@@ -111,7 +111,7 @@
         </div>
     </div>
 
-   <script>
+ <script>
         function saveSettingsAndShowLinks() {
             const nameInput = document.getElementById('child-name');
             const ageInput = document.getElementById('child-age');
@@ -128,7 +128,7 @@
 
             // 1. Сохранение данных в localStorage
             localStorage.setItem('childName', childName);
-            localStorage.setItem('childAge', childAge); // Сохраняем возраст
+            localStorage.setItem('childAge', childAge); 
             localStorage.setItem('lessonDate', lessonDate);
 
             // 2. Скрытие формы и показ ссылок
@@ -136,25 +136,15 @@
             document.getElementById('links-view').classList.remove('hidden');
         }
 
-        // *** ИЗМЕНЕНИЕ: УДАЛЯЕМ ЛОГИКУ ПРОВЕРКИ localStorage ПРИ ЗАГРУЗКЕ! ***
-        // Теперь при загрузке страницы форма всегда будет видима, 
-        // а ссылки будут скрыты, пока не нажмут кнопку.
+        // *** ОЧИЩЕННЫЙ БЛОК DOMContentLoaded ***
+        // Этот код гарантирует, что форма всегда видна, а поля - пусты, 
+        // независимо от того, что было сохранено ранее.
         
         document.addEventListener('DOMContentLoaded', () => {
-            // Если данные ранее были сохранены, заполняем ими форму для удобства
-            const storedName = localStorage.getItem('childName');
-            const storedAge = localStorage.getItem('childAge');
-            const storedDate = localStorage.getItem('lessonDate');
-            
-            if (storedName) {
-                document.getElementById('child-name').value = storedName;
-            }
-            if (storedAge) {
-                document.getElementById('child-age').value = storedAge;
-            }
-            if (storedDate) {
-                document.getElementById('lesson-date').value = storedDate;
-            }
+            // Очищаем поля формы при загрузке (если они были заполнены браузером)
+            document.getElementById('child-name').value = '';
+            document.getElementById('child-age').value = '';
+            document.getElementById('lesson-date').value = '';
             
             // Гарантируем, что форма видна, а ссылки скрыты
             document.getElementById('setup-form').classList.remove('hidden');
