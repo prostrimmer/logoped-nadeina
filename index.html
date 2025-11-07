@@ -3,38 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Волшебный мир Логопедии - Начало Занятия</title>
-    <link rel="stylesheet" href="style.css"> 
+    <title>Логопедические занятия</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #4682b4;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            text-align: left;
+        }
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #b0c4de;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .start-button {
+            background-color: #3cb371; /* Зеленый цвет для кнопки */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.1s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .start-button:hover {
+            background-color: #2e8b57;
+        }
+        .links-container {
+            margin-top: 30px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .lesson-link {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #4682b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .lesson-link:hover {
+            background-color: #5f9ea0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="disney-background">
-        <header>
-            <h1>Добро пожаловать в Волшебную Логопедическую Страну!</h1>
-        </header>
 
-        <main class="login-form-container">
-            <h2>Введите свои данные для начала приключения</h2>
-            <form id="start-lesson-form">
-                
-                <div class="input-group">
-                    <label for="child-name">Как тебя зовут?</label>
-                    <input type="text" id="child-name" required placeholder="Твое Имя Героя">
-                </div>
-                
-                <div class="input-group">
-                    <label for="lesson-date">Сегодняшняя дата:</label>
-                    <input type="date" id="lesson-date" required>
-                </div>
-                
-                <button type="submit" class="start-button">Начать Занятие!</button>
-            </form>
-        </main>
+    <div class="container">
+        <h1>👋 Добро пожаловать, Логопед!</h1>
         
-        <footer>
-            <p>&copy; Логопедические Занятия</p>
-        </footer>
+        <div id="setup-form">
+            <label for="child-name">Имя ребенка:</label>
+            <input type="text" id="child-name" placeholder="Введите имя" required>
+            
+            <label for="child-age">Возраст ребенка:</label>
+            <input type="number" id="child-age" placeholder="Введите возраст" min="3" max="10" required>
+
+            <label for="lesson-date">Дата занятия:</label>
+            <input type="date" id="lesson-date" required>
+            
+            <button class="start-button" onclick="saveSettingsAndShowLinks()">Начать занятие</button>
+        </div>
+
+        <div id="links-view" class="links-container hidden">
+            <h2>Выберите занятие:</h2>
+            
+            <a href="lesson-1.html" class="lesson-link">Занятие 1. Инженерия данных, основные понятия и определения (2 часа)</a>
+            <a href="lesson-3.html" class="lesson-link">Занятие 3. Тренировка звука С (Ваш текущий файл)</a>
+
+        </div>
     </div>
 
-    <script src="script.js"></script> 
+    <script>
+        function saveSettingsAndShowLinks() {
+            const nameInput = document.getElementById('child-name');
+            const ageInput = document.getElementById('child-age');
+            const dateInput = document.getElementById('lesson-date');
+            
+            const childName = nameInput.value.trim();
+            const childAge = ageInput.value.trim();
+            const lessonDate = dateInput.value;
+
+            if (childName === "" || childAge === "" || lessonDate === "") {
+                alert("Пожалуйста, заполните все поля.");
+                return;
+            }
+
+            // 1. Сохранение данных в localStorage
+            localStorage.setItem('childName', childName);
+            localStorage.setItem('childAge', childAge); // Сохраняем возраст
+            localStorage.setItem('lessonDate', lessonDate);
+
+            // 2. Скрытие формы и показ ссылок
+            document.getElementById('setup-form').classList.add('hidden');
+            document.getElementById('links-view').classList.remove('hidden');
+        }
+
+        // Показ занятий, если данные уже есть
+        document.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('childName') && localStorage.getItem('lessonDate')) {
+                // Если данные уже есть, сразу показываем ссылки
+                document.getElementById('setup-form').classList.add('hidden');
+                document.getElementById('links-view').classList.remove('hidden');
+            }
+        });
+    </script>
 </body>
 </html>
