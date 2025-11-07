@@ -111,7 +111,7 @@
         </div>
     </div>
 
-    <script>
+   <script>
         function saveSettingsAndShowLinks() {
             const nameInput = document.getElementById('child-name');
             const ageInput = document.getElementById('child-age');
@@ -136,13 +136,29 @@
             document.getElementById('links-view').classList.remove('hidden');
         }
 
-        // Показ занятий, если данные уже есть
+        // *** ИЗМЕНЕНИЕ: УДАЛЯЕМ ЛОГИКУ ПРОВЕРКИ localStorage ПРИ ЗАГРУЗКЕ! ***
+        // Теперь при загрузке страницы форма всегда будет видима, 
+        // а ссылки будут скрыты, пока не нажмут кнопку.
+        
         document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('childName') && localStorage.getItem('lessonDate')) {
-                // Если данные уже есть, сразу показываем ссылки
-                document.getElementById('setup-form').classList.add('hidden');
-                document.getElementById('links-view').classList.remove('hidden');
+            // Если данные ранее были сохранены, заполняем ими форму для удобства
+            const storedName = localStorage.getItem('childName');
+            const storedAge = localStorage.getItem('childAge');
+            const storedDate = localStorage.getItem('lessonDate');
+            
+            if (storedName) {
+                document.getElementById('child-name').value = storedName;
             }
+            if (storedAge) {
+                document.getElementById('child-age').value = storedAge;
+            }
+            if (storedDate) {
+                document.getElementById('lesson-date').value = storedDate;
+            }
+            
+            // Гарантируем, что форма видна, а ссылки скрыты
+            document.getElementById('setup-form').classList.remove('hidden');
+            document.getElementById('links-view').classList.add('hidden');
         });
     </script>
 </body>
