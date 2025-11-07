@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Волшебный мир Логопедии - Начало Занятия</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div class="disney-background">
+        <header>
+            <h1>Добро пожаловать в Волшебную Логопедическую Страну!</h1>
+        </header>
+
+        <main class="login-form-container">
+            <h2>Введите свои данные для начала приключения</h2>
+            <form id="start-lesson-form">
+                
+                <div class="input-group">
+                    <label for="child-name">Как тебя зовут?</label>
+                    <input type="text" id="child-name" required placeholder="Твое Имя Героя">
+                </div>
+                
+                <div class="input-group">
+                    <label for="lesson-date">Сегодняшняя дата:</label>
+                    <input type="date" id="lesson-date" required>
+                </div>
+                
+                <button type="submit" class="start-button">Начать Занятие!</button>
+            </form>
+        </main>
+        
+        <footer>
+            <p>&copy; Логопедические Занятия</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>

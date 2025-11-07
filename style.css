@@ -1,0 +1,147 @@
+/* ========================================= */
+/* 1. Общие настройки и Сброс Стилизации */
+/* ========================================= */
+
+:root {
+    /* Палитра Дисней (яркие, теплые тона) */
+    --color-primary: #FFD700; /* Золотой/Яркий желтый */
+    --color-secondary: #00BFFF; /* Небесно-голубой */
+    --color-accent: #FF6347; /* Ярко-красный/Коралловый (для кнопок) */
+    --color-text-dark: #333333; /* Темный текст */
+    --color-text-light: #FFFFFF; /* Светлый текст */
+    --color-background-light: #F0F8FF; /* Светлый, облачный фон */
+    
+    /* Шрифт (игривый, но читаемый) */
+    --font-main: 'Comic Sans MS', 'Arial Rounded MT Bold', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--color-text-dark);
+    line-height: 1.6;
+}
+
+/* ========================================= */
+/* 2. Фон и Общий Макет Страницы */
+/* ========================================= */
+
+.disney-background {
+    /* Градиентный фон, имитирующий небо или сказочный пейзаж */
+    background: linear-gradient(135deg, var(--color-background-light) 0%, var(--color-secondary) 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--color-accent); /* Красный акцент */
+    text-shadow: 3px 3px 0px var(--color-text-light); /* Эффект мультяшного текста */
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    border: 3px solid var(--color-primary);
+}
+
+/* ========================================= */
+/* 3. Форма Входа (Контейнер) */
+/* ========================================= */
+
+.login-form-container {
+    background-color: var(--color-text-light);
+    border: 5px solid var(--color-primary); /* Золотая рамка */
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 10px 10px 0px var(--color-accent), 
+                15px 15px 0px rgba(0, 0, 0, 0.1); /* Мультяшная тень */
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.login-form-container h2 {
+    color: var(--color-text-dark);
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+/* ========================================= */
+/* 4. Поля Ввода (Input) */
+/* ========================================= */
+
+.input-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    color: var(--color-accent);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: 3px solid var(--color-secondary);
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-family: var(--font-main);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.5); /* Эффект свечения при фокусе */
+    outline: none;
+}
+
+/* ========================================= */
+/* 5. Кнопка "Начать Занятие!" */
+/* ========================================= */
+
+.start-button {
+    background-color: var(--color-accent); /* Яркий, привлекающий цвет */
+    color: var(--color-text-light);
+    border: 4px solid var(--color-primary);
+    border-radius: 50px; /* Сильно скругленная, как игрушка */
+    padding: 15px 30px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 0 var(--color-text-dark); /* 3D-эффект кнопки */
+    transition: all 0.1s;
+    text-transform: uppercase;
+}
+
+.start-button:hover {
+    background-color: #FF8C00; /* Немного темнее при наведении */
+}
+
+.start-button:active {
+    /* Эффект нажатия (кнопка "проваливается") */
+    box-shadow: 0 2px 0 var(--color-text-dark);
+    transform: translateY(3px);
+}
+
+/* ========================================= */
+/* 6. Футер */
+/* ========================================= */
+
+footer {
+    margin-top: auto; /* Прижимает футер к низу */
+    padding-top: 20px;
+    color: var(--color-text-dark);
+    opacity: 0.6;
+}

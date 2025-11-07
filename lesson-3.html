@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 3: Автоматизация С (СА, СО, СЫ)</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lesson.css"> 
+    <link rel="stylesheet" href="lesson-3.css"> 
+</head>
+<body>
+    <div class="disney-background">
+        <header>
+            <h1 id="lesson-title">Занятие 3. Звуки СА, СО, СЫ</h1>
+            <p class="greeting">Привет, <span id="child-name-display">Юный Герой</span>! Продолжаем! Сегодня <span id="lesson-date-display">...</span></p>
+        </header>
+
+        <main class="lesson-container">
+
+            <section class="oral-tasks">
+                <h2>📚 Устная Разминка</h2>
+                <div class="task-list">
+                    <p>1. Произнеси звук **С-С-С** длительно на одном выдохе.</p>
+                    <p>2. Запомни и повтори слоговые ряды:</p>
+                    <pre><code>са-су-сы-со            со-сы-са-су
+са-сы-со-су            со-сы-су-са
+са-су-со-сы            со-са-су-сы
+са-сы-су-со            со-са-сы-су
+                    </code></pre>
+                    
+                    <p>3. Повтори скороговорку «Оса»:</p>
+                    <pre><code>Са-са-са — в саду оса,
+Са-са-са — ко мне летит оса,
+Сы-сы-сы — у осы усы,
+Сы-сы-сы — в саду нет осы.
+                    </code></pre>
+
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="interactive-task" id="task-5">
+                <h2>⭐ Задание 4. Сортировка по слогам</h2>
+                <p class="instruction">Перетащи каждую картинку в правильный "домик" по слогу в названии (СА, СО, СЫ). Какая картинка осталась?</p>
+                
+                <div class="sorting-area triple">
+                    <div id="target-SA" class="target-zone" data-target="СА"><h3>СЛОГ: **СА**</h3></div>
+                    <div id="target-СО" class="target-zone" data-target="СО"><h3>СЛОГ: **СО**</h3></div>
+                    <div id="target-СЫ" class="target-zone" data-target="СЫ"><h3>СЛОГ: **СЫ**</h3></div>
+                </div>
+
+                <div id="draggable-items-3" class="draggable-items-container">
+                    <img id="item-7" src="images/owl.png" alt="Совы" draggable="true" data-category="СО">
+                    <img id="item-8" src="images/bag.png" alt="Сумка" draggable="true" data-category="СУ"> 
+                    <img id="item-9" src="images/scythe.png" alt="Коса" draggable="true" data-category="СА">
+                    <img id="item-10" src="images/sock.png" alt="Носок" draggable="true" data-category="СО">
+                    <img id="item-11" src="images/scale.png" alt="Весы" draggable="true" data-category="СЫ">
+                    <img id="item-12" src="images/orchard.png" alt="Сад" draggable="true" data-category="СА">
+                </div>
+
+                <p class="note-after-sort">Какая картинка осталась и почему?</p>
+
+                <button id="check-button-3" class="start-button check-button">Проверить Сортировку!</button>
+                <div id="feedback-message-3" class="feedback"></div>
+
+            </section>
+
+            <hr>
+            
+            <section class="interactive-task" id="task-6">
+                <h2>⭐ Задание 5. Игра «Закончи слово»</h2>
+                <p class="instruction">Соедини начало слова (слева) с правильным окончанием (справа).</p>
+            
+                <div class="matching-game-container">
+                    
+                    <div class="match-group" id="group-1">
+                        <h3>С окончанием <strong>-СОК</strong></h3>
+                        <div class="match-left">
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">НО</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">ПЕ</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">КУ</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">ПОЯ</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">КВА</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">ТУЕ</span>
+                            <span class="match-stem" data-correct-end="сок" data-group-type="normal">ЛЕ</span>
+                        </div>
+                        <div class="match-right">
+                            <span class="match-end" data-end="сок">СОК</span>
+                        </div>
+                    </div>
+            
+                    <div class="match-group" id="group-2">
+                         <h3>С началом <strong>СО-</strong></h3>
+                        <div class="match-left">
+                            <span class="match-stem" data-correct-end="со" data-group-type="reversal-stem">М</span> 
+                            <span class="match-stem" data-correct-end="со" data-group-type="reversal-stem">Н</span>
+                            <span class="match-stem" data-correct-end="со" data-group-type="reversal-stem">К</span>
+                            <span class="match-stem" data-correct-end="со" data-group-type="reversal-stem">ТЫ</span>
+                            <span class="match-stem" data-correct-end="со" data-group-type="reversal-stem">ДА</span>
+                        </div>
+                        <div class="match-right">
+                            <span class="match-end" data-end="со">СО</span> 
+                        </div>
+                    </div>
+            
+                    <div class="match-group" id="group-3">
+                         <h3>С началом <strong>СУ-</strong></h3>
+                        <div class="match-left">
+                            <span class="match-stem" data-correct-end="су" data-group-type="reversal-stem">П</span>
+                            <span class="match-stem" data-correct-end="су" data-group-type="reversal-stem">ДНО</span>
+                            <span class="match-stem" data-correct-end="су" data-group-type="reversal-stem">К</span>
+                            <span class="match-stem" data-correct-end="су" data-group-type="reversal-stem">МКА</span>
+                            <span class="match-stem" data-correct-end="су" data-group-type="reversal-stem">ДАК</span>
+                        </div>
+                        <div class="match-right">
+                            <span class="match-end" data-end="су">СУ</span>
+                        </div>
+                    </div>
+                    
+                </div>
+                <button id="check-button-6" class="start-button check-button">Проверить Слова!</button>
+                <div id="feedback-message-6" class="feedback"></div>
+            
+            </section>
+
+            <hr>
+
+            <section class="writing-tasks">
+                <h2>✍️ Задания на составление</h2>
+                
+                <div class="task-block">
+                    <p>6. Проспрягай глагол по образцу:Я откусываю кусок мяса, Мы откусываем кусок мяса...</p>
+                    <p class="label-input">Я: <input type="text" placeholder=""></p>
+                    <p class="label-input">Ты: <input type="text" placeholder=""></p>
+                    <p class="label-input">Он/Она: <input type="text" placeholder=""></p>
+                    <p class="label-input">Мы: <input type="text" placeholder=""></p>
+                    <p class="label-input">Вы: <input type="text" placeholder=""></p>
+                    <p class="label-input">Они: <input type="text" placeholder=""></p>
+                </div>
+                
+                <p>7. Вспомни и назови картинки из упражнения 5.</p>
+
+                <div class="task-block">
+                    <p>9. Составь и преобразуй предложения по образцу: У Сони сумка. — Это Сонина сумка.</p>
+                    <p class="label-input">Соня, носок, у: <input type="text" placeholder=""></p>
+                    <p class="label-input">у, коса, Соня: <input type="text" placeholder=""></p>
+                    <p class="label-input">Соня, сад, у: <input type="text" placeholder=""></p>
+                    <p class="label-input">весы, Соня, у: <input type="text" placeholder=""></p>
+                </div>
+                
+            </section>
+
+            <hr>
+            
+            <section class="interactive-task" id="task-10">
+                <h2>🧩 Задание 10. Составь слова из слога СА</h2>
+                <p class="instruction">Прочитай, к каким частям можно присоединить слог СА, и запиши получившиеся слова.</p>
+
+                <div class="word-wheel-container">
+                    <img src="images/romashka.png" alt="Слоговое колесо СА" class="word-wheel-image">
+                </div>
+
+                <div class="word-input-grid">
+                    <div class="word-input-item"><input type="text" id="word-1" data-correct-word="САНЯ" placeholder=""></div>
+                    <div class="word-input-item"><input type="text" id="word-2" data-correct-word="САХАР" placeholder=""></div>
+                    <div class="word-input-item"><input type="text" id="word-3" data-correct-word="САША" placeholder=""></div>
+                    <div class="word-input-item"><input type="text" id="word-4" data-correct-word="САПОГ" placeholder=""></div>
+                    <div class="word-input-item"><input type="text" id="word-5" data-correct-word="САНИ" placeholder=""></div>
+                    <div class="word-input-item"><input type="text" id="word-6" data-correct-word="САЛО" placeholder=""></div>
+                </div>
+                
+                <button id="check-button-10" class="start-button check-button">Проверить Слова</button>
+                <div id="feedback-message-10" class="feedback"></div>
+            </section>
+
+            <hr>
+            
+            <section class="writing-tasks" id="task-11">
+                <h2>📝 Задание 11. Ответь на вопросы</h2>
+                <p class="instruction">Ответь на вопросы, запиши ответы.</p>
+                
+                <div class="question-answer-block">
+                    <div class="label-input">У какой рыбы длинные усы?
+                        <input type="text" id="q-fish" data-correct-word="СОМ" placeholder="Ответ">
+                    </div>
+                    <div class="label-input">Как называется птичка с красной грудкой?
+                        <input type="text" id="q-bird" data-correct-word="СНЕГИРЬ" placeholder="Ответ">
+                    </div>
+                    <div class="label-input">Как называют девочку из снега?
+                        <input type="text" id="q-snow-girl" data-correct-word="СНЕГУРОЧКА" placeholder="Ответ">
+                    </div>
+                    <div class="label-input">Что фокусник показывает в цирке?
+                        <input type="text" id="q-magic" data-correct-word="ФОКУС" placeholder="Ответ">
+                    </div>
+                </div>
+                
+                <button id="check-button-11" class="start-button check-button">Проверить Ответы</button>
+                <div id="feedback-message-11" class="feedback"></div>
+            </section>
+
+            <hr>
+
+            <section class="writing-tasks" id="task-12">
+                <h2>🧩 Задание 12. Составь слова из букв</h2>
+                <p class="instruction">Составь из букв слова. Запиши их.</p>
+                
+                <div class="word-puzzle-grid">
+                    <div class="label-input">А, С, Д —
+                        <input type="text" data-correct-word="САД" placeholder="Слово">
+                    </div>
+                    <div class="label-input">Р, С, Ы —
+                        <input type="text" data-correct-word="СЫР" placeholder="Слово">
+                    </div>
+                    <div class="label-input">С, К, О —
+                        <input type="text" data-correct-word="СОК" placeholder="Слово">
+                    </div>
+                    <div class="label-input">Л, А, С, И —
+                        <input type="text" data-correct-word="СИЛА" placeholder="Слово">
+                    </div>
+                    <div class="label-input">С, Л, Е —
+                        <input type="text" data-correct-word="ЛЕС" placeholder="Слово">
+                    </div>
+                    <div class="label-input">С, Ы, Б, У —
+                        <input type="text" data-correct-word="БУСЫ" placeholder="Слово">
+                    </div>
+                    <div class="label-input">Н, С, О —
+                        <input type="text" data-correct-word="СОН" placeholder="Слово">
+                    </div>
+                    <div class="label-input">И, Р, С —
+                        <input type="text" data-correct-word="РИС" placeholder="Слово">
+                    </div>
+                    <div class="label-input">Н, С, Г, Е —
+                        <input type="text" data-correct-word="СНЕГ" placeholder="Слово">
+                    </div>
+                    <div class="label-input">А, С, Д, О, К —
+                        <input type="text" data-correct-word="ОСАДОК" placeholder="Слово">
+                    </div>
+                </div>
+                
+                <button id="check-button-12" class="start-button check-button">Проверить Слова</button>
+                <div id="feedback-message-12" class="feedback"></div>
+            </section>
+            
+            <p class="note">✅ **Отличная работа!** Ты закончил Занятие 3.</p>
+
+        </main>
+        
+        <footer><p>&copy; Логопедические Занятия</p></footer>
+    </div>
+    
+    <script src="lesson-3.js"></script> 
+</body>
+</html>

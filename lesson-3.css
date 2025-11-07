@@ -1,0 +1,186 @@
+/* ========================================= */
+/* Стилизация для Занятия 3: Тройная Сортировка и Сопоставление */
+/* ========================================= */
+
+/* --- Задание 5: Тройная зона сортировки (СА, СО, СЫ) --- */
+
+.sorting-area.triple {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.sorting-area.triple .target-zone {
+    min-height: 280px;
+    border-radius: 12px;
+}
+
+/* --- Задание 6: Игра «Закончи слово» (Сопоставление) --- */
+
+.matching-game-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+    background-color: #F0FFF0;
+    border-radius: 15px;
+    border: 3px solid var(--color-secondary);
+}
+
+.match-group {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    padding: 10px;
+    border-right: 1px dashed #ccc;
+}
+
+.match-group:last-child {
+    border-right: none;
+}
+
+.match-group h3 {
+    color: var(--color-text-dark);
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 5px;
+}
+
+.match-left, .match-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.match-stem, .match-end {
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+/* Начало слова (левая колонка) */
+.match-stem {
+    background-color: var(--color-primary);
+    color: var(--color-text-dark);
+    border: 2px solid #FFA500;
+}
+
+.match-stem:hover {
+    transform: scale(1.05);
+}
+
+/* Окончание слова (правая колонка) */
+.match-end {
+    background-color: var(--color-accent);
+    color: var(--color-text-light);
+    border: 2px solid #B22222;
+}
+
+/* ========================================= */
+/* СТИЛИ ДЛЯ СОСТОЯНИЙ (Game 6) */
+/* ========================================= */
+
+.match-stem.selected {
+    border: 3px solid #0000FF;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+}
+
+.match-stem.correct {
+    background-color: #3CB371;
+    color: white;
+    border-color: #006400;
+}
+
+.match-stem.incorrect {
+    background-color: #FF6347;
+    color: white;
+    border-color: #B22222;
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+/* --- Стиль для полей ввода (Задания 7, 9, 11, 12) --- */
+.label-input {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    font-size: 1.1em;
+    justify-content: space-between; /* Распределяем текст и инпут */
+}
+
+.label-input input {
+    flex-grow: 1;
+    margin-left: 10px;
+    padding: 8px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 6px;
+    font-family: var(--font-main);
+}
+
+/* Стили для Задания 10: Словообразование */
+.word-wheel-container {
+    text-align: center;
+    margin: 20px auto;
+}
+
+.word-wheel-image {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.word-input-grid, .word-puzzle-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.word-input-item input, .word-puzzle-grid input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1.1em;
+}
+
+/* Стили для проверки полей ввода */
+.word-input-item input.correct,
+.word-puzzle-grid input.correct,
+#task-11 input.correct {
+    border-color: #3CB371;
+    background-color: #E6FFE6;
+}
+
+.word-input-item input.incorrect,
+.word-puzzle-grid input.incorrect,
+#task-11 input.incorrect {
+    border-color: #FF6347;
+    background-color: #FFE6E6;
+}
+
+/* Дополнительные стили для Задания 11, чтобы вопросы не растягивались на всю строку */
+.question-answer-block .label-input {
+    display: block;
+}
+
+.question-answer-block .label-input input {
+    margin-top: 5px;
+}
