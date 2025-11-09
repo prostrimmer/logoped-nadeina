@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 4: Автоматизация звука С</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lesson.css"> 
+    <link rel="stylesheet" href="lesson-4.css"> 
+</head>
+<body>
+    <div class="disney-background">
+        <header>
+            <h1 id="lesson-title">Занятие 4. Звуки С</h1>
+            <p class="greeting">Привет, <span id="child-name-display">Юный Герой</span>! Продолжаем! Сегодня <span id="lesson-date-display">...</span></p>
+        </header>
+
+        <main class="lesson-container">
+
+            <section class="oral-tasks">
+                <h2>📚 Устная разминка</h2>
+                <div class="task-list">
+                    <p>1. Произнеси звук С-С-С длительно на одном выдохе</p>
+                    <p>3. Назови слова, начинающиеся с СА, СО, СЫ</p>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="interactive-task" id="task-syllable-rows">
+                <h2>⭐ Работа со слоговыми рядами</h2>
+                <p class="instruction">Повтори слоговые ряды по образцам</p>
+                
+                <div class="syllable-rows-container">
+                    
+                    <div class="syllable-task">
+                        <p>4. Произнеси слоги и слова</p>
+                        <pre>
+                            <code>
+ас-ас-ас - вас       ос-ос-ос - нос        ус-ус-ус - фокус      ыс-ыс-ыс - кумыс
+ас-ас-ас - нас       ос-ос-ос - поднос     ус-ус-ус - фикус      ыс-ыс-ыс - мыс
+ас-ас-ас - ананас    ос-ос-ос - космос     ус-ус-ус - кактус     ес-ес-ес - вес
+ас-ас-ас - квас      ос-ос-ос - кокос      ус-ус-ус - автобус    ес-ес-ес - навес
+ас-ас-ас - комас     ос-ос-ос - космос     ус-ус-ус - фокус      ыс-ыс-ыс - мыс
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div class="syllable-task">
+                        <p>5. Повтори слоговые ряды</p>
+                        <pre><code>ас-ас-ас со-со-со сы-сы-сы
+ас-ас-ка со-со-ко сы-сы-ко
+ас-ас-ра со-со-ро сы-сы-ро
+ас-ас-ма со-со-мо сы-сы-мо
+ас-ас-ба со-со-бо сы-сы-бо</code></pre>
+                    </div>
+
+                    <div class="syllable-task">
+                        <p>6. Назови по-новому слоговые ряды</p>
+                        <pre><code>ас-ас-ас со-со-со сы-сы-сы
+ас-ас-ка со-со-ко сы-сы-ко
+ас-ас-ра со-со-ро сы-сы-ро
+ас-ас-ма со-со-мо сы-сы-мо
+ас-ас-ба со-со-бо сы-сы-бо</code></pre>
+                    </div>
+
+                    <div class="syllable-task">
+                        <p>7. Повтори слоговые ряды, которые назал логопед</p>
+                        <pre><code>ас-ас-ас со-со-со сы-сы-сы
+ас-ас-ка со-со-ко сы-сы-ко
+ас-ас-ра со-со-ро сы-сы-ро
+ас-ас-ма со-со-мо сы-сы-мо
+ас-ас-ба со-со-бо сы-сы-бо</code></pre>
+                    </div>
+
+                    <div class="syllable-task">
+                        <p>8. Составь слоговые ряды по образцу</p>
+                        <pre><code>ас-ас-ас
+со-со-со
+сы-сы-сы</code></pre>
+                    </div>
+
+                </div>
+
+                <button id="check-button-syllables" class="start-button check-button">Проверить ряды!</button>
+                <div id="feedback-message-syllables" class="feedback"></div>
+            </section>
+
+            <hr>
+
+            <!-- Блок 3: Игра "Закончи слово" -->
+            <section class="interactive-task" id="task-complete-word">
+                <h2>⭐ Игра "Закончи слово"</h2>
+                <p class="instruction">Нажми сначала на красную клавишу "С", затем на жёлтую клавишу с окончанием — "С" перенесётся в начало текста на жёлтой клавише, и она станет зелёной!</p>
+                <div class="matching-game-container two-columns" id="word-matching-area">
+                    <div class="column s-keys" id="s-column">
+                        <h3>Клавиша "С"</h3>
+                        <div class="match-item s-key" data-s="true">С</div>
+                        <div class="match-item s-key" data-s="true">С</div>
+                        <div class="match-item s-key" data-s="true">С</div>
+                    </div>
+                    <div class="column word-ends" id="ends-column">
+                        <h3>Окончание слова</h3>
+                        <div class="match-item end-item" data-word="АД">АД</div>
+                        <div class="match-item end-item" data-word="ОК">ОК</div>
+                        <div class="match-item end-item" data-word="ЫР">ЫР</div>
+                    </div>
+                </div>
+                <button id="check-button-complete-word" class="start-button check-button">Проверить слова!</button>
+                <div id="feedback-message-complete-word" class="feedback"></div>
+            </section>
+
+            <hr>
+
+            <!-- Блок 4: Рассмотри картинки и определи место звука С в названии каждой -->
+            <section class="interactive-task" id="task-position-s">
+                <h2>⭐ Рассмотри картинки и определи место звука С в названии каждой</h2>
+                <p class="instruction">Напиши название каждой картинки в клетки. Проверь правильность и место С (С в начале, середине или конце слова).</p>
+                
+                <div class="image-task-container">
+                    <!-- Картинка 1: Кактус (КАКТУС - С в конце) -->
+                    <div class="image-container">
+                        <img src="images/cactus.png" alt="Кактус" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="к" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="к" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="т" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="у" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+                        </div>
+                    </div>
+
+                    <!-- Картинка 2: Автобус (АВТОБУС - С в конце) -->
+                    <div class="image-container">
+                        <img src="images/bus.png" alt="Автобус" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="в" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="т" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="о" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="б" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="у" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+                        </div>
+                    </div>
+
+                    <!-- Картинка 3: Нос (НОС - С в конце) -->
+                    <div class="image-container">
+                        <img src="images/nose.png" alt="Нос" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="н" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="о" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+                        </div>
+                    </div>
+
+                    <!-- Картинка 4: Ваза с цветами (ВАЗА - С в середине) -->
+                    <div class="image-container">
+                        <img src="images/podnos.png" alt="Поднос" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="п" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="о" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="д" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="н" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="о" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+
+                        </div>
+                    </div>
+
+                    <!-- Картинка 5: Ананас (АНАНАС - С в конце) -->
+                    <div class="image-container">
+                        <img src="images/pineapple.png" alt="Ананас" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="н" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="н" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+                        </div>
+                    </div>
+
+                    <!-- Картинка 6: Часы (ЧАСЫ - С в середине) -->
+                    <div class="image-container">
+                        <img src="images/clock.png" alt="Часы" class="lesson-image">
+                        <div class="word-input-grid">
+                            <input type="text" maxlength="1" data-correct="ч" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="а" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+                            <input type="text" maxlength="1" data-correct="ы" placeholder=" ">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="check-button-position-s" class="start-button check-button">Проверить названия!</button>
+                <div id="feedback-message-position-s" class="feedback"></div>
+            </section>
+
+            <hr>
+
+            <!-- Блок 5: В каждой группе найди и отмети лишнюю картинку -->
+            <section class="interactive-task" id="task-lishniy">
+                <h2>⭐ В каждой группе найди и отмети лишнюю картинку</h2>
+                <p class="instruction">В каждой группе 4 картинки. Нажми левой кнопкой мыши на лишнюю — она обведётся синей рамкой (выбор), затем красной (отметка). Чтобы убрать, нажми правой кнопкой мыши. Проверь!</p>
+                
+                <div class="group-task-container">
+                    <!-- Группа 1: редис, рысь, самолет, комар -->
+                    <div class="group">
+                        <h3>Группа 1</h3>
+                        <div class="group-images">
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/beet.png" alt="Редис" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/lynx.png" alt="Рысь" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/plane.png" alt="Самолёт" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="true">
+                                <img src="images/mosquito.png" alt="Комар" class="group-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Группа 2: собака, сова, телефон, сом -->
+                    <div class="group">
+                        <h3>Группа 2</h3>
+                        <div class="group-images">
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/dog.png" alt="Собака" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/owl.png" alt="Сова" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="true">
+                                <img src="images/phone.png" alt="Телефон" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/som.png" alt="Сом" class="group-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Группа 3: стол, стул, стакан, карандаш -->
+                    <div class="group">
+                        <h3>Группа 3</h3>
+                        <div class="group-images">
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/table.png" alt="Стол" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/chair.png" alt="Стул" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/glass.png" alt="Стакан" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="true">
+                                <img src="images/pencil.png" alt="Карандаш" class="group-image">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Группа 4: самовар, окно, сапоги, бусы -->
+                    <div class="group">
+                        <h3>Группа 4</h3>
+                        <div class="group-images">
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/samovar.png" alt="Самовар" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="true">
+                                <img src="images/window.png" alt="Окно" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/boots.png" alt="Сапоги" class="group-image">
+                            </div>
+                            <div class="image-item" data-lishniy="false">
+                                <img src="images/beads.png" alt="Бусы" class="group-image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="check-button-lishniy" class="start-button check-button">Проверить выбор!</button>
+                <div id="feedback-message-lishniy" class="feedback"></div>
+            </section>
+          <!-- Блок 6: Определи первый звук в каждом слове, впиши в клеточку соответствующую букву и прочитай -->
+<section class="interactive-task" id="task-first-sound">
+    <h2>⭐ Определи первый звук в каждом слове, впиши в клеточку соответствующую букву и прочитай</h2>
+    <p class="instruction">Посмотри на картинки в линии. Определи первый звук (букву) в названии, впиши только первую букву в клеточку под картинкой и прочитай слово вслух.</p>
+    
+    <div class="linear-image-task-container">
+        <!-- Картинка 1: Самолёт (САМОЛЁТ - первый звук С) -->
+        <div class="word-image-item">
+            <img src="images/plane.png" alt="Самолёт" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="с" placeholder=" ">
+            </div>
+        </div>
+
+        <!-- Картинка 2: Облако (ОБЛАКО - первый звук О) -->
+        <div class="word-image-item">
+            <img src="images/cloud.png" alt="Облако" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="о" placeholder=" ">
+            </div>
+        </div>
+
+        <!-- Картинка 3: Лотос (ЛОТОС - первый звук Л) -->
+        <div class="word-image-item">
+            <img src="images/lotus.png" alt="Лотос" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="л" placeholder=" ">
+            </div>
+        </div>
+
+        <!-- Картинка 4: Носок (НОСОК - первый звук Н) -->
+        <div class="word-image-item">
+            <img src="images/sock.png" alt="Носок" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="н" placeholder=" ">
+            </div>
+        </div>
+
+        <!-- Картинка 5: Курица (КУРИЦА - первый звук К) -->
+        <div class="word-image-item">
+            <img src="images/chicken.png" alt="Цыплёнок" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="ц" placeholder=" ">
+            </div>
+        </div>
+
+        <!-- Картинка 6: Енот (ЕНОТ - первый звук Е) -->
+        <div class="word-image-item">
+            <img src="images/raccoon.png" alt="Енот" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="е" placeholder=" ">
+            </div>
+        </div>
+    </div>
+
+    <button id="check-button-first-sound" class="start-button check-button">Проверить буквы!</button>
+    <div id="feedback-message-first-sound" class="feedback"></div>
+</section>  
+            <p class="note">✅ **Отличная работа!** Ты закончил Занятие 4.</p>
+
+        </main>
+        
+        <footer><p>&copy; Логопедические занятия</p></footer>
+    </div>
+    
+    <script src="lesson-4.js"></script> 
+</body>
+</html>

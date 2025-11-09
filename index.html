@@ -87,7 +87,7 @@
 <body>
 
     <div class="container">
-        <h1>👋 Добро пожаловать!</h1>
+        <h1>👋 Добро пожаловать, Логопед!</h1>
         
         <div id="setup-form">
             <label for="child-name">Имя ребенка:</label>
@@ -107,11 +107,17 @@
             
             <a href="lesson-1.html" class="lesson-link">Занятие 1. Инженерия данных, основные понятия и определения (2 часа)</a>
             <a href="lesson-3.html" class="lesson-link">Занятие 3. Тренировка звука С (Ваш текущий файл)</a>
-
+            <a href="lesson-4.html" class="lesson-link">
+                <span class="lesson-number">Занятие 4</span>
+                <span class="lesson-topic">Автоматизация звука С (Обратные слоги)</span>
+            </a>
+            ```
+        
+        **Готово!** После загрузки файлов `lesson-4.html`, `lesson-4.js` и обновления `index.html` на GitHub, Занятие 4 будет доступно на вашем сайте.
         </div>
     </div>
 
- <script>
+    <script>
         function saveSettingsAndShowLinks() {
             const nameInput = document.getElementById('child-name');
             const ageInput = document.getElementById('child-age');
@@ -128,7 +134,7 @@
 
             // 1. Сохранение данных в localStorage
             localStorage.setItem('childName', childName);
-            localStorage.setItem('childAge', childAge); 
+            localStorage.setItem('childAge', childAge); // Сохраняем возраст
             localStorage.setItem('lessonDate', lessonDate);
 
             // 2. Скрытие формы и показ ссылок
@@ -136,21 +142,14 @@
             document.getElementById('links-view').classList.remove('hidden');
         }
 
-        // *** ОЧИЩЕННЫЙ БЛОК DOMContentLoaded ***
-        // Этот код гарантирует, что форма всегда видна, а поля - пусты, 
-        // независимо от того, что было сохранено ранее.
-        
+        // Показ занятий, если данные уже есть
         document.addEventListener('DOMContentLoaded', () => {
-            // Очищаем поля формы при загрузке (если они были заполнены браузером)
-            document.getElementById('child-name').value = '';
-            document.getElementById('child-age').value = '';
-            document.getElementById('lesson-date').value = '';
-            
-            // Гарантируем, что форма видна, а ссылки скрыты
-            document.getElementById('setup-form').classList.remove('hidden');
-            document.getElementById('links-view').classList.add('hidden');
+            if (localStorage.getItem('childName') && localStorage.getItem('lessonDate')) {
+                // Если данные уже есть, сразу показываем ссылки
+                document.getElementById('setup-form').classList.add('hidden');
+                document.getElementById('links-view').classList.remove('hidden');
+            }
         });
     </script>
 </body>
 </html>
-
