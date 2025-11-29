@@ -1,0 +1,793 @@
+.main-lesson-block {
+    background: rgba(255,255,255,0.97);
+    border-radius: 30px;
+    padding: 40px;
+    margin: 30px auto;
+    max-width: 1200px;
+    border: 8px solid #FFD700;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.task-block {
+    background: #f0f8ff;
+    border-radius: 25px;
+    padding: 35px;
+    margin: 40px 0;
+    border: 5px solid #e0ffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.task-block h2 {
+    text-align: center;
+    color: #FF6347;
+    font-size: 2.3em;
+    margin-bottom: 25px;
+    border-bottom: 5px solid #FFD700;
+    padding-bottom: 12px;
+}
+
+.instruction {
+    /* ---------------------------------------------------- */
+    /* Выравнивание и внешний вид текста */
+    /* ---------------------------------------------------- */
+    text-align: center; /* Выравнивает текст инструкции по центру контейнера. */
+    font-size: 1.3em;   /* Устанавливает размер шрифта. 
+                           1.2em означает на 20% больше, чем базовый размер шрифта родительского элемента. */
+    
+    color: #333;        /* Задает цвет текста. Используется темно-серый цвет (почти черный) для хорошей читаемости. */
+    font-style: italic; /* Применяет курсивное начертание шрифта, чтобы визуально выделить текст инструкции от основного текста. */
+    
+    /* ---------------------------------------------------- */
+    /* Отступы */
+    /* ---------------------------------------------------- */
+    margin: 10px 0;     /* Устанавливает внешние отступы (margin). 
+                           20px - сверху и снизу (вертикальные отступы).
+                           0 - слева и справа (горизонтальные отступы). 
+                           Это создает пространство вокруг инструкции. */
+}
+
+/* ЗАДАНИЕ 3 — НОВАЯ ВЕРСИЯ */
+.words-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 40px 0;
+    padding: 5px;
+    background: #e8f5e9;
+    border-radius: 20px;
+    border: 6px solid #FFD700;
+}
+
+.sound-word {
+    display: block;
+    width: 100%;
+    padding: 16px 8px;
+    margin: 2px 0;
+    background: #FFF176;
+    color: #333;
+    font-weight: bold;
+    font-size: 1.45em;
+    text-align: center;
+    border-radius: 16px;
+    border: 4px solid #FFC400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+}
+
+.sound-word:hover {
+    background: #FFEB3B;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.sound-word.selected {
+    border: 5px dashed #FF5722;
+    background: #FFCC80;
+    transform: scale(1.06);
+}
+
+.sound-word.correct {
+    background: #4CAF50 !important;
+    color: white;
+    border-color: #388E3C;
+    animation: bounce 0.6s;
+}
+
+.sound-word.incorrect {
+    background: #F44336 !important;
+    color: white;
+    border-color: #D32F2F;
+    animation: shake 0.6s;
+}
+
+.position-buttons {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.pos-btn {
+    padding: 18px 40px;
+    margin: 0 15px;
+    font-size: 1.7em;
+    background: #00BFFF;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 8px #0088cc;
+}
+
+.pos-btn:hover {
+    background: #0099cc;
+    transform: translateY(-4px);
+}
+
+/* Остальные задания */
+.syllable-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.syllable-row {
+    background: linear-gradient(135deg, #e6f7ff, #fffacd);
+    padding: 25px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 1.6em;
+    font-weight: bold;
+    border: 4px solid #FFD700;
+}
+
+.odd-one-out-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.image-item {
+    text-align: center;
+    cursor: pointer;
+}
+
+.image-item img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.pronoun-matching { max-width: 800px; margin: 50px auto; }
+.pronoun-line { display: flex; align-items: center; margin: 35px 0; font-size: 1.8em; }
+.pronoun { color: #FF6347; font-weight: bold; width: 120px; }
+.drop-zone { width: 200px; height: 200px; border: 6px dashed #00BFFF; border-radius: 25px; background: #f0fff0; }
+
+.draggable-pronouns {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+    margin: 40px 0;
+}
+
+.draggable-pronouns img {
+    width: 150px;
+    height: 150px;
+    cursor: grab;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.final-note {
+    text-align: center;
+    font-size: 2.6em;
+    color: #FF6347;
+    margin: 60px 0;
+    text-shadow: 3px 3px white;
+    font-weight: bold;
+}
+
+@keyframes bounce {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-12px); }
+    75% { transform: translateX(12px); }
+}
+
+.odd-one-out-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 40px 0;
+}
+
+.image-item {
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 6px solid transparent;
+}
+
+.image-item img {
+    width: 160px;
+    height: 160px;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.image-item.correct {
+    border: 8px solid #4CAF50 !important;
+    background: rgba(76, 175, 80, 0.2);
+    animation: bounce 0.8s;
+}
+
+.image-item.incorrect {
+    border: 8px solid #F44336 !important;
+    background: rgba(244, 67, 54, 0.2);
+    animation: shake 0.6s;
+}
+.draggable-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #e1f5fe, #fff3e0);
+    border-radius: 35px;
+    border: 8px solid #FFD700;
+    max-width: 1000px;
+}
+
+.draggable-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+    cursor: grab;
+    transition: all 0.3s;
+}
+
+.draggable-img:hover {
+    transform: translateY(-10px);
+}
+
+.draggable-img.dragging {
+    opacity: 0.6;
+    transform: rotate(8deg) scale(0.9);
+}
+
+.draggable-img.wrong {
+    animation: shake 0.6s;
+    border: 6px solid #F44336 !important;
+}
+
+.drop-zones {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin: 60px auto;
+    flex-wrap: wrap;
+}
+
+.drop-zone {
+    text-align: center;
+    width: 320px;
+}
+
+.drop-zone .label {
+    font-size: 3em;
+    font-weight: bold;
+    color: #D81B60;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 0 white;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.drop-zone .zone-area {
+    min-height: 260px;
+    border: 7px dashed #00BFFF;
+    border-radius: 35px;
+    background: #f8fdff;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.4s;
+}
+
+.drop-zone.over {
+    border-color: #4CAF50;
+    background: #e8f5e9;
+    transform: scale(1.05);
+}
+
+.drop-zone img {
+    width: 130px;
+    height: 130px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ЗАДАНИЕ 6 — 3 СТОЛБЦА РЯДОМ */
+.pictures-top {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 35px;
+    background: #e3f2fd;
+    border-radius: 30px;
+    border: 8px solid #FFD700;
+}
+
+.drag-pic {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    border-radius: 30px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    cursor: grab;
+    transition: all 0.3s ease;
+}
+
+.drag-pic:hover {
+    transform: translateY(-10px);
+}
+
+.drag-pic.dragging {
+    opacity: 0.6;
+    transform: rotate(8deg) scale(0.95);
+    z-index: 1000;
+}
+
+/* 3 столбца рядом */
+.gender-columns {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 60px auto 40px;
+    flex-wrap: nowrap;
+}
+
+.gender-column {
+    width: 340px;
+    text-align: center;
+    padding: 35px 25px;
+    border-radius: 40px;
+    background: white;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.gender-column.male   { border: 12px solid #2196F3; }
+.gender-column.female { border: 12px solid #E91E63; }
+.gender-column.neuter { border: 12px solid #4CAF50; }
+
+.gender-title {
+    font-size: 3.2em;
+    font-weight: bold;
+    color: white;
+    padding: 20px;
+    border-radius: 30px;
+    margin-bottom: 30px;
+}
+
+.male   .gender-title { background: #2196F3; }
+.female .gender-title { background: #E91E63; }
+.neuter .gender-title { background: #4CAF50; }
+
+.drop-area {
+    min-height: 340px;
+    border: 8px dashed currentColor;
+    border-radius: 35px;
+    background: #f8fdff;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    transition: background 0.3s;
+}
+
+.drop-area.over {
+    background: #e8f5e9;
+}
+
+.drop-area img {
+    width:  130px;
+    height: 130px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ЗАДАНИЕ 7 — Запоминание ряда слов */
+.memory-sequence {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin: 50px auto;
+    padding: 40px;
+    background: linear-gradient(135deg, #e1f5fe, #f3e5f5);
+    border-radius: 35px;
+    border: 10px solid #FFD700;
+    max-width: 1000px;
+}
+
+.word-card {
+    width: 220px;
+    height: 120px;
+    background: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #D81B60;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.word-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.controls {
+    text-align: center;
+    margin: 40px 0;
+}
+
+#shuffle-btn:hover, #show-answer:hover {
+    transform: translateY(-5px);
+}
+
+.words-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 80px auto;
+    flex-wrap: wrap;
+}
+
+.word-btn {
+    width: 380px;
+    height: 180px;
+    background: linear-gradient(135deg, #FFF176, #FFD54F);
+    color: #D81B60;
+    font-size: 3.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+.word-btn:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+    background: linear-gradient(135deg, #FFEB3B, #FFC400);
+}
+
+.word-btn:active {
+    transform: translateY(5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* ================================================== */
+/* ЗАДАНИЕ 9 — Проспрягай глагол "стоять"            */
+/* Все стили ниже относятся только к заданию №9       */
+/* ================================================== */
+
+/* Заголовок с фразой "стоять на ступеньках стадиона" */
+.verb-title {
+    text-align: center;                    /* текст по центру */
+    font-size: 3.2em;                      /* очень крупный шрифт */
+    font-weight: bold;                     /* жирный */
+    color: #D81B60;                        /* ярко-розовый цвет */
+    margin: 10px 0;                        /* отступы сверху и снизу */
+    background: white;                     /* белый фон */
+    padding: 10px;                         /* внутренние отступы */
+    border-radius: 35px;                   /* сильно скруглённые углы */
+    border: 10px solid #FFD700;            /* толстая золотая рамка */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3); /* большая тень */
+}
+
+/* Контейнер с местоимениями (Я, ТЫ, ОН, МЫ, ВЫ, ОНИ) */
+.pronouns-grid {
+    display: flex;                         /* флекс-контейнер */
+    justify-content: center;               /* по центру по горизонтали */
+    gap: 20px;                            /* большой промежуток между колонками */
+    margin: 10px 0;                        /* отступы сверху и снизу */
+    flex-wrap: wrap;                       /* перенос на новую строку на узких экранах */
+}
+
+/* Одна колонка местоимений (левая и правая) */
+.pronoun-col {
+    display: flex;                         /* вертикальный флекс */
+    flex-direction: column;                /* элементы друг под другом */
+    gap: 15px;                             /* расстояние между местоимениями */
+}
+
+/* Каждое отдельное местоимение (Я, ТЫ и т.д.) */
+.pronoun {
+    font-size: 3em;                        /* огромный шрифт */
+    font-weight: bold;                     /* жирный */
+    color: #2196F3;                        /* синий цвет */
+    background: white;                     /* белый фон */
+    width: 200px;                          /* фиксированная ширина */
+    height: 100px;                         /* фиксированная высота */
+    border-radius: 30px;                   /* скруглённые углы */
+    display: flex;                         /* центрирование текста внутри */
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3); /* тень */
+    border: 8px solid #2196F3;             /* синяя рамка */
+}
+
+/* Блок с образцами предложений */
+.example-sentences {
+    background: #f3e5f5;                   /* нежно-сиреневый фон */
+    border-radius: 35px;                   /* скруглённые углы */
+    padding: 50px;                         /* большие внутренние отступы */
+    margin: 60px auto;                  /* центрирование и отступы */
+    max-width: 1100px;                     /* максимальная ширина */
+    border: 10px solid #E91E63;            /* розовая рамка */
+}
+
+/* Надпись "Образец:" */
+.example-title {
+    text-align: center;                    /* по центру */
+    font-size: 2.8em;                      /* крупный шрифт */
+    font-weight: bold;                     /* жирный */
+    color: #E91E63;                        /* розовый */
+    margin-bottom: 40px;                   /* отступ снизу */
+}
+
+/* Строка с двумя колонками примеров */
+.example-row {
+    display: flex;                         /* флекс */
+    justify-content: center;               /* по центру */
+    gap: 100px;                            /* большой промежуток */
+    flex-wrap: wrap;                       /* перенос при необходимости */
+}
+
+/* Левая и правая колонка примеров */
+.example-left, .example-right {
+    flex: 1;                               /* занимают равное место */
+    min-width: 400px;                      /* минимальная ширина */
+}
+
+/* Каждое отдельное предложение-пример */
+.example-left p, .example-right p {
+    font-size: 2.4em;                      /* очень крупный текст */
+    line-height: 2.2;                      /* высокий межстрочный интервал */
+    color: #333;                           /* тёмно-серый */
+    background: white;                     /* белый фон */
+    padding: 20px 30px;                    /* внутренние отступы */
+    border-radius: 25px;                   /* скруглённые углы */
+    margin: 20px 0;                        /* отступы между предложениями */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* тень */
+    border-left: 12px solid #4CAF50;        /* зелёная полоса слева */
+}
+
+/* Кнопка "Повторить все предложения ещё раз!" */
+#repeat-all {
+    margin: 50px auto;                     /* центрирование */
+    display: block;                        /* блочный элемент */
+    font-size: 2em;                        /* крупный текст */
+    padding: 25px 60px;                    /* большие внутренние отступы */
+}
+
+/* ================================================== */
+/* ЗАДАНИЕ 10 — Выучи скороговорку (финальная версия без кнопок) */
+/* ================================================== */
+
+/* Основной контейнер всей скороговорки */
+.tongue-twister-clean {
+    background: linear-gradient(135deg, #e8f5e9, #fff3e0);   /* красивый мягкий градиент от светло-зелёного к светло-оранжевому */
+    border-radius: 40px;                                    /* сильно скруглённые углы — по-детски */
+    padding: 10px 10px;                                     /* большие отступы внутри */
+    margin: 20px auto;                                      /* отступы сверху/снизу и центрирование по горизонтали */
+    max-width: 1100px;                                      /* ограничение ширины, чтобы не растягивалось на больших экранах */
+    border: 12px solid #FFD700;                             /* толстая золотая рамка — главный акцент задания */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);                /* глубокая тень для объёма */
+    text-align: center;                                     /* весь текст по центру */
+}
+
+/* Каждая отдельная строка скороговорки */
+.twister-line {
+    font-size: 2.0em;                                       /* крупный, но уже умещающийся в одну строку шрифт */
+    font-weight: bold;                                      /* жирный текст — легче читать */
+    color: #8B008B;                                         /* тёмно-фиолетовый — хорошо видно на светлом фоне */
+    margin: 10px 0;                                         /* большие вертикальные отступы между строками */
+    line-height: 1.2;                                       /* комфортный межстрочный интервал */
+    text-shadow: 2px 2px 0 #FFF;                            /* белая обводка — текст «выпрыгивает» с фона */
+    white-space: nowrap;                                    /* ЗАПРЕЩАЕМ перенос строки — строка всегда в одну линию */
+    overflow: hidden;                                       /* если текст всё же не влезет — обрезаем */
+    text-overflow: ellipsis;                                /* при обрезке ставим три точки */
+    transition: all 0.4s ease;                              /* плавная анимация при наведении */
+}
+
+/* Эффект при наведении курсора на строку */
+.twister-line:hover {
+    color: #FF1744;                                         /* ярко-красный цвет при наведении */
+    transform: scale(1.08);                                 /* лёгкое увеличение строки */
+    text-shadow: 0 0 25px #FF1744;                          /* свечение вокруг текста */
+}
+
+/* Дополнительно — если захотим в будущем добавить анимацию подсветки строк */
+@keyframes pulse-line {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ================================================== */
+/* ЗАДАНИЕ 11 — СТИЛИ КАК В LESSON-4 БЛОК 6 (с комментариями) */
+/* ================================================== */
+
+/* Контейнер — картинки в одну линию */
+.linear-image-task-container {
+    display: flex;                          /* флекс для горизонтального размещения */
+    flex-wrap: nowrap;                      /* не переносим на новую строку */
+    justify-content: space-evenly;          /* равномерно распределяем */
+    gap: 15px;                              /* расстояние между карточками */
+    */
+    overflow-x: auto;                       /* прокрутка, если не влезет */
+    margin: 20px 0;                         /* отступы сверху и снизу */
+}
+
+/* Каждая карточка: картинка + клеточка */
+.word-image-item {
+    text-align: center;                     /* центрирование содержимого */
+    background-color: #F0FFF0;              /* светло-зелёный фон карточки */
+    border-radius: 12px;                    /* скруглённые углы */
+    padding: 10px;                          /* внутренние отступы */
+    border: 2px solid var(--color-secondary); /* голубая рамка из основной палитры */
+    min-width: 92px;                        /* минимальная ширина карточки */
+}
+
+/* Картинки */
+.word-image {
+    width: 92px;                           /* размер 92×92 как в lesson-4 */
+    height: 92px;
+    object-fit: cover;                      /* картинка заполняет блок */
+    margin-bottom: 5px;                     /* отступ до клеточки */
+    border-radius: 8px;                     /* скруглённые углы */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* лёгкая тень */
+}
+
+/* Контейнер для центрирования клеточки */
+.word-input-grid {
+    display: flex;                          /* флекс для центрирования */
+    justify-content: center;                /* по центру */
+}
+
+/* Клеточка для буквы */
+.first-sound-input {
+    width: 40px;                           /* размер 40×40 как в lesson-4 */
+    height: 40px;
+    text-align: center;                     /* буква по центру */
+    font-size: 1.3em;                      /* размер шрифта */
+    font-weight: bold;                      /* жирный текст */
+    border: 2px solid var(--color-secondary); /* голубая рамка */
+    border-radius: 6px;                     /* скруглённые углы */
+    text-transform: uppercase;               /* только заглавные буквы */
+}
+
+/* При фокусе */
+.first-sound-input:focus {
+    border-color: var(--color-accent);       /* оранжевая рамка при вводе */
+    outline: none;                          /* убираем стандартную обводку */
+    box-shadow: 0 0 8px rgba(255, 99, 71, 0.5); /* оранжевое свечение */
+}
+
+/* Правильная буква */
+.first-sound-input.correct {
+    border-color: #3CB371;                  /* зелёная рамка */
+    background-color: #E6FFE6;              /* светло-зелёный фон */
+    box-shadow: 0 0 10px #3CB371;            /* зелёное свечение */
+}
+
+/* Неправильная буква */
+.first-sound-input.incorrect {
+    border-color: #FF6347;                  /* красная рамка */
+    background-color: #FFE6E6;              /* светло-красный фон */
+    animation: shake 0.5s;                  /* тряска */
+}
+
+/* ================================================== */
+/* ЗАДАНИЕ 13 — Лабиринт с буквами (полные комментарии) */
+/* ================================================== */
+
+/* Контейнер для картинки-лабиринта */
+.maze-container */
+.maze-container {
+    text-align: center;                     /* центрируем картинку по горизонтали */
+    margin: 20px 0;                         /* большие отступы сверху и снизу */
+}
+
+/* Сама картинка с запутанными ниточками и буквами */
+.maze-image {
+    max-width: 95%;                         /* картинка не выходит за пределы экрана */
+    height: auto;                           /* сохраняем пропорции */
+    border-radius: 25px;                    /* скруглённые углы у картинки */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3); /* глубокая тень — картинка "висит" */
+    border: 10px solid #FFD700;             /* толстая золотая рамка — главный акцент */
+}
+
+/* Строка с клеточками для ввода букв */
+.letters-input-row {
+    display: flex;                          /* горизонтальное расположение клеточек */
+    justify-content: center;                /* по центру страницы */
+    gap: 10px;                              /* расстояние между клеточками */
+    margin: 10px auto;                      /* отступы сверху/снизу и центрирование */
+    flex-wrap: wrap;                        /* на узких экранах переносим на новую строку */
+}
+
+/* Одна клеточка для буквы */
+.maze-input {
+    width: 80px;                            /* ширина клетки */
+    height: 80px;                           /* высота клетки */
+    font-size: 3.5em;                         /* огромная буква внутри */
+    font-weight: bold;                      /* жирный шрифт */
+    text-align: center;                     /* буква по центру */
+    text-transform: uppercase;              /* только заглавные буквы */
+    border: 6px solid #FF9800;              /* оранжевая рамка */
+    border-radius: 20px;                    /* сильно скруглённые углы */
+    background: white;                      /* белый фон */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); /* объёмная тень */
+    transition: all 0.4s ease;              /* плавные анимации */
+}
+
+/* При фокусе на клеточке (когда ребёнок печатает) */
+.maze-input:focus {
+    outline: none;                          /* убираем стандартную обводку браузера */
+    border-color: #FF5722;                  /* ярко-оранжевая рамка */
+    transform: scale(1.1);                  /* клеточка немного увеличивается */
+}
+
+/* Правильная буква */
+.maze-input.correct {
+    border-color: #4CAF50;                  /* зелёная рамка */
+    background: #e8f5e9;                    /* светло-зелёный фон */
+    box-shadow: 0 0 20px #4CAF50;           /* зелёное свечение */
+}
+
+/* Неправильная буква */
+.maze-input.incorrect {
+    border-color: #F44336;                  /* красная рамка */
+    background: #ffebee;                    /* светло-красный фон */
+    animation: shake 0.6s;                  /* трясём клеточку */
+}
+
+/* Анимация тряски (для неправильных ответов) */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }  /* начальное и конечное положение */
+    25% { transform: translateX(-10px); }   /* влево */
+    75% { transform: translateX(10px); }          /* вправо */
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 7: Звук СТ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="lesson.css">
+    <link rel="stylesheet" href="lesson-7.css">
+</head>
+<body>
+    <div class="disney-background">
+        <header>
+            <h1 id="lesson-title">Занятие 4. Звук С</h1>
+            <p class="greeting">Привет, <span id="child-name-display">Юный Герой</span>! </p>
+        </header>
+
+        <main class="lesson-container">
+            <section class="main-lesson-block">
+
+                <!-- Устная разминка -->
+                <div class="task-block">
+                    <h2>Устная разминка</h2>
+                    <p>1. Артикуляционная, пальчиковая и дыхательная разминка.</p>
+                    <p>2. Произнеси звук С-С-С длительно на одном выдохе.</p>
+                </div>
+
+                <!-- ЗАДАНИЕ 3 — ФИНАЛЬНАЯ ВЕРСИЯ -->
+                <div class="task-block" id="task-sound-position">
+                    <h2>3. Проговори слова по 3 раза</h2>
+                    <p class="instruction">Нажми на слово → выбери правильное место звука С</p>
+
+                    <div class="position-buttons">
+                        <button class="pos-btn" data-pos="начало">В начале</button>
+                        <button class="pos-btn" data-pos="середина">В середине</button>
+                        <button class="pos-btn" data-pos="конец">В конце</button>
+                    </div>
+
+                    <div class="words-grid" id="words-grid">
+                        <!-- Слова будут вставлены через JavaScript в случайном порядке -->
+                    </div>
+
+                    <button id="check-all-sound-pos" class="start-button check-button">Проверить всё!</button>
+                    <div id="feedback-sound-pos" class="feedback"></div>
+                </div>
+
+                <!-- ЗАДАНИЕ 4 — Слоговые ряды -->
+                <div class="task-block">
+                    <h2>4. Запомни и повтори слоговые ряды</h2>
+                    <div class="syllable-grid">
+                        <div class="syllable-row">ста-сто-сту-сты</div>
+                        <div class="syllable-row">сто-сту-сты-ста</div>
+                        <div class="syllable-row">сту-сты-ста-сто</div>
+                        <div class="syllable-row">сты-ста-сто-сту</div>
+                        <div class="syllable-row">аст-ост-уст-ыст</div>
+                        <div class="syllable-row">ост-уст-ыст-аст</div>
+                        <div class="syllable-row">уст-ыст-аст-ост</div>
+                        <div class="syllable-row">ыст-аст-ост-уст</div>
+                    </div>
+                    <button id="check-syllables" class="start-button check-button">Я всё повторил!</button>
+                    <div id="feedback-syllables" class="feedback"></div>
+                </div>
+
+                <!-- ЗАДАНИЕ 5 — МГНОВЕННАЯ ПОДСВЕТКА ПРИ КЛИКЕ -->
+<div class="task-block" id="task-odd-one-out">
+    <h2>5. Какая картинка лишняя? Почему?</h2>
+    <p class="instruction">Кликни на картинку, которую считаешь лишней</p>
+
+    <div class="odd-one-out-container">
+        <div class="image-item" data-word="лестница">
+            <img src="images/stairs.png" alt="лестница">
+            <p>лестница</p>
+        </div>
+        <div class="image-item" data-word="стакан">
+            <img src="images/glass.png" alt="стакан">
+            <p>стакан</p>
+        </div>
+        <div class="image-item" data-word="стог">
+            <img src="images/stog.png" alt="стог">
+            <p>стог</p>
+        </div>
+        <div class="image-item" data-word="стадион">
+            <img src="images/stadium.png" alt="стадион">
+            <p>стадион</p>
+        </div>
+        <div class="image-item" data-word="стадо">
+            <img src="images/sheep.png" alt="стадо">
+            <p>стадо</p>
+        </div>
+        <div class="image-item" data-word="статуя">
+            <img src="images/statue.png" alt="статуя">
+            <p>статуя</p>
+        </div>
+    </div>
+
+    <div id="feedback-odd" class="feedback" style="font-size: 1.8em; margin-top: 30px;"></div>
+</div>
+<!-- ЗАДАНИЕ 6 — 3 СТОЛБЦА РЯДОМ, ПЕРЕМЕЩЕНИЕ БЕЗ КОПИЙ -->
+<div class="task-block" id="task-pronouns">
+    <h2>6. Подбери картинки к словам мой, моя, моё</h2>
+    <p class="instruction">Перетащи каждую картинку в правильное поле</p>
+
+    <!-- Картинки сверху -->
+    <div class="pictures-top">
+        <img src="images/stairs.png"   alt="лестница" data-gender="женский" class="drag-pic" draggable="true">
+        <img src="images/sheep.png"    alt="стадо"    data-gender="средний" class="drag-pic" draggable="true">
+        <img src="images/statue.png"   alt="статуя"   data-gender="женский" class="drag-pic" draggable="true">
+        <img src="images/testo.png"    alt="тесто"    data-gender="средний" class="drag-pic" draggable="true">
+        <img src="images/stadium.png"  alt="стадион"  data-gender="мужской" class="drag-pic" draggable="true">
+        <img src="images/glass.png"    alt="стакан"   data-gender="мужской" class="drag-pic" draggable="true">
+    </div>
+
+    <!-- 3 СТОЛБЦА РЯДОМ -->
+    <div class="gender-columns">
+        <div class="gender-column male" data-gender="мужской">
+            <div class="gender-title">МОЙ</div>
+            <div class="drop-area"></div>
+        </div>
+        <div class="gender-column female" data-gender="женский">
+            <div class="gender-title">МОЯ</div>
+            <div class="drop-area"></div>
+        </div>
+        <div class="gender-column neuter" data-gender="средний">
+            <div class="gender-title">МОЁ</div>
+            <div class="drop-area"></div>
+        </div>
+    </div>
+
+    <div id="feedback-pronouns" class="feedback"></div>
+</div>
+
+<!-- ЗАДАНИЕ 7 — Запомни и повтори ряд слов -->
+<div class="task-block" id="task-7">
+    <h2>7. Запомни и повтори ряд слов</h2>
+    
+    <div class="memory-sequence">
+        <div class="word-card" data-word="стадион">СТАДИОН</div>
+        <div class="word-card" data-word="стакан">СТАКАН</div>
+        <div class="word-card" data-word="статус">СТАТУЯ</div>
+        <div class="word-card" data-word="стадо">СТАДО</div>
+    </div>
+
+    <div class="controls">
+        <button id="shuffle-btn" class="start-button">Перемешать слова</button>
+      
+    </div>
+
+    <div id="feedback-7" class="feedback" style="font-size:1.8em; margin-top:40px;"></div>
+</div>
+
+<div class="final-note">
+    Умница! Ты отлично справился с занятием 7!
+</div>
+
+<!-- ЗАДАНИЕ 8 — ТОЛЬКО ТРИ КНОПКИ СО СЛОВАМИ -->
+<div class="task-block" id="task-8">
+    <h2>8. Посчитай от 1 до 5 и обратно со словами</h2>
+    <p class="instruction">Нажимай на слова и считай вслух: одна ступенька, две ступеньки...</p>
+
+    <div class="words-buttons">
+        <button class="word-btn" data-word="ступенька">СТУПЕНЬКА</button>
+        <button class="word-btn" data-word="стадион">СТАДИОН</button>
+        <button class="word-btn" data-word="стадо">СТАДО</button>
+    </div>
+
+    <div id="feedback-8" class="feedback" style="font-size:2.2em; margin-top:50px;"></div>
+</div>
+
+<!-- ЗАДАНИЕ 9 — Проспрягай глагол "стоять" -->
+<div class="task-block" id="task-9">
+    <h2>9. Проспрягай глагол по образцу</h2>
+    <div class="verb-title">стоять на ступеньках стадиона</div>
+
+    <div class="pronouns-grid">
+        <div class="pronoun-col">
+            <div class="pronoun">Я</div>
+            <div class="pronoun">ТЫ</div>
+            <div class="pronoun">ОН</div>
+            <div class="pronoun">ОНА</div>
+        </div>
+
+        <div class="pronoun-col">
+            <div class="pronoun">МЫ</div>
+            <div class="pronoun">ВЫ</div>
+            <div class="pronoun">ОНИ</div>
+            <div class="pronoun">ОНО</div>
+        </div>
+    </div>
+
+    
+    <button id="repeat-all" class="start-button" style="margin: 50px auto; display: block; font-size: 2em; padding: 25px 60px;">
+        Повторить все предложения ещё раз!
+    </button>
+
+    <div id="feedback-9" class="feedback"></div>
+</div>
+
+<!-- ================================================== -->
+<!-- ЗАДАНИЕ 10 — Выучи скороговорку (финальная версия) -->
+<!-- ================================================== -->
+<div class="task-block" id="task-10">
+    <h2>10. Выучи скороговорку</h2>
+    <p class="instruction">
+        Сначала читай медленно, потом всё быстрее и быстрее!<br>
+        Повторяй вслух за взрослым!
+    </p>
+
+    <!-- Скороговорка — теперь в одну строку каждая -->
+    <div class="tongue-twister-clean">
+        <div class="twister-line">Сты-сты-сты — у нас новые мосты</div>
+        <div class="twister-line">Сту-сту-сту — автобус едет по мосту</div>
+        <div class="twister-line">Сто-сто-сто — стоят кони под мостом</div>
+        <div class="twister-line">Ста-ста-ста — сидит киска у моста</div>
+    </div>
+
+    <div id="feedback-10" class="feedback" style="margin-top: 60px; font-size: 2.4em;">
+        Попробуй сказать всю скороговорку быстро и без ошибок!
+    </div>
+</div>
+
+<!-- ================================================== -->
+<!-- ЗАДАНИЕ 11 — Определи первый звук (точно как в lesson-4) -->
+<!-- ================================================== -->
+<div class="task-block" id="task-11"> <section class="interactive-task" id="task-first-sound-11">
+    <h2>11. Определи первый звук в словах</h2>
+<section class="interactive-task" id="task-first-sound-11">
+    <!-- Заголовок задания -->
+    <!-- Инструкция -->
+    <p class="instruction">
+        Посмотри на картинки. Определи первый звук в названии, впиши только первую букву в клеточку под картинкой и прочитай слово вслух.
+    </p>
+
+    <!-- Контейнер с картинками и клеточками (как в lesson-4) -->
+    <div class="linear-image-task-container">
+        <!-- 1. Стол → С -->
+        <div class="word-image-item">
+            <img src="images/table.png" alt="Стол" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="с" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 2. Удочка → У -->
+        <div class="word-image-item">
+            <img src="images/fishing_rod.png" alt="Удочка" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="у" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 3. Гриб → Г -->
+        <div class="word-image-item">
+            <img src="images/mushroom.png" alt="Гриб" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="г" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 4. Радуга → Р -->
+        <div class="word-image-item">
+            <img src="images/rainbow.png" alt="Радуга" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="р" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 5. Облако → О -->
+        <div class="word-image-item">
+            <img src="images/cloud.png" alt="Облако" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="о" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 6. Бочка → Б -->
+        <div class="word-image-item">
+            <img src="images/barrel.png" alt="Бочка" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="б" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+    </div>
+
+    <!-- Кнопка проверки — как в lesson-4 -->
+    <button id="check-button-first-sound-11" class="start-button check-button">Проверить буквы!</button>
+
+    <!-- Обратная связь -->
+    <div id="feedback-message-first-sound-11" class="feedback11"></div>
+</section>
+
+<!-- Задание 12 -->
+<div class="task-block" id="task-12">
+    <h2>12. Определи первый звук в словах</h2>
+    <p class="instruction">Определи первый звук в каждом слове и запиши его в клетку. Собери слово!</p>
+    
+    <section class="interactive-task" id="task-first-sound-12">
+        <div class="linear-image-task-container">
+            
+            <div class="word-image-item">
+                <img src="images/boots.png" alt="Сапоги" class="word-image">
+                <div class="word-input-grid">
+                    <input type="text" maxlength="1" data-correct="с" placeholder=" " class="first-sound-input">
+                </div>
+            </div>
+
+            <div class="word-image-item">
+                <img src="images/watermelon.png" alt="Арбуз" class="word-image">
+                <div class="word-input-grid">
+                    <input type="text" maxlength="1" data-correct="а" placeholder=" " class="first-sound-input">
+                </div>
+            </div>
+
+            <div class="word-image-item">
+                <img src="images/sheet.png" alt="Лист" class="word-image">
+                <div class="word-input-grid">
+                    <input type="text" maxlength="1" data-correct="л" placeholder=" " class="first-sound-input">
+                </div>
+            </div>
+
+            <div class="word-image-item">
+                <img src="images/skirt.png" alt="Юбка" class="word-image">
+                <div class="word-input-grid">
+                    <input type="text" maxlength="1" data-correct="ю" placeholder=" " class="first-sound-input">
+                </div>
+            </div>
+            
+            <div class="word-image-item">
+                <img src="images/phone.png" alt="Телефон" class="word-image">
+                <div class="word-input-grid">
+                    <input type="text" maxlength="1" data-correct="т" placeholder=" " class="first-sound-input">
+                </div>
+            </div>
+            
+        </div>
+
+        <button id="check-button-first-sound-12" class="start-button check-button">Проверить буквы!</button>
+
+    </section>
+</div>
+
+<!-- ================================================== -->
+<!-- ЗАДАНИЕ 13 — Запиши буквы по порядку (лабиринт) -->
+<!-- ================================================== -->
+<section class="interactive-task" id="task-task-13">
+    <h2>Запиши буквы по порядку. Прочитай получившееся слово.</h2>
+    <p class="instruction">
+        Проведи пальцем или мышкой по ниточке от буквы к букве по порядку цифр. 
+        Впиши буквы в клеточки и прочитай слово вслух!
+    </p>
+
+    <!-- Картинка-лабиринт -->
+    <div class="maze-container">
+        <img src="images/maze_letters.png" alt="Лабиринт с буквами" class="maze-image">
+    </div>
+
+    <!-- Клеточки для ввода букв -->
+    <div class="letters-input-row">
+        <input type="text" maxlength="1" data-order="1" data-correct="С" class="maze-input">
+        <input type="text" maxlength="1" data-order="2" data-correct="М" class="maze-input">
+        <input type="text" maxlength="1" data-order="3" data-correct="Е" class="maze-input">
+        <input type="text" maxlength="1" data-order="4" data-correct="Я" class="maze-input">
+        <input type="text" maxlength="1" data-order="5" data-correct="Т" class="maze-input">
+        <input type="text" maxlength="1" data-order="6" data-correct="Ь" class="maze-input">
+        <input type="text" maxlength="1" data-order="7" data-correct="С" class="maze-input">
+        <input type="text" maxlength="1" data-order="8" data-correct="Я" class="maze-input">
+    </div>
+
+    <button id="check-maze" class="start-button check-button">ПРОВЕРИТЬ СЛОВО!</button>
+
+    <div id="feedback-maze" class="feedback"></div>
+</section>
+
+
+
+
+            </section>
+        </main>
+
+        <footer><p>© Логопедические занятия</p></footer>
+    </div>
+
+    <script src="lesson-7.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a654af0acdbc8f8',t:'MTc2NDQ1MjczMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

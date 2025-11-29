@@ -45,79 +45,76 @@
             font-size: 16px;
         }
         .start-button {
-            background-color: #3cb371; /* Зеленый цвет для кнопки */
+            background-color: #3cb371;
             color: white;
             padding: 12px 25px;
             border: none;
-            border-radius: 25px;
-            cursor: pointer;
+            border-radius: 10px;
             font-size: 18px;
-            font-weight: bold;
-            transition: background-color 0.3s, transform 0.1s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
         }
         .start-button:hover {
             background-color: #2e8b57;
-        }
-        .links-container {
-            margin-top: 30px;
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-        }
-        .lesson-link {
-            display: block;
-            margin: 10px 0;
-            padding: 12px;
-            background-color: #4682b4;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        .lesson-link:hover {
-            background-color: #5f9ea0;
+            transform: translateY(-3px);
         }
         .hidden {
             display: none;
         }
+        .lesson-link {
+            display: block;
+            margin: 20px auto;
+            padding: 18px;
+            background: linear-gradient(#4CAF50, #388E3C);
+            color: white;
+            font-size: 1.6em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 20px;
+            width: 90%;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+        }
+        .lesson-link:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>👋 Добро пожаловать, Логопед!</h1>
-        
+        <h1>Логопедические занятия</h1>
+
+        <!-- Форма ввода данных -->
         <div id="setup-form">
-            <label for="child-name">Имя ребенка:</label>
-            <input type="text" id="child-name" placeholder="Введите имя" required>
-            
-            <label for="child-age">Возраст ребенка:</label>
-            <input type="number" id="child-age" placeholder="Введите возраст" min="3" max="10" required>
+            <label for="child-name">Имя ребёнка:</label>
+            <input type="text" id="child-name" placeholder="Например, Саша" required>
+
+            <label for="child-age">Возраст ребёнка:</label>
+            <input type="number" id="child-age" placeholder="Например, 5" min="3" max="10" required>
 
             <label for="lesson-date">Дата занятия:</label>
             <input type="date" id="lesson-date" required>
-            
-            <button class="start-button" onclick="saveSettingsAndShowLinks()">Начать занятие</button>
+
+            <button class="start-button" onclick="saveChildData()">Начать занятия!</button>
         </div>
 
-        <div id="links-view" class="links-container hidden">
-            <h2>Выберите занятие:</h2>
-            
-            <a href="lesson-1.html" class="lesson-link">Занятие 1. Звуки С и СЫ</a>
-            <a href="lesson-3.html" class="lesson-link">Занятие 3. Тренировка звука С</a>
-            <a href="lesson-4.html" class="lesson-link">
-                <span class="lesson-number">Занятие 4</span>
-                <span class="lesson-topic">Автоматизация звука С</span>
-            </a>
-            ```
-        
-      </div>
+        <!-- Список занятий -->
+        <div id="links-view" class="hidden">
+            <h2>Выбери занятие:</h2>
+
+            <a href="lesson-1.html" class="lesson-link">Занятие 1. Звук С</a>
+            <a href="lesson-2.html" class="lesson-link">Занятие 2. Звук З</a>
+            <a href="lesson-7.html" class="lesson-link">Занятие 3. Звук С</a> <!-- ← НОВАЯ ССЫЛКА -->
+
+            <br><br>
+            <button class="start-button" onclick="location.reload()">Начать заново</button>
+        </div>
     </div>
 
     <script>
-        function saveSettingsAndShowLinks() {
+        function saveChildData() {
             const nameInput = document.getElementById('child-name');
             const ageInput = document.getElementById('child-age');
             const dateInput = document.getElementById('lesson-date');
@@ -131,26 +128,23 @@
                 return;
             }
 
-            // 1. Сохранение данных в localStorage
+            // Сохранение в localStorage
             localStorage.setItem('childName', childName);
-            localStorage.setItem('childAge', childAge); // Сохраняем возраст
+            localStorage.setItem('childAge', childAge);
             localStorage.setItem('lessonDate', lessonDate);
 
-            // 2. Скрытие формы и показ ссылок
+            // Переход к списку занятий
             document.getElementById('setup-form').classList.add('hidden');
             document.getElementById('links-view').classList.remove('hidden');
         }
 
-        // Показ занятий, если данные уже есть
+        // Показываем занятия сразу, если данные уже сохранены
         document.addEventListener('DOMContentLoaded', () => {
             if (localStorage.getItem('childName') && localStorage.getItem('lessonDate')) {
-                // Если данные уже есть, сразу показываем ссылки
                 document.getElementById('setup-form').classList.add('hidden');
                 document.getElementById('links-view').classList.remove('hidden');
             }
         });
     </script>
 </body>
-
 </html>
-

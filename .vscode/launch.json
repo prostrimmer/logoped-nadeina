@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "chrome",
+            "name": "http://file:///C:/Users/strimmer/Documents/GitHub/logoped-nadeina/lesson-7.html",
+            "request": "launch",
+            "url": "http://file:///C:/Users/strimmer/Documents/GitHub/logoped-nadeina/lesson-7.html"
+        }
+    ]
+}
