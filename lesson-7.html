@@ -12,7 +12,7 @@
     <div class="disney-background">
         <header>
             <h1 id="lesson-title">Занятие 4. Звук С</h1>
-            <p class="greeting">Привет, <span id="child-name-display">Юный Герой</span>! </p>
+            <p class="greeting">Привет, <span id="child-name-display">Юный Герой</span>! Сегодня <span id="lesson-date-display"></span></p>
         </header>
 
         <main class="lesson-container">
@@ -148,24 +148,45 @@
     <div id="feedback-7" class="feedback" style="font-size:1.8em; margin-top:40px;"></div>
 </div>
 
-<div class="final-note">
-    Умница! Ты отлично справился с занятием 7!
-</div>
 
 <!-- ЗАДАНИЕ 8 — ТОЛЬКО ТРИ КНОПКИ СО СЛОВАМИ -->
 <div class="task-block" id="task-8">
+    <!-- Контейнер задания. 
+         Класс task-block — общий для всех заданий (фон, отступы, скругления из style.css)
+         id="task-8" — уникальный якорь для прокрутки и обращения из JavaScript -->
+
     <h2>8. Посчитай от 1 до 5 и обратно со словами</h2>
-    <p class="instruction">Нажимай на слова и считай вслух: одна ступенька, две ступеньки...</p>
-
+    <p class="instruction">
+        Нажимай на слова и считай вслух: одна ступенька, две ступеньки...
+    </p>
     <div class="words-buttons">
+        <!-- Контейнер для трёх больших кнопок-слов. 
+             Нужен для flex-расположения по центру и равномерных отступов -->
+        
         <button class="word-btn" data-word="ступенька">СТУПЕНЬКА</button>
+        <!-- Первая кнопка-слово.
+             class="word-btn" — общий стиль больших ярких кнопок (из lesson.css или style.css)
+             data-word="ступенька" — правильное написание слова строчными буквами (для озвучки и проверки)
+             Текст в ВЕРХНЕМ РЕГИСТРЕ — чтобы ребёнку было легче читать -->
+
         <button class="word-btn" data-word="стадион">СТАДИОН</button>
+        <!-- Вторая кнопка-слово со звуком [С] в середине -->
+
         <button class="word-btn" data-word="стадо">СТАДО</button>
+        <!-- Третья кнопка-слово. Все слова начинаются на «СТ» — идеально для автоматизации [С] -->
+
     </div>
+    <!-- /.words-buttons -->
 
-    <div id="feedback-8" class="feedback" style="font-size:2.2em; margin-top:50px;"></div>
+    <div id="feedback-8" class="feedback" style="font-size:2.2em; margin-top:20px;"></div>
+    <!-- Блок обратной связи.
+         id="feedback-8" — уникальный, чтобы JS точно знал, куда выводить сообщение
+         class="feedback" — общий стиль: крупный текст, центрирование, цвет меняется через JS
+         style="font-size:2.2em; margin-top:50px;" — увеличенный шрифт и большой отступ, 
+         чтобы поздравление «Молодец! Ты посчитал 15 слов!» выглядело эффектно и радостно -->
+
 </div>
-
+<!-- Конец задания 8 -->
 <!-- ЗАДАНИЕ 9 — Проспрягай глагол "стоять" -->
 <div class="task-block" id="task-9">
     <h2>9. Проспрягай глагол по образцу</h2>
@@ -188,7 +209,7 @@
     </div>
 
     
-    <button id="repeat-all" class="start-button" style="margin: 50px auto; display: block; font-size: 2em; padding: 25px 60px;">
+    <button id="repeat-all" class="start-button" style="margin: 50px auto; display: block; font-size: 1.3em; padding: 25px 60px;">
         Повторить все предложения ещё раз!
     </button>
 
@@ -288,55 +309,69 @@
     <div id="feedback-message-first-sound-11" class="feedback11"></div>
 </section>
 
-<!-- Задание 12 -->
-<div class="task-block" id="task-12">
+<!-- ================================================== -->
+<!-- ЗАДАНИЕ 12. Определи первый звук в словах и собери слово «САЛЮТ» -->
+<!-- ================================================== -->
+
+<section class="interactive-task" id="task-12">
     <h2>12. Определи первый звук в словах</h2>
-    <p class="instruction">Определи первый звук в каждом слове и запиши его в клетку. Собери слово!</p>
-    
-    <section class="interactive-task" id="task-first-sound-12">
-        <div class="linear-image-task-container">
-            
-            <div class="word-image-item">
-                <img src="images/boots.png" alt="Сапоги" class="word-image">
-                <div class="word-input-grid">
-                    <input type="text" maxlength="1" data-correct="с" placeholder=" " class="first-sound-input">
-                </div>
-            </div>
+    <p class="instruction">
+        Посмотри на каждую картинку, определи первый звук в слове и впиши его в клеточку.<br>
+        Когда заполнишь все — у тебя получится секретное слово! ✨
+    </p>
 
-            <div class="word-image-item">
-                <img src="images/watermelon.png" alt="Арбуз" class="word-image">
-                <div class="word-input-grid">
-                    <input type="text" maxlength="1" data-correct="а" placeholder=" " class="first-sound-input">
-                </div>
-            </div>
+    <div class="linear-image-task-container">
 
-            <div class="word-image-item">
-                <img src="images/sheet.png" alt="Лист" class="word-image">
-                <div class="word-input-grid">
-                    <input type="text" maxlength="1" data-correct="л" placeholder=" " class="first-sound-input">
-                </div>
+        <!-- 1. Сапоги → С -->
+        <div class="word-image-item">
+            <img src="images/boots.png" alt="Сапоги" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="с" placeholder=" " class="first-sound-input">
             </div>
-
-            <div class="word-image-item">
-                <img src="images/skirt.png" alt="Юбка" class="word-image">
-                <div class="word-input-grid">
-                    <input type="text" maxlength="1" data-correct="ю" placeholder=" " class="first-sound-input">
-                </div>
-            </div>
-            
-            <div class="word-image-item">
-                <img src="images/phone.png" alt="Телефон" class="word-image">
-                <div class="word-input-grid">
-                    <input type="text" maxlength="1" data-correct="т" placeholder=" " class="first-sound-input">
-                </div>
-            </div>
-            
         </div>
 
-        <button id="check-button-first-sound-12" class="start-button check-button">Проверить буквы!</button>
+        <!-- 2. Арбуз → А -->
+        <div class="word-image-item">
+            <img src="images/watermelon.png" alt="Арбуз" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="а" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
 
-    </section>
-</div>
+        <!-- 3. Лист → Л -->
+        <div class="word-image-item">
+            <img src="images/sheet.png" alt="Лист" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="л" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 4. Юбка → Ю -->
+        <div class="word-image-item">
+            <img src="images/skirt.png" alt="Юбка" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="ю" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+        <!-- 5. Телефон → Т -->
+        <div class="word-image-item">
+            <img src="images/phone.png" alt="Телефон" class="word-image">
+            <div class="word-input-grid">
+                <input type="text" maxlength="1" data-correct="т" placeholder=" " class="first-sound-input">
+            </div>
+        </div>
+
+    </div>
+    <!-- /.linear-image-task-container -->
+
+    <button id="check-button-12" class="start-button check-button">
+        Проверить буквы!
+    </button>
+
+    <div id="feedback-12" class="feedback"></div>
+    <!-- Здесь будет появляться сообщение: «Молодец! У тебя получилось слово САЛЮТ!» и т.д. -->
+</section>
 
 <!-- ================================================== -->
 <!-- ЗАДАНИЕ 13 — Запиши буквы по порядку (лабиринт) -->
@@ -356,13 +391,10 @@
     <!-- Клеточки для ввода букв -->
     <div class="letters-input-row">
         <input type="text" maxlength="1" data-order="1" data-correct="С" class="maze-input">
-        <input type="text" maxlength="1" data-order="2" data-correct="М" class="maze-input">
-        <input type="text" maxlength="1" data-order="3" data-correct="Е" class="maze-input">
-        <input type="text" maxlength="1" data-order="4" data-correct="Я" class="maze-input">
-        <input type="text" maxlength="1" data-order="5" data-correct="Т" class="maze-input">
-        <input type="text" maxlength="1" data-order="6" data-correct="Ь" class="maze-input">
-        <input type="text" maxlength="1" data-order="7" data-correct="С" class="maze-input">
-        <input type="text" maxlength="1" data-order="8" data-correct="Я" class="maze-input">
+        <input type="text" maxlength="1" data-order="2" data-correct="А" class="maze-input">
+        <input type="text" maxlength="1" data-order="3" data-correct="Н" class="maze-input">
+        <input type="text" maxlength="1" data-order="4" data-correct="К" class="maze-input">
+        <input type="text" maxlength="1" data-order="5" data-correct="И" class="maze-input">
     </div>
 
     <button id="check-maze" class="start-button check-button">ПРОВЕРИТЬ СЛОВО!</button>

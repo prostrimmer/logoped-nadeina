@@ -330,77 +330,69 @@ function highlightLines(delay) {
         console.error('Кнопка проверки для Задания 11 не найдена. Проверьте ID в HTML.');
     }
 }); // <-- КОНЕЦ document.addEventListener('DOMContentLoaded', ...)
-// ========================================================== //
-// ЗАДАНИЕ 12 — Проверка первого звука + слово САЛЮТ (Аналог 11)
-// ========================================================== //
+// =================================================================
+// ЗАДАНИЕ 12: Определи первый звук → собери слово «САЛЮТ»
+// =================================================================
 
-const firstSoundInputs12 = document.querySelectorAll('#task-first-sound-12 .first-sound-input');
-const checkButton12 = document.getElementById('check-button-first-sound-12');
-const feedback12 = document.getElementById('feedback-message-first-sound-12');
-const TARGET_WORD_12 = 'САЛЮТ'; // *** ИСПРАВЛЕНО НА САЛЮТ ***
+document.addEventListener('DOMContentLoaded', () => {
 
-if (firstSoundInputs12.length > 0 && checkButton12) {
-    
-    // ... (Функция checkFullWord12 остаётся той же, но использует новый TARGET_WORD_12)
+    // Автоматический uppercase + только одна буква (для удобства ребёнка)
+    const inputs12 = document.querySelectorAll('#task-12 .first-sound-input');
+    inputs12.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value = input.value.toUpperCase().slice(0, 1); // только первая буква и в верхнем регистре
+        });
+    });
 
-    function checkFullWord12() {
-        let enteredWord = '';
+    // Кнопка проверки
+    const checkButton12 = document.getElementById('check-button-12');
+    const feedback12     = document.getElementById('feedback-12');
+
+    checkButton12.addEventListener('click', () => {
         let correctCount = 0;
-        const totalInputs = firstSoundInputs12.length;
+        const total = inputs12.length; // 5
 
-        firstSoundInputs12.forEach(input => {
-            const userLetter = input.value.trim().toUpperCase();
-            const correctLetter = input.dataset.correct.toUpperCase();
-            
-            enteredWord += userLetter;
-            
-            // Сброс и применение стилей
+        // Собранное ребёнком слово
+        let userWord = '';
+
+        inputs12.forEach(input => {
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = input.getAttribute('data-correct').toLowerCase();
+
+            // Сбрасываем стили
             input.classList.remove('correct', 'incorrect');
-            
-            if (userLetter === correctLetter && userLetter !== '') {
+
+            if (userAnswer === correctAnswer && userAnswer !== '') {
                 correctCount++;
                 input.classList.add('correct');
-            } else if (userLetter !== '') {
+                userWord += correctAnswer.toUpperCase(); // собираем слово в верхнем регистре
+            } else if (userAnswer !== '') {
                 input.classList.add('incorrect');
             }
         });
 
-        // --- ФИНАЛЬНЫЙ ВЫВОД РЕЗУЛЬТАТА ---
-        if (enteredWord === TARGET_WORD_12) {
-            feedback12.innerHTML = `🎉 <strong>ПОБЕДА!</strong> У тебя получился яркий САЛЮТ! Прочитай слово по слогам и скажи, какой звук [С] в слове — твердый или мягкий?`;
-            feedback12.style.cssText = 'color: #3CB371; font-size: 2em; text-align: center; font-weight: bold;';
+        // Формируем сообщение
+        if (correctCount === total) {
+            feedback12.innerHTML = `
+                <span style="font-size: 1.8em;">🎉🎊 <strong>УРА!</strong> Ты собрал секретное слово:</span><br>
+                <span style="font-size: 4em; font-weight: bold; color: #FF4500; text-shadow: 3px 3px 0 #FFD700;">
+                    ${userWord}
+                </span><br>
+                <span style="font-size: 1.6em;">✨ Молодец! САЛЮТ тебе!</span>
+            `;
+            feedback12.style.color = '#3CB371';
         } else {
-            feedback12.innerHTML = `🤔 **Попробуй еще!** Правильно ${correctCount} из ${totalInputs}. Получилось: **${enteredWord || '.....'}**`;
-            feedback12.style.cssText = 'color: #FF5722; font-size: 1.8em; text-align: center;';
+            const missing = total - correctCount;
+            feedback12.innerHTML = `
+                <span style="font-size: 1.5em;">🤔 Почти!</span><br>
+                Правильно: <strong>${correctCount} из ${total}</strong><br>
+                Ещё <strong>${missing}</strong> ${missing === 1 ? 'буква не угадана' : 'буквы не угаданы'} — попробуй ещё разок! 💪
+            `;
+            feedback12.style.color = '#FF6347';
         }
-    }
-
-    // Обработчики ввода (без изменений)
-    firstSoundInputs12.forEach(input => {
-        input.addEventListener('input', () => {
-            input.value = input.value.toUpperCase();
-        });
-        
-        input.addEventListener('keyup', (e) => {
-            if (input.value.length === 1 && /^[А-ЯЁ]$/i.test(input.value)) {
-                const currentInputIndex = Array.from(firstSoundInputs12).indexOf(input);
-                const nextInput = firstSoundInputs12[currentInputIndex + 1];
-                if (nextInput) {
-                    nextInput.focus();
-                }
-            }
-        });
     });
 
-    // Обработчик кнопки
-    checkButton12.addEventListener('click', checkFullWord12);
-
-} else {
-    console.error('Задание 12: Не найдены поля ввода или кнопка проверки. Проверьте ID!');
-}
-// ========================================================== //
-// КОНЕЦ ЗАДАНИЯ 12
-// ========================================================== //
+});
 
 // ================================================== //
 // ЗАДАНИЕ 13 — Лабиринт: собрать слово СМЕЯТЬСЯ //
@@ -438,13 +430,13 @@ checkMazeBtn.addEventListener('click', () => {
         }
     });
 
-    if (word === 'СМЕЯТЬСЯ') {
+    if (word === 'САНКИ') {
         feedbackMaze.innerHTML = `
             <div style="font-size:4em;color:#FFD700;text-shadow:5px 5px #333;">
                 УРА! СЛОВО СОБРАНО!
             </div>
             <div style="font-size:4em;margin:30px 0;color:#4CAF50;">
-                СМЕЯТЬСЯ
+               САНКИ
             </div>
             <div style="font-size:2em;">Ты — настоящий следопыт!</div>
         `;
