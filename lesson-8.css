@@ -533,7 +533,29 @@ input[type="text"],
     font-family: 'Comic Sans MS', sans-serif;
 }
 
+/* Задание №12: Видео */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
 
+.lesson-video {
+    width: 100%;
+    max-width: 800px; /* Ограничиваем ширину для удобства просмотра */
+    border-radius: 25px;
+    border: 5px solid #ffd600;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Напоминание для всех текстовых полей, включая новые */
+input[type="text"].upper-large-input {
+    text-transform: uppercase !important;
+    font-size: 2em !important;
+    font-weight: bold;
+}
 
 
 
