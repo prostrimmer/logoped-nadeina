@@ -1,0 +1,540 @@
+body {
+    margin: 0; padding: 0;
+    background-color: #99dfff;
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+}
+
+.content-wrapper { padding: 40px 20px; }
+
+.main-header { text-align: center; margin-bottom: 40px; }
+.lesson-badge {
+    display: inline-block;
+    background: #fff9c4;
+    padding: 12px 50px;
+    border-radius: 15px;
+    color: #ff6d00;
+    font-weight: bold;
+    font-size: 2.3em;
+    border: 3px solid #fff;
+}
+.user-info { font-size: 1.2em; color: #546e7a; margin-top: 10px; font-weight: bold; }
+
+.white-card {
+    background: #f0faff;
+    border: 8px solid #ffd600;
+    border-radius: 45px;
+    padding: 40px;
+    margin: 0 auto 50px auto;
+    max-width: 1050px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-title { color: #ff7043; text-align: center; font-size: 3.2em; margin: 0; }
+.yellow-divider { width: 90%; height: 4px; background: #90caf9; margin: 20px auto; }
+.card-instruction, .card-instruction-multi { 
+    text-align: center; font-size: 1.8em; line-height: 1.3; color: #37474f; margin-bottom: 35px; 
+}
+
+.btn-box { display: flex; justify-content: center; margin-top: 30px; }
+.orange-check-btn {
+    background: #ff7043;
+    color: white;
+    border: none;
+    padding: 18px 70px;
+    font-size: 2em;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #d84315;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.orange-check-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #d84315; }
+
+/* Задание 1 */
+.shadow-row, .source-row { display: flex; justify-content: center; align-items: flex-end; gap: 35px; margin: 30px 0; }
+.drop-target {
+    width: 175px; height: 175px; background: #fff; border: 3px dashed #90caf9;
+    border-radius: 30px; display: flex; align-items: center; justify-content: center;
+}
+.drag-item-18 { width: 160px; height: auto; cursor: grab; }
+.inner-shadow { width: 150px; height: auto; opacity: 0.2; }
+
+/* Задание 2 */
+.backpack-flex-container { display: flex; justify-content: center; align-items: center; gap: 60px; margin: 30px 0; }
+.items-selection-box { 
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; 
+    background: #fff; padding: 25px; border-radius: 30px; border: 2px solid #e1f5fe;
+}
+.drag-pack { width: 125px; cursor: grab; }
+.elli-img { width: 500px; }
+.hidden-item { opacity: 0; transform: scale(0); position: absolute; transition: 0.5s; }
+
+/* Задание 3 */
+.image-error-wrap { text-align: center; }
+.puzzle-img { max-width: 65%; border-radius: 30px; border: 10px solid #fff; }
+
+.result-text { text-align: center; height: 80px; font-size: 2.5em; font-weight: bold; color: #4caf50; }
+
+/* Задание 4 */
+.word-game-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 35px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.word-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.word-column {
+    width: 48%;
+}
+
+.word-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.8em;
+    color: #37474f;
+}
+
+/* Выравнивание текста, чтобы инпуты стояли в ряд */
+.word-row span {
+    flex-basis: 160px; /* Ширина области для текста (диск, артист и т.д.) */
+    flex-shrink: 0;
+    text-align: left;
+}
+
+.word-input {
+    flex-grow: 1; /* Инпут займет оставшееся место */
+    max-width: 220px;
+    height: 50px;
+    border: 2px solid #90caf9;
+    border-radius: 15px;
+    padding: 0 15px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 0.8em;
+    outline: none;
+}
+
+.word-input.correct { border-color: #8bc34a; background: #f1f8e9; }
+.word-input.wrong { border-color: #ef5350; background: #ffebee; }
+
+/* Задание 5 */
+.syllable-game-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.syllable-box {
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+    border: 4px solid #e1f5fe;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.syl-btn {
+    background: #fff;
+    border: 3px solid #90caf9;
+    border-radius: 15px;
+    padding: 15px 30px;
+    font-size: 2.2em; /* Крупный шрифт для доцента */
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+    color: #37474f;
+    min-width: 120px;
+}
+
+.syl-btn.active {
+    background: #fff9c4;
+    border-color: #ffb300;
+    transform: scale(1.05);
+}
+
+.syl-btn.connected {
+    background: #e8f5e9;
+    border-color: #4caf50;
+    color: #2e7d32;
+    cursor: default;
+}
+
+/* Окончания больше не бледнеют */
+.syl-btn.static.connected {
+    background: #fff; 
+    border-color: #90caf9;
+}
+/* Задание №6: Увеличенный масштаб и точное позиционирование */
+.forest-background-container {
+    position: relative;
+    width: 100%;
+    max-width: 950px; /* Увеличил ширину */
+    min-height: 800px; /* Увеличил высоту, чтобы избежать перекрытий */
+    margin: 0 auto;
+  
+    background: url('images/funny-forest1-8.jpg') no-repeat center;
+    background-size: 100% 100%; /* Растягиваем фон ровно по контейнеру */
+    border-radius: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.forest-overlay-box {
+    position: absolute;
+    /* Точные координаты для попадания на свиток */
+    top: 45%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Увеличил расстояние между строками */
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.forest-example {
+    text-align: center;
+    font-size: 2em;
+    color: #d84315;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.forest-row {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Центрируем всю строку на свитке */
+    font-size: 1.8em;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #3e2723;
+}
+
+.forest-row span {
+    width: 180px; /* Увеличил место под текст для выравнивания инпутов */
+    display: inline-block;
+    text-align: left;
+}
+
+.forest-row .word-input {
+    width: 220px; /* Чуть длиннее поля для ввода */
+    height: 45px;
+    border: 2px solid #a1887f;
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 0.9em;
+    background: rgba(255, 255, 255, 0.95); /* Более плотный фон для читаемости */
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Состояния проверки */
+.forest-row .word-input.correct { border-color: #4caf50; background: #e8f5e9; }
+.forest-row .word-input.wrong { border-color: #f44336; background: #ffebee; }
+
+/* Задание 7: Собери подарок */
+.gift-flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.drop-gift-zone {
+    width: 450px;
+    height: 400px;
+    border: 4px dashed #ffb300;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 248, 225, 0.5);
+    transition: 0.3s;
+}
+
+.drop-gift-zone.drag-over {
+    background: #fff9c4;
+    transform: scale(1.02);
+}
+
+.vanya-img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.drag-gift {
+    width: 120px;
+    cursor: grab;
+    transition: transform 0.2s;
+    margin: 10px;
+}
+
+.drag-gift:active { cursor: grabbing; }
+
+.hidden-gift {
+    display: none;
+}
+
+/* Задание №8: Исправленная сетка */
+.pair-game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.pair-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 180px); /* 5 колонок равной ширины */
+    gap: 20px;
+    justify-content: center;
+}
+
+.pair-item-8 {
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.pair-item-8 img {
+    max-width: 100%;
+    max-height: 100%;
+    pointer-events: none; /* Чтобы клик шел на контейнер, а не на картинку */
+}
+
+.pair-item-8.selected {
+    background: #fff9c4;
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.pair-item-8.matched {
+    opacity: 0.4;
+    cursor: default;
+    background: #f0f0f0;
+}
+
+.blue-border { border: 4px solid #3f51b5; }
+.green-border { border: 4px solid #4caf50; }
+
+/* Задание 9: Сетка в два столбца */
+.word-multi-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    padding: 20px;
+    background: #fdfefe;
+    border-radius: 20px;
+}
+
+.example-row-full {
+    width: 100%;
+    text-align: center;
+    font-size: 1.8em;
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.multi-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 300px;
+}
+
+.word-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4em;
+    color: #2c3e50;
+}
+
+.word-row span {
+    flex-basis: 150px;
+}
+
+.word-row .word-input {
+    width: 160px;
+    height: 35px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 0 10px;
+    font-size: 0.9em;
+    outline: none;
+}
+
+.word-row .word-input.correct { border-color: #27ae60; background: #eafaf1; }
+.word-row .word-input.wrong { border-color: #e74c3c; background: #fdedec; }
+
+/* Задание №10: Двойной размер шрифта */
+.upper-large-input {
+    text-transform: uppercase;
+    font-size: 1.4em !important; /* Увеличен в 2 раза */
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.obj-input-10 {
+    width: 260px; /* Увеличил ширину под крупный шрифт и длинные слова */
+    height: 70px;  /* Увеличил высоту для соответствия шрифту */
+    border: 1.2px solid #dfe6e9;
+    border-radius: 12px;
+    padding: 0 10px;
+    text-align: center;
+    background: #fff;
+    outline: none;
+}
+
+.obj-input-10.correct { border-color: #27ae60; background: #eafaf1; }
+.obj-input-10.wrong { border-color: #e74c3c; background: #fdedec; }
+
+/* Остальные стили из предыдущего шага сохраняются для центрирования */
+
+.noise-task-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.noise-image-fullwidth {
+    width: 100%; /* Картинка на всю ширину */
+    display: flex;
+    justify-content: center;
+}
+
+.noise-image-fullwidth img {
+    width: 100%;
+    max-width: 900px; /* Ограничение для больших экранов */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.noise-inputs-centered {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Центрируем весь блок полей */
+    width: 100%;
+}
+
+.input-row-10 {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    flex-wrap: wrap; /* Для мобильных устройств */
+}
+
+.obj-input-10 {
+    width: 180px;
+    height: 45px;
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    padding: 0 15px;
+    font-size: 1em;
+    text-align: center;
+    background: #fff;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.obj-input-10.correct { border-color: #27ae60; background: #eafaf1; }
+.obj-input-10.wrong { border-color: #e74c3c; background: #fdedec; }
+
+/* Задание №11: Три картинки и поля */
+.triple-story-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+}
+
+.story-images-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.story-img-item {
+    flex: 1;
+    max-width: 300px;
+}
+
+.story-img-item img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.story-inputs-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 930px; /* Соответствует ширине трех картинок с отступами */
+}
+
+.story-input-11 {
+    width: 100%;
+    height: 60px;
+    border: 2px solid #dfe6e9;
+    border-radius: 12px;
+    padding: 0 20px;
+    background: #fff;
+    outline: none;
+}
+
+/* Используем уже созданный класс для двойного шрифта и регистра */
+.upper-large-input {
+  /*  text-transform: uppercase; */
+    font-size: 2em !important;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Глобальное оформление полей ввода по требованию */
+input[type="text"], 
+.word-input, 
+.obj-input-10, 
+.story-input-11, 
+.upper-large-input {
+    text-transform: uppercase !important; /* Автоматические заглавные буквы */
+    font-size: 1.1em !important;           /* Увеличение шрифта в 2 раза */
+    font-weight: bold !important;
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+
+
+
+
+

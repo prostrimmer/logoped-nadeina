@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 5. Автоматизация звука «С»</title>
+    <link rel="stylesheet" href="lesson-8.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <div class="lesson-badge">Занятие 8. Автоматизация звука «С»</div>
+            <p class="user-info">Ученик: <span id="child-name-display"></span> | Дата: <span id="lesson-date-display"></span></p>
+        </header>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 1. Найти пару</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Назови каждый предмет и перетащи картинку на её тень</p>
+
+            <div class="source-row" id="source-18">
+                <img src="images/fox-8.png" class="drag-item-18" draggable="true" id="fox">
+                <img src="images/scales-8.png" class="drag-item-18" draggable="true" id="scales">
+                <img src="images/sock-8.png" class="drag-item-18" draggable="true" id="sock">
+                <img src="images/beads-8.png" class="drag-item-18" draggable="true" id="beads">
+                <img src="images/wasp-8.png" class="drag-item-18" draggable="true" id="wasp">
+            </div>
+
+            <div class="shadow-row">
+                <div class="drop-target" data-match="wasp"><img src="images/wasp-8-black.png" class="inner-shadow"></div>
+                <div class="drop-target" data-match="sock"><img src="images/sock-8-black.png" class="inner-shadow"></div>
+                <div class="drop-target" data-match="beads"><img src="images/beads-8-black.png" class="inner-shadow"></div>    
+                <div class="drop-target" data-match="fox"><img src="images/fox-8-black.png" class="inner-shadow"></div> 
+                <div class="drop-target" data-match="scales"><img src="images/scales-8-black.png" class="inner-shadow"></div>   
+            </div>
+
+            
+
+            <div id="res-18" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-18" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 2. Собери рюкзак</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction-multi">
+                Друзья пригласили Элли и Тотошку в поход. Помоги им собрать рюкзак.
+                Найди предметы, в названии которых есть звук [C] и перетащи их в рюкзак,
+                проговаривая каждое слово по несколько раз. Закрой глаза и назови
+                предметы, которые теперь в рюкзаке у Элли
+            </p>
+
+            <div class="backpack-flex-container">
+                <div class="items-selection-box" id="pack-source">
+                    <img src="images/clock-8.png" class="drag-pack" draggable="true" id="clock-8" data-sound="true">
+                    <img src="images/piano-8.png" class="drag-pack" draggable="true" id="piano-8" data-sound="false">
+                    <img src="images/iron-8.png" class="drag-pack" draggable="true" id="iron-8" data-sound="false">
+                    <img src="images/tablet-8.png" class="drag-pack" draggable="true" id="tablet-8" data-sound="false">
+                    <img src="images/candle-8.png" class="drag-pack" draggable="true" id="candle-8" data-sound="true">
+                    <img src="images/compass-8.png" class="drag-pack" draggable="true" id="compass-8" data-sound="true">
+                    <img src="images/matches-8.png" class="drag-pack" draggable="true" id="matches-8" data-sound="true">
+                    <img src="images/whistle-8.png" class="drag-pack" draggable="true" id="whistle-8" data-sound="true">
+                    <img src="images/nuke-8.png" class="drag-pack" draggable="true" id="nuke-8" data-sound="false">
+                </div>
+
+                <div class="drop-backpack-zone" id="backpack-goal">
+                    <img src="images/Elli-8.png" class="elli-img">
+                </div>
+            </div>
+
+            <div id="res-19" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-19" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 3. Что неправильно?</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Рассмотри внимательно картинку и расскажи мне какие ошибки допустил художник. Как должно быть правильно?</p>
+            
+            <div class="image-error-wrap">
+                <img src="images/funny-errors-8.jpg" class="puzzle-img" id="task3-img">
+            </div>
+
+            <div id="res-20" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-20" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+    </div>
+<!-- ЗАДАНИЕ 4   -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Один — много</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Замени слово в единственном числе на слово во множественном числе. <br>
+                                Произнеси оба слова чётко</p>
+    
+    <div class="word-game-container">
+        <div class="word-grid">
+            <div class="word-column">
+                <div class="word-row"><span>диск —</span> <input type="text" class="word-input" data-answer="диски"></div>
+                <div class="word-row"><span>аист —</span> <input type="text" class="word-input" data-answer="аисты"></div>
+                <div class="word-row"><span>турист —</span> <input type="text" class="word-input" data-answer="туристы"></div>
+                <div class="word-row"><span>баянист —</span> <input type="text" class="word-input" data-answer="баянисты"></div>
+                <div class="word-row"><span>артист —</span> <input type="text" class="word-input" data-answer="артисты"></div>
+                <div class="word-row"><span>фигурист —</span> <input type="text" class="word-input" data-answer="фигуристы"></div>
+                <div class="word-row"><span>хвост —</span> <input type="text" class="word-input" data-answer="хвосты"></div>
+            </div>
+            <div class="word-column">
+                <div class="word-row"><span>клёст —</span> <input type="text" class="word-input" data-answer="клесты"></div>
+                <div class="word-row"><span>хоккеист —</span> <input type="text" class="word-input" data-answer="хоккеисты"></div>
+                <div class="word-row"><span>киоск —</span> <input type="text" class="word-input" data-answer="киоски"></div>
+                <div class="word-row"><span>куст —</span> <input type="text" class="word-input" data-answer="кусты"></div>
+                <div class="word-row"><span>выпуск —</span> <input type="text" class="word-input" data-answer="выпуски"></div>
+                <div class="word-row"><span>пропуск —</span> <input type="text" class="word-input" data-answer="пропуски"></div>
+                <div class="word-row"><span>пост —</span> <input type="text" class="word-input" data-answer="посты"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-21" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-21" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+<!-- ЗАДАНИЕ 5-->
+<div class="white-card">
+            <h2 class="card-title">Задание 5. Собери слова</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Нажимай на слоги по очереди, чтобы собрать целое слово. Прочитай получившиеся слова</p>
+            
+            <div class="syllable-game-container">
+                <div class="syllable-box" data-group="1">
+                    <div class="left-parts">
+                        <button class="syl-btn" data-pair="КС" data-original="БО">БО</button>
+                        <button class="syl-btn" data-pair="КС" data-original="КО">КО</button>
+                        <button class="syl-btn" data-pair="КС" data-original="КЕ">КЕ</button>
+                    </div>
+                    <div class="right-parts">
+                        <button class="syl-btn static" data-id="КС">КС</button>
+                    </div>
+                </div>
+
+                <div class="syllable-box" data-group="2">
+                    <div class="left-parts">
+                        <button class="syl-btn" data-pair="СА" data-original="КЛЯК">КЛЯК</button>
+                        <button class="syl-btn" data-pair="СА" data-original="ВАК">ВАК</button>
+                        <button class="syl-btn" data-pair="СА" data-original="ТАК">ТАК</button>
+                    </div>
+                    <div class="right-parts">
+                        <button class="syl-btn static" data-id="СА">СА</button>
+                    </div>
+                </div>
+
+                <div class="syllable-box" data-group="3">
+                    <div class="left-parts">
+                        <button class="syl-btn" data-pair="РС" data-original="ТО">ТО</button>
+                        <button class="syl-btn" data-pair="РС" data-original="КУ">КУ</button>
+                        <button class="syl-btn" data-pair="РС" data-original="БА">БА</button>
+                        <button class="syl-btn" data-pair="РС" data-original="ВО">ВО</button>
+                    </div>
+                    <div class="right-parts">
+                        <button class="syl-btn static" data-id="РС">РС</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="res-22" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-22" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+    <!--ЗАДАНИЕ 6-->
+<div class="white-card">
+            <h2 class="card-title">Задание 6. Один — много</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Замени слово в единственном числе на слово во множественном числе и произнеси оба слова</p>
+            
+            <div class="forest-background-container">
+                <div class="forest-overlay-box">
+                    <div class="forest-example">сосуд — сосуды</div>
+                    
+                    <div class="forest-row"><span>сосна —</span> <input type="text" class="word-input" data-answer="сосны"></div>
+                    <div class="forest-row"><span>соска —</span> <input type="text" class="word-input" data-answer="соски"></div>
+                    <div class="forest-row"><span>саксофон —</span> <input type="text" class="word-input" data-answer="саксофоны"></div>
+                    <div class="forest-row"><span>пылесос —</span> <input type="text" class="word-input" data-answer="пылесосы"></div>
+                    <div class="forest-row"><span>сосулька —</span> <input type="text" class="word-input" data-answer="сосульки"></div>
+                    <div class="forest-row"><span>самосвал —</span> <input type="text" class="word-input" data-answer="самосвалы"></div>
+                </div>
+            </div>
+
+            <div id="res-23" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-23" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+<!-- ЗАДАНИЕ 7-->
+<div class="white-card">
+            <h2 class="card-title">Задание 7. Собери подарок</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction-multi">
+                Ваня собирается на день рождения к другу Коли и выбирает подарки.<br>
+                Найди только те предметы, в названии которых есть сразу два звука [с].<br>
+                Соедини эти картинки с подарочной коробкой
+            </p>
+
+            <div class="gift-flex-container">
+                <div class="items-selection-box" id="gift-source">
+                    <img src="images/truck-8.png" class="drag-gift" draggable="true" id="truck-8" data-double-sound="true">
+                    <img src="images/pineapple-8.png" class="drag-gift" draggable="true" id="pineapple-8" data-double-sound="false">
+                    <img src="images/bag-8.png" class="drag-gift" draggable="true" id="bag-8" data-double-sound="false">
+                    <img src="images/revolver-8.png" class="drag-gift" draggable="true" id="revolver-8" data-double-sound="false">
+                    <img src="images/sax-8.png" class="drag-gift" draggable="true" id="sax-8" data-double-sound="true">
+                    <img src="images/vacuum-8.png" class="drag-gift" draggable="true" id="vacuum-8" data-double-sound="true">
+                </div>
+
+                <div class="drop-gift-zone" id="gift-goal">
+                    <img src="images/vanya-gift-8.png" class="vanya-img">
+                </div>
+            </div>
+
+            <div id="res-24" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-24" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+<!-- ЗАДАНИЕ 8-->
+<div class="white-card">
+            <h2 class="card-title">Задание 8. Найди пару</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Найди и соедини предметы, подходящие друг другу по смыслу</p>
+            
+            <div class="pair-game-container">
+                <div class="pair-grid" id="row-8-top">
+                    <div class="pair-item-8 blue-border" data-pair="transport"><img src="images/bus-8.png"></div>
+                    <div class="pair-item-8 blue-border" data-pair="animals"><img src="images/fox-8.png"></div>
+                    <div class="pair-item-8 blue-border" data-pair="food"><img src="images/sausage-8.png"></div>
+                    <div class="pair-item-8 blue-border" data-pair="birds"><img src="images/bird-8.png"></div>
+                    <div class="pair-item-8 blue-border" data-pair="furniture"><img src="images/chair-8.png"></div>
+                </div>
+
+                <div class="pair-grid" id="row-8-bottom">
+                    <div class="pair-item-8 green-border" data-pair="animals"><img src="images/forest-8.png"></div>
+                    <div class="pair-item-8 green-border" data-pair="birds"><img src="images/birdhouse-8.png"></div>
+                    <div class="pair-item-8 green-border" data-pair="transport"><img src="images/plane-8.png"></div>
+                    <div class="pair-item-8 green-border" data-pair="furniture"><img src="images/table-8.png"></div>
+                    <div class="pair-item-8 green-border" data-pair="food"><img src="images/pot-8.png"></div>
+                </div>
+            </div>
+
+            <div id="res-28" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-28" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+<!-- ЗАДАНИЕ 9-->
+<div class="white-card">
+            <h2 class="card-title">Задание 9. Один — много </h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Замени слово в единственном числе на слово во множественном числе. <br>
+                Произнеси оба слова чётко</p>
+            
+            <div class="word-multi-grid">
+                <div class="example-row-full">самосвал — самосвалы</div>
+                
+                <div class="multi-column">
+                    <div class="word-row"><span>выпуск —</span> <input type="text" class="word-input" data-answer="выпуски"></div>
+                    <div class="word-row"><span>пропуск —</span> <input type="text" class="word-input" data-answer="пропуски"></div>
+                    <div class="word-row"><span>клякса —</span> <input type="text" class="word-input" data-answer="кляксы"></div>
+                    <div class="word-row"><span>диск —</span> <input type="text" class="word-input" data-answer="диски"></div>
+                    <div class="word-row"><span>услуга —</span> <input type="text" class="word-input" data-answer="услуги"></div>
+                    <div class="word-row"><span>эстафета —</span> <input type="text" class="word-input" data-answer="эстафеты"></div>
+                </div>
+
+                <div class="multi-column">
+                    <div class="word-row"><span>выступ —</span> <input type="text" class="word-input" data-answer="выступы"></div>
+                    <div class="word-row"><span>испытание —</span> <input type="text" class="word-input" data-answer="испытания"></div>
+                    <div class="word-row"><span>кислота —</span> <input type="text" class="word-input" data-answer="кислоты"></div>
+                    <div class="word-row"><span>косточка —</span> <input type="text" class="word-input" data-answer="косточки"></div>
+                    <div class="word-row"><span>поступок —</span> <input type="text" class="word-input" data-answer="поступки"></div>
+                    <div class="word-row"><span>мастерская —</span> <input type="text" class="word-input" data-answer="мастерские"></div>
+                </div>
+            </div>
+
+            <div id="res-29" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-29" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+<!-- ЗАДАНИЕ 10 -->
+<div class="white-card">
+            <h2 class="card-title">Задание 10. Найди и напиши</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Найди, назови и напиши все предметы на картинке. <br>
+                                        Определи, где в них находится звук [с]</p>
+            
+            <div class="noise-task-wrapper">
+                <div class="noise-image-fullwidth">
+                    <img src="images/hidden-objects-8.jpg" alt="Зашумленная картинка">
+                </div>
+
+                <div class="noise-inputs-centered">
+                    <div class="input-row-10">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                    </div>
+                    <div class="input-row-10">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                        <input type="text" class="obj-input-10 upper-large-input" placeholder="...">
+                    </div>
+                </div>
+            </div>
+
+            <div id="res-30" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-30" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+<!-- ЗАДАНИЕ 11 -->
+<div class="white-card">
+            <h2 class="card-title">Задание 11. Придумай предложения</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Рассмотри картинки внимательно. <br>
+                                        Придумай и запиши предложение к каждому из них</p>
+            
+            <div class="triple-story-container">
+                <div class="story-images-row">
+                    <div class="story-img-item"><img src="images/winters-8.png" alt="Зима"></div>
+                    <div class="story-img-item"><img src="images/samovars-8.png" alt="Самовар"></div>
+                    <div class="story-img-item"><img src="images/trucks-8.png" alt="Самосвал"></div>
+                </div>
+
+                <div class="story-inputs-column">
+                    <input type="text" class="story-input-11 upper-large-input" placeholder="...">
+                    <input type="text" class="story-input-11 upper-large-input" placeholder="...">
+                    <input type="text" class="story-input-11 upper-large-input" placeholder="...">
+                </div>
+            </div>
+
+            <div id="res-31" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-31" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+
+
+
+
+
+    <script src="lesson-8.js"></script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

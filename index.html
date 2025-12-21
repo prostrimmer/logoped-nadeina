@@ -3,148 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логопедические занятия</title>
+    <title>Логопедический портал — Индивидуальные занятия</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-bg: #002b5b; /* Темно-синий из лендинга */
+            --accent-color: #ff4b2b; /* Яркий акцент для кнопок */
+            --text-main: #333;
+            --light-bg: #f4f7f6;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             margin: 0;
-            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
         }
-        .container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 100%;
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary-bg);
+            color: white;
+            padding: 80px 20px;
             text-align: center;
+            background-image: linear-gradient(135deg, #002b5b 0%, #004aad 100%);
         }
-        h1 {
-            color: #4682b4;
-            margin-bottom: 30px;
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 20px 0;
+            line-height: 1.2;
         }
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
+
+        .hero p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        /* Card Style for Form and Lessons */
+        .content-card {
+            background: white;
+            max-width: 500px;
+            margin: -60px auto 40px;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
             text-align: left;
         }
-        input[type="text"], input[type="date"], input[type="number"] {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 2px solid #b0c4de;
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
             border-radius: 8px;
             box-sizing: border-box;
-            font-size: 16px;
+            font-size: 1em;
         }
-        .start-button {
-            background-color: #3cb371;
+
+        .btn-main {
+            background: var(--accent-color);
             color: white;
-            padding: 12px 25px;
             border: none;
-            border-radius: 10px;
-            font-size: 18px;
-            cursor: pointer;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            transition: all 0.3s;
-        }
-        .start-button:hover {
-            background-color: #2e8b57;
-            transform: translateY(-3px);
-        }
-        .hidden {
-            display: none;
-        }
-        .lesson-link {
-            display: block;
-            margin: 20px auto;
-            padding: 18px;
-            background: linear-gradient(#4CAF50, #388E3C);
-            color: white;
-            font-size: 1.6em;
+            padding: 18px 30px;
+            border-radius: 8px;
+            font-size: 1.1em;
             font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-main:hover {
+            background: #e63e1f;
+            transform: translateY(-2px);
+        }
+
+        /* Lesson Grid Area */
+        .lessons-area {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
             text-decoration: none;
-            border-radius: 20px;
-            width: 90%;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            transition: all 0.3s;
+            color: inherit;
+            border: 1px solid #eee;
+            transition: 0.3s;
         }
-        .lesson-link:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+
+        .lesson-card:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         }
+
+        .lesson-card h3 {
+            margin-top: 0;
+            color: var(--primary-bg);
+        }
+
+        .hidden { display: none; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Логопедические занятия</h1>
 
-        <!-- Форма ввода данных -->
-        <div id="setup-form">
-            <label for="child-name">Имя ребёнка:</label>
-            <input type="text" id="child-name" placeholder="Например, Саша" required>
+    <section class="hero">
+        <h1>Твоя дорога к красивой речи</h1>
+        <p>Интерактивные занятия для детей с применением современных методик коррекции звукопроизношения</p>
+    </section>
 
-            <label for="child-age">Возраст ребёнка:</label>
-            <input type="number" id="child-age" placeholder="Например, 5" min="3" max="10" required>
-
-            <label for="lesson-date">Дата занятия:</label>
-            <input type="date" id="lesson-date" required>
-
-            <button class="start-button" onclick="saveChildData()">Начать занятия!</button>
+    <div id="setup-form" class="content-card">
+        <div class="input-group">
+            <label>ИМЯ УЧЕНИКА</label>
+            <input type="text" id="child-name" placeholder="Например: Артем">
         </div>
-
-        <!-- Список занятий -->
-        <div id="links-view" class="hidden">
-            <h2>Выбери занятие:</h2>
-
-            <a href="lesson-1.html" class="lesson-link">Занятие 1. Звук С</a>
-            <a href="lesson-2.html" class="lesson-link">Занятие 2. Звук З</a>
-            <a href="lesson-7.html" class="lesson-link">Занятие 3. Звук С</a> <!-- ← НОВАЯ ССЫЛКА -->
-
-            <br><br>
-            <button class="start-button" onclick="location.reload()">Начать заново</button>
+        <div class="input-group">
+            <label>ВОЗРАСТ</label>
+            <input type="number" id="child-age" placeholder="Лет">
         </div>
+        <div class="input-group">
+            <label>ДАТА ЗАНЯТИЯ</label>
+            <input type="date" id="lesson-date">
+        </div>
+        <button class="btn-main" onclick="saveData()">Записаться на занятие</button>
+    </div>
+
+    <div id="links-view" class="lessons-area hidden">
+        <h2 style="text-align:center; margin-bottom:40px;">Выберите доступное приключение:</h2>
+        <div class="grid">
+            <a href="lesson-4.html" class="lesson-card">
+                <h3>🚀 Занятие 3</h3>
+                <p>Автоматизация звука [С]. Первые шаги к чистому произношению.</p>
+            </a>
+            <a href="lesson-7.html" class="lesson-card">
+                <h3>🎨 Занятие 4</h3>
+                <p>Работа над звуком [С]. Складываем буквы в красивые слова.</p>
+            </a>
+             <a href="lesson-8.html" class="lesson-card">
+                <h3>🔮 Занятие 5</h3>
+                <p>Автоматизация звука [С]</p>
+            </a>
+        </div>
+        <p style="text-align:center; margin-top:40px;">
+            <a href="#" onclick="localStorage.clear(); location.reload();" style="color:#666;">Сменить пользователя</a>
+        </p>
     </div>
 
     <script>
-        function saveChildData() {
-            const nameInput = document.getElementById('child-name');
-            const ageInput = document.getElementById('child-age');
-            const dateInput = document.getElementById('lesson-date');
-            
-            const childName = nameInput.value.trim();
-            const childAge = ageInput.value.trim();
-            const lessonDate = dateInput.value;
+        function saveData() {
+            const name = document.getElementById('child-name').value;
+            const age = document.getElementById('child-age').value;
+            const date = document.getElementById('lesson-date').value;
 
-            if (childName === "" || childAge === "" || lessonDate === "") {
-                alert("Пожалуйста, заполните все поля.");
-                return;
+            if(name && date) {
+                localStorage.setItem('childName', name);
+                localStorage.setItem('childAge', age);
+                localStorage.setItem('lessonDate', date);
+                renderView();
+            } else {
+                alert("Пожалуйста, введите имя и выберите дату.");
             }
-
-            // Сохранение в localStorage
-            localStorage.setItem('childName', childName);
-            localStorage.setItem('childAge', childAge);
-            localStorage.setItem('lessonDate', lessonDate);
-
-            // Переход к списку занятий
-            document.getElementById('setup-form').classList.add('hidden');
-            document.getElementById('links-view').classList.remove('hidden');
         }
 
-        // Показываем занятия сразу, если данные уже сохранены
-        document.addEventListener('DOMContentLoaded', () => {
-            if (localStorage.getItem('childName') && localStorage.getItem('lessonDate')) {
+        function renderView() {
+            if(localStorage.getItem('childName')) {
                 document.getElementById('setup-form').classList.add('hidden');
                 document.getElementById('links-view').classList.remove('hidden');
             }
-        });
+        }
+
+        window.onload = renderView;
     </script>
 </body>
 </html>
