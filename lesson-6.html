@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 6. Автоматизация звука «С»</title>
+    <link rel="stylesheet" href="lesson-6.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <div class="lesson-badge">Занятие 6. Автоматизация звука «С»</div>
+            <p class="user-info">Ученик: <span id="child-name-display"></span> | Дата: <span id="lesson-date-display"></span></p>
+        </header>
+<!-- ЗАДАНИЕ №1 -->
+        <div class="white-card">
+            <h2 class="card-title">Задание 1. Найди лишнее слово</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Нажми на лишнее слово в каждом ряду, а затем проверь себя.</p>
+
+            <div class="task-container-6">
+                <div class="word-row-6">
+                    <span class="selectable-word">сосна</span>
+                    <span class="selectable-word">сосенка</span>
+                    <span class="selectable-word">сосновый</span>
+                    <span class="selectable-word" data-correct="true">соска</span>
+                </div>
+                <div class="word-row-6">
+                    <span class="selectable-word">лес</span>
+                    <span class="selectable-word">лесок</span>
+                    <span class="selectable-word" data-correct="true">леска</span>
+                    <span class="selectable-word">лесник</span>
+                </div>
+                <div class="word-row-6">
+                    <span class="selectable-word">сон</span>
+                    <span class="selectable-word">бессонница</span>
+                    <span class="selectable-word">сонный</span>
+                    <span class="selectable-word" data-correct="true">солнечный</span>
+                </div>
+                <div class="word-row-6">
+                    <span class="selectable-word">соль</span>
+                    <span class="selectable-word" data-correct="true">соловей</span>
+                    <span class="selectable-word">солёный</span>
+                    <span class="selectable-word">солонка</span>
+                </div>
+                <div class="word-row-6">
+                    <span class="selectable-word">нос</span>
+                    <span class="selectable-word">носовой</span>
+                    <span class="selectable-word" data-correct="true">носок</span>
+                    <span class="selectable-word">носик</span>
+                </div>
+            </div>
+
+            <div id="res-1" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-1" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+        </div>
+<!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. «Мой» или «Моя»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри предметы. Если о предмете можно сказать «МОЙ» – перетащи в синий прямоугольник, если «МОЯ» – в красный.</p>
+
+    <div class="drag-task-container">
+        <div class="items-grid-6">
+            <div class="grid-slot"><img src="images/space_suit-6.png" class="drag-item-6" draggable="true" id="it1" data-gender="my"></div>
+            <div class="grid-slot"><img src="images/wasp-6.png" class="drag-item-6" draggable="true" id="it2" data-gender="moya"></div>
+            <div class="grid-slot"><img src="images/arrow-6.png" class="drag-item-6" draggable="true" id="it3" data-gender="moya"></div>
+            <div class="grid-slot"><img src="images/watermelon-6.png" class="drag-item-6" draggable="true" id="it4" data-gender="my"></div>
+            <div class="grid-slot"><img src="images/birdhouse-6.png" class="drag-item-6" draggable="true" id="it5" data-gender="my"></div>
+            <div class="grid-slot"><img src="images/braid-6.png" class="drag-item-6" draggable="true" id="it6" data-gender="moya"></div>
+        </div>
+
+        <div class="drop-zones-row-6">
+            <div class="drop-box-6 blue-box" data-target="my" id="zone-my">
+                <div class="box-label">МОЙ</div>
+                <div class="mini-container"></div>
+            </div>
+            <div class="drop-box-6 red-box" data-target="moya" id="zone-moya">
+                <div class="box-label">МОЯ</div>
+                <div class="mini-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-2" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 3-->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Что изменилось?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри и назови предметы, помещенные в овал и предметы, помещенные в прямоугольник. Каких предметов не хватает в прямоугольнике?</p>
+
+    <div class="task-3-container">
+        <div class="image-box-3">
+            <img src="images/lesson-6-3.png" alt="Что изменилось" class="task-3-img">
+        </div>
+
+        <div id="answer-3" class="hidden-answer">
+            В прямоугольнике не хватает: <strong>паровоза, занавески, чеснока.</strong>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-3" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Запоминалка</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Прочитай пары слов и повтори</p>
+
+    <div class="task-4-container">
+        <div class="word-pairs-box">
+            <div class="pair-row">ВЕСЛО — КРЕСЛО</div>
+            <div class="pair-row">ЛИСА — ЛЕСКА</div>
+            <div class="pair-row">ПУСТЫНЯ — ОСТРОВ</div>
+            <div class="pair-row">ИСПАНИЯ — ЭСТОНИЯ</div>
+            <div class="pair-row">ТРЕСК — ОТБЛЕСК</div>
+            <div class="pair-row">ВЫПУСК — КУСТ</div>
+            <div class="pair-row">ЭКСПЕРТ — ЭКСПОРТ</div>
+            <div class="pair-row">ПСКОВ — ОБСТАНОВКА</div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-4" class="orange-check-btn">Проверить</button>
+    </div>
+    <div id="res-4" class="result-text"></div>
+</div>
+<!-- ЗАДАНИЕ № 5-->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Клякса</h2>
+    <div class="yellow-divider"></div>
+    
+    <div class="task-5-content">
+        <p class="card-instruction text-justify">Как-то раз Ваня рисовал за столом. Мама позвала его обедать. Когда Ваня вышел из комнаты, Макс решил посмотреть рисунок Вани. Случайно он задел лапой банку с краской, и она опрокинулась. На полу появились большие кляксы. Посмотри и назови какие предметы они напоминают</p>
+        
+        <div class="main-illustration-box">
+            <img src="images/lesson-6-5.png" alt="Макс и краска" class="task-5-hero-img">
+        </div>
+    </div>
+
+    <div id="res-5" class="result-text-blots"></div>
+    <div class="btn-box">
+        <button id="btn-5" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 6-->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Фотоохота</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Ваня и Макс были на фотоохоте. Посмотри, какие фотографии у них получились. Назови предметы и составь предложения с этими словами</p>
+
+    <div class="task-6-container">
+        <div class="main-photo-collage">
+            <img src="images/lesson-6-6.png" alt="Фотоохота коллаж" class="collage-img">
+        </div>
+
+        <div class="inputs-list-6">
+            <input type="text" class="sentence-input" placeholder="1.">
+            <input type="text" class="sentence-input" placeholder="2.">
+            <input type="text" class="sentence-input" placeholder="3.">
+            <input type="text" class="sentence-input" placeholder="4.">
+            <input type="text" class="sentence-input" placeholder="5.">
+            <input type="text" class="sentence-input" placeholder="6.">
+        </div>
+    </div>
+
+    <div id="res-6" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-6" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 7-->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Посчитай</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Сосчитай, каких предметов больше всего на этой картинке. Составь предложения с этими словами.</p>
+
+    <div class="task-7-container">
+        <div class="search-image-box">
+            <img src="images/lesson-6-7.png" alt="Посчитай предметы" class="task-7-img">
+        </div>
+
+        <div class="inputs-list-7">
+            <input type="text" class="sentence-input-7" placeholder="1.">
+            <input type="text" class="sentence-input-7" placeholder="2.">
+            <input type="text" class="sentence-input-7" placeholder="3.">
+        </div>
+    </div>
+
+    <div id="res-7" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-7" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 8-->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Найди отличия</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посмотри на картинку и найди отличия. Назови слова со звуком [С] и определи, где находится звук [С] в каждом слове.</p>
+
+    <div class="task-8-container">
+        <div class="diff-images-box">
+            <img src="images/lesson-6-8.png" alt="Найди отличия" class="task-8-img">
+        </div>
+
+      
+    </div>
+
+    <div id="res-8" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-8" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 9-->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Соедини картинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Назови что изображено на картинке, чётко произнося звук [С]. Соедини линией предметы, в которых одинаковое количество слогов.</p>
+
+    <div class="task-9-container" id="container-9">
+        <canvas id="canvas-9"></canvas>
+
+        <div class="items-grid-9">
+            <div class="grid-item-9" data-syllables="2" id="item-1"><img src="images/stakan.png" alt="Стакан"></div>
+            <div class="grid-item-9" data-syllables="3" id="item-2"><img src="images/samokat.png" alt="Самокат"></div>
+            <div class="grid-item-9" data-syllables="4" id="item-3"><img src="images/kastryulya.png" alt="Кастрюля"></div>
+            
+            <div class="grid-item-9" data-syllables="2" id="item-4"><img src="images/chair-8.png" alt="Кресло"></div>
+            <div class="grid-item-9" data-syllables="2" id="item-5"><img src="images/sumka.png" alt="Сумка"></div>
+            <div class="grid-item-9" data-syllables="2" id="item-6"><img src="images/fox-8.png" alt="Лиса"></div>
+            
+            <div class="grid-item-9" data-syllables="1" id="item-7"><img src="images/table.png" alt="Стол"></div>
+            <div class="grid-item-9" data-syllables="4" id="item-8"><img src="images/raskladushka.png" alt="Раскладушка"></div>
+            <div class="grid-item-9" data-syllables="3" id="item-9"><img src="images/plane-8.png" alt="Самолет"></div>
+        </div>
+    </div>
+
+    <div id="res-9" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-9-clear" class="orange-check-btn" style="background-color: #7f8c8d; box-shadow: 0 6px 0 #34495e; margin-right: 10px;">Сбросить линии</button>
+        <button id="btn-9" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 10-->
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Картинное поле</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посмотри внимательно на картинки и ответь на вопросы преподавателя. Нажимай на предметы, чтобы выделить их.</p>
+
+    <div class="task-10-wrapper">
+        <div class="pano-container">
+            <img src="images/lesson-6-10.png" alt="Картинное поле" class="pano-img">
+            
+            <div class="selection-grid-10">
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+                <div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div><div class="cell-10"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-10-reset" class="orange-check-btn" style="background-color: #7f8c8d; box-shadow: 0 6px 0 #34495e;">Сбросить выбор</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 11-->
+<div class="white-card">
+    <h2 class="card-title">Задание 11. Играем в прятки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Назови предметы, спрятанные на картинках. Постарайся найти все детали!</p>
+
+    <div class="task-11-container">
+        <div class="hidden-objects-box">
+            <img src="images/lesson-6-11.png" alt="Спрятанные предметы" class="task-11-img">
+        </div>
+
+        <div id="answer-11" class="hidden-answer">
+            <p><strong>На картинках спрятаны:</strong></p>
+            <ul class="answer-list">
+                <li>Самосвал, автобус, пистолет;</li>
+                <li>Подсолнух, сосна, куст;</li>
+                <li>Слон, оса, кресло;</li>
+                <li>Скворечник, совы, ласточка.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-11" class="orange-check-btn">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ № 12 если успею-->
+
+
+
+<!--концовка блока страницы-->
+    <script src="lesson-6.js"></script>
+</body>
+</html>
