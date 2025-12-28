@@ -1,0 +1,692 @@
+/* ========================================= */
+/* 1. Базовые стили (Перенесено из lesson-8.css) */
+/* ========================================= */
+
+body {
+    margin: 0; padding: 0;
+    background-color: #99dfff; /* Голубой фон */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+}
+
+.content-wrapper { padding: 40px 20px; }
+
+/* Шапка урока */
+.main-header { text-align: center; margin-bottom: 40px; }
+
+.lesson-badge {
+    display: inline-block;
+    background: #fff9c4;
+    padding: 12px 50px;
+    border-radius: 15px;
+    color: #ff6d00;
+    font-weight: bold;
+    font-size: 2.3em;
+    border: 3px solid #fff;
+}
+
+.user-info { font-size: 1.2em; color: #546e7a; margin-top: 10px; font-weight: bold; }
+
+/* Карточка (Белая с желтой рамкой) */
+.white-card {
+    background: #f0faff;
+    border: 8px solid #ffd600;
+    border-radius: 45px;
+    padding: 40px; /* Отступ внутри карточки */
+    margin: 0 auto 50px auto;
+    max-width: 1050px; /* Ограничение ширины карточки */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.card-title { color: #ff7043; text-align: center; font-size: 3.2em; margin: 0; }
+.yellow-divider { width: 90%; height: 4px; background: #90caf9; margin: 20px auto; }
+.card-instruction, .card-instruction-multi { 
+    text-align: center; font-size: 1.8em; line-height: 1.3; color: #37474f; margin-bottom: 35px; 
+}
+
+/* Кнопка проверки */
+.btn-box { display: flex; justify-content: center; margin-top: 30px; }
+.orange-check-btn {
+    background: #ff7043;
+    color: white;
+    border: none;
+    padding: 18px 70px;
+    font-size: 2em;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #d84315;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.orange-check-btn:active { transform: translateY(4px); box-shadow: 0 2px 0 #d84315; }
+
+.result-text {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-top: 20px;
+    min-height: 1.4em;
+}
+
+/* ========================================= */
+/* 2. Специфические стили для Задания 1 (Урок 6) */
+/* ========================================= */
+
+.task-container-6 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Небольшой отступ между рядами */
+    width: 100%;
+    max-width: 930px; /* Ширина как у блоков в lesson-8 */
+    margin: 0 auto;
+}
+
+.word-row-6 {
+    display: flex;
+    justify-content: space-around; /* Равномерное распределение слов */
+    align-items: center;
+    padding: 10px 15px; /* Умеренный паддинг, чтобы не раздувать блок */
+    background: #fff;
+    border-radius: 15px;
+    border: 2px dashed #99dfff; /* Пунктирная рамка */
+}
+
+.selectable-word {
+    /* ИСПРАВЛЕНИЕ: Размер шрифта 1.1em, точно как в input из lesson-8 */
+    font-size: 1.7em; 
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    padding: 5px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    user-select: none; /* Чтобы текст не выделялся как текст при кликах */
+}
+
+.selectable-word:hover {
+    background-color: #e3f2fd; /* Легкая подсветка при наведении */
+}
+
+/* Красный цвет при выборе (как было в ТЗ) */
+.selectable-word.selected {
+    color: #e74c3c !important;
+    background-color: #ffebee;
+}
+
+/* Зеленый цвет при правильном ответе */
+.selectable-word.correct {
+    color: #27ae60 !important;
+    background-color: #e8f5e9;
+}
+
+/* Красный цвет при ошибке (после проверки) */
+.selectable-word.wrong {
+    color: #e74c3c !important;
+}
+
+/* === Задание №2: Стили сетки и прямоугольников === */
+
+.drag-task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Сетка 2 ряда по 3 колонки */
+.items-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 270px);
+    grid-template-rows: repeat(2, 270px);
+    row-gap: 20px; /* Отступ для строк остался 20px */
+    column-gap: 70px; /* Отступ для колонок стал 70px */
+    justify-content: center;
+}
+
+.grid-slot {
+    width: 270px;
+    height: 270px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 20px;
+}
+
+/* Картинки 250x250 */
+.drag-item-6 {
+    width: 250px !important;
+    height: 250px !important;
+    object-fit: contain;
+    cursor: grab;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+/* Стили обводки и бледности для оригиналов */
+.correct-my-border { border: 10px solid #00BFFF !important; opacity: 0.4; pointer-events: none; border-radius: 20px; }
+.correct-moya-border { border: 10px solid #FF6347 !important; opacity: 0.4; pointer-events: none; border-radius: 20px; }
+
+/* Ряд прямоугольников в линию */
+.drop-zones-row-6 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Прямоугольники СИНЕГО и КРАСНОГО цвета */
+.drop-box-6 {
+    width: 450px;
+    min-height: 200px;
+    border-radius: 35px;
+    border: 6px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.blue-box { background-color: #00BFFF !important; }
+.red-box { background-color: #FF6347 !important; }
+
+.box-label { color: #fff; font-size: 2.2em; font-weight: bold; margin-bottom: 15px; text-shadow: 1px 1px 3px rgba(0,0,0,0.3); }
+
+/* Контейнер для отрисовки миниатюр внутри прямоугольника */
+.mini-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Маленькая картинка 100x100 */
+.mini-img-6 {
+    width: 120px !important;
+    height: 120px !important;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 12px;
+    padding: 5px;
+}
+
+.drop-box-6.hover { border-style: dashed; transform: scale(1.03); }
+
+/* === Задание №3: Стили интерфейса === */
+
+.task-3-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.image-box-3 {
+    width: 100%;
+    max-width: 800px;
+   
+    overflow: hidden;
+    
+}
+
+.task-3-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Скрытый изначально текст ответа */
+.hidden-answer {
+    display: none;
+    font-size: 2em; /* Крупный текст для ребенка */
+    color: #2c3e50;
+    text-align: center;
+    background: #fff9c4;
+    padding: 20px 40px;
+    border-radius: 20px;
+    border: 3px dashed #ff7043;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* === Задание №4: Стили для пар слов === */
+
+.task-4-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.word-pairs-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Отступ между парами */
+}
+
+.pair-row {
+    font-size: 2.2em; /* Крупный шрифт как на скриншоте */
+    font-weight: bold;
+    color: #1a237e; /* Темно-синий цвет текста */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Эффект при нажатии на проверку */
+.pair-row.highlight {
+    color: #27ae60;
+    transition: color 0.3s ease;
+}
+
+/* === Задание №5: Стили для Клякс === */
+
+.task-5-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-justify {
+    text-align: justify;
+    line-height: 1.4;
+    padding: 0 10px;
+}
+
+.main-illustration-box {
+    width: 120%;
+    max-width: 600px;
+}
+
+.task-5-hero-img {
+    width: 120%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.result-text-blots {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #d32f2f;
+    min-height: 1.3em;
+    text-align: center;
+}
+
+/* === Задание №6: Стили для коллажа и ввода === */
+
+.task-6-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Контейнер для большого фото */
+.main-photo-collage {
+    width: 100%;
+    max-width: 1000px;
+    padding: 15px;
+    
+    
+    
+    border-radius: 10px;
+}
+
+.collage-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+}
+
+/* Список полей ввода в виде строк */
+.inputs-list-6 {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sentence-input {
+    width: 100%;
+    height: 40px;
+    font-size: 1.6em; /* Крупный читаемый шрифт */
+    padding: 0 10px;
+    border: none;
+    border-bottom: 2px solid #34495e; /* Линия как в тетради */
+    background: transparent;
+    outline: none;
+    color: #1a237e;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.sentence-input:focus {
+    border-bottom-color: #ff7043;
+}
+
+/* Стиль при успешном заполнении */
+.sentence-input.filled {
+    border-bottom-color: #27ae60;
+}
+
+/* === Задание №7: Стили для поиска и счета === */
+
+.task-7-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+}
+
+.search-image-box {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.task-7-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.inputs-list-7 {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sentence-input-7 {
+    width: 100%;
+    height: 45px;
+    font-size: 1.6em;
+    padding: 0 10px;
+    border: none;
+    border-bottom: 2px solid #34495e; /* Линии как в тетради */
+    background: transparent;
+    outline: none;
+    color: #1a237e;
+    font-family: inherit;
+}
+
+.sentence-input-7:focus {
+    border-bottom-color: #ff7043;
+}
+
+.sentence-input-7.correct {
+    border-bottom-color: #27ae60;
+}
+
+/* === Задание №8: Стили для поиска отличий и схем === */
+
+.task-8-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.diff-images-box {
+    width: 100%;
+    max-width: 900px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.task-8-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+}
+
+.sound-analysis-table {
+    width: 100%;
+    max-width: 700px;
+    background: #f1f8ff;
+    padding: 20px;
+    border-radius: 25px;
+    border: 3px solid #00BFFF;
+}
+
+.table-label {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #1a237e;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.analysis-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.word-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #34495e;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #d1d1d1;
+}
+
+.pos-chips {
+    display: flex;
+    gap: 8px;
+}
+
+.chip {
+    padding: 5px 12px;
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    font-size: 0.8em;
+    color: #7f8c8d;
+    cursor: pointer;
+}
+
+/* Класс для подсветки правильного выбора */
+.chip.active {
+    background: #27ae60;
+    color: #fff;
+    border-color: #27ae60;
+}
+
+.chip.wrong {
+    background: #e74c3c;
+    color: #fff;
+    border-color: #e74c3c;
+}
+
+/* === Задание №9: Интерактивные линии === */
+
+.task-9-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.items-grid-9 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    position: relative;
+    z-index: 2; /* Картинки выше канваса для кликов */
+}
+
+.grid-item-9 {
+    aspect-ratio: 1 / 1;
+    background: #fff;
+    border: 3px solid #eee;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.grid-item-9 img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* Чтобы клик шел на родительский div */
+}
+
+/* Состояние при первом клике */
+.grid-item-9.selected {
+    border-color: #00BFFF;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+#canvas-9 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Линии под картинками или над ними (зависит от задачи) */
+    pointer-events: none;
+}
+
+/* === Задание №10: Сетка поверх панно === */
+
+.task-10-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.pano-container {
+    position: relative;
+    width: 100%;
+    max-width: 830px; /* Размер основного панно */
+    line-height: 0;
+}
+
+.pano-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    
+}
+
+/* Сетка накладывается точно поверх картинки */
+.selection-grid-10 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    grid-template-rows: repeat(6, 1fr);    /* 6 рядов */
+}
+
+/* Интерактивная ячейка */
+.cell-10 {
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: 1px solid transparent; /* Границы для отладки можно сделать видимыми */
+}
+
+.cell-10:hover {
+ /*   background-color: rgba(255, 255, 255, 0.1);*/
+}
+
+/* Красная рамка при выделении */
+.cell-10.selected {
+    border: 6px solid #e74c3c !important;
+    box-shadow: inset 0 0 15px rgba(231, 76, 60, 0.3);
+}
+
+/* === Задание №11: Стили для игры в прятки === */
+
+.task-11-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.hidden-objects-box {
+    width: 100%;
+    max-width: 700px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.task-11-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.hidden-answer {
+    display: none;
+    width: 100%;
+    max-width: 700px;
+    background-color: #e8f5e9;
+    border: 3px dashed #2e7d32;
+    border-radius: 20px;
+    padding: 20px;
+    font-size: 1.5em;
+    color: #1b5e20;
+    animation: slideDown 0.5s ease-out;
+}
+
+.answer-list {
+    margin-top: 10px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.answer-list li {
+    margin-bottom: 8px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.answer-list li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #4caf50;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
