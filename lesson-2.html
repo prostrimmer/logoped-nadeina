@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 2. Автоматизация звука «С»</title>
+    <link rel="stylesheet" href="lesson-2.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <div class="lesson-badge">Занятие 7. Автоматизация звука «С»</div>
+            <p class="user-info">Ученик: <span id="child-name-display"></span> | Дата: <span id="lesson-date-display"></span></p>
+        </header>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 1. Зашифрованные слова</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Ксюша составила необычные шифровки. Помоги их расшифровать. Назови цепочку зашифрованных слов используя таблицы</p>
+            
+            <div class="cipher-layout">
+                <div class="cipher-box">
+                    <img src="images/lesson-2-1-1.png" alt="Шифровка 1" class="lesson-img-full">
+                </div>
+                <div class="cipher-box">
+                    <img src="images/lesson-2-1-2.png" alt="Шифровка 2" class="lesson-img-full">
+                </div>
+            </div>
+
+            <div id="res-1" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-1" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 2. Пирамида</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">
+                Для каждого ряда пирамиды надо выполнить соответствующее задание:<br>
+                1 ряд – назови предметы ласково;<br>
+                2 ряд – назови предметы, о которых можно сказать «шумный», «высокая», «белый», «удобное»;<br>
+                3 ряд – назови предметы, к которым можно подобрать слова-действия «едет, летает, стреляет»;<br>
+                4 ряд – подбери как можно больше слов-признаков, отвечающих на вопрос «какой» к данному предмету
+            </p>
+            
+            <div class="pyramid-full-width">
+                <img src="images/lesson-2-2.png" alt="Пирамида" class="lesson-img-full">
+            </div>
+
+            <div id="res-2" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 3. Мечты</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Папа обещал Ксюше подарок. О чём она мечтает? Рассмотри картинку и назови все предметы.</p>
+            
+            <div class="lesson-image-container">
+                <img src="images/lesson-2-3.png" alt="Мечты Ксюши" class="lesson-img-full">
+            </div>
+
+            <div id="res-3" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-3" class="orange-check-btn">ГОТОВО</button>
+            </div>
+        </div>
+        <div class="white-card">
+            <h2 class="card-title">Задание 4. Сочинялки</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Назови предметы, изображенные на картинках, и составь предложения с этими словами.</p>
+            
+            <div class="story-container">
+                <div class="story-grid-matrix">
+                    <div class="story-img-item"><img src="images/lesson-2-4-1.png" alt="1"></div>
+                    <div class="story-img-item"><img src="images/lesson-2-4-2.png" alt="2"></div>
+                    <div class="story-img-item"><img src="images/lesson-2-4-3.png" alt="3"></div>
+                    <div class="story-img-item"><img src="images/lesson-2-4-4.png" alt="4"></div>
+                </div>
+
+                <div class="story-inputs-column">
+                    <input type="text" class="story-input-4 upper-large-input" placeholder="...">
+                    <input type="text" class="story-input-4 upper-large-input" placeholder="...">
+                    <input type="text" class="story-input-4 upper-large-input" placeholder="...">
+                    <input type="text" class="story-input-4 upper-large-input" placeholder="...">
+                </div>
+            </div>
+
+            <div id="res-4" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-4" class="orange-check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+        
+        <div class="white-card">
+    <h2 class="card-title">Задание 5. Отгадки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Отгадай загадку и соедини её с картинкой, к которой она относится.</p>
+    
+    <div class="drawing-wrapper" id="draw-container-5" style="position: relative; line-height: 0;">
+        <img src="images/lesson-2-5.png" alt="Загадки" class="lesson-img-full" draggable="false" style="user-select: none;">
+        <canvas id="canvas-5" style="position: absolute; top: 0; left: 0; cursor: crosshair;"></canvas>
+    </div>
+
+    <div id="res-5" class="result-text"></div>
+    <div class="btn-box-row">
+        <button id="btn-5" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        <button id="btn-reset-5" class="orange-check-btn reset-style">СБРОСИТЬ ЛИНИИ</button>
+    </div>
+</div>
+
+<div class="white-card">
+            <h2 class="card-title">Задание 6. Собери рифму</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Ваня учится сочинять стихи, подыскивая рифму. Помоги ему. Подскажи слово и повтори предложение целиком:</p>
+            
+            <div class="rhyme-box-layout">
+                <div class="rhyme-item">
+                    <div class="rhyme-text">
+                        <p>Загудит как стая ос,</p>
+                        <p>Пыль сметая . . .</p>
+                    </div>
+                    <input type="text" class="rhyme-input-final upper-large-input" data-answer="ПЫЛЕСОС">
+                </div>
+
+                <div class="rhyme-item">
+                    <div class="rhyme-text">
+                        <p>Если много видим дыр,</p>
+                        <p>Значит вкусный будет . . .</p>
+                    </div>
+                    <input type="text" class="rhyme-input-final upper-large-input" data-answer="СЫР">
+                </div>
+
+                <div class="rhyme-item">
+                    <div class="rhyme-text">
+                        <p>Зазвенит звонок сейчас,</p>
+                        <p>И войдёт учитель в . . .</p>
+                    </div>
+                    <input type="text" class="rhyme-input-final upper-large-input" data-answer="КЛАСС">
+                </div>
+            </div>
+
+            <div id="res-6" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-6" class="green-check-btn-final">Проверить</button>
+            </div>
+        </div>
+
+
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Подбери цвет</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посмотри внимательно на картинки и выбери тот цвет, который больше всего подходит каждой из картинок.</p>
+    
+    <div class="coloring-container">
+        <div class="coloring-grid">
+            <div class="color-item-box" data-correct="yellow" data-base-src="lesson-2-7-sun">
+                <img src="images/lesson-2-7-sun.png" alt="Солнце">
+            </div>
+            <div class="color-item-box" data-correct="orange" data-base-src="lesson-2-7-apricot">
+                <img src="images/lesson-2-7-apricot.png" alt="Абрикос">
+            </div>
+            <div class="color-item-box" data-correct="pink" data-base-src="lesson-2-7-radish">
+                <img src="images/lesson-2-7-radish.png" alt="Редис">
+            </div>
+            <div class="color-item-box" data-correct="green" data-base-src="lesson-2-7-leaf">
+                <img src="images/lesson-2-7-leaf.png" alt="Лист">
+            </div>
+            <div class="color-item-box" data-correct="striped" data-base-src="lesson-2-7-wasp">
+                <img src="images/lesson-2-7-wasp.png" alt="Оса">
+            </div>
+            <div class="color-item-box" data-correct="yellow-green" data-base-src="lesson-2-7-sunflower">
+                <img src="images/lesson-2-7-sunflower.png" alt="Подсолнух">
+            </div>
+        </div>
+
+        <div class="palette-row">
+            <div class="color-sample" data-color="red" style="background-color: #FF0000;"></div>
+            <div class="color-sample" data-color="orange" style="background-color: #FF7F00;"></div>
+            <div class="color-sample" data-color="yellow" style="background-color: #FFFF00;"></div>
+            <div class="color-sample" data-color="green" style="background-color: #00FF00;"></div>
+            <div class="color-sample" data-color="lightblue" style="background-color: #00BFFF;"></div>
+            <div class="color-sample" data-color="blue" style="background-color: #0000FF;"></div>
+            <div class="color-sample" data-color="purple" style="background-color: #8B00FF;"></div>
+        </div>
+    </div>
+
+    <div id="res-7" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-7" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Напиши рассказ</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Внимательно посмотри на картинки комикса про Снеговика. Расставь порядок действий, перетаскивая картинки. Напиши рассказ про действия на картинках.</p>
+    
+    <div class="comic-container" id="comic-grid">
+        <div class="comic-item" draggable="true" data-order="3">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-1.png" alt="Сцена 3">
+        </div>
+        <div class="comic-item" draggable="true" data-order="1">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-2.png" alt="Сцена 1">
+        </div>
+        <div class="comic-item" draggable="true" data-order="6">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-3.png" alt="Сцена 6">
+        </div>
+        <div class="comic-item" draggable="true" data-order="2">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-4.png" alt="Сцена 2">
+        </div>
+        <div class="comic-item" draggable="true" data-order="5">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-5.png" alt="Сцена 5">
+        </div>
+        <div class="comic-item" draggable="true" data-order="4">
+            <div class="number-badge"></div>
+            <img src="images/lesson-2-8-6.png" alt="Сцена 4">
+        </div>
+    </div>
+
+    <div class="story-input-container">
+        <textarea id="story-text" class="story-textarea" placeholder="Напиши свой рассказ здесь..."></textarea>
+    </div>
+
+    <div id="res-8" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-8" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Лесенка</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри внимательно картинки и заполни словами, начинающимися с буквы «С» лесенку</p>
+    
+    <div class="ladder-layout">
+        <div class="ladder-grid-container">
+            <div class="ladder-row" data-word="СОК">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+            <div class="ladder-row" data-word="СЛОН">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+            <div class="ladder-row" data-word="САНКИ">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+            <div class="ladder-row" data-word="СУНДУК">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+            <div class="ladder-row" data-word="СВИСТОК">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+            <div class="ladder-row" data-word="СКАМЕЙКА">
+                <div class="char-cell static">С</div>
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+                <input type="text" class="char-cell" maxlength="1">
+            </div>
+        </div>
+
+        <div class="ladder-hints-grid">
+            <div class="hint-card"><img src="images/lesson-2-9-chest.png" alt="Сундук"></div>
+            <div class="hint-card"><img src="images/lesson-2-9-juice.png" alt="Сок"></div>
+            <div class="hint-card"><img src="images/lesson-2-9-bench.png" alt="Скамейка"></div>
+            <div class="hint-card"><img src="images/lesson-2-9-elephant.png" alt="Слон"></div>
+            <div class="hint-card"><img src="images/lesson-2-9-sledge.png" alt="Санки"></div>
+            <div class="hint-card"><img src="images/lesson-2-9-whistle.png" alt="Свисток"></div>
+        </div>
+    </div>
+
+    <div id="res-9" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-9" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card">
+            <h2 class="card-title">Задание 10. Повтори предложения</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Повтори предложения, чётко проговаривая слова со звуками [с] и [с’]</p>
+            
+            <div class="speech-container">
+                <div class="speech-row">
+                    <div class="speech-text">
+                        Лесник <strong>С</strong>емён стоит в лесу. У него <strong>с</strong>ломался компа<strong>с</strong>. От <strong>с</strong>о<strong>с</strong>ны он повернул на <strong>с</strong>евер.
+                    </div>
+                    <div class="speech-image">
+                        <img src="images/lesson-2-10-1.png" alt="Лесник Семён">
+                    </div>
+                </div>
+
+                <div class="speech-row reverse">
+                    <div class="speech-text">
+                        <strong>С</strong>оня по<strong>с</strong>тавила <strong>с</strong>такан <strong>с</strong>ока на подно<strong>с</strong>. <strong>С</strong>ерёжа <strong>с</strong>казал: «<strong>С</strong>па<strong>с</strong>ибо за вку<strong>с</strong>ный <strong>с</strong>ок».
+                    </div>
+                    <div class="speech-image">
+                        <img src="images/lesson-2-10-2.png" alt="Соня и Серёжа">
+                    </div>
+                </div>
+
+                <div class="speech-row">
+                    <div class="speech-text">
+                        В авгу<strong>с</strong>те <strong>с</strong>озрела <strong>с</strong>ладкая <strong>с</strong>вёкла. <strong>С</strong>вета <strong>с</strong>варила <strong>с</strong>векольный <strong>с</strong>уп и <strong>с</strong>делала <strong>с</strong>алат из <strong>с</strong>вёклы.
+                    </div>
+                    <div class="speech-image">
+                        <img src="images/lesson-2-10-3.png" alt="Света и свёкла">
+                    </div>
+                </div>
+
+                <div class="speech-row reverse">
+                    <div class="speech-text">
+                        <strong>С</strong>олнце <strong>с</strong>ело за <strong>с</strong>елом. У<strong>с</strong>нули птицы. <strong>С</strong>пит <strong>с</strong>тепь, ле<strong>с</strong> и <strong>с</strong>ады.
+                    </div>
+                    <div class="speech-image">
+                        <img src="images/lesson-2-10-4.png" alt="Закат в селе">
+                    </div>
+                </div>
+            </div>
+
+            <div id="res-10" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-10" class="green-check-btn-final">Прочитано</button>
+            </div>
+        </div>
+
+
+
+
+
+        
+    </div>
+    <script src="lesson-2.js"></script>
+</body>
+</html>
