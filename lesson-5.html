@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 5. Автоматизация звука «С»</title>
+    <link rel="stylesheet" href="lesson-5.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <div class="lesson-badge">Занятие 5. Автоматизация звуков «С» и «С'»</div>
+            <p class="user-info">Ученик: <span id="child-name-display"></span> | Дата: <span id="lesson-date-display"></span></p>
+        </header>
+
+        <div class="white-card" id="task-1">
+            <h2 class="card-title">Задание 1. Назови картинки</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction">Внимательно посмотри на картинки. Назови предметы чётко проговаривая каждый звук. Выдели только те картинки, названия предметов на которых начинается со звука «С’».</p>
+            
+            <div class="image-selection-grid">
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/setka.png" alt="сетка">
+                    <span class="img-label">сетка</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/desyat.png" alt="десять">
+                    <span class="img-label">десять</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/karas.png" alt="карась">
+                    <span class="img-label">карась</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/sedlo.png" alt="седло">
+                    <span class="img-label">седло</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/seno.png" alt="сено">
+                    <span class="img-label">сено</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/besedka.png" alt="беседка">
+                    <span class="img-label">беседка</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/sergi.png" alt="серьги">
+                    <span class="img-label">серьги</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/sito.png" alt="сито">
+                    <span class="img-label">сито</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/osina.png" alt="осина">
+                    <span class="img-label">осина</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/nosilki.png" alt="носилки">
+                    <span class="img-label">носилки</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/seif.png" alt="сейф">
+                    <span class="img-label">сейф</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/osel.png" alt="осёл">
+                    <span class="img-label">осёл</span>
+                </div>
+                <div class="selectable-item" data-correct="true">
+                    <img src="images/sem.png" alt="семь">
+                    <span class="img-label">семь</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/lestnica.png" alt="лестница">
+                    <span class="img-label">лестница</span>
+                </div>
+                <div class="selectable-item" data-correct="false">
+                    <img src="images/vasilek.png" alt="василёк">
+                    <span class="img-label">василёк</span>
+                </div>
+             
+            </div>
+
+            <div id="res-1" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-1" class="green-check-btn-final">Проверить</button>
+            </div>
+        </div>
+
+        <div class="white-card" id="task-2">
+    <h2 class="card-title">Задание 2. Придумай предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посмотри внимательно на пары картинок и придумай интересные предложения с ними.</p>
+
+    <div class="task-2-layout">
+        <div class="pairs-row">
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/gus.png" alt="гусь">
+                    <img src="images/pismo.png" alt="письмо">
+                </div>
+            </div>
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/los.png" alt="лось">
+                    <img src="images/seno.png" alt="сено">
+                </div>
+            </div>
+        </div>
+        <div class="input-row">
+            <input type="text" class="sentence-input" placeholder="Предложение про гуся и письмо...">
+            <input type="text" class="sentence-input" placeholder="Предложение про лося и сено...">
+        </div>
+
+        <div class="pairs-row">
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/osminog.png" alt="осьминог">
+                    <img src="images/vosem.png" alt="восемь">
+                </div>
+            </div>
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/karas.png" alt="карась">
+                    <img src="images/bassein.png" alt="бассейн">
+                </div>
+            </div>
+        </div>
+        <div class="input-row">
+            <input type="text" class="sentence-input" placeholder="Предложение про осьминога...">
+            <input type="text" class="sentence-input" placeholder="Предложение про карася...">
+        </div>
+
+        <div class="pairs-row">
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/taksi.png" alt="такси">
+                    <img src="images/apelsin.png" alt="апельсин">
+                </div>
+            </div>
+            <div class="pair-item-wrapper">
+                <div class="pair-visual">
+                    <img src="images/snegir.png" alt="снегирь">
+                    <img src="images/snegovik.png" alt="снеговик">
+                </div>
+            </div>
+        </div>
+        <div class="input-row">
+            <input type="text" class="sentence-input" placeholder="Предложение про такси...">
+            <input type="text" class="sentence-input" placeholder="Предложение про снегиря...">
+        </div>
+    </div>
+
+    <div id="res-2" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-2" class="green-check-btn-final">Готово</button>
+    </div>
+</div>
+<div class="white-card" id="task-3">
+    <h2 class="card-title">Задание 3. Посчитай</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посчитай предметы от 1 до 5 проговаривая вслух</p>
+
+    <div class="task-3-grid">
+        <div class="count-card">
+            <img src="images/lestnica.png" alt="лестница">
+            <div class="number-row yellow-theme">
+                <div class="num-circle">1</div>
+                <div class="num-circle">2</div>
+                <div class="num-circle">3</div>
+                <div class="num-circle">4</div>
+                <div class="num-circle">5</div>
+            </div>
+        </div>
+
+        <div class="count-card">
+            <img src="images/beads-8.png" alt="бусы">
+            <div class="number-row red-theme">
+                <div class="num-circle">1</div>
+                <div class="num-circle">2</div>
+                <div class="num-circle">3</div>
+                <div class="num-circle">4</div>
+                <div class="num-circle">5</div>
+            </div>
+        </div>
+
+        <div class="count-card">
+            <img src="images/vasilek.png" alt="василёк">
+            <div class="number-row blue-theme">
+                <div class="num-circle">1</div>
+                <div class="num-circle">2</div>
+                <div class="num-circle">3</div>
+                <div class="num-circle">4</div>
+                <div class="num-circle">5</div>
+            </div>
+        </div>
+
+        <div class="count-card">
+            <img src="images/besedka.png" alt="беседка">
+            <div class="number-row green-theme">
+                <div class="num-circle">1</div>
+                <div class="num-circle">2</div>
+                <div class="num-circle">3</div>
+                <div class="num-circle">4</div>
+                <div class="num-circle">5</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-3" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-4">
+    <h2 class="card-title">Задание 4. Игра «Эхо»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Образуй слова-признаки от слов-предметов по образцу.</p>
+
+    <div class="echo-wrapper">
+        <div class="echo-section">
+            <div class="echo-headers">
+                <div class="spacer"></div>
+                <div class="header-item">день</div>
+                <div class="header-item">погода</div>
+                <div class="header-item">настроение</div>
+            </div>
+            
+            <div class="echo-row">
+                <span class="echo-label">осень —</span>
+                <div class="echo-input-container">
+                    <input type="text" class="echo-line-input">
+                    <div class="echo-underline"></div>
+                </div>
+            </div>
+
+            <div class="echo-row">
+                <span class="echo-label">весна —</span>
+                <div class="echo-input-container">
+                    <input type="text" class="echo-line-input">
+                    <div class="echo-underline"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="echo-section">
+            <div class="echo-headers">
+                <div class="spacer"></div>
+                <div class="header-item">ветка</div>
+                <div class="header-item">лист</div>
+                <div class="header-item">полено</div>
+            </div>
+
+            <div class="echo-row">
+                <span class="echo-label">у ясеня —</span>
+                <div class="echo-input-container">
+                    <input type="text" class="echo-line-input">
+                    <div class="echo-underline"></div>
+                </div>
+            </div>
+
+            <div class="echo-row">
+                <span class="echo-label">у осины —</span>
+                <div class="echo-input-container">
+                    <input type="text" class="echo-line-input">
+                    <div class="echo-underline"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-4" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+<div class="white-card" id="task-5">
+    <h2 class="card-title">Задание 5. Скороговорки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Повтори скороговорки. Соедини скороговорку с картинкой (кликни на текст, а затем на нужную картинку).</p>
+
+    <div class="tongue-twister-container">
+        <div class="twister-list">
+            <div class="twister-item" data-id="karas">Ся-ся-ся - Вася ловит карася.</div>
+            <div class="twister-item" data-id="milk">Сё-сё-сё - молоко пролили всё.</div>
+            <div class="twister-item" data-id="porridge">Сю-сю-сю - дети кашу съели всю.</div>
+            <div class="twister-item" data-id="taxi">Си-си-си - едет кошка на такси.</div>
+            <div class="twister-item" data-id="squirrel">Се-се-се - скачет белка в колесе.</div>
+        </div>
+
+        <div class="twister-images">
+            <div class="img-card" data-id="taxi"><img src="images/lesson-5-5-4.png" alt="такси"></div>
+            <div class="img-card" data-id="squirrel"><img src="images/lesson-5-5-5.png" alt="белка"></div>
+            <div class="img-card" data-id="milk"><img src="images/lesson-5-5-1.png" alt="молоко"></div>
+            <div class="img-card" data-id="porridge"><img src="images/lesson-5-5-3.png" alt="каша"></div>
+            <div class="img-card" data-id="karas"><img src="images/lesson-5-5-2.png" alt="карась"></div>
+            <div class="img-card" data-id="fox"><img src="images/lesson-5-5-6.png" alt="лиса"></div>
+        </div>
+    </div>
+
+    <div id="res-5" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-5" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-6">
+    <h2 class="card-title">Задание 6. Определи место звука</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Назови картинки. Определи, где слышится звук [с’]: в начале, в середине или в конце слова. Нажми на нужную клеточку.</p>
+
+    <div class="sound-place-grid">
+        <div class="sound-item">
+            <img src="images/serdce.png" alt="сердце">
+            <div class="cells" data-correct="0"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/seif.png" alt="сейф">
+            <div class="cells" data-correct="0"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/pismo.png" alt="письмо">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/osminog.png" alt="осьминог">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/pig.png" alt="поросёнок">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/osel.png" alt="осёл">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/gusenica.png" alt="гусеница">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/gus.png" alt="гусь">
+            <div class="cells" data-correct="2"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/vosem.png" alt="восемь">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/setka.png" alt="сетка">
+            <div class="cells" data-correct="0"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/sergi.png" alt="серьги">
+            <div class="cells" data-correct="0"><div></div><div></div><div></div></div>
+        </div>
+        <div class="sound-item">
+            <img src="images/taksi.png" alt="такси">
+            <div class="cells" data-correct="1"><div></div><div></div><div></div></div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-6" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+<div class="white-card" id="task-7">
+    <h2 class="card-title">Задание 7. Отправь животных в сарай</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди животных, в названии которых есть мягкий звук [с’]. Перетащи их мышкой в сарай. Если всё верно — животное спрячется!</p>
+
+    <div class="barn-container">
+        <div class="animals-pool" id="animals-pool">
+           
+            <img src="images/lesson-5-7-indi.png" class="drag-animal" data-sound="no" alt="индюшка" draggable="true">
+            <img src="images/lesson-5-7-pig.png" class="drag-animal" data-sound="yes" alt="поросёнок" draggable="true">
+            <img src="images/lesson-5-7-cow.png" class="drag-animal" data-sound="no" alt="корова" draggable="true">
+            <img src="images/lesson-5-7-gus.png" class="drag-animal" data-sound="yes" alt="гусь" draggable="true">
+           
+            
+            <img src="images/lesson-5-7-horse.png" class="drag-animal" data-sound="no" alt="лошадь" draggable="true">
+             <img src="images/lesson-5-7-osel.png" class="drag-animal" data-sound="yes" alt="осёл" draggable="true">
+            <img src="images/lesson-5-7-ram.png" class="drag-animal" data-sound="no" alt="баран" draggable="true">
+            <img src="images/lesson-5-7-cock.png" class="drag-animal" data-sound="no" alt="петух" draggable="true">
+             <img src="images/lesson-5-7-duck.png" class="drag-animal" data-sound="yes" alt="селезень" draggable="true">
+        </div>
+
+        <div class="barn-zone" id="drop-zone-7">
+            <img src="images/lesson-5-7-0.png" alt="сарай" class="barn-img">
+            <div class="barn-overlay"></div>
+        </div>
+    </div>
+
+    <div id="res-7" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-7" class="green-check-btn-final">Проверить</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-8">
+    <h2 class="card-title">Задание 8. Собери слово по первым звукам</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посмотри на картинки. Определи первый звук в каждом слове, впиши букву в клеточку и прочитай, какое слово получилось.</p>
+
+    <div class="word-builder-container">
+        <div class="letter-grid">
+            <div class="letter-box">
+                <img src="images/lesson-5-8-1.png" alt="сирень">
+                <input type="text" maxlength="1" class="letter-input" data-correct="С">
+            </div>
+            <div class="letter-box">
+                <img src="images/osina.png" alt="осина">
+                <input type="text" maxlength="1" class="letter-input" data-correct="О">
+            </div>
+            <div class="letter-box">
+                <img src="images/lesson-5-8-3.png" alt="синица">
+                <input type="text" maxlength="1" class="letter-input" data-correct="С">
+            </div>
+            <div class="letter-box">
+                <img src="images/lesson-5-7-indi.png" alt="индюшка">
+                <input type="text" maxlength="1" class="letter-input" data-correct="И">
+            </div>
+            <div class="letter-box">
+                <img src="images/lesson-5-8-5.png" alt="сойка">
+                <input type="text" maxlength="1" class="letter-input" data-correct="С">
+            </div>
+            <div class="letter-box">
+                <img src="images/lesson-5-8-6.png" alt="касатка">
+                <input type="text" maxlength="1" class="letter-input" data-correct="К">
+            </div>
+            <div class="letter-box">
+                <img src="images/lesson-5-8-7.png" alt="ананас">
+                <input type="text" maxlength="1" class="letter-input" data-correct="А">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-8" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-8" class="green-check-btn-final">ПРОВЕРИТЬ СЛОВО</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-9">
+    <h2 class="card-title">Задание 9. Придумай предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">1. Прочитай предложения и соотнеси их с картинками (перетащи текст). 2. Рассмотри большую картинку внизу и напиши своё предложение, где все слова начинаются на «С».</p>
+
+    <div class="task-9-content">
+        <div class="sentences-pool" id="sentences-source">
+            <div class="drag-sentence" draggable="true" data-match="elephants">Семь серых слонов собирают сирень</div>
+            <div class="drag-sentence" draggable="true" data-match="birds">Сойка и Синица спрятались в сено</div>
+            <div class="drag-sentence" draggable="true" data-match="gopher">Суслик спокойно стоит у старой сосны</div>
+            <div class="drag-sentence" draggable="true" data-match="bullfinches">Смешные снегири сидят среди сугробов</div>
+        </div>
+
+        <div class="images-targets-row">
+            <div class="target-box" data-id="birds">
+                <img src="images/lesson-5-9-2.png" alt="птицы">
+                <div class="drop-zone-text"></div>
+            </div>
+            <div class="target-box" data-id="elephants">
+                <img src="images/lesson-5-9-1.png" alt="слоны">
+                <div class="drop-zone-text"></div>
+            </div>
+            <div class="target-box" data-id="bullfinches">
+                <img src="images/lesson-5-9-4.png" alt="снегири">
+                <div class="drop-zone-text"></div>
+            </div>
+            <div class="target-box" data-id="gopher">
+                <img src="images/lesson-5-9-3.png" alt="суслик">
+                <div class="drop-zone-text"></div>
+            </div>
+        </div>
+
+        <div class="creative-full-width">
+            <div class="creative-box-inner">
+                <img src="images/lesson-5-9-5.png" alt="Птицы читают книгу" class="creative-img-large">
+                <div class="creative-input-group">
+                    <label for="creative-input">Твоё предложение на «С»:</label>
+                    <input type="text" id="creative-input" placeholder="Введите предложение...">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-9" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-9" class="green-check-btn-final">Проверить всё</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script src="lesson-5.js"></script>
+</body>
+</html>
