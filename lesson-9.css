@@ -1,0 +1,672 @@
+body {
+    margin: 0; padding: 0;                    /* Полное удаление стандартных отступов браузера */
+    background-color: #99dfff;                /* Светло-голубой фон всей страницы — основной цвет темы */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif;
+    /* Основной шрифт — Comic Sans MS (детская/игровая стилистика), запасной — Arial */
+}
+
+.content-wrapper {
+    padding: 30px 10px;                       /* Внутренние отступы: большие сверху/снизу, умеренные по бокам */
+}
+
+/* Заголовочная часть страницы */
+.main-header {
+    text-align: center;                       /* Центрирование всего содержимого заголовка */
+    margin-bottom: 30px;                      /* Отступ снизу перед основным контентом */
+}
+
+/* Бейдж / ярлык с номером или названием занятия */
+.lesson-badge {
+    display: inline-block;                    /* Позволяет задавать padding и ширину блоку inline-уровня */
+    background: #fff9c4;                      /* Очень светлый жёлтый фон */
+    padding: 12px 50px;                       /* Горизонтальные отступы значительно больше вертикальных — вытянутая форма */
+    border-radius: 15px;                      /* Скруглённые углы */
+    color: #ff6d00;                           /* Ярко-оранжевый цвет текста */
+    font-weight: bold;
+    font-size: 2.5em;                         /* Крупный размер для акцента */
+    border: 3px solid #fff;                   /* Белая рамка для контраста на жёлтом фоне */
+}
+
+/* Информация о пользователе (имя, уровень, дата и т.п.) */
+.user-info {
+    font-size: 1.2em;
+    color: #546e7a;                           /* Тёмно-серо-голубой цвет (спокойный, нейтральный) */
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Основная белая карточка с содержимым занятия */
+.white-card {
+    background: #f0faff;                      /* Очень светлый голубовато-белый фон */
+    border: 8px solid #ffd600;                /* Толстая ярко-жёлтая рамка — основной визуальный акцент */
+    border-radius: 45px;                      /* Очень сильное скругление углов — мягкий, дружелюбный вид */
+    padding: 20px;                            /* Значительные внутренние отступы */
+    margin: 0 auto 20px auto;                 /* Горизонтальное центрирование + отступ снизу */
+    max-width: 1050px;                        /* Ограничение максимальной ширины для читаемости */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);  /* Мягкая тень для эффекта «поднятия» карточки */
+}
+
+.card-title {
+    color: #ff7043;                           /* Оранжевый цвет заголовка (согласуется с кнопкой) */
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.yellow-divider {
+    height: 6px;
+    background: #ffd600;                      /* Жёлтая полоса-разделитель */
+    width: 80%;                               /* Не на всю ширину — выглядит аккуратнее */
+    margin: 0 auto 10px auto;                 /* Центрирование + отступ снизу */
+    border-radius: 3px;                       /* Небольшие скруглённые концы */
+}
+
+/* Текст скороговорки (основной рабочий элемент) */
+.tongue-twister-text {
+    font-size: 1.8em;                    /* Крупный размер для удобства чтения детьми */
+    line-height: 1.3;                    /* Увеличенный межстрочный интервал для лучшей читаемости */
+    color: #2c3e50;                      /* Тёмно-синий цвет текста */
+    text-align: center;                  /* Выравнивание текста по центру блока */
+    font-weight: bold;
+    margin: 30px auto 30px auto;         /* Вертикальные отступы + горизонтальное центрирование блока */
+    max-width: 90%;                      /* Ограничение ширины текста для удобства чтения на широких экранах */
+    padding: 0 15px;                     /* Небольшие внутренние боковые отступы (опционально) */
+}
+
+.card-instruction-multi {
+    font-size: 1.8em;
+    color: #1565c0;   
+    margin-left: 60px;                           /* Ярко-синий цвет инструкции */
+    font-weight: bold;
+    margin-bottom: 1px;
+}
+
+/* Список устных вопросов (для логопеда или самопроверки) */
+.oral-questions {                        /* Контейнер списка устных вопросов */
+    font-size: 1.6em;                    /* Размер шрифта списка */
+    color: #37474f;                      /* Тёмно-серо-синий цвет текста */
+    margin-left: 60px;                   /* Отступ слева для визуального выделения */
+    margin-bottom: 10px;                 /* Отступ снизу до следующего блока */
+}
+
+.oral-questions li {                     /* Каждый пункт списка */
+    margin-bottom: 3px;                  /* Минимальный вертикальный зазор между пунктами */
+}
+
+.sentences-grid {                        /* Сетка для размещения предложений / фраз */
+    display: grid;                       /* Использование CSS Grid */
+    grid-template-columns: 1fr 1fr;      /* Две равные по ширине колонки */
+    gap: 25px 50px;                      /* 25 px между строками, 50 px между колонками */
+    margin-bottom: 40px;                 /* Отступ снизу до следующего элемента */
+}
+
+.s-item {                                /* Элемент сетки (обычно пара: текст + поле ввода) */
+    display: flex;                       /* Flex-контейнер */
+    flex-direction: column;              /* Вертикальное расположение дочерних элементов */
+    font-size: 1.3em;                    /* Размер шрифта внутри элемента */
+    font-weight: bold;                   /* Полужирное начертание */
+    color: #2c3e50;                      /* Тёмно-синий цвет текста */
+}
+
+input.upper-large-input {                /* Поле ввода в верхнем регистре (большое) */
+    text-transform: uppercase !important; /* Принудительный верхний регистр текста */
+    font-size: 1.1em !important;         /* Размер шрифта */
+    font-weight: bold !important;        /* Жирное начертание */
+    font-family: 'Comic Sans MS', sans-serif; /* Шрифт, характерный для детских интерфейсов */
+    padding: 10px;                       /* Внутренние отступы поля */
+    border: 3px solid #90caf9;           /* Светло-голубая рамка */
+    border-radius: 15px;                 /* Скругление углов */
+    margin-top: 5px;                     /* Отступ сверху от метки/текста */
+}
+
+.image-full-width {                      /* Контейнер изображения на всю ширину */
+    width: 100%;                         /* Полная ширина родителя */
+    margin: 30px 0;                      /* Вертикальные отступы 30 px */
+}
+
+.image-full-width img {                  /* Само изображение внутри контейнера */
+    width: 100%;                         /* Растягивается на всю ширину контейнера */
+    border-radius: 20px;                 /* Скругление углов картинки */
+    display: block;                      /* Убирает нижний зазор, свойственный inline-элементам */
+}
+
+.orange-check-btn {                      /* Кнопка проверки / подтверждения (оранжевая) */
+    background: #ff7043;                 /* Основной оранжевый фон */
+    color: #fff;                         /* Белый цвет текста */
+    border: none;                        /* Без рамки */
+    padding: 15px 45px;                  /* Вертикальные и горизонтальные отступы */
+    font-size: 1.8em;                    /* Крупный размер шрифта */
+    font-weight: bold;                   /* Жирное начертание */
+    border-radius: 20px;                 /* Скругление углов кнопки */
+    cursor: pointer;                     /* Курсор-указатель при наведении */
+    box-shadow: 0 6px #e64a19;           /* Тень снизу для эффекта объёма */
+}
+
+.orange-check-btn:active {               /* Состояние нажатой кнопки */
+    box-shadow: 0 2px #e64a19;           /* Уменьшенная тень */
+    transform: translateY(4px);          /* Сдвиг вниз на 4 px — имитация нажатия */
+}
+
+.result-text {                           /* Текст результата проверки */
+    text-align: center;                  /* Центрирование текста */
+    font-size: 1.6em;                    /* Размер шрифта результата */
+    font-weight: bold;                   /* Жирное начертание */
+    margin-top: 20px;                    /* Отступ сверху */
+    min-height: 1.6em;                   /* Защита от скачков высоты при пустом/заполненном результате */
+}
+
+.btn-box {                               /* Контейнер для центрирования кнопки */
+    text-align: center;                  /* Горизонтальное центрирование дочерних элементов */
+}
+
+
+
+
+.card-instruction-multi {
+    font-size: 1.5em;
+    color: #011a37;
+    font-weight: bold;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+/* Стили для Задания 3 */
+.mystery-images-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.mystery-img-styled {
+    max-width: 100%; /* Ограничение шириной блока */
+    height: auto;
+    border-radius: 35px; /* Скругление картинки */
+  
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sentences-input-section {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.story-inputs-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sentence-field {
+    width: 100%;
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+/* Контейнер для картинки и списка */
+.task-4-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.task-4-image {
+    width: 100%;
+    max-width: 800px; /* Ограничение ширины картинки */
+}
+
+.rounded-task-img {
+    width: 100%;
+    border-radius: 25px;
+  
+}
+
+/* Список с уменьшенными отступами */
+.animals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Минимальный отступ между строками */
+    width: 100%;
+    max-width: 700px;
+}
+
+.animal-row-short {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.animal-label {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #2c3e50;
+    min-width: 180px;
+    text-align: right;
+}
+
+/* Инпут без верхнего регистра */
+.animal-input-plain {
+    flex: 1;
+    font-size: 1.4em;
+    font-family: 'Comic Sans MS', sans-serif;
+    padding: 5px 15px;
+    border: 3px solid #90caf9;
+    border-radius: 12px;
+    text-transform: none !important; /* Отмена верхнего регистра */
+    font-weight: bold;
+}
+
+
+/* ЗАДАНИЕ 5 */
+.task-image-wrap {
+    width: 100%;
+    max-width: 100%; /* Ограничение размером блока white-card */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.rounded-scene-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 40px; /* Скругление углов */
+ 
+}
+
+.story-text-content {
+    font-size: 1.5em; /* Текст под рисунком 1.5em */
+    line-height: 1.6;
+    color: #2c3e50;
+    text-align: justify;
+    padding: 0 10px;
+}
+
+.story-name {
+    text-align: center;
+    color: #ff7043;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+.crossword-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Сетка кроссворда */
+.cw-grid-fixed {
+    display: grid;
+    /* 11 колонок (включая цифры) по 45px */
+    grid-template-columns: repeat(11, 45px);
+    /* 5 строк по 45px */
+    grid-template-rows: repeat(5, 45px);
+    gap: 5px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+.cw-cell {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #1565c0;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+    background: #fff;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.static-cell {
+    background-color: #e3f2fd;
+    border: 3px solid #0d47a1;
+    color: #0d47a1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cw-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ff7043;
+}
+
+.cw-hints {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    align-self: flex-start;
+    margin-top: 20px;
+}
+
+.cw-hints ol {
+    margin-left: 40px;
+}
+
+
+/* ЗАДАНИЕ 7. СУП */                          /* Заголовок-комментарий раздела "Суп" */
+.cooking-container {                            /* Основной flex-контейнер задания */
+    display: flex;                              /* Включает flex-контекст */
+    justify-content: space-between;             /* Распределяет пространство между элементами максимально */
+    gap: 20px;                                  /* Устанавливает зазор между flex-элементами */
+    margin-top: 20px;                           /* Добавляет отступ сверху от предыдущего блока */
+}
+.products-grid {                                /* Контейнер сетки продуктов */
+    display: grid;                              /* Включает grid-контекст */
+    grid-template-columns: repeat(4, 1fr);      /* Создаёт четыре равные колонки */
+    gap: 10px;                                  /* Задаёт отступ между элементами сетки */
+    width: 60%;                                 /* Устанавливает ширину блока продуктов */
+}
+.product-card {                                 /* Стили отдельной карточки продукта */
+    border: 2px solid #eee;                     /* Тонкая серая рамка вокруг карточки */
+    border-radius: 12px;                        /* Скругляет углы карточки */
+    padding: 5px;                               /* Внутренние отступы внутри карточки */
+    cursor: grab;                               /* Курсор «захват» — указывает на drag-возможность */
+    background: #fff;                           /* Белый фон карточки */
+    transition: opacity 0.3s;                   /* Плавное изменение прозрачности за 0,3 секунды */
+}
+.product-card img {                             /* Изображение внутри карточки продукта */
+    width: 100%;                                /* Изображение занимает всю ширину карточки */
+    display: block;                             /* Устраняет нижний зазор под изображением */
+}
+/* Эффект бледности и неактивности */          /* Комментарий к следующему правилу */
+.product-card.inactive {                        /* Модификатор для неактивной/использованной карточки */
+    opacity: 0.3;                               /* Сильно снижает прозрачность */
+    pointer-events: none;                       /* Полностью отключает события мыши */
+    filter: grayscale(0.8);                     /* Применяет сильный эффект чёрно-белого */
+}
+.cook-zone {                                    /* Контейнер зоны приготовления */
+    position: relative;                         /* Необходим для абсолютного позиционирования внутри */
+    width: 35%;                                 /* Занимает 35% ширины родителя */
+}
+.ksusha-img {                                   /* Изображение персонажа или кастрюли */
+    width: 100%;                                /* Растягивается на всю ширину контейнера */
+    border-radius: 20px;                        /* Скругляет углы изображения */
+}
+.drop-area {                                    /* Зона, принимающая сброшенные элементы */
+    position: absolute;                         /* Абсолютное позиционирование относительно .cook-zone */
+    top: 40%;                                   /* Расположение сверху на 40% высоты родителя */
+    left: 10%;                                  /* Отступ слева 10% ширины родителя */
+    width: 50%;                                 /* Ширина зоны сброса */
+    height: 30%;                                /* Высота зоны сброса */
+    /* border: 2px dashed red; */               /* Отладочная рамка (закомментирована) */
+}
+
+/* ЗАДАНИЕ 7. ГОРЯЧИЙ ЦЕХ */                    /* Заголовок-комментарий другого варианта задания */
+.cooking-container {                            /* Основной flex-контейнер (вариант "Горячий цех") */
+    display: flex;                              /* Включает flex-контекст */
+    justify-content: space-between;             /* Максимальное расстояние между блоками */
+    align-items: flex-start;                    /* Выравнивает элементы по верхнему краю */
+    gap: 10px;                                  /* Увеличенный зазор между блоками */
+    margin: 5px 0;                             /* Вертикальные отступы снаружи */
+}
+.products-grid {                                /* Сетка продуктов (вариант "Горячий цех") */
+    display: grid;                              /* Включает grid-контекст */
+    grid-template-columns: repeat(4, 1fr);      /* Четыре равные колонки */
+    gap: 5px;                                  /* Отступ между карточками продуктов */
+    width: 60%;                                 /* Ширина блока продуктов */
+}
+.product-card {                                 /* Карточка продукта (вариант "Горячий цех") */
+    background: #fff;                           /* Белый фон карточки */
+    border: 2px solid #f0f0f0;                  /* Более светлая рамка */
+    border-radius: 15px;                        /* Скругление углов карточки */
+    padding: 8px;                               /* Внутренние отступы */
+    cursor: grab;                               /* Курсор перетаскивания */
+    transition: 0.3s;                           /* Плавный переход всех изменяемых свойств */
+}
+.product-card img {                             /* Изображение внутри карточки */
+    width: 100%;                                /* Полная ширина карточки */
+    display: block;                             /* Убирает нижний зазор */
+}
+.product-card.inactive {                        /* Неактивная карточка (вариант "Горячий цех") */
+    opacity: 0.3;                               /* Снижение прозрачности */
+    pointer-events: none;                       /* Отключение событий мыши */
+    filter: grayscale(1);                       /* Полное обесцвечивание */
+}
+.cook-zone {                                    /* Зона приготовления (вариант "Горячий цех") */
+    position: relative;                         /* Для абсолютного позиционирования drop-target */
+    width: 45%;                                 /* Ширина зоны */
+}
+.ksusha-img {                                   /* Изображение персонажа/посуды */
+    width: 100%;                                /* Полная ширина контейнера */
+    border-radius: 25px;                        /* Скругление углов */
+}
+.drop-target {                                  /* Целевая зона сброса (вариант "Горячий цех") */
+    position: absolute;                         /* Абсолютное позиционирование */
+    top: 40%;                                   /* Положение сверху */
+    left: 10%;                                  /* Положение слева */
+    width: 50%;                                 /* Ширина зоны */
+    height: 30%;                                /* Высота зоны */
+}
+
+/* КНОПКИ УПРАВЛЕНИЯ */                        /* Заголовок-комментарий блока кнопок */
+.task-btn {                                     /* Базовый стиль всех кнопок задания */
+    border: none;                               /* Убирает стандартную рамку */
+    padding: 15px 45px;                         /* Вертикальные и горизонтальные отступы */
+    font-size: 1.6em;                           /* Крупный размер шрифта */
+    font-weight: bold;                          /* Жирное начертание текста */
+    border-radius: 18px;                        /* Скругление углов кнопки */
+    cursor: pointer;                            /* Курсор-указатель при наведении */
+    color: white;                               /* Цвет текста — белый */
+    font-family: 'Comic Sans MS', sans-serif;   /* Детский/игровой шрифт */
+    transition: transform 0.1s, box-shadow 0.1s;/* Быстрая анимация нажатия */
+    margin: 0 10px;                             /* Горизонтальные отступы между кнопками */
+}
+.btn-green {                                    /* Стили зелёной кнопки */
+    background: #4caf50;                        /* Основной зелёный фон */
+    box-shadow: 0 5px #388e3c;                  /* Тень для эффекта объёма */
+}
+.btn-green:active {                             /* Состояние нажатой зелёной кнопки */
+    transform: translateY(4px);                 /* Сдвиг вниз на 4 пикселя */
+    box-shadow: 0 1px #388e3c;                  /* Сильно уменьшенная тень */
+}
+.btn-orange {                                   /* Стили оранжевой кнопки */
+    background: #ff7043;                        /* Основной оранжевый фон */
+    box-shadow: 0 5px #e64a19;                  /* Тень для эффекта объёма */
+}
+.btn-orange:active {                            /* Состояние нажатой оранжевой кнопки */
+    transform: translateY(4px);                 /* Сдвиг вниз на 4 пикселя */
+    box-shadow: 0 1px #e64a19;                  /* Сильно уменьшенная тень */
+}
+
+
+/* ЗАДАНИЕ 8: СТИЛИ И ПОЗИЦИОНИРОВАНИЕ */
+.clouds-game-area { display: flex; justify-content: space-between; align-items: center; padding: 40px; background: #f0faff; border-radius: 40px; min-height: 550px; position: relative; } /* Фон и отступы зоны */
+.giraffe-box { position: relative; width: 250px; z-index: 5; } /* Контейнер для наложения солнца за жирафа */
+.img-giraffe { width: 100%; position: relative; z-index: 10; } /* Жираф всегда выше солнца */
+
+.sun-anim { position: absolute; top: 20px; left: 50%; transform: translateX(-50%) scale(0); font-size: 100px; opacity: 0; z-index: 1; transition: all 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275); } /* Солнце спрятано */
+.sun-anim.visible { opacity: 1 !important; transform: translateX(-50%) scale(1.2) !important; top: -110px !important; } /* Анимация появления солнца */
+
+.clouds-fixed-grid { position: relative; width: 520px; height: 450px; } /* Размеры области с облаками */
+.cloud-wrapper { position: absolute; width: 180px; height: 110px; cursor: pointer; display: flex; align-items: center; justify-content: center; } /* Обертка облака */
+
+/* Точные координаты облаков по картинке */
+.pos-top { top: 0; left: 170px; } 
+.pos-l1 { top: 115px; left: 10px; } 
+.pos-r1 { top: 115px; left: 330px; } 
+.pos-l2 { top: 270px; left: 10px; } 
+.pos-r2 { top: 270px; left: 330px; } 
+.pos-l3 { top: 400px; left: 110px; } 
+.pos-r3 { top: 400px; left: 340px; }
+
+.cloud-cover { width: 100%; height: 100%; position: absolute; z-index: 3; transition: opacity 0.5s ease; pointer-events: auto; } /* Изображение cloude.png */
+.cloud-wrapper.opened .cloud-cover { opacity: 0; pointer-events: none; } /* Исчезновение при клике */
+.hidden-word { font-size: 1.9rem; font-weight: bold; color: #1565c0; z-index: 2; text-transform: uppercase; font-family: 'Comic Sans MS', sans-serif; } /* Слово под облаком */
+
+
+
+/* ЗАДАНИЕ 9. МЫЛЬНЫЕ ПУЗЫРИ */
+.bubble-game-container {                        /* Основной контейнер всей игры с пузырьками */
+    position: relative;                         /* Родитель для абсолютного позиционирования дочерних элементов */
+    width: 100%;                                /* Занимает всю доступную ширину родителя */
+    height: 500px;                              /* Фиксированная высота игрового поля */
+    
+    margin: 20px 0;                             /* Вертикальные внешние отступы */
+    overflow: hidden;                           /* Скрывает всё, что выходит за границы контейнера */
+}
+
+.inner-giraffe {                                /* Изображение жирафа внутри игрового поля */
+    position: absolute;                         /* Абсолютное позиционирование относительно .bubble-game-container */
+    top: 50%;                                   /* Вертикальное положение — середина контейнера */
+    left: 50%;                                  /* Горизонтальное положение — 40% от левого края */
+    transform: translate(-60%, -55%);           /* Смещение на половину собственной ширины и высоты для точного центрирования */
+    width: 520px;                               /* Фиксированная ширина изображения жирафа */
+    z-index: 1;                                 /* Уровень слоя — выше пузырьков (если z-index пузырьков ниже) */
+}
+
+.bubble-track {                                 /* Контейнер / трек для движения пузырьков */
+    position: relative;                         /* Родитель для абсолютного позиционирования пузырьков */
+    width: 100%;                                /* Полная ширина родительского контейнера */
+    height: 100%;                               /* Полная высота родительского контейнера */
+}
+
+.bubble-item {                                  /* Отдельный элемент-пузырёк */
+    position: absolute;                         /* Абсолютное позиционирование внутри .bubble-track */
+    display: flex;                              /* Flex-контекст для центрирования содержимого внутри пузырька */
+    align-items: center;                        /* Вертикальное центрирование содержимого */
+    justify-content: center;                    /* Горизонтальное центрирование содержимого */
+    cursor: pointer;                            /* Курсор-указатель — элемент кликабелен */
+    transition: transform 0.2s;                 /* Плавное изменение трансформации за 0,2 секунды (масштаб, поворот и т.п.) */
+}
+/* Стилизация мыльного пузыря через CSS (эффект перелива) */
+.soap-bubble {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.8), 
+                0 0 10px rgba(173, 216, 230, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 3;
+    transition: all 0.3s ease-out;
+}
+
+/* Анимация лопанья */
+.bubble-item.popped .soap-bubble {
+    transform: scale(1.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.b-word {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #011412;
+    z-index: 2;
+}
+
+/* Расстановка пузырей по траектории (координаты) */
+.b1 { top: 100px; left: 50px; width: 140px; height: 140px; } /* Самый большой */
+.b2 { top: 24px; left: 210px; width: 90px; height: 90px; }
+.b3 { top: 14px; left: 310px; width: 95px; height: 95px; }
+.b4 { top: 33px; left: 420px; width: 100px; height: 100px; }
+.b5 { top: 55px; left: 550px; width: 95px; height: 95px; }
+.b6 { top: 62px; left: 670px; width: 90px; height: 90px; }
+.b7 { top: 124px; left: 770px; width: 115px; height: 115px; }
+.b8 { top: 250px; left: 820px; width: 95px; height: 95px; }
+.b9 { top: 350px; left: 720px; width: 105px; height: 105px; }
+.b10 { top: 380px; left: 585px; width: 110px; height: 110px; }
+.b11 { top: 360px; left: 445px; width: 100px; height: 100px; }
+.b12 { top: 340px; left: 320px; width: 105px; height: 105px; }
+.b13 { top: 370px; left: 180px; width: 110px; height: 110px; }
+.b14 { top: 270px; left: 80px; width: 110px; height: 110px; }
+
+/* Задание 10 */
+/* Таблица ключей */                            
+
+.cipher-key-container {                         /* Контейнер всей таблицы ключа */
+    margin: 20px auto;                          /* Вертикальный отступ + горизонтальное центрирование */
+    width: fit-content;                         /* Ширина определяется содержимым (не растягивается) */
+}
+
+.cipher-table {                                 /* Стили таблицы ключа шифрования */
+    border-collapse: collapse;                  /* Убирает двойные границы между ячейками */
+    background: #fff;                           /* Белый фон таблицы */
+}
+
+.cipher-table td {                              /* Каждая ячейка таблицы */
+    border: 1px solid #333;                     /* Тёмная рамка вокруг каждой ячейки */
+    width: 80px;                                /* Фиксированная ширина ячейки */
+    height: 70px;                               /* Фиксированная высота ячейки */
+    text-align: center;                         /* Центрирование содержимого */
+    font-weight: bold;                          /* Полужирное начертание */
+    font-size: 2.3rem;                          /* Размер шрифта в ячейках */
+}
+
+/* Сетка в 3 столбца */                        /* Заголовок раздела — область расшифровки */
+
+.decoding-grid-3col {                           /* Вертикальный контейнер для строк расшифровки */
+    display: flex;                              /* Включает flex-контекст */
+    flex-direction: column;                     /* Расположение строк друг под другом */
+    gap: 15px;                                  /* Отступ между строками */
+    margin: 20px 0;                             /* Вертикальные отступы снаружи блока */
+}
+
+.decode-row {                                   /* Одна строка расшифровки (3 колонки) */
+    display: grid;                              /* Включает grid-контекст */
+    grid-template-columns: 80px 1fr 1fr;        /* Колонки: номер/картинка | слово 1 | слово 2 */
+    align-items: center;                        /* Вертикальное центрирование элементов строки */
+    gap: 90px;                                  /* Отступ между элементами строки */
+}
+
+/* Блоки слов */                                /* Заголовок раздела — блоки с буквами слов */
+
+.word-block {                                   /* Контейнер букв одного слова */
+    display: flex;                              /* Flex-контекст для горизонтального расположения */
+    gap: 10px;                                   /* Небольшой зазор между буквами */
+}
+
+.single-char {                                  /* Модификатор для одиночных символов */
+    justify-content: flex-start;                /* Выравнивание содержимого по левому краю */
+}
+
+.cipher-item {                                  /* Один элемент шифра (буква + поле ввода) */
+    display: flex;                              /* Flex-контекст */
+    flex-direction: column;                     /* Вертикальное расположение символа и поля */
+    align-items: center;                        /* Горизонтальное центрирование */
+    background: #fff;                           /* Белый фон элемента */
+    border: 1px solid #81d4fa;                  /* Светло-голубая тонкая рамка */
+    border-radius: 8px;                         /* Небольшое скругление углов */
+    padding: 5px;                               /* Внутренние отступы */
+}
+
+.cipher-item input {                            /* Поле ввода внутри элемента шифра */
+    width: 75px;                                /* Фиксированная ширина поля */
+    height: 75px;                               /* Фиксированная высота поля */
+    text-align: center;                         /* Центрирование вводимого символа */
+    font-size: 2.2rem;                          /* Размер шрифта в поле */
+    font-weight: bold;                          /* Жирное начертание */
+    border: 1px solid #ccc;                     /* Серая рамка поля в обычном состоянии */
+    margin-top: 5px;                            /* Отступ сверху от символа */
+    text-transform: uppercase;                  /* Принудительный верхний регистр */
+}
+
+/* Подсветка ответов */                         /* Заголовок раздела — стили обратной связи */
+
+.cipher-item input.correct {                    /* Поле с правильно введённой буквой */
+    background: #dff0d8;                        /* Светло-зелёный фон */
+    border-color: #3c763d;                      /* Тёмно-зелёная рамка */
+}
+
+.cipher-item input.wrong {                      /* Поле с ошибочно введённой буквой */
+    background: #f2dede;                        /* Светло-красный фон */
+    border-color: #a94442;                      /* Тёмно-красная рамка */
+}
+
