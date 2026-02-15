@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Занятие 10. Автоматизация звука [С]</title>
+    <link rel="stylesheet" href="lesson-10.css">
+</head>
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <div class="lesson-badge">Занятие 10. Автоматизация звука [С]</div>
+            <p class="user-info">Ученик: <span id="child-name-display">Ульяна</span> | Дата: <span id="lesson-date-display">08.02.2026</span></p>
+        </header>
+
+        <div class="white-card">
+            <h2 class="card-title">Задание 1. Где спрятался звук [С]?</h2>
+            <div class="yellow-divider"></div>
+            <p class="card-instruction-multi">Рассмотри картинки. Выбери только те предметы, название которых <b>начинается</b> со звука [С].</p>
+
+            <div class="image-selection-grid" id="task1-grid">
+                <div class="img-card" data-correct="true"><img src="images/setka.png" alt="Сетка"></div>
+                <div class="img-card" data-correct="false"><img src="images/mesyac.png" alt="Месяц"></div>
+                <div class="img-card" data-correct="false"><img src="images/karas.png" alt="Карась"></div>
+                <div class="img-card" data-correct="true"><img src="images/seno.png" alt="Сено"></div>
+                
+                <div class="img-card" data-correct="false"><img src="images/ryis.png" alt="Рысь"></div>
+                <div class="img-card" data-correct="false"><img src="images/los.png" alt="Лось"></div>
+                <div class="img-card" data-correct="false"><img src="images/osel.png" alt="Осёл"></div>
+                <div class="img-card" data-correct="true"><img src="images/semechki.png" alt="Семечки"></div>
+                
+                <div class="img-card" data-correct="true"><img src="images/lesson-5-8-3.png" alt="Синица"></div>
+                <div class="img-card" data-correct="false"><img src="images/apelsin.png" alt="Апельсин"></div>
+                <div class="img-card" data-correct="false"><img src="images/avoska.png" alt="Авоська"></div>
+                <div class="img-card" data-correct="false"><img src="images/gus.png" alt="Гусь"></div>
+                
+                <div class="img-card" data-correct="true"><img src="images/сыр.jpg" alt="Сыр"></div>
+                <div class="img-card" data-correct="false"><img src="images/pismo.png" alt="Письмо"></div>
+                <div class="img-card" data-correct="true"><img src="images/sem.png" alt="Семь"></div>
+                <div class="img-card" data-correct="true"><img src="images/sito.png" alt="Сито"></div>
+            </div>
+
+            <div id="res-1-10" class="result-text"></div>
+            <div class="btn-box">
+                <button id="btn-1-10" class="check-btn">ПРОВЕРИТЬ</button>
+            </div>
+        </div>
+
+<div class="white-card" id="task-10-2">
+    <h2 class="card-title">Задание 2. Прочитай по картинке</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Внимательно рассмотри картинку и прочитай все слова, которые на ней написаны.</p>
+
+    <div class="task-2-wrapper">
+        <img src="images/lesson-10-2.jpg" alt="Задание для чтения" class="img-800">
+    </div>
+</div>
+
+<div class="white-card" id="task-10-3">
+    <h2 class="card-title">Задание 3. Что снится Лисёнку?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри внимательно рисунок. Нажимай на предметы, которые видит во сне Лисёнок, и чётко называй их.</p>
+
+    <div class="task-3-wrapper">
+        <div class="dream-image-container">
+            <img src="images/lesson-10-3.jpg" alt="Сон лисёнка" class="img-800">
+            
+            <div class="click-zone" style="top: 15%; left: 20%; width: 80px; height: 80px;"></div>
+            <div class="click-zone" style="top: 10%; left: 45%; width: 90px; height: 90px;"></div>
+            <div class="click-zone" style="top: 25%; left: 70%; width: 75px; height: 75px;"></div>
+            <div class="click-zone" style="top: 50%; left: 10%; width: 100px; height: 100px;"></div>
+            <div class="click-zone" style="top: 55%; left: 40%; width: 85px; height: 85px;"></div>
+            <div class="click-zone" style="top: 45%; left: 75%; width: 95px; height: 95px;"></div>
+        </div>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-4">
+    <h2 class="card-title">Задание 4. Четвёртый лишний</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди в каждом ряду лишний предмет. Нажми на него ЛКМ, а затем нажми кнопку «Проверить».</p>
+
+    <div class="logic-grid-16">
+        <div class="logic-row-16">
+            <div class="item-16" data-status="main"><img src="images/vasilek.png" alt="Василёк"></div>
+            <div class="item-16" data-status="main"><img src="images/kosichki.png" alt="Косички"></div>
+            <div class="item-16" data-status="main"><img src="images/desyat.png" alt="Десять"></div>
+            <div class="item-16" data-status="extra"><img src="images/med.png" alt="Мёд"></div>
+        </div>
+
+        <div class="logic-row-16">
+            <div class="item-16" data-status="main"><img src="images/lisenok.png" alt="Лисёнок"></div>
+            <div class="item-16" data-status="main"><img src="images/rys.png" alt="Рысь"></div>
+            <div class="item-16" data-status="extra"><img src="images/krolik.png" alt="Кролик"></div>
+            <div class="item-16" data-status="main"><img src="images/porosenok.png" alt="Поросёнок"></div>
+        </div>
+
+        <div class="logic-row-16">
+            <div class="item-16" data-status="main"><img src="images/siren.png" alt="Сирень"></div>
+            <div class="item-16" data-status="main"><img src="images/persik.png" alt="Персик"></div>
+            <div class="item-16" data-status="extra"><img src="images/myshonok.png" alt="Мышонок"></div>
+            <div class="item-16" data-status="main"><img src="images/nosilki.png" alt="Носилки"></div>
+        </div>
+
+        <div class="logic-row-16">
+            <div class="item-16" data-status="main"><img src="images/semechki.png" alt="Семечки"></div>
+            <div class="item-16" data-status="main"><img src="images/gusyata.png" alt="Гусята"></div>
+            <div class="item-16" data-status="main"><img src="images/pismo2.png" alt="Письмо"></div>
+            <div class="item-16" data-status="extra"><img src="images/medvezhonok.png" alt="Медвежонок"></div>
+        </div>
+    </div>
+
+<div id="res-10-4" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-4" class="check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+<div class="white-card" id="task-10-5">
+    <h2 class="card-title">Задание 5. Собери предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Нажимай на картинки по порядку, чтобы закончить предложения. Если ошибся — нажми «ОТМЕНИТЬ».</p>
+
+    <div class="sentences-list">
+        <p>1. Сыр положили на <span class="drop-word" id="word-1">...</span></p>
+        <p>2. У машины заменили <span class="drop-word" id="word-2">...</span></p>
+        <p>3. Соня прогнала полосатую <span class="drop-word" id="word-3">...</span></p>
+        <p>4. Красивый рыжий мех у <span class="drop-word" id="word-4">...</span></p>
+        <p>5. У моей сестры две толстых <span class="drop-word" id="word-5">...</span></p>
+        <p>6. Покраснели на морозе у детей <span class="drop-word" id="word-6">...</span></p>
+        <p>7. Мама купила к празднику <span class="drop-word" id="word-7">...</span></p>
+        <p>8. У нашего папы красивые <span class="drop-word" id="word-8">...</span></p>
+        <p>9. У нашей мамы яркие <span class="drop-word" id="word-9">...</span></p>
+        <p>10. В шкафу стоит чайный <span class="drop-word" id="word-10">...</span></p>
+        <p>11. Мама запекла вкусное <span class="drop-word" id="word-11">...</span></p>
+        <p>12. У Кати кудрявые <span class="drop-word" id="word-12">...</span></p>
+    </div>
+
+    <div class="images-selection-grid">
+        <div class="img-choice" data-txt="колбасу"><img src="images/kolbasa2.png" alt="Колбаса"></div>
+        <div class="img-choice" data-txt="весы"><img src="images/scale.png" alt="Весы"></div>
+        <div class="img-choice" data-txt="мясо"><img src="images/maso.png" alt="Мясо"></div> 
+        <div class="img-choice" data-txt="колесо"><img src="images/koleso.png" alt="Колесо"></div>
+   
+        <div class="img-choice" data-txt="лисы"><img src="images/fox-8.png" alt="Лиса"></div>
+        <div class="img-choice" data-txt="бусы"><img src="images/beads-8.png" alt="Бусы"></div>
+        <div class="img-choice" data-txt="носы"><img src="images/nosy.png" alt="Носы"></div>
+        <div class="img-choice" data-txt="осу"><img src="images/wasp-6.png" alt="Оса"></div>   
+        <div class="img-choice" data-txt="усы"><img src="images/myzhik.png" alt="Усы"></div>
+    
+        <div class="img-choice" data-txt="сервиз"><img src="images/serviz.png" alt="Сервиз"></div>
+     
+        <div class="img-choice" data-txt="волосы"><img src="images/volosy.png" alt="Волосы"></div>
+         <div class="img-choice" data-txt="косички"><img src="images/kosichki.png" alt="Косички"></div>
+    </div>
+
+    <div id="res-10-5" class="result-text"></div>
+    
+    <div class="btn-box-double">
+        <button id="btn-check-10-5" class="orange-btn">ПРОВЕРИТЬ</button>
+        <button id="btn-reset-10-5" class="orange-btn gray-btn">ОТМЕНИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-6">
+    <h2 class="card-title">Задание 6. Играем в прятки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Назови предметы, спрятанные на картинке. Нажимай на них мышкой.</p>
+
+    <div class="hide-seek-wrapper">
+        <div class="image-area">
+            <img src="images/lesson-10-6.png" alt="Гусь" class="base-image">
+            
+            <div class="zone" data-name="ВЕЛОСИПЕД" style="top: 40%; left: 25%; width: 120px; height: 100px;"></div>
+            <div class="zone" data-name="ЛОСЬ" style="top: 45%; left: 45%; width: 150px; height: 130px;"></div>
+            <div class="zone" data-name="СОСИСКИ" style="top: 65%; left: 60%; width: 110px; height: 50px;"></div>
+            <div class="zone" data-name="ЦВЕТЫ" style="top: 72%; left: 22%; width: 70px; height: 70px;"></div>
+        </div>
+
+        <div class="found-words-box" id="found-container-6"></div>
+    </div>
+
+    <div id="res-10-6" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-6" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-7">
+    <h2 class="card-title">Задание 7. Найди буквы</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди на картинке все буквы <b>С</b> и нажми на них. После этого нажми кнопку «Проверить».</p>
+
+    <div class="find-letters-wrapper">
+        <div class="letters-image-container" id="image-container-7">
+            <img src="images/lesson-10-7-1.png" alt="Поиск букв" class="find-img" id="main-img-7">
+        </div>
+    </div>
+
+    <div id="images/lesson-10-7-2.png" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-7" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-8">
+    <h2 class="card-title">Задание 8. Найди слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди на картинке 8 предметов со звуком <b>С</b> и напиши их названия в клеточки.</p>
+
+    <div class="task-content-8">
+        <div class="image-box-8">
+            <img src="images/lesson-10-8.png" alt="Слон на самокате" class="main-img-8">
+        </div>
+
+        <div class="input-container-8">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+            <input type="text" class="word-input-8" placeholder="..." autocomplete="off">
+        </div>
+    </div>
+
+    <div id="res-10-8" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-8" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-9">
+    <h2 class="card-title">Задание 9. Произношение звука «С» в предложениях</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Помоги писателю закончить предложения. Выбери правильное слово под каждой картинкой.</p>
+
+    <div class="sentences-grid-9">
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-1.jpg" alt="Лиса">
+            <p class="phrase-text">У лисы пушистый …</p>
+            <div class="options-row">
+                <span class="opt-btn" data-correct="true">ХВОСТ</span>
+                <span class="opt-btn">МОСТ</span>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-2.jpg" alt="Охотник">
+            <p class="phrase-text">По следу идёт …</p>
+            <div class="options-row">
+                <span class="opt-btn" data-correct="true">СОБАКА</span>
+                <span class="opt-btn">СОРОКА</span>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-3.jpg" alt="Автобус">
+            <p class="phrase-text">У автобуса спустило …</p>
+            <div class="options-row">
+                <span class="opt-btn" data-correct="true">КОЛЕСО</span>
+                <span class="opt-btn">ЛАССО</span>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-4.jpg" alt="Ананас">
+            <p class="phrase-text">На столе вкусный …</p>
+            <div class="options-row">
+                <span class="opt-btn">КВАС</span>
+                <span class="opt-btn" data-correct="true">АНАНАС</span>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-5.jpg" alt="Самолет">
+            <p class="phrase-text">Мчится быстро …</p>
+            <div class="options-row">
+                <span class="opt-btn">САМОКАТ</span>
+                <span class="opt-btn" data-correct="true">САМОЛЁТ</span>
+            </div>
+        </div>
+
+        <div class="sentence-card">
+            <img src="images/lesson-10-9-6.jpg" alt="Соня">
+            <p class="phrase-text">Соня садится на …</p>
+            <div class="options-row">
+                <span class="opt-btn">СТОЛ</span>
+                <span class="opt-btn" data-correct="true">СТУЛ</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-10-9" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-9" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-10">
+    <h2 class="card-title">Задание 10. Сыщик</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди все картинки со звуком <b>«С»</b> и посчитай, сколько раз они встречаются на большом рисунке.</p>
+
+    <div class="detective-container">
+        <div class="pano-wrapper">
+            <img src="images/lesson-10-10.png" alt="Панорама" class="img-pano">
+        </div>
+
+        <div class="items-grid-18">
+            <div class="grid-item">
+                <img src="images/lisenok.png" alt="Лиса">
+                <input type="number" class="count-input" data-ans="2">
+            </div>
+            <div class="grid-item">
+                <img src="images/porosenok.png" alt="Свинья">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/сено.png" alt="Сено">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/lesson-5-8-3.png" alt="Синица">
+                <input type="number" class="count-input" data-ans="4">
+            </div>
+            <div class="grid-item">
+                <img src="images/snegir.png" alt="Снегирь">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/sem.png" alt="Семь">
+                <input type="number" class="count-input" data-ans="4">
+            </div>
+            <div class="grid-item">
+                <img src="images/vosem.png" alt="Восемь">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/desyat.png" alt="Десять">
+                <input type="number" class="count-input" data-ans="2">
+            </div>
+            <div class="grid-item">
+                <img src="images/sedlo.png" alt="Седло">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/osel.png" alt="Осел">
+                <input type="number" class="count-input" data-ans="1">
+            </div>
+            <div class="grid-item">
+                <img src="images/snegovik.png" alt="Снеговик">
+                <input type="number" class="count-input" data-ans="1">
+            </div>
+            <div class="grid-item">
+                <img src="images/seif.png" alt="Сейф">
+                <input type="number" class="count-input" data-ans="1">
+            </div>
+            <div class="grid-item">
+                <img src="images/lesson-2-7-leaf-orange.png" alt="Лист">
+                <input type="number" class="count-input" data-ans="2">
+            </div>
+            <div class="grid-item">
+                <img src="images/рысь.jpg" alt="Рысь">
+                <input type="number" class="count-input" data-ans="3">
+            </div>
+            <div class="grid-item">
+                <img src="images/lesson-6-6-2.png" alt="Сова">
+                <input type="number" class="count-input" data-ans="2">
+            </div>
+            <div class="grid-item">
+                <img src="images/karas.png" alt="Карась">
+                <input type="number" class="count-input" data-ans="4">
+            </div>
+            <div class="grid-item">
+                <img src="images/сало.jpg" alt="Сало">
+                <input type="number" class="count-input" data-ans="7">
+            </div>
+            <div class="grid-item">
+                <img src="images/semechki.png" alt="Семечки">
+                <input type="number" class="count-input" data-ans="2">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-10-10" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-10" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-10-11">
+    <h2 class="card-title">Задание 11. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Впиши в кроссворд слова, заканчивающиеся звуком <b>[С]</b>.</p>
+
+    <div class="crossword-container-11">
+        <div class="crossword-main-row">
+            <div class="side-images">
+                <img src="images/compass.png" alt="Компас" class="img-cross-large">
+                <img src="images/ear.png" alt="Колос" class="img-cross-large">
+            </div>
+
+            <div class="crossword-grid">
+                <div class="cross-row" data-word="ЛЕС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+                <div class="cross-row" data-word="КЕКС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+                <div class="cross-row" data-word="КОЛОС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+                <div class="cross-row" data-word="КОМПАС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+                <div class="cross-row" data-word="АВТОБУС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+                <div class="cross-row" data-word="ТРОЛЛЕЙБУС">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <input type="text" maxlength="1" class="cross-letter js-input">
+                    <div class="cross-letter static">С</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-images-large">
+            <img src="images/cake.png" alt="Кекс">
+            <img src="images/forest.png" alt="Лес">
+            <img src="images/bus.png" alt="Автобус">
+            <img src="images/trolley.png" alt="Троллейбус">
+        </div>
+    </div>
+
+    <div id="res-10-11" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-check-10-11" class="orange-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <script src="lesson-10.js"></script>
+</body>
+</html>

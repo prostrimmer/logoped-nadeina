@@ -1,0 +1,179 @@
+body {
+    margin: 0; padding: 0;                    /* Убираем стандартные внешние и внутренние отступы страницы */
+    background-color: #99dfff;                /* Устанавливаем светло-голубой фон всей страницы */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Основной шрифт — Comic Sans MS с fallback на Arial */
+}
+
+.content-wrapper { padding: 30px 10px; }      /* Добавляем вертикальные отступы для контента, горизонтальные — минимальные */
+
+.main-header { text-align: center; margin-bottom: 30px; } /* Центрируем заголовок и добавляем отступ снизу */
+
+.lesson-badge {
+    display: inline-block;                    /* Позволяет блоку вести себя как строчный элемент с шириной по содержимому */
+    background: #fff9c4;                      /* Светло-жёлтый фон бейджа */
+    padding: 12px 50px;                       /* Удобные внутренние отступы, особенно широкие по горизонтали */
+    border-radius: 15px;                      /* Скруглённые углы */
+    color: #ff6d00;                           /* Ярко-оранжевый цвет текста */
+    font-weight: bold;                        /* Жирное начертание */
+    font-size: 2rem;                          /* Крупный размер текста */
+    box-shadow: 0 4px 0 #ffd600;              /* Имитация объёма жёлтой тенью-сдвигом */
+}
+
+.user-info { font-size: 1.2rem; color: #2c3e50; } /* Средний размер и тёмно-серо-синий цвет для информации о пользователе */
+
+.white-card {
+    background: #f0faff;                      /* Очень светлый голубовато-белый фон карточки */
+    border: 8px solid #ffd600;                /* Толстая жёлтая рамка */
+    border-radius: 45px;                      /* Сильно скруглённые углы — «пухлая» карточка */
+    padding: 30px;                            /* Внутренние отступы внутри карточки */
+    max-width: 800px;                         /* Ограничение максимальной ширины для читаемости */
+    margin: 0 auto;                           /* Центрирование карточки по горизонтали */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);  /* Лёгкая тень для визуального приподнимания */
+}
+
+.card-title { color: #ff7043; text-align: center; font-size: 2.2rem; margin: 0; } /* Оранжевый заголовок карточки, центрированный, без отступов */
+
+.yellow-divider { 
+    height: 6px; 
+    background: #ffd600;                      /* Жёлтая горизонтальная разделительная линия */
+    width: 80%;                               /* Не на всю ширину — выглядит аккуратнее */
+    margin: 15px auto;                        /* Центрирование и отступы сверху/снизу */
+    border-radius: 3px;                       /* Мягкие края полосы */
+}
+
+.card-instruction-multi { 
+    font-size: 1.6rem; 
+    color: #011a37;                           /* Тёмный сине-чёрный цвет инструкции */
+    text-align: center; 
+    margin-bottom: 30px;                      /* Отступ снизу для воздуха перед сеткой */
+}
+
+/* Сетка 4х4 */
+.image-selection-grid {
+    display: grid;                            /* Используем CSS Grid для равномерной раскладки */
+    grid-template-columns: repeat(4, 1fr);    /* Четыре равные колонки */
+    gap: 10px;                                /* Отступы между ячейками */
+    justify-items: center;                    /* Центрируем содержимое каждой ячейки */
+    max-width: 600px;                         /* Ограничение ширины всей сетки */
+    margin: 0 auto;                           /* Центрирование сетки на странице */
+}
+
+.img-card img {
+    width: 125px; 
+    height: 125px;                             /* Фиксированный размер изображений */
+    object-fit: contain;                      /* Изображение помещается целиком без обрезки */
+}
+
+.img-card {
+    background: white;                        /* Белый фон карточки с изображением */
+    border: 4px solid #ffd600;                /* Жёлтая рамка по умолчанию */
+    border-radius: 10px;                      /* Скругление углов карточки */
+    width: 140px; 
+    height: 140px;                            /* Фиксированный квадратный размер */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;                  /* Центрируем изображение внутри карточки */
+    cursor: pointer;                          /* Курсор указывает на кликабельность */
+    transition: transform 0.2s;               /* Плавное увеличение при наведении */
+    box-sizing: border-box;                   /* Размеры включают border и padding */
+}
+
+
+
+.img-card:hover { transform: scale(1.05); }   /* Лёгкое увеличение карточки при наведении курсора */
+
+.img-card.selected { 
+    background-color: #fff9c4; 
+    border-color: #ff7043; 
+    border-width: 6px;                        /* Выделение выбранной карточки оранжевой рамкой */
+}
+
+.img-card.correct { 
+    background-color: #dff0d8; 
+    border-color: #4caf50; 
+    border-width: 6px;                        /* Зелёное оформление для правильного ответа */
+}
+
+.img-card.wrong { 
+    background-color: #f2dede; 
+    border-color: #ef5350; 
+    border-width: 6px;                        /* Красное оформление для неправильного ответа */
+}
+
+.btn-box { text-align: center; margin-top: 30px; } /* Центрирование блока с кнопкой и отступ сверху */
+
+.check-btn {
+    background: #ff7043;                      /* Оранжевый фон кнопки */
+    color: white; 
+    border: none;                             /* Без рамки */
+    padding: 15px 50px;                       /* Крупные отступы внутри кнопки */
+    border-radius: 30px;                      /* Сильно скруглённая кнопка */
+    font-size: 1.5rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 5px 0 #e64a19;              /* Имитация объёма тёмно-оранжевой тенью */
+}
+
+.check-btn:active { 
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 #e64a19;              /* Эффект нажатия — сдвиг вниз и уменьшение тени */
+}
+
+.result-text { 
+    text-align: center; 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    min-height: 1.5em;                        /* Зарезервированное место под текст результата */
+}
+
+
+/* === Задание №2. Интерактивная сетка поверх изображения === */
+
+.interactive-container {                          /* Контейнер для позиционирования наложения */
+    position: relative;                           /* Устанавливаем относительное позиционирование */
+    width: 600px;                                 /* Фиксированная ширина блока */
+    margin: 20px auto;                            /* Центрирование контейнера на странице */
+    border: 5px solid #ffd600;                    /* Желтая рамка вокруг изображения */
+    border-radius: 20px;                          /* Скругление углов контейнера */
+    overflow: hidden;                             /* Скрытие вылетающих за границы элементов */
+    line-height: 0;                               /* Устранение нижнего отступа у картинки */
+}                                                 /* Конец блока контейнера */
+
+.task-bg-image {                                  /* Стили основного фонового рисунка */
+    width: 100%;                                  /* Растягиваем картинку на всю ширину */
+    height: auto;                                 /* Автоматическая высота по пропорциям */
+    display: block;                               /* Перевод изображения в блочный элемент */
+}                                                 /* Конец блока изображения */
+
+.selection-overlay {                              /* Слой прозрачной сетки поверх фото */
+    position: absolute;                           /* Абсолютное наложение на контейнер */
+    top: 0;                                       /* Привязка к верхнему краю */
+    left: 0;                                      /* Привязка к левому краю */
+    width: 100%;                                  /* Ширина совпадает с контейнером */
+    height: 100%;                                 /* Высота совпадает с контейнером */
+    display: grid;                                /* Включение технологии CSS Grid */
+    grid-template-columns: repeat(4, 1fr);        /* Создание 4-х равных колонок */
+    grid-template-rows: repeat(4, 1fr);           /* Создание 4-х равных строк */
+}                                                 /* Конец блока сетки */
+
+.grid-cell {                                      /* Стили отдельной ячейки-квадрата */
+    border: 1px dashed rgba(255, 214, 0, 0.4);    /* Пунктирная граница для видимости ячеек */
+    cursor: pointer;                              /* Изменение курсора при наведении */
+    transition: background-color 0.3s ease;       /* Плавная анимация смены цвета */
+    box-sizing: border-box;                       /* Учет границ в общем размере ячейки */
+}                                                 /* Конец блока ячейки */
+
+.grid-cell:hover {                                /* Эффект при наведении на квадрат */
+    background-color: rgba(255, 255, 255, 0.2);   /* Легкое подсвечивание ячейки */
+}                                                 /* Конец блока эффекта наведения */
+
+.grid-cell.active-green {                         /* Состояние после нажатия (прочитано) */
+    background-color: rgba(76, 175, 80, 0.5);     /* Полупрозрачный зеленый фон */
+    border: 3px solid #4caf50;                    /* Яркая зеленая рамка */
+}                                                 /* Конец блока активного состояния */
+
+#btn-reset-2-10 {                                 /* Стиль кнопки сброса задания 2 */
+    background: #2196f3;                          /* Синий цвет фона кнопки */
+    box-shadow: 0 5px 0 #1976d2;                  /* Темно-синяя тень для объема */
+}                                                 /* Конец блока кнопки сброса */

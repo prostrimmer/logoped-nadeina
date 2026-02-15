@@ -1,0 +1,761 @@
+body {
+    margin: 0; padding: 0;                    /* Убираем стандартные внешние и внутренние отступы страницы */
+    background-color: #99dfff;                /* Устанавливаем светло-голубой фон всей страницы */
+    font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Основной шрифт — Comic Sans MS с fallback на Arial */
+}
+
+.content-wrapper { padding: 30px 10px; }      /* Добавляем вертикальные отступы для контента, горизонтальные — минимальные */
+
+.main-header { text-align: center; margin-bottom: 30px; } /* Центрируем заголовок и добавляем отступ снизу */
+
+.lesson-badge {
+    display: inline-block;                    /* Позволяет блоку вести себя как строчный элемент с шириной по содержимому */
+    background: #fff9c4;                      /* Светло-жёлтый фон бейджа */
+    padding: 12px 50px;                       /* Удобные внутренние отступы, особенно широкие по горизонтали */
+    border-radius: 15px;                      /* Скруглённые углы */
+    color: #ff6d00;                           /* Ярко-оранжевый цвет текста */
+    font-weight: bold;                        /* Жирное начертание */
+    font-size: 2rem;                          /* Крупный размер текста */
+    box-shadow: 0 4px 0 #ffd600;              /* Имитация объёма жёлтой тенью-сдвигом */
+}
+
+.user-info { font-size: 1.2rem; color: #2c3e50; } /* Средний размер и тёмно-серо-синий цвет для информации о пользователе */
+
+.white-card {
+    background: #f0faff;                       /* Очень светлый голубовато-белый фон карточки */
+    border: 8px solid #ffd600;                 /* Толстая жёлтая рамка */
+    border-radius: 45px;                       /* Сильно скруглённые углы — «пухлая» карточка */
+    padding: 30px;                             /* Внутренние отступы внутри карточки */
+    max-width: 800px;                          /* Ограничение максимальной ширины для читаемости */
+    margin: 20px auto;                         /* 40px — отступ между карточками, auto — центрирование */
+    box-shadow: 0 15px 20px rgba(0,0,0,0.1);   /* Лёгкая тень для визуального приподнимания */
+    position: relative;                        /* Для корректного позиционирования внутренних элементов */
+    overflow: hidden;                          /* Гарантирует, что контент не выйдет за границы рамки */
+}
+
+.card-title { color: #ff7043; text-align: center; font-size: 2.2rem; margin: 0; } /* Оранжевый заголовок карточки, центрированный, без отступов */
+
+.yellow-divider { 
+    height: 6px; 
+    background: #ffd600;                      /* Жёлтая горизонтальная разделительная линия */
+    width: 80%;                               /* Не на всю ширину — выглядит аккуратнее */
+    margin: 15px auto;                        /* Центрирование и отступы сверху/снизу */
+    border-radius: 3px;                       /* Мягкие края полосы */
+}
+
+.card-instruction, .card-instruction-multi { 
+    font-size: 1.5rem; 
+    color: #011a37;                           /* Тёмный сине-чёрный цвет инструкции */
+    text-align: center; 
+    margin-bottom: 30px;                      /* Отступ снизу для воздуха перед сеткой */
+}
+
+/* Сетка 4х4 */
+.image-selection-grid {
+    display: grid;                            /* Используем CSS Grid для равномерной раскладки */
+    grid-template-columns: repeat(4, 1fr);    /* Четыре равные колонки */
+    gap: 10px;                                /* Отступы между ячейками */
+    justify-items: center;                    /* Центрируем содержимое каждой ячейки */
+    max-width: 600px;                         /* Ограничение ширины всей сетки */
+    margin: 0 auto;                           /* Центрирование сетки на странице */
+}
+
+.img-card img {
+    width: 125px; 
+    height: 125px;                             /* Фиксированный размер изображений */
+    object-fit: contain;                      /* Изображение помещается целиком без обрезки */
+}
+
+.img-card {
+    background: white;                        /* Белый фон карточки с изображением */
+    border: 4px solid #ffd600;                /* Жёлтая рамка по умолчанию */
+    border-radius: 10px;                      /* Скругление углов карточки */
+    width: 140px; 
+    height: 140px;                            /* Фиксированный квадратный размер */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;                  /* Центрируем изображение внутри карточки */
+    cursor: pointer;                          /* Курсор указывает на кликабельность */
+    transition: transform 0.2s;               /* Плавное увеличение при наведении */
+    box-sizing: border-box;                   /* Размеры включают border и padding */
+}
+
+/* Задание 1 */
+
+
+.img-card:hover { transform: scale(1.05); }   /* Лёгкое увеличение карточки при наведении курсора */
+
+.img-card.selected { 
+    background-color: #fff9c4; 
+    border-color: #ff7043; 
+    border-width: 6px;                        /* Выделение выбранной карточки оранжевой рамкой */
+}
+
+.img-card.correct { 
+    background-color: #dff0d8; 
+    border-color: #4caf50; 
+    border-width: 6px;                        /* Зелёное оформление для правильного ответа */
+}
+
+.img-card.wrong { 
+    background-color: #f2dede; 
+    border-color: #ef5350; 
+    border-width: 6px;                        /* Красное оформление для неправильного ответа */
+}
+
+.btn-box { text-align: center; margin-top: 30px; } /* Центрирование блока с кнопкой и отступ сверху */
+
+.check-btn {
+    background: #ff7043;                      /* Оранжевый фон кнопки */
+    color: white; 
+    border: none;                             /* Без рамки */
+    padding: 15px 50px;                       /* Крупные отступы внутри кнопки */
+    border-radius: 30px;                      /* Сильно скруглённая кнопка */
+    font-size: 1.6rem; 
+    font-weight: bold; 
+    cursor: pointer; 
+    box-shadow: 0 5px 0 #e64a19;              /* Имитация объёма тёмно-оранжевой тенью */
+}
+
+.check-btn:active { 
+    transform: translateY(3px); 
+    box-shadow: 0 2px 0 #e64a19;              /* Эффект нажатия — сдвиг вниз и уменьшение тени */
+}
+
+.result-text { 
+    text-align: center; 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    margin-top: 20px; 
+    min-height: 1.5em;                        /* Зарезервированное место под текст результата */
+}
+
+
+/* Задание 2 */
+
+.task-2-wrapper {
+    display: flex;                              /* Флекс-контейнер для вертикального стека */
+    flex-direction: column;                     /* Расположение элементов друг под другом */
+    align-items: center;                        /* Центрирование по горизонтальной оси */
+    gap: 25px;                                  /* Отступ между картинкой и полями ввода */
+}
+
+.img-800 {
+    width: 800px;                               /* Фиксированная ширина согласно инструкции */
+    height: auto;                               /* Автоматическая высота для сохранения пропорций */
+    border-radius: 20px;                        /* Скругление углов изображения */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);     /* Легкая тень для объема */
+}
+
+.input-container-2 {
+    width: 100%;                                /* Заполнение всей ширины контейнера */
+    max-width: 700px;                           /* Ограничение максимальной ширины блока ввода */
+}
+
+.word-row {
+    display: flex;                              /* Строка с двумя полями ввода */
+    justify-content: space-between;             /* Распределение элементов по краям */
+    margin-bottom: 15px;                        /* Отступ между рядами */
+    gap: 10px;                                  /* Промежуток между парами номер-поле */
+}
+
+.word-input-10 {
+    width: 250px;                               /* Ширина поля ввода */
+    padding: 12px;                              /* Внутренние отступы в поле */
+    border: 3px solid #ccc;                     /* Стандартная серая рамка */
+    border-radius: 12px;                        /* Скругление углов поля */
+    font-family: 'Comic Sans MS', sans-serif;   /* Шрифт из общей стилистики урока */
+    font-size: 1.8rem;                          /* Крупный размер шрифта для ребенка */
+    text-align: center;                         /* Центрирование текста в поле */
+    text-transform: uppercase;                  /* Принудительный верхний регистр */
+    outline: none;                              /* Удаление стандартного контура фокуса */
+}
+
+.word-input-10.correct {
+    border-color: #4caf50;                      /* Зеленая рамка при правильном ответе */
+    background-color: #e8f5e9;                  /* Светло-зеленый фон поля */
+}
+
+.word-input-10.wrong {
+    border-color: #ef5350;                      /* Красная рамка при ошибке */
+    background-color: #ffebee;                  /* Светло-красный фон поля */
+}
+
+/* Урок №10. Комментарий: Стили для работы с интерактивными зонами на едином рисунке */
+
+.task-3-wrapper {
+    display: flex;                              /* Контейнер для центрирования картинки */
+    justify-content: center;                    /* Горизонтальное выравнивание */
+    padding: 10px 0;                            /* Внутренние отступы */
+}
+
+.dream-image-container {
+    position: relative;                         /* База для позиционирования зон поверх картинки */
+    width: 800px;                               /* Ширина по инструкции */
+}
+
+.img-800 {
+    width: 800px;                               /* Строго заданная ширина */
+    height: auto;                               /* Пропорциональная высота */
+    display: block;                             /* Устранение зазоров снизу */
+    border-radius: 20px;                        /* Скругление углов в стиле урока 9 */
+}
+
+.click-zone {
+    position: absolute;                         /* Свободное позиционирование поверх рисунка */
+    border: 3px solid transparent;              /* Изначально невидимая рамка */
+    border-radius: 50%;                         /* Округлые зоны выбора */
+    cursor: pointer;                            /* Указатель мышки */
+    transition: all 0.2s;                       /* Плавность появления рамки */
+}
+
+.click-zone:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Легкая подсветка при наведении */
+}
+
+.click-zone.active {
+    border-color: #ff6d00;                      /* Оранжевая рамка при нажатии ЛКМ */
+    background-color: rgba(255, 109, 0, 0.1);   /* Полупрозрачная заливка выбранного предмета */
+}
+/* Урок №10. Комментарий: Стили сетки с минимальными отступами 7px */
+
+.logic-grid-16 {
+    display: flex;                              /* Вертикальный стек рядов */
+    flex-direction: column;
+    gap: 7px;                                   /* Расстояние по вертикали 7px */
+    margin-bottom: 25px;
+}
+
+.logic-row-16 {
+    display: grid;                              /* Сетка для картинок в ряду */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 7px;                                   /* Расстояние по горизонтали 7px */
+}
+
+.item-16 {
+    background: #ffffff;                        /* Белый фон карточки */
+    border: 3px solid #eee;                     /* Тонкая серая рамка */
+    border-radius: 15px;                        /* Уменьшенное скругление для плотности */
+    height: 150px;                              /* Оптимальная высота */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;                       /* Плавность эффектов */
+}
+
+.item-16 img {
+    max-width: 120px;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+/* Красный контур при клике на ЛЮБУЮ картинку (выбор ребенка) */
+.item-16.active {
+    border-color: #ef5350;                      /* Красный контур выбора */
+}
+
+/* Специальный класс для фиксации верного/неверного после проверки */
+.item-16.correct-border { border-color: #ef5350 !important; }
+
+.result-text {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.4rem;
+    min-height: 1.6em;
+    margin-bottom: 15px;
+}
+
+/* Урок №10. Комментарий: Оформление задания 5 с динамическим заполнением текста */
+
+.sentences-list {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: #f0faff;
+    border-radius: 20px;
+}
+
+.sentences-list p {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    color: #002b5b;
+    font-weight: bold;
+}
+
+.drop-word {
+    color: #ef5350;                             /* Красный цвет для вставленных слов */
+    border-bottom: 2px dashed #ff6d00;
+    padding: 0 5px;
+}
+
+.images-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);      /* 6 колонок в 2 ряда */
+    gap: 7px;                                   /* Отступы 7px по инструкции */
+    margin-bottom: 30px;
+}
+
+.img-choice {
+    background: #fff;
+    border: 3px solid #eee;
+    border-radius: 12px;
+    height: 110px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.2s;
+}
+
+.img-choice.selected {
+    border-color: #ef5350;                      /* Красный контур при выборе */
+    opacity: 0.5;
+    pointer-events: none;                       /* Запрет повторного нажатия */
+}
+
+.img-choice img {
+    max-width: 90px;
+    max-height: 90px;
+    object-fit: contain;
+}
+
+.btn-box-double {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.orange-btn {
+    background-color: #ff6d00;
+    color: #fff;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.gray-btn {
+    background-color: #9e9e9e;                  /* Серый цвет для кнопки отмены */
+}
+
+/* Урок №10.5 Комментарий: Стили для корректного отображения картинки и зон поиска */
+
+.hide-seek-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    overflow: hidden;                           /* Строгий контроль границ */
+}
+
+.image-area {
+    position: relative;                         /* Для позиционирования зон поверх */
+    max-width: 700px;                           /* Ширина по стандарту урока */
+    border: 2px solid #e0f2f1;
+    border-radius: 25px;
+    line-height: 0;                             /* Убирает лишние отступы снизу */
+}
+
+.base-image {
+    width: 100%;                                /* Вписывается в контейнер */
+    height: auto;
+    border-radius: 23px;
+}
+
+.zone {
+    position: absolute;                         /* Зоны поверх картинки */
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 5;
+}
+
+.zone.active {
+    background-color: rgba(255, 109, 0, 0.2);   /* Подсветка при клике */
+    border: 3px solid #ff6d00;
+    pointer-events: none;                       /* Блокировка повторного клика */
+}
+
+.found-words-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;                                   /* Отступы между словами 7px */
+    min-height: 50px;
+    padding: 10px;
+}
+
+.word-tag {
+    background: #ff6d00;
+    color: #fff;
+    padding: 6px 15px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.orange-btn {
+    background-color: #ff6d00;
+    color: #fff;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 50px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Урок №10.7 Комментарий: Стили для поиска букв и эффекта раскрашивания */
+
+.find-letters-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.letters-image-container {
+    position: relative;                         /* Для наложения зон клика */
+    max-width: 800px;
+    border: 3px solid #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;                           /* Чтобы картинка не выходила за рамки */
+}
+
+.find-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.5s ease;               /* Плавность при смене (если нужно) */
+}
+
+.letter-hitbox {
+    position: absolute;                         /* Зоны клика поверх картинки */
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* Красный кружок при нажатии на букву */
+.letter-hitbox.found {
+    border-color: #ef5350;
+    background-color: rgba(239, 83, 80, 0.2);
+}
+
+/* Оранжевая кнопка ПРОВЕРИТЬ по стандарту */
+.orange-btn {
+    background-color: #ff6d00;
+    color: #fff;
+    border: none;
+    padding: 15px 60px;
+    border-radius: 50px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 109, 0, 0.3);
+}
+
+/* Урок №10. Комментарий: Стили с жестким контролем границ и отступов */
+
+.task-content-8 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;                        /* Центрирование контента */
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-box-8 {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.main-img-8 {
+    width: 100%;                                /* Картинка занимает всю ширину блока */
+    max-width: 700px;                           /* Ограничение по макету */
+    height: auto;
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.input-container-8 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);      /* 4 колонки как на скриншоте */
+    grid-template-rows: repeat(2, 1fr);         /* 2 ряда */
+    gap: 10px;                                  /* Компактный отступ */
+    width: 100%;
+    max-width: 700px;
+    padding: 0 10px;
+}
+
+.word-input-8 {
+    width: 100%;
+    height: 45px;
+    border: 2px solid #ffcc80;
+    border-radius: 12px;
+    text-align: center;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.word-input-8:focus {
+    border-color: #ff6d00;                      /* Оранжевый фокус */
+    background-color: #fffde7;
+}
+
+/* Оранжевая кнопка из lesson-9 */
+.orange-btn {
+    background-color: #ff6d00;
+    color: #ffffff;
+    border: none;
+    padding: 15px 70px;
+    border-radius: 50px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255, 109, 0, 0.3);
+}
+/* Урок №10.9*/
+
+.sentences-grid-9 {
+    display: grid;                              /* включаем grid-раскладку */
+    grid-template-columns: repeat(3, 1fr);      /* три равные колонки */
+    gap: 5px;                                  /* расстояние между карточками */
+    margin-bottom: 10px;                        /* отступ снизу от всей сетки */
+    padding: 0 10px;                            /* небольшие боковые отступы от краёв экрана */
+}
+
+.sentence-card {
+    background: #ffffff;                        /* белый фон карточки */
+    border: 1px solid #e0e0e0;                  /* тонкая серая рамка */
+    border-radius: 15px;                        /* скругление углов */
+    padding: 5px;                              /* внутренние отступы */
+    text-align: center;                         /* центрируем весь текст внутри */
+    display: flex;                              /* flex для вертикального выравнивания */
+    flex-direction: column;                     /* элементы друг под другом */
+    justify-content: space-between;             /* распределяем пространство: картинка сверху, кнопки снизу */
+}
+
+.sentence-card img {
+    width: 100%;                                /* картинка на всю ширину карточки */
+    height: 180px;                              /* фиксированная высота для единообразия */
+    object-fit: contain;                        /* картинка полностью помещается без обрезки */
+    margin-bottom: 10px;                        /* отступ снизу до текста */
+}
+
+.phrase-text {
+    font-size: 1.1rem;                            /* базовый размер шрифта */
+    color: #002b5b;                             /* тёмно-синий цвет текста */
+    font-weight: bold;                          /* жирный шрифт */
+    margin-bottom: 2px;                        /* отступ перед вариантами ответов */
+    min-height: 1.1em;                          /* минимальная высота — чтобы карточки не прыгали по высоте */
+}
+
+.options-row {
+    display: flex;                              /* горизонтальная строка вариантов */
+    justify-content: space-around;              /* равномерно распределяем кнопки */
+    gap: 2px;                                   /* небольшой промежуток между кнопками */
+}
+
+.opt-btn {
+    font-size: 1rem;                          /* чуть меньший шрифт */
+    font-weight: 800;                           /* очень жирный текст */
+    color: #4caf50;                             /* зелёный цвет текста */
+    cursor: pointer;                            /* курсор-рука */
+    padding: 5px;                               /* внутренние отступы кнопки */
+    transition: all 0.2s;                       /* плавный переход при наведении/выборе */
+    border: 2px solid transparent;              /* прозрачная рамка — чтобы не скакала ширина при выделении */
+    border-radius: 8px;                         /* скругление кнопки */
+}
+
+/* Эффект выбора */
+.opt-btn.selected {
+    background-color: #e8f5e9;                  /* светло-зелёный фон при выборе */
+    border-color: #4caf50;                      /* зелёная рамка */
+    transform: scale(1.05);                     /* лёгкое увеличение кнопки */
+}
+
+.orange-btn {
+    background-color: #ff6d00;                  /* основной оранжевый цвет */
+    color: #fff;                                /* белый текст */
+    border: none;                               /* без рамки */
+    padding: 15px 70px;                         /* крупная кнопка */
+    border-radius: 50px;                        /* сильно скруглённые углы (пилюля) */
+    font-family: 'Comic Sans MS', sans-serif;   /* детский шрифт */
+    font-size: 1.4rem;                          /* крупный текст */
+    font-weight: bold;                          /* жирный */
+    cursor: pointer;                            /* курсор-рука */
+}
+
+/* Урок №10. Комментарий: Стили для размещения панорамного изображения и сетки 18 элементов */
+
+.detective-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.pano-wrapper {
+    width: 100%;
+    max-width: 850px;                           /* Соответствие макету */
+    border: 3px solid #e0f2f1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.img-pano {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.items-grid-18 {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);      /* 9 колонок строго по ТЗ */
+    gap: 8px;
+    width: 100%;
+    max-width: 850px;
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: 5px;
+}
+
+.count-input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Comic Sans MS', sans-serif;
+    border: 2px solid #ffcc80;
+    border-radius: 5px;
+    outline: none;
+}
+
+.count-input:focus {
+    border-color: #ff6d00;
+}
+
+/* Оранжевая кнопка */
+.orange-btn {
+    background-color: #ff6d00;
+    color: #fff;
+    border: none;
+    padding: 15px 70px;
+    border-radius: 50px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Урок №10.11 */
+
+.crossword-container-11 {
+    display: flex;                              /* основной контейнер → flex */
+    flex-direction: column;                     /* вертикальное расположение блоков */
+    align-items: center;                        /* центрирование по горизонтали */
+    gap: 30px;                                  /* расстояние между секциями */
+}
+
+.crossword-main-row {
+    display: flex;                              /* горизонтальная строка для картинок и сетки */
+    align-items: flex-end;                      /* выравнивание по нижнему краю */
+    gap: 40px;                                  /* отступ между левым блоком и кроссвордом */
+    width: 100%;                                /* на всю ширину */
+    justify-content: center;                    /* центрирование контента */
+}
+
+.side-images {
+    display: flex;                              /* вертикальный стек для левых картинок */
+    flex-direction: column;                     
+    gap: 20px;                                  /* расстояние между компасом и колосом */
+}
+
+.img-cross-large {
+    width: 180px;                               /* фиксированная ширина 180px по инструкции */
+    height: auto;                               /* пропорциональная высота */
+    object-fit: contain;                        /* сохранение пропорций */
+}
+
+.crossword-grid {
+    display: flex;                              /* контейнер лесенки */
+    flex-direction: column;                     /* строки одна под другой */
+    align-items: flex-end;                      /* ВАЖНО: выравнивание вправо для формы лесенки */
+    gap: 5px;                                   /* межстрочный интервал */
+}
+
+.cross-row {
+    display: flex;                              /* строка как горизонтальный flex */
+    gap: 5px;                                   /* расстояние между буквами */
+}
+
+.cross-letter {
+    width: 45px;                                /* ширина ячейки */
+    height: 45px;                               /* высота ячейки */
+    border: 2px solid #002b5b;                  /* синяя рамка */
+    text-align: center;                         /* буква по центру */
+    font-size: 1.5rem;                          /* размер шрифта */
+    font-weight: bold;                          /* жирные буквы */
+    font-family: 'Comic Sans MS', sans-serif;   /* детский шрифт */
+    text-transform: uppercase;                  /* приведение к верхнему регистру */
+    outline: none;                              /* убираем обводку при клике */
+}
+
+.cross-letter.static {
+    background-color: #f0f0f0;                  /* фон для буквы С */
+    color: #002b5b;                             /* цвет буквы С */
+    display: flex;                              /* центрирование внутри блока */
+    align-items: center;                        
+    justify-content: center;                    
+    border-color: #999;                         /* серый контур */
+}
+
+.bottom-images-large {
+    display: flex;                              /* контейнер нижних картинок */
+    justify-content: center;                    /* центрирование */
+    gap: 20px;                                  /* отступы между ними */
+    margin-top: 20px;                           /* отступ от кроссворда */
+}
+
+.bottom-images-large img {
+    width: 180px;                               /* размер 180px */
+    height: 180px;                              
+    object-fit: contain;                        /* вписывание картинки */
+}
+
+.orange-btn {
+    background-color: #ff6d00;                  /* оранжевый фон кнопки */
+    color: #fff;                                /* белый текст */
+    padding: 15px 70px;                         /* размер кнопки */
+    border-radius: 50px;                        /* скругление */
+    font-weight: bold;                          
+    cursor: pointer;                            
+    border: none;                               
+}
