@@ -1,0 +1,444 @@
+/* ОБЩИЕ СТИЛИ */
+body {
+    margin: 0; padding: 0;
+    background-color: #99dfff;                  /* Голубой фон страницы */
+    font-family: 'Comic Sans MS', sans-serif;
+}
+
+.content-wrapper { padding: 30px 20px; }
+
+.lesson-badge {
+    display: inline-block;
+    background: #fff9c4;                        /* Светло-желтый фон */
+    padding: 15px 45px;
+    border-radius: 20px;
+    color: #ff6d00;                             /* Оранжевый текст */
+    font-weight: bold;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+}
+
+.main-header { text-align: center; }
+
+.white-card {
+    background: #f0faff;
+    border: 8px solid #ffd600;                  /* Желтая рамка */
+    border-radius: 45px;
+    padding: 40px;
+    margin: 0 auto 40px auto;
+    max-width: 950px;                           /* Ограничение ширины блока */
+}
+
+.card-title { color: #ff7043; text-align: center; font-size: 2.2em; margin: 0; }
+
+.yellow-divider {
+    height: 6px;
+    background: #ffd600;
+    width: 250px;
+    margin: 15px auto 25px auto;
+    border-radius: 10px;
+}
+
+.card-instruction {
+    font-size: 1.6rem !important;               /* Шрифт по требованию Доцента */
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ЗАДАНИЕ 1 */
+.task-one-container { text-align: center; }
+.clickable-task-img {
+    max-width: 100%;
+    border-radius: 25px;
+    cursor: pointer;                            /* Указатель для кликов */
+}
+
+/* ЗАДАНИЕ 2 - СЕТКА 3х3 */
+.drag-and-drop-wrapper {
+    display: flex;                              /* Сетки в ряд */
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 120px);    /* 3 колонки по 120px */
+    grid-template-rows: repeat(3, 120px);       /* 3 ряда по 120px */
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 30px;
+}
+
+.drop-target-11, .drag-box-11 {
+    width: 120px; height: 120px;                /* Одинаковый размер ячеек */
+    background: #fff;
+    border: 3px solid #ffd600;
+    border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+}
+
+.inner-sh-img, .drag-item-11 {
+    width: 110px; height: 110px;                /* Размер картинок внутри ячейки */
+    object-fit: contain;
+}
+
+.inner-sh-img { opacity: 0.2; filter: grayscale(1); } /* Стиль тени */
+.drag-item-11 { cursor: grab; }
+
+/* КНОПКИ */
+.btn-box { text-align: center; margin-top: 25px; }
+.orange-check-btn {
+    background-color: #ff6d00;
+    color: white;
+    border: none;
+    padding: 15px 50px;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #d35400;
+}
+
+.result-text {
+    text-align: center; font-size: 1.8em; font-weight: bold; margin-top: 20px; min-height: 1.2em;
+}
+
+
+.wardrobe-game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+    margin: 20px 0;
+}
+
+.heroes-line, .clothes-line {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.hero-cell, .cloth-cell {
+    width: 170px;
+    height: 220px;
+    background: #ffffff;
+    border: 4px solid #b2ebf2;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.character-portrait { width: 140px; height: 180px; object-fit: contain; }
+.drag-cloth { width: 140px; height: 140px; object-fit: contain; cursor: grab; }
+
+.hero-cell.drag-hover { border-color: #ff6d00; background-color: #fff9c4; }
+.hero-cell.fixed-success { border-color: #4caf50; background-color: #e8f5e9; }
+
+.plural-columns-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin: 30px 0;
+}
+
+.plural-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.plural-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.singular-word {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #2c3e50;
+    min-width: 120px;
+}
+
+.plural-input {
+    width: 220px;
+    height: 45px;
+    border: 3px solid #dfe6e9;
+    border-radius: 12px;
+    padding: 0 10px;
+    font-size: 1.2em !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Comic Sans MS', sans-serif;
+    outline: none;
+}
+
+.plural-input:focus { border-color: #ffd600; }
+.plural-input.correct { border-color: #27ae60; background-color: #e8f5e9; }
+.plural-input.wrong { border-color: #e74c3c; background-color: #ffebee; }
+
+/* Общий контейнер для строк-векторов */
+.letter-elimination-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+/* Настройка строки на 12 ячеек */
+.letter-row {
+    display: grid;
+    grid-template-columns: repeat(12, 55px);
+    gap: 8px;
+    background: #e1f5fe;
+    padding: 12px;
+    border-radius: 15px;
+    justify-content: center;
+}
+
+/* Базовый стиль буквы */
+.letter-box {
+    width: 55px;
+    height: 55px;
+    background: #ffffff;
+    border: 3px solid #81d4fa;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+/* КРАСНОЕ ВЫДЕЛЕНИЕ всей группы одинаковых букв */
+.letter-box.highlight-red {
+    border: 3px solid #ff0000 !important;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+    background-color: #ffebee;
+}
+
+/* Состояние исчезновения буквы */
+.letter-box.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(0.5); /* Эффект схлопывания */
+}
+
+/* Контейнер для задания с поляной */
+.flower-task-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.flower-main-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: opacity 0.5s ease; /* Плавный переход при смене */
+}
+
+/* Зеленая кнопка "Продолжить" согласно макету */
+.green-continue-btn {
+    background-color: #7cb342; /* Зеленый цвет как на скриншоте */
+    color: white;
+    border: none;
+    padding: 12px 60px;
+    font-size: 1.6em;
+    font-weight: bold;
+    border-radius: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 0 #558b2f;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.green-continue-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 1px 0 #558b2f;
+}
+
+.green-continue-btn:hover {
+    background-color: #8bc34a;
+}
+
+/* Контейнер для фазанов */
+.pheasant-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.pheasant-main-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 25px;
+    cursor: crosshair; /* Курсор прицела для поиска */
+    transition: filter 0.5s ease;
+}
+
+/* Эффект для найденных фазанов (визуальный отклик при клике) */
+.pheasant-main-img.active-search {
+    border: 5px solid #ff6d00;
+}
+
+/* Контейнер игры на сопоставление */
+.matching-game-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 40px 100px;
+    margin: 20px 0;
+}
+
+.words-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.word-item {
+    background: #ffffff;
+    border: 3px solid #ffd600;
+    border-radius: 15px;
+    padding: 15px 25px;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.2s;
+    user-select: none;
+    z-index: 2;
+}
+
+.word-item:hover { background: #fffde7; }
+.word-item.selected { background: #ffecb3; border-color: #ff6d00; }
+.word-item.matched { background: #e8f5e9; border-color: #4caf50; cursor: default; }
+
+/* SVG слой для линий */
+.connection-svg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; /* Чтобы не мешать кликам */
+    z-index: 1;
+}
+
+.connection-line {
+    stroke: #ff6d00;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+.syllable-game-container {
+    position: relative;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.syllable-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 180px);
+    gap: 40px;
+    justify-content: center;
+}
+
+.img-item {
+    width: 180px;
+    height: 180px;
+    background: #ffffff;
+    border: 4px solid #81d4fa;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+    z-index: 2;
+}
+
+.img-item img {
+    max-width: 140px;
+    max-height: 140px;
+    object-fit: contain;
+}
+
+.img-item.selected { border-color: #ff6d00; background-color: #fff9c4; }
+.img-item.matched { border-color: #4caf50; background-color: #e8f5e9; }
+
+/* Стили линий SVG берем из Задания 8 или дублируем */
+
+
+/* Контейнер задания 10 */
+.sentence-task-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+/* Сетка 2х2 для картинок */
+.sentence-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 220px);
+    gap: 20px;
+}
+
+.sentence-img-box {
+    width: 220px;
+    height: 220px;
+    border: 3px solid #81d4fa;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.sentence-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Стили полей ввода - длинные строки */
+.sentence-inputs-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sentence-input {
+    width: 100%;
+    height: 45px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #2c3e50; /* Линии как в тетради */
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.3em !important;
+    padding: 5px 10px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.sentence-input:focus {
+    border-bottom-color: #ff6d00;
+    background-color: rgba(255, 214, 0, 0.05);
+}
+
+.sentence-input.filled {
+    border-bottom-color: #27ae60;
+}

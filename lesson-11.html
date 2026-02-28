@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">                                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 11 - Автоматизация звука З</title>
+    <link rel="stylesheet" href="lesson-11.css">             </head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Автоматизация звука [З]</div>
+    </header>
+
+    <div class="white-card">
+        <h2 class="card-title">Задание 1. Найди буквы «З»</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Внимательно посмотри на картинку и <b>найди все спрятанные буквы</b>.</p>
+
+        <div class="task-one-container">
+            <img src="images/lesson-11-1.png" alt="Поиск букв" class="clickable-task-img" id="search-image">
+        </div>
+
+        <div id="res-11-1" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-11-1" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <div class="white-card">
+        <h2 class="card-title">Задание 2. Найти пару</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Назови каждый предмет и <b>перетащи картинку</b> на её тень.</p>
+
+        <div class="drag-and-drop-wrapper">
+            <div class="grid-container shadow-grid">
+                <div class="drop-target-11" data-match="hare"><img src="images/hare-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="cinderella"><img src="images/cinderella-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="castle1"><img src="images/castle1-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="teeth"><img src="images/teeth-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="bison"><img src="images/bison-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="fence"><img src="images/fence-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="umbrella"><img src="images/umbrella-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="castle2"><img src="images/castle2-sh.png" class="inner-sh-img"></div>
+                <div class="drop-target-11" data-match="znayka"><img src="images/znayka-sh.png" class="inner-sh-img"></div>
+            </div>
+
+            <div class="grid-container object-grid">
+                <div class="drag-box-11"><img src="images/bison.png" class="drag-item-11" draggable="true" id="bison"></div>
+                <div class="drag-box-11"><img src="images/cinderella.png" class="drag-item-11" draggable="true" id="cinderella"></div>
+                <div class="drag-box-11"><img src="images/castle1.png" class="drag-item-11" draggable="true" id="castle1"></div>
+                <div class="drag-box-11"><img src="images/fence.png" class="drag-item-11" draggable="true" id="fence"></div>
+                <div class="drag-box-11"><img src="images/teeth.png" class="drag-item-11" draggable="true" id="teeth"></div>
+                <div class="drag-box-11"><img src="images/hare.png" class="drag-item-11" draggable="true" id="hare"></div>
+                <div class="drag-box-11"><img src="images/znayka.png" class="drag-item-11" draggable="true" id="znayka"></div>
+                <div class="drag-box-11"><img src="images/castle2.png" class="drag-item-11" draggable="true" id="castle2"></div>
+                <div class="drag-box-11"><img src="images/umbrella.png" class="drag-item-11" draggable="true" id="umbrella"></div>
+            </div>
+        </div>
+
+        <div id="res-11-2" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-11-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-3">
+    <h2 class="card-title">Задание 3. Неправильный гардероб</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Герои всё перепутали! <b>Перетащи</b> верную одежду на каждого персонажа.</p>
+
+    <div class="wardrobe-game-container">
+        <div class="heroes-line">
+            <div class="hero-cell target-zone" data-hero="znayka">
+                <img src="images/znayka-wrong.png" id="img-znayka" class="character-portrait">
+                <div class="hero-name">Знайка</div>
+            </div>
+            <div class="hero-cell target-zone" data-hero="elsa">
+                <img src="images/elsa-wrong.png" id="img-elsa" class="character-portrait">
+                <div class="hero-name">Эльза</div>
+            </div>
+            <div class="hero-cell target-zone" data-hero="hare">
+                <img src="images/hare-wrong.png" id="img-hare" class="character-portrait">
+                <div class="hero-name">Заяц</div>
+            </div>
+            <div class="hero-cell target-zone" data-hero="cinderella">
+                <img src="images/cinderella-wrong.png" id="img-cinderella" class="character-portrait">
+                <div class="hero-name">Золушка</div>
+            </div>
+            <div class="hero-cell target-zone" data-hero="neznayka">
+                <img src="images/neznayka-wrong.png" id="img-neznayka" class="character-portrait">
+                <div class="hero-name">Незнайка</div>
+            </div>
+        </div>
+
+        <div class="clothes-line" id="clothes-container">
+            <div class="cloth-cell"><img src="images/suit-znayka.png" class="drag-cloth" draggable="true" id="znayka"></div>
+            <div class="cloth-cell"><img src="images/dress-elsa.png" class="drag-cloth" draggable="true" id="elsa"></div>
+            <div class="cloth-cell"><img src="images/shirt-hare.png" class="drag-cloth" draggable="true" id="hare"></div>
+            <div class="cloth-cell"><img src="images/dress-cinderella.png" class="drag-cloth" draggable="true" id="cinderella"></div>
+            <div class="cloth-cell"><img src="images/shirt-neznayka.png" class="drag-cloth" draggable="true" id="neznayka"></div>
+        </div>
+    </div>
+
+    <div id="res-11-3" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-3" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+<div class="white-card" id="task-11-4">
+    <h2 class="card-title">Задание 4. Один — много</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Я назову один предмет, а ты напиши, когда их <b>много</b>.</p>
+
+    <div class="plural-columns-container">
+        <div class="plural-column">
+            <div class="plural-row">
+                <span class="singular-word">Запах —</span>
+                <input type="text" class="plural-input" data-answer="ЗАПАХИ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Закон —</span>
+                <input type="text" class="plural-input" data-answer="ЗАКОНЫ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Загадка —</span>
+                <input type="text" class="plural-input" data-answer="ЗАГАДКИ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Запятая —</span>
+                <input type="text" class="plural-input" data-answer="ЗАПЯТЫЕ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Забота —</span>
+                <input type="text" class="plural-input" data-answer="ЗАБОТЫ" placeholder="...">
+            </div>
+        </div>
+
+        <div class="plural-column">
+            <div class="plural-row">
+                <span class="singular-word">Замена —</span>
+                <input type="text" class="plural-input" data-answer="ЗАМЕНЫ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Затея —</span>
+                <input type="text" class="plural-input" data-answer="ЗАТЕИ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Занятие —</span>
+                <input type="text" class="plural-input" data-answer="ЗАНЯТИЯ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Задание —</span>
+                <input type="text" class="plural-input" data-answer="ЗАДАНИЯ" placeholder="...">
+            </div>
+            <div class="plural-row">
+                <span class="singular-word">Заготовка —</span>
+                <input type="text" class="plural-input" data-answer="ЗАГОТОВКИ" placeholder="...">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-11-4" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-4" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-5">
+    <h2 class="card-title">Задание 5. Пропавшие слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Наведи на букву — если она <b>красная</b>, значит у неё есть пара. Нажми, чтобы убрать все такие буквы!</p>
+
+    <div class="letter-elimination-container" id="letter-grid">
+        <div class="letter-row">
+            <div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="М">М</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="А">А</div>
+            <div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="М">М</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="Л">Л</div><div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="М">М</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="С">С</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="И">И</div><div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="С">С</div>
+            <div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="Б">Б</div><div class="letter-box" data-char="И">И</div><div class="letter-box" data-char="С">С</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="И">И</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="Б">Б</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="В">В</div><div class="letter-box" data-char="О">О</div><div class="letter-box" data-char="Г">Г</div>
+            <div class="letter-box" data-char="Н">Н</div><div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="Б">Б</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="В">В</div><div class="letter-box" data-char="Г">Г</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="Р">Р</div><div class="letter-box" data-char="П">П</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="О">О</div><div class="letter-box" data-char="Н">Н</div>
+            <div class="letter-box" data-char="Р">Р</div><div class="letter-box" data-char="П">П</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="Д">Д</div><div class="letter-box" data-char="Р">Р</div><div class="letter-box" data-char="П">П</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="С">С</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="Р">Р</div>
+            <div class="letter-box" data-char="С">С</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="У">У</div><div class="letter-box" data-char="Я">Я</div><div class="letter-box" data-char="С">С</div><div class="letter-box" data-char="Т">Т</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="Е">Е</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="Ж">Ж</div><div class="letter-box" data-char="М">М</div><div class="letter-box" data-char="Х">Х</div>
+            <div class="letter-box" data-char="О">О</div><div class="letter-box" data-char="Е">Е</div><div class="letter-box" data-char="К">К</div><div class="letter-box" data-char="Ж">Ж</div><div class="letter-box" data-char="Х">Х</div><div class="letter-box" data-char="Е">Е</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="Ц">Ц</div><div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="Ч">Ч</div><div class="letter-box" data-char="Т">Т</div><div class="letter-box" data-char="Щ">Щ</div>
+            <div class="letter-box" data-char="О">О</div><div class="letter-box" data-char="Р">Р</div><div class="letter-box" data-char="Ц">Ц</div><div class="letter-box" data-char="Ч">Ч</div><div class="letter-box" data-char="Щ">Щ</div><div class="letter-box" data-char="Ц">Ц</div>
+        </div>
+        <div class="letter-row">
+            <div class="letter-box" data-char="З">З</div><div class="letter-box" data-char="Ю">Ю</div><div class="letter-box" data-char="А">А</div><div class="letter-box" data-char="Э">Э</div><div class="letter-box" data-char="Б">Б</div><div class="letter-box" data-char="Ф">Ф</div>
+            <div class="letter-box" data-char="О">О</div><div class="letter-box" data-char="Ю">Ю</div><div class="letter-box" data-char="Р">Р</div><div class="letter-box" data-char="Э">Э</div><div class="letter-box" data-char="Ф">Ф</div><div class="letter-box" data-char="Ю">Ю</div>
+        </div>
+    </div>
+
+    <div id="res-11-5" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-5" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-6">
+    <h2 class="card-title">Задание 6. Цветочная поляна</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Ваня и Бакс играют на поляне. Внимательно посмотри на картинку и <b>запомни названия предметов</b>.</p>
+
+    <div class="flower-task-container">
+        <img src="images/lesson-11-6-start.png" id="flower-field-img" alt="Цветочная поляна" class="flower-main-img">
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-11-6-next" class="green-continue-btn">ПРОДОЛЖИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-7-1">
+    <h2 class="card-title">Задание 7. Найди и сосчитай</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Внимательно посмотри на картинку. <b>Найди и нажми</b> на всех фазанов, проговаривая вслух.</p>
+
+    <div class="pheasant-container">
+        <img src="images/lesson-11-7-1.png" id="pheasant-img" alt="Поиск фазанов" class="pheasant-main-img">
+    </div>
+
+    <div id="res-11-7" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-7" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-8">
+    <h2 class="card-title">Задание 8. Подходящие пары</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Прочитай слова и <b>соедини линией</b> подходящие пары слов.</p>
+
+    <div class="matching-game-container" id="match-container-11-8">
+        <svg class="connection-svg" id="svg-11-8"></svg>
+
+        <div class="words-column left-column">
+            <div class="word-item" data-pair="сок" id="w-ber">БЕРЁЗОВЫЙ</div>
+            <div class="word-item" data-pair="куст" id="w-roz">РОЗОВЫЙ</div>
+            <div class="word-item" data-pair="шкатулка" id="w-muz">МУЗЫКАЛЬНАЯ</div>
+            <div class="word-item" data-pair="ожерелье" id="w-izu">ИЗУМРУДНОЕ</div>
+        </div>
+
+        <div class="words-column right-column">
+            <div class="word-item target-item" data-word="куст" id="t-kust">КУСТ</div>
+            <div class="word-item target-item" data-word="сок" id="t-sok">СОК</div>
+            <div class="word-item target-item" data-word="ожерелье" id="t-oze">ОЖЕРЕЛЬЕ</div>
+            <div class="word-item target-item" data-word="шкатулка" id="t-shka">ШКАТУЛКА</div>
+        </div>
+    </div>
+
+    <div id="res-11-8" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-8" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card" id="task-11-9">
+    <h2 class="card-title">Задание 9. Соедини картинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Соедини линией предметы, в названии которых <b>одинаковое количество слогов</b>.</p>
+
+    <div class="syllable-game-container" id="syllable-container">
+        <svg class="connection-svg" id="svg-11-9"></svg>
+        
+        <div class="syllable-grid">
+            <div class="img-item" data-syllables="2" id="item-vase">
+                <img src="images/vase.png" alt="Ваза">
+            </div>
+            <div class="img-item" data-syllables="4" id="item-corn">
+                <img src="images/corn.png" alt="Кукуруза">
+            </div>
+            
+            <div class="img-item" data-syllables="4" id="item-overall">
+                <img src="images/overalls.png" alt="Комбинезон">
+            </div>
+            <div class="img-item" data-syllables="2" id="item-goat">
+                <img src="images/koza.png" alt="Коза">
+            </div>
+            <div class="img-item" data-syllables="3" id="item-truck">
+                <img src="images/truck.png" alt="Грузовик">
+            </div>
+            <div class="img-item" data-syllables="3" id="item-birch">
+                <img src="images/birch.png" alt="Береза">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-11-9" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-9" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+<div class="white-card" id="task-11-10">
+    <h2 class="card-title">Задание 10. Составь предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Ваня нарисовал картинки. Внимательно рассмотри их и <b>составь предложение</b> к каждому рисунку.</p>
+
+    <div class="sentence-task-wrapper">
+        <div class="sentence-images-grid">
+            <div class="sentence-img-box"><img src="images/bunny-fence.png" alt="Зайка у забора"></div>
+            <div class="sentence-img-box"><img src="images/goat-corn.png" alt="Коза ест кукурузу"></div>
+            <div class="sentence-img-box"><img src="images/girl-train.png" alt="Девочка заходит в вагон"></div>
+            <div class="sentence-img-box"><img src="images/boy-bag.png" alt="Мальчик собирает рюкзак"></div>
+        </div>
+
+        <div class="sentence-inputs-container">
+            <input type="text" class="sentence-input" placeholder="Напиши 1-е предложение здесь..." data-index="1">
+            <input type="text" class="sentence-input" placeholder="Напиши 2-е предложение здесь..." data-index="2">
+            <input type="text" class="sentence-input" placeholder="Напиши 3-е предложение здесь..." data-index="3">
+            <input type="text" class="sentence-input" placeholder="Напиши 4-е предложение здесь..." data-index="4">
+        </div>
+    </div>
+
+    <div id="res-11-10" class="result-text"></div>
+    <div class="btn-box">
+        <button id="btn-11-10" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="lesson-11.js"></script>                    </body>
+</html>
