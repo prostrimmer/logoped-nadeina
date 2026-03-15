@@ -1,0 +1,569 @@
+body {
+    margin: 0; padding: 0;                                      /* Убираем внешние поля */
+    background-color: #99dfff;                                  /* Цвет фона страницы */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Основной шрифт */
+}
+
+.content-wrapper { padding: 15px 10px; }                        /* Уменьшенный общий отступ */
+
+.main-header { text-align: center; }                            /* Центрирование шапки */
+
+.lesson-badge {
+    display: inline-block;                                      /* Строчно-блочный элемент */
+    background: #fff9c4;                                        /* Фон плашки заголовка */
+    padding: 8px 30px;                                          /* Уменьшенные внутренние поля */
+    border-radius: 15px;                                        /* Скругление углов */
+    color: #ff6d00;                                             /* Цвет текста */
+    font-weight: bold;                                          /* Жирное начертание */
+    font-size: 1.6em;                                           /* Уменьшенный размер шрифта */
+    margin-bottom: 15px;                                        /* Уменьшенный отступ снизу */
+}
+
+.white-card {
+    background: #f0faff;                                        /* Фон карточки */
+    border: 6px solid #ffd600;                                  /* Желтая рамка */
+    border-radius: 30px;                                        /* Скругление углов */
+    padding: 20px 30px;                                         /* Внутренние отступы */
+    
+    /* ИЗМЕНИТЕ ЭТУ СТРОКУ: */
+    margin: 0 auto 20px auto;                                   /* 40px — отступ снизу между блоками */
+    
+    max-width: 800px;                                           /* Ограничение ширины */
+}
+
+.card-title { 
+    color: #ff7043; text-align: center;                         /* Цвет и центровка */
+    font-size: 1.6em; margin: 0;                                /* Уменьшен шрифт заголовка */
+}
+
+.yellow-divider {
+    height: 4px; background: #ffd600; width: 800px;             /* Тонкая линия разделителя */
+    margin: 10px auto; border-radius: 10px;                     /* Уменьшены отступы линии */
+}
+
+.card-instruction {
+    font-size: 1.2rem; color: #2c3e50;                          /* Уменьшен текст инструкции */
+    text-align: center; margin: 10px 0;                         /* Центровка и отступы */
+}
+
+.word-transform-container {
+    display: flex; flex-direction: column; align-items: center; /* Список в колонку */
+    gap: 8px; margin: 15px 0;                                   /* Уменьшен шаг между строками */
+}
+
+.transform-row {
+    display: flex; align-items: center; width: 100%;            /* Строка элементов */
+    max-width: 500px; gap: 15px;                                /* Ограничение по ширине */
+}
+
+.word-left {
+    font-size: 1.3em; font-weight: bold; color: #2c3e50;        /* Стиль исходного слова */
+    min-width: 180px; text-align: right;                        /* Выравнивание по краю */
+}
+
+.word-right-sample {
+    font-size: 1.2em; color: #7f8c8d; font-style: italic;       /* Стиль примера ответа */
+    border-bottom: 2px dashed #bdc3c7;                          /* Пунктир снизу */
+}
+
+.transform-input {
+    width: 200px; height: 32px; border: none;                   /* Уменьшено поле ввода */
+    border-bottom: 2px solid #81d4fa; background: transparent;  /* Линия подчеркивания */
+    font-family: 'Comic Sans MS', sans-serif; font-size: 1.1em; /* Шрифт внутри инпута */
+    font-weight: bold; text-transform: uppercase; outline: none;/* Стиль текста ввода */
+}
+
+.transform-input.correct { border-bottom-color: #27ae60; color: #27ae60; } /* Зеленый при успехе */
+.transform-input.wrong { border-bottom-color: #e74c3c; color: #e74c3c; }   /* Красный при ошибке */
+
+.btn-box { text-align: center; margin-top: 15px; }              /* Центровка кнопки */
+
+.orange-check-btn {
+    background-color: #ff6d00; color: white; border: none;      /* Оранжевая кнопка */
+    padding: 10px 40px; font-size: 1.2em; font-weight: bold;    /* Уменьшен размер кнопки */
+    border-radius: 30px; cursor: pointer;                       /* Скругление кнопки */
+    box-shadow: 0 4px 0 #d35400; transition: 0.2s;              /* Тень кнопки */
+}
+
+.orange-check-btn:active { transform: translateY(2px); box-shadow: 0 2px 0 #d35400; } /* Эффект клика */
+
+.result-text {
+    text-align: center; font-size: 1.3em; margin-top: 10px;     /* Уменьшен текст результата */
+    min-height: 30px;                                           /* Минимальная высота блока */
+}
+
+.task-card-margin {
+    margin-bottom: 25px !important;                             /* Небольшой отступ между блоками */
+}
+
+.task-image-container-full {
+    text-align: center;                                         /* Центровка контейнера */
+    margin: 10px 0;                                             /* Вертикальные отступы */
+    width: 100%;                                                /* Контейнер на всю ширину */
+}
+
+.logic-img-wide {
+    width: 95%;                                                 /* Картинка почти на весь блок */
+    max-width: 850px;                                           /* Ограничение для больших экранов */
+    height: auto;                                               /* Пропорциональное изменение высоты */
+    border-radius: 20px;                                        /* Скругление углов картинки */
+/*    border: 3px solid #81d4fa;                                  /* Голубая рамка */
+    cursor: crosshair;                                          /* Курсор-прицел */
+    transition: transform 0.1s;                                 /* Быстрая анимация клика */
+}
+
+.logic-img-wide:active {
+    transform: scale(0.99);                                     /* Легкое уменьшение при нажатии */
+}
+
+.result-text {
+    text-align: center;                                         /* Центровка текста результата */
+    font-size: 1.3em;                                           /* Размер шрифта сообщения */
+    margin-top: 10px;                                           /* Отступ сверху */
+    min-height: 30px;                                           /* Резерв места под текст */
+}
+
+/* ЗАДАНИЕ №3. Стили макета и ячеек */
+
+/* Контейнер для выравнивания таблицы и сайдбара */
+.task-3-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin: 20px 0;
+}
+
+/* Сетка таблицы с фиксированными размерами */
+.logic-grid-4x4 {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(4, 120px);
+    gap: 10px;
+}
+
+/* Стили ячеек таблицы: белый фон и желтые рамки */
+.grid-cell {
+    width: 120px; height: 120px;
+    background-color: #ffffff;
+    border: 3px solid #00ff59;
+    border-radius: 15px;
+    display: flex; align-items: center; justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Оформление пустых ячеек (пунктир) */
+.grid-cell.empty {
+    border-style: dashed;
+    border-color: #81d4fa;
+}
+
+/* Колонки справа для перетаскивания (без рамок) */
+.drag-sidebar-clean {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Контейнеры исходных картинок справа */
+.side-slot-clean {
+    width: 100px; height: 120px;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* Единые размеры для всех изображений в задании */
+.grid-cell img, .side-slot-clean img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+/* Эффект наведения при перетаскивании */
+.grid-cell.drag-over {
+    background-color: #e3f2fd !important;
+}
+
+
+/* ЗАДАНИЕ №4 */
+.count-task-container {
+    display: flex;                   /* Устанавливаем гибкий контейнер */
+    flex-direction: column;          /* Располагаем элементы в колонку */
+    gap: 15px;                       /* Задаем вертикальный отступ между рядами */
+    align-items: center;             /* Центрируем ряды по горизонтали */
+}
+
+.count-row {
+    display: flex;                   /* Создаем гибкий ряд для предметов */
+    justify-content: center;         /* Центрируем предметы внутри ряда */
+    align-items: center;             /* Выравниваем предметы по вертикальной оси */
+    width: 100%;                     /* Растягиваем ряд на всю ширину контейнера */
+    background: #fdfdfd;             /* Устанавливаем светлый фон для ряда */
+    border-radius: 12px;             /* Скругляем углы подложки ряда */
+    padding: 10px 0;                 /* Добавляем внутренние отступы сверху и снизу */
+}
+
+/* Настройка размеров: чем выше ряд, тем больше визуальный размер предметов */
+.row-huge .count-item { 
+    width: 190px;                    /* Задаем максимальную ширину для самого верхнего ряда */
+    height: 170px;                   /* Задаем максимальную высоту для самого верхнего ряда */
+}
+
+.row-large .count-item { 
+    width: 140px;                    /* Уменьшаем ширину для второго ряда */
+    height: 140px;                   /* Уменьшаем высоту для второго ряда */
+}
+
+.row-medium .count-item { 
+    width: 105px;                     /* Устанавливаем среднюю ширину для третьего ряда */
+    height: 105px;                    /* Устанавливаем среднюю высоту для третьего ряда */
+}
+
+.row-small .count-item { 
+    width: 90px;                     /* Задаем минимальную ширину для нижнего ряда */
+    height: 90px;                    /* Задаем минимальную высоту для нижнего ряда */
+}
+
+.count-item img {
+    max-width: 95%;                  /* Ограничиваем ширину картинки внутри блока */
+    max-height: 95%;                 /* Ограничиваем высоту картинки внутри блока */
+    object-fit: contain;             /* Сохраняем пропорции изображения без обрезки */
+}
+
+.answer-selection {
+    margin: 20px 0;                  /* Добавляем отступы для блока выбора ответа */
+    text-align: center;              /* Центрируем выпадающий список */
+}
+
+.styled-select {
+    padding: 10px 20px;              /* Задаем внутренние поля для списка */
+    font-size: 1.2em;                /* Увеличиваем размер шрифта для удобства ребенка */
+    border: 3px solid #ffd600;       /* Устанавливаем фирменную желтую рамку */
+    border-radius: 10px;             /* Скругляем углы рамки списка */
+    cursor: pointer;                 /* Меняем курсор при наведении на список */
+}
+
+/* ЗАДАНИЕ №5. Стили для синхронного рисования кругов */
+
+/* Контейнер для центровки картинок */
+.diff-task-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+/* Обертка для картинки и слоя с маркерами */
+.interactive-zone {
+    position: relative;
+    max-width: 600px;
+    border: 4px solid #ffd600;
+    border-radius: 20px;
+    overflow: hidden;
+    line-height: 0;
+    cursor: crosshair;
+}
+
+.interactive-zone img {
+    width: 100%;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Контейнер для кругов поверх изображения */
+.markers-layer {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; /* Клики проходят сквозь слой на родителя */
+}
+
+/* Стиль круга (маркера) */
+.click-circle {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border: 3px solid #ff6d00;
+    border-radius: 50%;
+    background: rgba(255, 109, 0, 0.2);
+    transform: translate(-50%, -50%);
+    animation: circle-pop 0.25s ease-out;
+}
+
+@keyframes circle-pop {
+    from { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* ЗАДАНИЕ №6. Стили для исправления предложений */
+
+.correction-task-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.sentence-item {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 2px solid #e1f5fe;
+}
+
+.wrong-text {
+    font-size: 1.2em;
+    color: #546e7a;
+    margin: 0 0 8px 0;
+}
+
+.fix-input {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1.1em;
+    border: 2px solid #ffd600;
+    border-radius: 10px;
+    outline: none;
+    font-family: inherit;
+    box-sizing: border-box;
+}
+
+.fix-input:focus {
+    border-color: #ff6d00;
+    background-color: #fffde7;
+}
+
+/* Стили для валидации */
+.sentence-item.success { border-color: #8bc34a; background-color: #f1f8e9; }
+.sentence-item.error { border-color: #ef5350; background-color: #ffebee; }
+
+
+/* ЗАДАНИЕ №7. Стили для интерактивной улитки */
+
+.snail-task-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.snail-container {
+    position: relative;
+    max-width: 800px;
+    line-height: 0;
+}
+
+.snail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Стили зон для клика на панцире */
+.snail-spot {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+/* Эффект при наведении и активном состоянии */
+.snail-spot:hover {
+    background: rgba(255, 214, 0, 0.2);
+    border-color: #ffd600;
+}
+
+.snail-spot.active-word {
+    border-color: #ff6d00;
+    background: rgba(255, 109, 0, 0.2);
+    box-shadow: 0 0 15px #ff6d00;
+    animation: pulse-orange 1.5s infinite;
+}
+
+.snail-spot.completed {
+    border-color: #8bc34a;
+    background: rgba(139, 195, 74, 0.2);
+}
+
+/* Подсказка названия слова */
+.word-hint {
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #ff6d00;
+    margin: 15px 0;
+    min-height: 1.2em;
+}
+
+@keyframes pulse-orange {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.1); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ЗАДАНИЕ №8. Стили для зеркальных букв */
+
+.letter-puzzle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.word-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.letter {
+    font-size: 2.2em;
+    font-weight: bold;
+    color: #000000;
+    cursor: pointer;
+    padding: 5px 12px;
+    background: #ffffff;
+    border: 2px solid #e1f5fe;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Зеркальное отражение буквы по горизонтали */
+.letter.mirror {
+    display: inline-block;
+    transform: scaleX(-1);
+    color: #000000;
+}
+
+/* Исчезновение при клике */
+.letter.removed {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0);
+}
+
+.letter:not(.removed):hover {
+    border-color: #ffd600;
+    background-color: #fffde7;
+}
+
+/* ЗАДАНИЕ №9 */
+.crossword-container {
+    display: flex;                   /* Используем гибкий контейнер */
+    flex-direction: column;          /* Выстраиваем строки в колонку */
+    align-items: center;             /* Центрируем кроссворд на странице */
+    margin: 20px 0;                  /* Задаем внешние отступы блока */
+}
+
+.cross-row {
+    display: grid;                   /* Применяем сеточную модель для выравнивания */
+    grid-template-columns: 40px repeat(9, 45px); /* Номер + 9 колонок для букв */
+    gap: 8px;                        /* Задаем зазор между ячейками */
+    margin-bottom: 5px;              /* Отступ между строками кроссворда */
+}
+
+.row-num {
+    display: flex;                   /* Контейнер для цифры номера */
+    align-items: center;             /* Центрируем номер по вертикали */
+    justify-content: flex-end;       /* Прижимаем номер к ячейкам */
+    padding-right: 15px;             /* Отступ от номера до сетки */
+    font-weight: bold;               /* Делаем цифру заметной */
+    color: #1976d2;                  /* Устанавливаем синий цвет для нумерации */
+}
+
+.cell {
+    width: 42px;                     /* Ширина каждой буквенной ячейки */
+    height: 42px;                    /* Высота каждой буквенной ячейки */
+    text-align: center;              /* Центрируем символ внутри */
+    font-size: 1.6em;                /* Увеличиваем шрифт для удобства ввода */
+    font-weight: bold;               /* Делаем буквы жирными */
+    text-transform: uppercase;       /* Автоматически переводим буквы в верхний регистр */
+    border: 2px solid #bbdefb;       /* Устанавливаем светло-синюю рамку */
+    border-radius: 6px;              /* Слегка скругляем углы ячеек */
+    outline: none;                   /* Убираем стандартный контур фокуса */
+}
+
+.cell.static {
+    background-color: #f5f5f5;       /* Фон для предопределенной буквы З */
+    color: #e53935;                  /* Выделяем букву З красным цветом */
+    border-color: #e53935;           /* Рамка буквы З также становится красной */
+}
+
+.empty-cell {
+    width: 42px;                     /* Ширина пустого пространства для выравнивания */
+    height: 42px;                    /* Высота пустого пространства для выравнивания */
+}
+
+.crossword-img {
+    max-width: 95%;                  /* Ограничиваем ширину картинки подсказок */
+    display: block;                  /* Делаем изображение блочным */
+    margin: 5px auto;               /* Центрируем картинку и добавляем отступ сверху */
+    border-radius: 15px;             /* Скругляем края изображения */
+    
+}
+
+
+/* ЗАДАНИЕ №10. Стили для отображения единого панно и сетки ответов */
+
+/* Контейнер для основного изображения-панно */
+.search-field-container {
+    text-align: center;              /* Центрируем содержимое контейнера */
+    margin-bottom: 1px;             /* Задаем отступ снизу до сетки ответов */
+}
+
+.main-detective-img {
+    max-width: 100%;                 /* Ограничиваем ширину картинки краями экрана */
+    height: auto;                    /* Сохраняем пропорции при масштабировании */
+    border: 3px solid #e1f5fe;       /* Добавляем светло-голубую рамку */
+    border-radius: 15px;             /* Скругляем углы основного изображения */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Добавляем мягкую тень для объема */
+}
+
+/* Сетка для малых карточек с инпутами (7 колонок как в макете) */
+.detective-answers-grid {
+    display: grid;                   /* Используем сеточную модель отображения */
+    grid-template-columns: repeat(7, 1fr); /* Создаем 7 равных колонок в ряд */
+    gap: 7px;                       /* Устанавливаем зазоры между карточками */
+    margin: 20px auto;               /* Центрируем сетку и задаем внешние отступы */
+}
+
+/* Оформление карточки отдельного предмета */
+.answer-slot {
+    display: flex;                   /* Используем флекс-контейнер для элементов */
+    flex-direction: column;          /* Располагаем картинку и инпут вертикально */
+    align-items: center;             /* Выравниваем элементы по центру горизонтали */
+    gap: 5px;                        /* Задаем расстояние между картинкой и вводом */
+    padding: 5px;                   /* Устанавливаем внутренние поля карточки */
+    background: #ffffff;             /* Устанавливаем белый фон карточки */
+    border: 2px solid #46a1ec;       /* Рисуем  рамку согласно дизайну */
+    border-radius: 10px;             /* Скругляем углы рамки карточки */
+}
+
+.answer-slot img {
+    width: 60px;                     /* Устанавливаем фиксированную ширину иконки */
+    height: 60px;                    /* Устанавливаем фиксированную высоту иконки */
+    object-fit: contain;             /* Вписываем картинку в размер без искажений */
+}
+
+/* Стили для числового ввода */
+.detective-input {
+    width: 50px;                     /* Задаем ширину поля для ввода числа */
+    text-align: center;              /* Центрируем вводимый текст */
+    font-size: 1.2em;                /* Увеличиваем шрифт для удобства ребенка */
+    font-weight: bold;               /* Делаем число в поле ввода жирным */
+    border: 2px solid #ec32ba;       /* Устанавливаем  рамку инпута */
+    border-radius: 8px;              /* Скругляем углы рамки поля ввода */
+    outline: none;                   /* Убираем стандартную обводку при фокусе */
+}
+
+/* Подсветка при правильном/неправильном ответе */
+.answer-slot.correct { border-color: #8bc34a; background-color: #f1f8e9; } /* Зеленая тема при успехе */
+.answer-slot.wrong { border-color: #ef5350; background-color: #ffebee; }   /* Красная тема при ошибке */
