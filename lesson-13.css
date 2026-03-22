@@ -1,0 +1,530 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0; padding: 0;                                      /* Убираем внешние поля */
+    background-color: #99dfff;                                  /* Цвет фона из lesson-12 */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Шрифт из lesson-12 */
+}
+
+.content-wrapper { padding: 15px 10px; }                        /* Внутренние отступы контента */
+
+.main-header { text-align: center; }                            /* Центрирование шапки */
+
+.lesson-badge {
+    display: inline-block;                                      /* Плашка заголовка */
+    background: #fff9c4;                                        /* Светло-желтый фон */
+    padding: 8px 30px;                                          /* Внутренние поля */
+    border-radius: 15px;                                        /* Скругление */
+    color: #ff6d00;                                             /* Оранжевый текст */
+    font-weight: bold;                                          /* Жирный шрифт */
+    font-size: 1.6em;                                           /* Размер шрифта */
+    margin-bottom: 15px;                                        /* Отступ снизу */
+    box-shadow: 0 4px 0 #ffd600;                                /* Тень под плашкой */
+}
+
+.white-card {
+    background: #f0faff;                                        /* Фон карточки */
+    border: 6px solid #ffd600;                                  /* Желтая рамка */
+    border-radius: 30px;                                        /* Скругление углов */
+    padding: 20px;                                              /* Поля внутри */
+    max-width: 800px;                                           /* Ширина увеличена для 3 столбцов */
+    margin: 0 auto 30px;                                        /* Центрирование */
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05);                      /* Легкая тень */
+}
+
+.card-title {
+    color: #ff6d00;                                             /* Оранжевый заголовок */
+    text-align: center;                                         /* Центрирование */
+    font-size: 1.8em;                                           /* Размер шрифта */
+}
+
+.yellow-divider {
+    height: 4px;                                                /* Линия-разделитель */
+    background-color: #ffd600;                                  /* Желтый цвет */
+    margin-bottom: 20px;                                        /* Отступ снизу */
+}
+
+/* ЗАДАНИЕ №1. СЕТКА ТРАНСФОРМАЦИИ */
+.transform-grid {
+    display: grid;                                              /* Используем грид для столбцов */
+    grid-template-columns: repeat(3, 1fr);                      /* Создаем 3 равных столбца */
+    gap: 20px;                                                  /* Расстояние между столбцами */
+    margin-bottom: 25px;                                        /* Отступ до кнопки */
+}
+
+.transform-column {
+    display: flex;                                              /* Флекс для элементов внутри столбца */
+    flex-direction: column;                                     /* Располагаем элементы вертикально */
+    gap: 15px;                                                  /* Отступ между парами слов */
+}
+
+.transform-item {
+    display: flex;                                              /* Ряд для слова и инпута */
+    align-items: center;                                        /* Выравнивание по центру */
+    justify-content: space-between;                             /* Распределяем по краям */
+}
+
+.word-label {
+    font-size: 1.3em;                                           /* Размер текста метки */
+    font-weight: bold;                                          /* Жирный шрифт */
+    color: #0277bd;                                             /* Синий цвет */
+    text-align: right;                                          /* Текст вправо */
+    flex: 1;                                                    /* Занимает доступное место */
+    margin-right: 10px;                                         /* Отступ до инпута */
+}
+
+.transform-input {
+    width: 100px;                                               /* Ширина поля ввода */
+    padding: 5px 10px;                                          /* Внутренние поля */
+    font-size: 1.2em;                                           /* Размер шрифта ввода */
+    font-family: 'Comic Sans MS';                               /* Детский шрифт */
+    border: 3px solid #81d4fa;                                  /* Голубая рамка */
+    border-radius: 10px;                                        /* Скругление */
+    text-transform: uppercase;                                  /* Авто-капс */
+    outline: none;                                              /* Без обводки */
+}
+
+.transform-input.correct {
+    border-color: #8bc34a;                                      /* Зеленый при успехе */
+    background-color: #f1f8e9;                                  /* Светло-зеленый фон */
+}
+
+.transform-input.wrong {
+    border-color: #ef5350;                                      /* Красный при ошибке */
+    background-color: #ffebee;                                  /* Светло-красный фон */
+}
+
+.result-text {
+    text-align: center;                                         /* Центрируем текст результата */
+    font-size: 1.2em;                                           /* Размер шрифта */
+    margin-bottom: 15px;                                        /* Отступ */
+}
+/* Центрирование кнопки */
+.btn-box {
+    display: flex;                   /* Используем флекс для надежного центрирования */
+    justify-content: center;         /* Горизонтальное выравнивание по центру */
+    width: 100%;                     /* Ширина на весь блок */
+    margin-top: 25px;                /* Отступ от полей ввода */
+}
+.orange-check-btn {
+    background: #ff8a65;                                        /* Оранжевая кнопка */
+    color: white;                                               /* Белый текст */
+    border: none;                                               /* Без рамки */
+    padding: 12px 45px;                                         /* Размер кнопки */
+    font-size: 1.3em;                                           /* Шрифт на кнопке */
+    font-weight: bold;                                          /* Жирный */
+    border-radius: 20px;                                        /* Скругление */
+    cursor: pointer;                                            /* Курсор-рука */
+    box-shadow: 0 6px 0 #e64a19;                                /* Тень кнопки */
+}
+
+/* ЗАДАНИЕ №2. СТИЛИ ДЛЯ КАРТОЧЕК С ПРЕДЛОЖЕНИЯМИ */
+.sentence-images-grid {
+    display: grid;                   /* Используем сеточную модель */
+    grid-template-columns: repeat(3, 1fr); /* 3 колонки одинаковой ширины */
+    gap: 15px;                       /* Расстояние между карточками */
+    margin-bottom: 20px;             /* Отступ до кнопки */
+}
+
+.sentence-item {
+    background: #ffffff;             /* Белый фон карточки */
+    border: 3px solid #81d4fa;       /* Голубая рамка */
+    border-radius: 20px;             /* Скругление углов */
+    padding: 12px;                   /* Внутренние поля */
+    display: flex;                   /* Флекс-контейнер */
+    flex-direction: column;          /* Элементы друг под другом */
+    align-items: center;             /* Центрирование по горизонтали */
+    justify-content: space-between;  /* Равномерное распределение высоты */
+    min-height: 220px;               /* Минимальная высота карточки */
+}
+
+.task-img {
+    height: 150px;                    /* Фиксированная высота картинки */
+    object-fit: contain;             /* Пропорциональное вписывание */
+    margin-bottom: 5px;             /* Отступ под картинкой */
+}
+
+.sentence-box {
+    font-size: 1.1em;                /* Размер текста предложения */
+    text-align: center;              /* Центрирование текста */
+    line-height: 1.3;                /* Межстрочный интервал */
+}
+
+.sentence-input {
+    width: 95%;                      /* Ширина поля ввода почти во всю карточку */
+    margin-top: 8px;                 /* Отступ от текста сверху */
+    padding: 6px;                    /* Внутренние поля инпута */
+    font-family: 'Comic Sans MS';    /* Основной шрифт урока */
+    font-size: 1em;                  /* Размер шрифта ввода */
+    border: 2px solid #ffd600;       /* Желтая рамка поля ввода */
+    border-radius: 8px;              /* Скругление рамки инпута */
+    text-transform: uppercase;       /* Авто-капс при вводе */
+    text-align: center;              /* Текст внутри инпута по центру */
+    outline: none;                   /* Убираем обводку при клике */
+}
+
+/* СОСТОЯНИЯ ПРОВЕРКИ */
+.sentence-input.correct { border-color: #8bc34a; background: #f1f8e9; } /* Зеленый при успехе */
+.sentence-input.wrong { border-color: #ef5350; background: #ffebee; }   /* Красный при ошибке */
+
+.btn-box {
+    display: flex;                   /* Флекс для кнопки */
+    justify-content: center;         /* Центрирование кнопки по горизонтали */
+    width: 100%;                     /* На всю ширину карточки */
+    margin-top: 20px;                /* Отступ от упражнения */
+}
+
+/* ЗАДАНИЕ №3. СТИЛИ ДЛЯ ИНТЕРАКТИВНОЙ КАРТИНКИ */
+.mystery-img-container {
+    text-align: center;              /* Центрируем картинку по горизонтали */
+    margin-bottom: 10px;             /* Отступ снизу до текстового поля */
+}
+
+.mystery-img {
+    width: 100%;                     /* Растягиваем изображение на всю ширину */
+    max-width: 750px;                /* Ограничиваем максимальную ширину */
+    border-radius: 20px;             /* Скругляем углы изображения */
+    cursor: pointer;                 /* Указатель-рука при наведении */
+    transition: transform 0.3s;      /* Плавная анимация при клике */
+}
+
+.mystery-img:active {
+    transform: scale(0.98);          /* Эффект легкого нажатия */
+}
+
+.story-input {
+    width: 100%;                     /* Поле на всю ширину карточки */
+    height: 150px;                   /* Высота поля для рассказа */
+    padding: 15px;                   /* Внутренние отступы для текста */
+    font-family: 'Comic Sans MS';    /* Основной шрифт урока */
+    font-size: 1.2em;                /* Крупный шрифт для ребенка */
+    border: 3px solid #81d4fa;       /* Голубая рамка поля ввода */
+    border-radius: 15px;             /* Скругляем углы поля */
+    box-sizing: border-box;          /* Учитываем границы в общей ширине */
+    resize: none;                    /* Запрещаем изменять размер вручную */
+    outline: none;                   /* Убираем стандартную обводку */
+    background-color: #ffffff;       /* Белый фон поля */
+}
+
+.story-input:focus {
+    border-color: #ff6d00;           /* Оранжевая рамка при активации поля */
+}
+
+/* ЗАДАНИЕ №4. СЕТКА ИЗ 6 КАРТИНОК */
+.pairs-grid-only {
+    display: grid;                                              /* Используем сетку грид */
+    grid-template-columns: 1fr 1fr;                             /* Создаем ровно два столбца */
+    gap: 10px;                                                  /* Расстояние между картинками */
+    margin: 10px 0;                                             /* Отступы блока от краев */
+    justify-items: center;                                      /* Центрируем картинки в ячейках */
+}
+
+.task-4-img {
+    width: 100%;                                                /* Растягиваем на ширину колонки */
+    max-width: 360px;                                           /* Ограничиваем максимальный размер */
+    border-radius: 20px;                                        /* Скругляем углы как на макете */
+    border: 3px solid #e1f5fe;                                  /* Тонкая голубая рамка */
+    transition: transform 0.6s ease;                            /* Плавная анимация переворота */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);                     /* Легкая тень для объема */
+}
+
+/* Класс для вертикального зеркального отражения */
+.mirror-v {
+    transform: scaleX(-1);                                      /* Отражаем картинку по вертикали */
+}
+
+.btn-box {
+    display: flex;                                              /* Флекс-контейнер для кнопки */
+    justify-content: center;                                    /* Центрируем кнопку по горизонтали */
+    margin-top: 10px;                                           /* Отступ от сетки картинок */
+}
+
+/* ЗАДАНИЕ №5. СТИЛИ ДЛЯ СПИСКА АНТОНИМОВ */
+.antonyms-list {
+    display: flex;                                              /* Используем флекс-контейнер */
+    flex-direction: column;                                     /* Выстраиваем строки вертикально */
+    gap: 15px;                                                  /* Расстояние между предложениями */
+    text-align: left;                                           /* Выравнивание текста по левому краю */
+    margin-bottom: 20px;                                        /* Отступ до кнопки проверки */
+}
+
+.antonym-row {
+    font-size: 1.2em;                                           /* Размер шрифта предложений */
+    line-height: 1.4;                                           /* Межстрочный интервал */
+    color: #333;                                                /* Цвет основного текста */
+}
+
+.antonym-input {
+    width: 160px;                                               /* Ширина поля для ввода слова */
+    padding: 4px 10px;                                          /* Внутренние отступы в поле */
+    border: 3px solid #81d4fa;                                  /* Голубая рамка поля ввода */
+    border-radius: 10px;                                        /* Скругление углов рамки */
+    font-family: 'Comic Sans MS';                               /* Детский шрифт урока */
+    font-size: 1em;                                             /* Размер шрифта в инпуте */
+    text-transform: uppercase;                                  /* Принудительный ввод заглавными */
+    outline: none;                                              /* Убираем стандартный контур фокуса */
+}
+
+/* СОСТОЯНИЯ ПРОВЕРКИ */
+.antonym-input.correct {
+    border-color: #8bc34a;                                      /* Зеленая рамка при успехе */
+    background-color: #f1f8e9;                                  /* Светло-зеленый фон поля */
+}
+
+.antonym-input.wrong {
+    border-color: #ef5350;                                      /* Красная рамка при ошибке */
+    background-color: #ffebee;                                  /* Розоватый фон поля */
+}
+
+.btn-box {
+    display: flex;                                              /* Контейнер для центрирования кнопки */
+    justify-content: center;                                    /* Горизонтальное центрирование */
+    width: 100%;                                                /* Ширина контейнера */
+}
+
+/* ЗАДАНИЕ №6. ДВА ЛАБИРИНТА */
+.mazes-wrapper {
+    display: flex;                   /* Располагаем блоки рядом */
+    justify-content: space-around;   /* Распределяем место между ними */
+    gap: 20px;                       /* Зазор между лабиринтами */
+    margin: 20px 0;                  /* Внешние отступы */
+}
+
+.maze-block {
+    flex: 1;                         /* Блоки занимают равное место */
+    max-width: 450px;                /* Ограничение ширины одного лабиринта */
+    text-align: center;              /* Центровка содержимого */
+}
+
+.maze-img {
+    width: 100%;                     /* Картинка на всю ширину блока */
+    height: auto;                    /* Пропорциональная высота */
+    border-radius: 15px;             /* Скругление углов */
+    border: 3px solid #e1f5fe;       /* Голубая рамка */
+}
+
+.maze-description {
+    display: none;                   /* Изначально описание скрыто */
+    margin-top: 15px;                /* Отступ от картинки */
+    font-size: 1.1em;                /* Размер текста */
+    font-weight: bold;               /* Жирный шрифт для ключевых слов */
+    color: #0277bd;                  /* Темно-голубой цвет текста */
+    line-height: 1.5;                /* Межстрочный интервал */
+    animation: fadeIn 0.5s ease;     /* Плавное появление */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Адаптив для узких экранов */
+@media (max-width: 800px) {
+    .mazes-wrapper { flex-direction: column; align-items: center; }
+}
+
+/* ЗАДАНИЕ №7. СЕТКА И КОНТУРЫ */
+.odd-one-grid {
+    display: flex;                                              /* Флекс для вертикальных рядов */
+    flex-direction: column;                                     /* Направление — колонка */
+    gap: 5px;                                                  /* Отступ между рядами */
+    margin: 20px 0;                                             /* Внешние поля блока */
+}
+
+.odd-row {
+    display: grid;                                              /* Сетка для картинок в ряду */
+    grid-template-columns: repeat(4, 1fr);                      /* 4 колонки одинаковой ширины */
+    gap: 5px;                                                  /* Расстояние между карточками */
+}
+
+.odd-item {
+    background-color: #fff;                                     /* Белый фон карточки */
+    border: 3px solid #0288d1;                                  /* Синий контур по умолчанию */
+    border-radius: 15px;                                        /* Скругленные углы */
+    padding: 5px;                                              /* Внутренние отступы */
+    cursor: pointer;                                            /* Курсор при наведении */
+    display: flex;                                              /* Центрирование картинки */
+    justify-content: center;                                    /* Горизонтально */
+    align-items: center;                                        /* Вертикально */
+    transition: border-color 0.2s;                              /* Плавная смена цвета рамки */
+}
+
+/* Красный контур при выборе левой кнопкой мыши */
+.odd-item.selected {
+    border-color: #d32f2f;                                      /* Изменение на красный */
+}
+
+.odd-item img {
+    height: 100%;                                                /* Адаптивная ширина картинки */
+    max-height: 150px;                                           /* Ограничение размера */
+    width: auto;                                              /* Сохранение пропорций */
+}
+
+/* ЗАДАНИЕ №8. СОГЛАСОВАНИЕ СЛОВ И КАРТИНОК */
+.words-row {
+    display: flex;                                              /* Устанавливаем гибкую контейнерную модель */
+    justify-content: space-around;                              /* Распределяем кнопки равномерно по ширине */
+    gap: 10px;                                                  /* Задаем фиксированный отступ между кнопками */
+    margin: 10px 0;                                             /* Устанавливаем внешние отступы сверху и снизу */
+}
+
+.word-btn {
+    flex: 1;                                                    /* Позволяем кнопкам растягиваться поровну */
+    padding: 10px;                                              /* Внутренние поля для комфортного нажатия */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Устанавливаем основной шрифт урока */
+    font-weight: bold;                                          /* Делаем начертание текста жирным */
+    border: none;                                               /* Убираем стандартную браузерную рамку */
+    border-radius: 8px;                                         /* Закругляем углы кнопок */
+    color: white;                                               /* Устанавливаем белый цвет шрифта */
+    cursor: pointer;                                            /* Меняем указатель мыши при наведении */
+    transition: background 0.3s;                                /* Плавный переход цвета при активации */
+}
+
+/* ЦВЕТОВЫЕ ТЕМЫ КНОПОК */
+.green-theme .word-btn { background-color: #689f38; }          /* Зеленый фон для верхней группы слов */
+.blue-theme .word-btn { background-color: #be00fe; }           /* Фиолетовый фон для нижней группы слов */
+
+/* АКТИВНОЕ СОСТОЯНИЕ КНОПКИ */
+.word-btn.active { 
+    background-color: #1206f4 !important;                       /* Синий цвет после выбора пользователем */
+}
+
+/* СЕТКА КАРТИНОК */
+.match-grid {
+    display: grid;                                              /* Используем сеточную модель отображения */
+    grid-template-columns: repeat(4, 1fr);                      /* Создаем 4 колонки одинаковой ширины */
+    gap: 15px;                                                  /* Расстояние между карточками с картинками */
+    margin: 25px 0;                                             /* Внешние отступы блока иллюстраций */
+}
+
+/* РАМКИ КАРТИНОК */
+.img-frame {
+    background: #fff;                                           /* Белый фон подложкки картинки */
+    border: 3px solid #81d4fa;                                  /* Начальный голубой контур рамки */
+    border-radius: 12px;                                        /* Скругление углов рамки карточки */
+    padding: 5px;                                               /* Внутренний отступ от картинки до края */
+    cursor: pointer;                                            /* Делаем область картинки кликабельной */
+    display: flex;                                              /* Включаем флекс для центрирования контента */
+    justify-content: center;                                    /* Горизонтальное выравнивание картинки */
+    align-items: center;                                        /* Вертикальное выравнивание картинки */
+    transition: border-color 0.3s;                              /* Плавная смена цвета рамки при выборе */
+}
+
+.img-frame img { 
+    width: 100%;                                                /* Растягиваем изображение на всю ширину */
+    height: auto;                                               /* Автоматическая высота для пропорций */
+    max-width: 150px;                                            /* Ограничение максимального размера картинки */
+}
+
+/* ДИНАМИЧЕСКИЕ ЦВЕТА КОНТУРОВ */
+.img-frame.border-green { 
+    border-color: #689f38 !important;                           /* Зеленый контур после выбора слова сверху */
+}
+.img-frame.border-blue { 
+    border-color: #7e35eb !important;                           /* Фиолетовый контур после выбора слова снизу */
+}
+
+/* ОБЕРТКА ДЛЯ ЦЕНТРИРОВАНИЯ ВСЕГО БЛОКА */
+.detective-centered-box {
+    display: flex;                                              /* Используем флексбокс для выравнивания */
+    justify-content: center;                                    /* Центрируем содержимое по горизонтали */
+    width: 100%;                                                /* Растягиваем обертку на всю ширину карточки */
+    margin: 20px 0;                                             /* Задаем внешние отступы сверху и снизу */
+}
+
+/* КОНТЕЙНЕР С ЕДИНЫМ ИЗОБРАЖЕНИЕМ И ЗОНАМИ */
+.detective-wrapper {
+    position: relative;                                         /* База для абсолютного позиционирования зон клика */
+    width: 700px;                                               /* Устанавливаем фиксированную ширину 700 пикселей */
+    height: auto;                                               /* Высота вычисляется автоматически */
+}
+
+/* СТИЛИ ОСНОВНОГО ИЗОБРАЖЕНИЯ */
+.detective-main-img {
+    display: block;                                             /* Убираем зазоры строчного элемента */
+    width: 700px;                                               /* Дублируем ширину для самого изображения */
+    height: auto;                                               /* Сохраняем пропорции картинки */
+    border-radius: 15px;                                        /* Скругляем углы согласно общему дизайну */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);                      /* Добавляем легкую тень для объема */
+}
+
+/* ИНТЕРАКТИВНЫЕ ЗОНЫ КЛИКА */
+.hero-zone {
+    position: absolute;                                         /* Позиционируем зону относительно контейнера */
+    cursor: pointer;                                            /* Меняем курсор на "палец" при наведении */
+    background: rgba(255, 255, 255, 0);                         /* Оставляем зону полностью прозрачной */
+    z-index: 5;                                                 /* Поднимаем зону над основным изображением */
+}
+
+/* ЭФФЕКТ ПРИ НАЖАТИИ */
+.hero-zone:active {
+    background: rgba(255, 165, 0, 0.1);                         /* Слабая оранжевая вспышка при клике мышкой */
+}
+
+/* СТИЛИ ДЛЯ ЗАДАНИЯ №10: КРОССВОРД */
+.crossword-wrapper {
+    display: flex;                                              /* Устанавливаем гибкую модель отображения */
+    flex-direction: column;                                     /* Выравниваем элементы (сетку и фото) в колонку */
+    align-items: center;                                        /* Центрируем содержимое по горизонтали */
+    gap: 20px;                                                  /* Задаем расстояние между сеткой и подсказками */
+    margin: 10px 0;                                             /* Внешние отступы всего блока задания */
+}
+
+.crossword-grid {
+    display: flex;                                              /* Включаем флекс для рядов кроссворда */
+    flex-direction: column;                                     /* Выстраиваем ряды один под другим */
+    align-items: flex-start;                                    /* Выравниваем "лесенку" по левому краю */
+    gap: 2px;                                                   /* Минимальный зазор между рядами для имитации сетки */
+}
+
+.cross-row {
+    display: flex;                                              /* Каждый ряд кроссворда — это горизонтальный флекс */
+    align-items: center;                                        /* Выравниваем номер ряда и ячейки по центру */
+    gap: 2px;                                                   /* Зазор между ячейками в ряду */
+}
+
+.row-number {
+    width: 40px;                                                /* Ширина кружка с номером */
+    height: 40px;                                               /* Высота кружка с номером */
+    border: 2px solid #0277bd;                                  /* Синий контур кружка */
+    border-radius: 50%;                                         /* Делаем форму круглой */
+    display: flex;                                              /* Флекс для центрирования цифры */
+    justify-content: center;                                    /* Центрируем цифру горизонтально */
+    align-items: center;                                        /* Центрируем цифру вертикально */
+    margin-right: 10px;                                         /* Отступ номера от первой ячейки */
+    font-weight: bold;                                          /* Жирный шрифт номера */
+    color: #0277bd;                                             /* Цвет текста номера */
+}
+
+.cell {
+    width: 55px;                                                /* Фиксированная ширина ячейки */
+    height: 55px;                                               /* Фиксированная высота ячейки */
+    text-align: center;                                         /* Центрируем текст внутри ячейки */
+    font-size: 1.5em;                                           /* Размер шрифта для буквы */
+    font-weight: bold;                                          /* Жирное начертание букв */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Основной шрифт урока */
+    border: 1px solid #0277bd;                                  /* Синяя граница ячейки */
+    text-transform: uppercase;                                  /* Автоматический перевод в заглавные */
+    outline: none;                                              /* Убираем стандартную обводку фокуса */
+}
+
+.cell.static {
+    background-color: #e1f5fe;                                  /* Светло-голубой фон для буквы 'З' */
+    color: #0277bd;                                             /* Цвет текста буквы 'З' */
+}
+
+.cell.correct {
+    background-color: #c8e6c9;                                  /* Зеленый фон при правильном ответе */
+    border-color: #4caf50;                                      /* Зеленая рамка при правильном ответе */
+}
+
+.cell.wrong {
+    background-color: #ffcdd2;                                  /* Красный фон при ошибке */
+    border-color: #f44336;                                      /* Красная рамка при ошибке */
+}
+
+.hint-img {
+    width: 720px;                                               /* Заданная ширина для картинки-подсказки */
+    height: auto;                                               /* Автоматическая высота для пропорций */
+    border-radius: 10px;                                        /* Скругление углов изображения */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);                      /* Легкая тень под изображением */
+}

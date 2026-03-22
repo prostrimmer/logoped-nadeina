@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 13 - Автоматизация звуков</title>
+    <link rel="stylesheet" href="lesson-13.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 13. Звук [З] в словах</div>
+    </header>
+
+    <div class="white-card">
+        <h2 class="card-title">Задание 1. Превращай-ка</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Преврати одно слово в другое, заменив первый звук на <b>[З]</b>. Запиши получившиеся слова.</p>
+
+        <div class="transform-grid">
+            <div class="transform-column">
+                <div class="transform-item">
+                    <span class="word-label">губы —</span>
+                    <input type="text" class="transform-input" data-answer="ЗУБЫ">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">майка —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАЙКА">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">дуб —</span>
+                    <input type="text" class="transform-input" data-answer="ЗУБ">
+                </div>
+            </div>
+
+            <div class="transform-column">
+                <div class="transform-item">
+                    <span class="word-label">намок —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАМОК">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">вагон —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАГОН">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">набор —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАБОР">
+                </div>
+            </div>
+
+            <div class="transform-column">
+                <div class="transform-item">
+                    <span class="word-label">накат —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАКАТ">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">вал —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАЛ">
+                </div>
+                <div class="transform-item">
+                    <span class="word-label">найти —</span>
+                    <input type="text" class="transform-input" data-answer="ЗАЙТИ">
+                </div>
+            </div>
+        </div>
+
+        <div id="res-13-1" class="result-text"></div>
+        
+        <div class="btn-box">
+            <button id="btn-13-1" class="orange-check-btn">Проверить</button>
+        </div>
+    </div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Замени картинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Закончи предложения. Не забывай чётко произносить звук <b>[З]</b>.</p>
+
+    <div class="sentence-images-grid">
+        <div class="sentence-item">
+            <img src="images/castle13.png" alt="Замок" class="task-img">
+            <div class="sentence-box">
+                <span>Принцесса восхищается </span>
+                <input type="text" class="sentence-input" data-answer="ЗАМКОМ">
+            </div>
+        </div>
+
+        <div class="sentence-item">
+            <img src="images/hairpin.png" alt="Заколка" class="task-img">
+            <div class="sentence-box">
+                <span>Волосы закалывают </span>
+                <input type="text" class="sentence-input" data-answer="ЗАКОЛКОЙ">
+            </div>
+        </div>
+
+        <div class="sentence-item">
+            <img src="images/umbrella.png" alt="Зонт" class="task-img">
+            <div class="sentence-box">
+                <span>От дождя прячутся под </span>
+                <input type="text" class="sentence-input" data-answer="ЗОНТОМ">
+            </div>
+        </div>
+
+        <div class="sentence-item">
+            <img src="images/flowers.png" alt="Незабудки" class="task-img">
+            <div class="sentence-box">
+                <span>Мама любуется </span>
+                <input type="text" class="sentence-input" data-answer="НЕЗАБУДКАМИ">
+            </div>
+        </div>
+
+        <div class="sentence-item">
+            <img src="images/lawn.png" alt="Газон" class="task-img">
+            <div class="sentence-box">
+                <span>Садовник ухаживает за </span>
+                <input type="text" class="sentence-input" data-answer="ГАЗОНОМ">
+            </div>
+        </div>
+
+        <div class="sentence-item">
+            <img src="images/birch13.png" alt="Береза" class="task-img">
+            <div class="sentence-box">
+                <span>Подберёзовик под </span>
+                <input type="text" class="sentence-input" data-answer="БЕРЁЗОЙ">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-13-2" class="result-text"></div>
+    
+    <div class="btn-box">
+        <button id="btn-13-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card">
+        <h2 class="card-title">Задание 3. Загадочная картинка</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Посмотри внимательно на картинку и придумай небольшой рассказ, используя все предметы со звуком <b>[З]</b>. Нажми на картинку, чтобы она стала цветной!</p>
+
+        <div class="mystery-img-container">
+            <img src="images/lesson-13-3-0.png" id="mystery-img" class="mystery-img" alt="Загадочная картинка">
+        </div>
+
+        <textarea id="task-3-story" class="story-input" placeholder="Напиши свой рассказ здесь..."></textarea>
+
+        <div id="res-13-3" class="result-text"></div>
+
+        <div class="btn-box">
+            <button id="btn-13-3" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+<div class="white-card">
+        <h2 class="card-title">Задание 4. Придумай предложения</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Посмотри, какие пары картинок у нас есть. Придумай для каждой пары предложение со звуком <b>[З]</b>.</p>
+
+        <div class="pairs-grid-only">
+            <img src="images/lesson-13-4-1.jpg" class="task-4-img" alt="Пара 1">
+            <img src="images/lesson-13-4-2.jpg" class="task-4-img" alt="Пара 2">
+            <img src="images/lesson-13-4-3.jpg" class="task-4-img" alt="Пара 3">
+            <img src="images/lesson-13-4-4.jpg" class="task-4-img" alt="Пара 4">
+            <img src="images/lesson-13-4-5.jpg" class="task-4-img" alt="Пара 5">
+            <img src="images/lesson-13-4-6.jpg" class="task-4-img" alt="Пара 6">
+        </div>
+
+        <div class="btn-box">
+            <button id="btn-13-4" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Скажи наоборот</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Допиши предложения, подобрав слова по принципу противопоставления со звуком <b>[З]</b>.</p>
+
+    <div class="antonyms-list">
+        <div class="antonym-row">
+            <span class="antonym-text">Много конфет есть вредно, а фрукты есть — </span>
+            <input type="text" class="antonym-input" data-answer="ПОЛЕЗНО">
+        </div>
+        <div class="antonym-row">
+            <span class="antonym-text">Один мальчик больной, а другой — </span>
+            <input type="text" class="antonym-input" data-answer="ЗДОРОВЫЙ">
+        </div>
+        <div class="antonym-row">
+            <span class="antonym-text">У Мальвины руки чистые, а у Буратино — </span>
+            <input type="text" class="antonym-input" data-answer="ГРЯЗНЫЕ">
+        </div>
+        <div class="antonym-row">
+            <span class="antonym-text">Иван-царевич добрый, а Кощей Бессмертный — </span>
+            <input type="text" class="antonym-input" data-answer="ЗЛОЙ">
+        </div>
+        <div class="antonym-row">
+            <span class="antonym-text">Грачи прилетают рано, а ласточки — </span>
+            <input type="text" class="antonym-input" data-answer="ПОЗДНО">
+        </div>
+        <div class="antonym-row">
+            <span class="antonym-text">Змея ползёт вперёд, а рак пятится — </span>
+            <input type="text" class="antonym-input" data-answer="НАЗАД">
+        </div>
+    </div>
+
+    <div id="res-13-5" class="result-text"></div>
+
+    <div class="btn-box">
+        <button id="btn-13-5" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Лабиринт</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Пройди по стрелкам лабиринта пальчиком или карандашом и на каждой картинке громко и чётко назови, что на ней нарисовано.</p>
+
+    <div class="mazes-wrapper">
+        <div class="maze-block">
+            <img src="images/lesson-13-6.png" class="maze-img" alt="Лабиринт 1">
+            <div id="desc-6-1" class="maze-description">«зал → заяц → замок → завод → замок → закат → забор → завиток → забияка»</div>
+        </div>
+        <div class="maze-block">
+            <img src="images/lesson-13-7.png" class="maze-img" alt="Лабиринт 2">
+            <div id="desc-6-2" class="maze-description">«ваза → коза → роза → медуза → мимоза → берёза → гроза → глаза → блуза»</div>
+        </div>
+    </div>
+
+    <div class="btn-box">
+        <button id="btn-13-6" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+<div class="white-card">
+        <h2 class="card-title">Задание 7. Четвёртый лишний</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Посмотри на картинки и выбери в каждом ряду лишнюю. Назови её, чётко произнося звук <b>[З]</b>.</p>
+
+        <div class="odd-one-grid">
+            <div class="odd-row">
+                <div class="odd-item" data-correct="true"><img src="images/umbrella2.png" alt="Зонт"></div>
+                <div class="odd-item"><img src="images/dress-cinderella.png" alt="Платье"></div>
+                <div class="odd-item"><img src="images/shirt-hare.png" alt="Футболка"></div>
+                <div class="odd-item"><img src="images/suit-znayka.png" alt="Костюм"></div>
+            </div>
+            <div class="odd-row">
+                <div class="odd-item"><img src="images/birch12.png" alt="Береза"></div>
+                <div class="odd-item" data-correct="true"><img src="images/mimosa.png" alt="Мимоза"></div>
+                <div class="odd-item"><img src="images/oak.png" alt="Дуб"></div>
+                <div class="odd-item"><img src="images/fir.png" alt="Ель"></div>
+            </div>
+            <div class="odd-row">
+                <div class="odd-item" data-correct="true"><img src="images/corn.png" alt="Кукуруза"></div>
+                <div class="odd-item"><img src="images/lemon.png" alt="Лимон"></div>
+                <div class="odd-item"><img src="images/orange.png" alt="Апельсин"></div>
+                <div class="odd-item"><img src="images/apple.png" alt="Яблоко"></div>
+            </div>
+            <div class="odd-row">
+                <div class="odd-item"><img src="images/bear.png" alt="Медведь"></div>
+                <div class="odd-item"><img src="images/raccoon13.png" alt="Енот"></div>
+                <div class="odd-item" data-correct="true"><img src="images/goat.png" alt="Коза"></div>
+                <div class="odd-item"><img src="images/wolf.png" alt="Волк"></div>
+            </div>
+        </div>
+
+        <div id="res-13-7" class="result-text"></div>
+
+        <div class="btn-box">
+            <button id="btn-13-7" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <div class="white-card">
+        <h2 class="card-title">Задание 8. Прочитай слова</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">Выбери сначала слово, а затем подходящую картинку. Составь словосочетание.</p>
+
+        <div class="words-row green-theme">
+            <button class="word-btn" data-color="green">ЗНАКОМЫЙ</button>
+            <button class="word-btn" data-color="green">ЗНАКОМАЯ</button>
+            <button class="word-btn" data-color="green">ЗНАКОМОЕ</button>
+            <button class="word-btn" data-color="green">ЗНАКОМЫЕ</button>
+        </div>
+
+        <div class="match-grid">
+            <div class="img-frame"><img src="images/hare13.png" alt="Заяц"></div>
+            <div class="img-frame"><img src="images/goat.png" alt="Коза"></div>
+            <div class="img-frame"><img src="images/zebra.png" alt="Зебры"></div>
+            <div class="img-frame"><img src="images/mirror.png" alt="Зеркало"></div>
+            <div class="img-frame"><img src="images/umbrella.png" alt="Зонт"></div>
+            <div class="img-frame"><img src="images/vase2.png" alt="Ваза"></div>
+            <div class="img-frame"><img src="images/nest.png" alt="Гнездо"></div>
+            <div class="img-frame"><img src="images/signs.png" alt="Знаки"></div>
+        </div>
+
+        <div class="words-row blue-theme">
+            <button class="word-btn" data-color="blue">ЗАБАВНЫЙ</button>
+            <button class="word-btn" data-color="blue">ЗАБАВНАЯ</button>
+            <button class="word-btn" data-color="blue">ЗАБАВНОЕ</button>
+            <button class="word-btn" data-color="blue">ЗАБАВНЫЕ</button>
+        </div>
+
+        <div id="res-13-8" class="result-text"></div>
+
+        <div class="btn-box">
+            <button id="btn-13-8" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <div class="white-card">
+    <h2 class="card-title">Задание 9. Сыщик</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Проведи дорожки от Змеи, Золушки, Знайки и Козы к предметам, которые они ищут, а затем придумай и произнеси предложения про каждую получившуюся пару</p>
+
+    <div class="detective-centered-box">
+        <div class="detective-wrapper">
+            <img src="images/lesson-13-9.jpg" class="detective-main-img" alt="Сыщик">
+            
+        </div>
+    </div>
+
+    <div id="res-13-9" class="result-text"></div>
+
+    <div class="btn-box">
+        <button id="btn-13-9" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри картинки. Впиши в кроссворд слова, которые начинаются на букву [З].</p>
+
+    <div class="crossword-wrapper">
+        <div class="crossword-grid">
+            <div class="cross-row" data-word="ЗАЛ">
+                <div class="row-number">1</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+            <div class="cross-row" data-word="ЗОЛА">
+                <div class="row-number">2</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+            <div class="cross-row" data-word="ЗАКАТ">
+                <div class="row-number">3</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+            <div class="cross-row" data-word="ЗУБИЛО">
+                <div class="row-number">4</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+            <div class="cross-row" data-word="ЗАКОЛКА">
+                <div class="row-number">5</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+            <div class="cross-row" data-word="ЗОЛОТНИК">
+                <div class="row-number">6</div>
+                <input type="text" class="cell static" value="З" readonly>
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+                <input type="text" class="cell char-input" maxlength="1">
+            </div>
+        </div>
+
+        <div class="crossword-hints">
+            <img src="images/lesson-13-10.jpg" class="hint-img" alt="Подсказки к кроссворду">
+        </div>
+    </div>
+
+    <div id="res-13-10" class="result-text"></div>
+
+    <div class="btn-box">
+        <button id="btn-13-10" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script src="lesson-13.js"></script>
+</body>
+</html>
