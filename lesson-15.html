@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 15 - Автоматизация звука [3']</title>
+    <link rel="stylesheet" href="lesson-15.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 15. Автоматизация звука [3']</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+ <div class="white-card">
+        <h2 class="card-title">Задание 1. Найди звук</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            В названии каких предметов слышится звук <b>[З’]</b>? Произнеси слова правильно.
+        </p>
+
+        <div class="items-grid">
+            <div class="grid-item"><img src="images/newspaper.png" alt="Газета"></div>
+            <div class="grid-item"><img src="images/knot.png" alt="Узел"></div>
+            <div class="grid-item"><img src="images/basil.png" alt="Базилик"></div>
+            <div class="grid-item"><img src="images/monkey.png" alt="Обезьяна"></div>
+            
+            <div class="grid-item"><img src="images/shop.png" alt="Магазин"></div>
+            <div class="grid-item"><img src="images/basket.png" alt="Корзина"></div>
+            <div class="grid-item"><img src="images/snake.png" alt="Змея"></div>
+            <div class="grid-item"><img src="images/strawberry.png" alt="Земляника"></div>
+            
+            <div class="grid-item"><img src="images/mirror.png" alt="Зеркало"></div>
+            <div class="grid-item"><img src="images/zebra.png" alt="Зебра"></div>
+            <div class="grid-item"><img src="images/chaffinch.png" alt="Зяблик"></div>
+            <div class="grid-item"><img src="images/kingfisher.png" alt="Зимородок"></div>
+        </div>
+
+        <div id="res-15-1" class="result-text"></div>
+
+        <div class="btn-box">
+            <button id="btn-15-1" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+    
+
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Собери слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай слоги и запиши слова правильно.
+    </p>
+
+    <div class="syllable-img-box">
+        <img src="images/lesson-15-2.png" class="syllable-img" alt="Слоги">
+    </div>
+
+    <div class="word-grid">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+        <input type="text" class="word-field" placeholder="СЛОВО">
+    </div>
+
+    <div id="res-15-2" class="result-text"></div>
+
+    <div class="btn-box">
+        <button id="btn-15-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+    </div>
+</div>
+
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 3. Автоматизация в речи</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Произнеси предложения правильно, чётко выделяя звук <b>[З’]</b>. Какого слова не хватает? Назови его и затащи мышкой нужную картинку в предложение.
+        </p>
+
+        <div class="l15-t3-sentences">
+            <div class="l15-t3-item" data-answer="ЗЕФИР">В магазине мы купили сладкий <span class="l15-t3-drop">...</span></div>
+            <div class="l15-t3-item" data-answer="ГАЗЕТУ">Папа читает <span class="l15-t3-drop">...</span></div>
+            <div class="l15-t3-item" data-answer="ТАЗИК">Мама купила зеленый <span class="l15-t3-drop">...</span></div>
+            <div class="l15-t3-item" data-answer="КОРЗИНЕ">Зина принесла зелень в <span class="l15-t3-drop">...</span></div>
+            <div class="l15-t3-item" data-answer="ЗЕМЛЯНИКА">На поле растёт <span class="l15-t3-drop">...</span></div>
+        </div>
+
+        <div class="l15-t3-drag-zone">
+            <img src="images/basket.png" class="l15-t3-pic" draggable="true" data-word="КОРЗИНЕ">         
+            <img src="images/basin.png" class="l15-t3-pic" draggable="true" data-word="ТАЗИК">
+            <img src="images/newspaper.png" class="l15-t3-pic" draggable="true" data-word="ГАЗЕТУ">
+            <img src="images/strawberry.png" class="l15-t3-pic" draggable="true" data-word="ЗЕМЛЯНИКА">
+            <img src="images/marshmallow.png" class="l15-t3-pic" draggable="true" data-word="ЗЕФИР">
+        </div>
+
+        <div id="res-15-3" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-3" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+    
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 4. Составь слова</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Составь слова из букв и запиши их в пустые клетки.
+        </p>
+
+        <div class="l15-t4-container">
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">М, А, И, З</span>
+                <input type="text" class="l15-t4-input" data-answer="зима" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">П, О, З, Е, Д</span>
+                <input type="text" class="l15-t4-input" data-answer="поезд" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">Ь, А, З, М</span>
+                <input type="text" class="l15-t4-input" data-answer="мазь" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">Р, О, З, Е, О</span>
+                <input type="text" class="l15-t4-input" data-answer="озеро" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">О, Р, Е, З, Н</span>
+                <input type="text" class="l15-t4-input" data-answer="зерно" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">Я, М, Л, Е, З</span>
+                <input type="text" class="l15-t4-input" data-answer="земля" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">Н, К, Ь, Я, З</span>
+                <input type="text" class="l15-t4-input" data-answer="князь" maxlength="10">
+            </div>
+            <div class="l15-t4-row">
+                <span class="l15-t4-letters">Б, З, Е, Р, А</span>
+                <input type="text" class="l15-t4-input" data-answer="зебра" maxlength="10">
+            </div>
+        </div>
+
+        <div id="res-15-4" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-4" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+    <!-- ЗАДАНИЕ №5 -->
+ <div class="white-card">
+        <h2 class="card-title">Задание 5. Составь слово</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Определи первый звук в каждом слове. Впиши в клеточку соответствующие буквы. Прочитай получившиеся слова.
+        </p>
+
+        <div class="l15-t5-main-container">
+            <div class="l15-t5-row" data-answer="ЗАКАТ">
+                <div class="l15-t5-images">
+                    <img src="images/rabbit15.png" title="Заяц">
+                    <img src="images/stork.png" title="Аист">
+                    <img src="images/cat15.png" title="Кот">
+                    <img src="images/акула.png" title="Акула">
+                    <img src="images/tiger.png" title="Тигр">
+                </div>
+                <div class="l15-t5-inputs">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                </div>
+            </div>
+
+            <div class="l15-t5-row" data-answer="ЗЯБЛИК">
+                <div class="l15-t5-images">
+                    <img src="images/umbrella.png" title="Зонт">
+                    <img src="images/apple.png" title="Яблоко">
+                    <img src="images/bow.png" title="Бант">
+                    <img src="images/onion.png" title="Лук">
+                    <img src="images/needle.png" title="Иголка">
+                    <img src="images/cat.png" title="Кот">
+                </div>
+                <div class="l15-t5-inputs">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                </div>
+            </div>
+
+            <div class="l15-t5-row" data-answer="ЗВОНОК">
+                <div class="l15-t5-images">
+                    <img src="images/snake.png" title="Змея">
+                    <img src="images/crow.png" title="Ворона">
+                    <img src="images/cloud.png" title="Облако">
+                    <img src="images/knife.png" title="Нож">
+                    <img src="images/cloud.png" title="Облако">
+                    <img src="images/corn.png" title="Кукуруза">
+                </div>
+                <div class="l15-t5-inputs">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                </div>
+            </div>
+
+            <div class="l15-t5-row" data-answer="ЗВЕЗДА">
+                <div class="l15-t5-images">
+                    <img src="images/mirror.png" title="Зеркало">
+                    <img src="images/wolf.png" title="Волк">
+                    <img src="images/raccoon.png" title="Енот">
+                    <img src="images/umbrella.png" title="Зонт">
+                    <img src="images/house.png" title="Дом">
+                    <img src="images/alphabet.png" title="Азбука">
+                </div>
+                <div class="l15-t5-inputs">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                    <input type="text" class="l15-t5-letter" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <div id="res-15-5" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-5" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>  
+    
+
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 6. Кто есть кто</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Посмотри на картинки и разложи их по категориям <b>«МОЙ»</b> и <b>«МОЯ»</b>, проговаривая вслух.
+        </p>
+
+        <div class="l15-t6-wrapper">
+            <div class="l15-t6-zone l15-t6-male" data-gender="male">
+                <div class="l15-t6-zone-label">МОЙ</div>
+                <div class="l15-t6-drop-area" id="zone-male"></div>
+            </div>
+
+            <div class="l15-t6-items-source" id="items-source">
+                <img src="images/strawberry.png" class="l15-t6-drag-item" draggable="true" data-gender="female" id="img-1" title="Земляника">
+                <img src="images/zebra15.png" class="l15-t6-drag-item" draggable="true" data-gender="female" id="img-2" title="Зебра">
+                <img src="images/basket.png" class="l15-t6-drag-item" draggable="true" data-gender="female" id="img-3" title="Корзина">
+                <img src="images/raisins.png" class="l15-t6-drag-item" draggable="true" data-gender="male" id="img-4" title="Изюм">
+                <img src="images/tractor.png" class="l15-t6-drag-item" draggable="true" data-gender="male" id="img-5" title="Вездеход">
+                <img src="images/newspaper.png" class="l15-t6-drag-item" draggable="true" data-gender="female" id="img-6" title="Газета">
+                <img src="images/monkey.png" class="l15-t6-drag-item" draggable="true" data-gender="female" id="img-7" title="Обезьяна">
+                <img src="images/goat.png" class="l15-t6-drag-item" draggable="true" data-gender="male" id="img-8" title="Козёл">
+                <img src="images/marshmallow.png" class="l15-t6-drag-item" draggable="true" data-gender="male" id="img-9" title="Зефир">
+                <img src="images/kingfisher.png" class="l15-t6-drag-item" draggable="true" data-gender="male" id="img-10" title="Зимородок">
+            </div>
+
+            <div class="l15-t6-zone l15-t6-female" data-gender="female">
+                <div class="l15-t6-zone-label">МОЯ</div>
+                <div class="l15-t6-drop-area" id="zone-female"></div>
+            </div>
+        </div>
+
+        <div id="res-15-6" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-6" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 7. Кроссворд</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Рассмотри картинки. Впиши в кроссворд слова, в которых встречается буква <b>[З’]</b>.
+        </p>
+
+        <div class="l15-t7-container">
+            <div class="l15-t7-grid">
+                <div class="l15-t7-row" data-word="ЗЕМЛЕРОЙКА">
+                    <div class="l15-t7-number">1</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЯБЛИК">
+                    <div class="l15-t7-number">2</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЕРНО">
+                    <div class="l15-t7-number">3</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЕФИР">
+                    <div class="l15-t7-number">4</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЕМЛЯНИКА">
+                    <div class="l15-t7-number">5</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЕЛЬЕ">
+                    <div class="l15-t7-number">6</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+
+                <div class="l15-t7-row" data-word="ЗЕМЛЯ">
+                    <div class="l15-t7-number">7</div>
+                    <div class="l15-t7-cells">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                        <input type="text" class="l15-t7-letter" maxlength="1">
+                    </div>
+                </div>
+            </div>
+
+            <div class="l15-t7-hint-box">
+                <img src="images/lesson-15-7.png" class="l15-t7-hint-img" alt="Подсказки к кроссворду">
+            </div>
+        </div>
+
+        <div id="res-15-7" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-7" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div> 
+    
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 8. Сыщик</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Найди все картинки со звуком <b>[З’]</b> и посчитай, сколько раз они встречаются.
+        </p>
+
+        <div class="l15-t8-container">
+            <div class="l15-t8-puzzle-box">
+                <img src="images/lesson-15-8.png" class="l15-t8-main-img" alt="Поле поиска">
+            </div>
+
+            <div class="l15-t8-counter-grid">
+                <div class="l15-t8-counter-item" data-answer="3">
+                    <img src="images/newspaper.png" alt="Газета">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="4">
+                    <img src="images/basket.png" alt="Корзина">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="4">
+                    <img src="images/monkey.png" alt="Обезьяна">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="3">
+                    <img src="images/strawberry2.png" alt="Земляника">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="3">
+                    <img src="images/grains.png" alt="Зерно">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="4">
+                    <img src="images/mirror.png" alt="Зеркало">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="4">
+                    <img src="images/зефир.png" alt="Зефир">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="4">
+                    <img src="images/zebra15.png" alt="Зебра">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="5">
+                    <img src="images/knot.png" alt="Узел">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+                <div class="l15-t8-counter-item" data-answer="3">
+                    <img src="images/goat.png" alt="Коза">
+                    <input type="number" class="l15-t8-input" min="0" placeholder="?">
+                </div>
+            </div>
+        </div>
+
+        <div id="res-15-8" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-15-8" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="lesson-15.js"></script>
+</body>
+</html>
