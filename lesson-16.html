@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 16 - Автоматизация звука [3']</title>
+    <link rel="stylesheet" href="lesson-16.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 16. Автоматизация звука [3']</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 1. Чистоговорки</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Повтори чистоговорки, чётко произнеся слоги. Какая картинка подходит для каждой из них? Перетащи её в пустое окошко.
+        </p>
+
+        <div class="l16-t1-main-box">
+            <div class="l16-t1-list-phrases">
+                <div class="l16-t1-phrase-row">
+                    <p>1. <b>ЗЯ-ЗЯ-ЗЯ</b> — детям спички брать нельзя.</p>
+                    <div class="l16-t1-drop-zone" data-answer="matches"></div>
+                </div>
+                <div class="l16-t1-phrase-row">
+                    <p>2. <b>ЗЕ-ЗЕ-ЗЕ</b> — дали сено мы козе.</p>
+                    <div class="l16-t1-drop-zone" data-answer="goat"></div>
+                </div>
+                <div class="l16-t1-phrase-row">
+                    <p>3. <b>ЗИ-ЗИ-ЗИ</b> — поросята все в грязи.</p>
+                    <div class="l16-t1-drop-zone" data-answer="pigs"></div>
+                </div>
+                <div class="l16-t1-phrase-row">
+                    <p>4. <b>ЗИН-ЗИН-ЗИН</b> — мы сходили в магазин.</p>
+                    <div class="l16-t1-drop-zone" data-answer="shop"></div>
+                </div>
+                <div class="l16-t1-phrase-row">
+                    <p>5. <b>ЗИ-ЗИ-ЗИ</b> — обезьяну привези.</p>
+                    <div class="l16-t1-drop-zone" data-answer="monkey"></div>
+                </div>
+                <div class="l16-t1-phrase-row">
+                    <p>6. <b>ЗЯ-ЗЯ-ЗЯ</b> — в дождик нам гулять нельзя.</p>
+                    <div class="l16-t1-drop-zone" data-answer="rain"></div>
+                </div>
+            </div>
+
+            <div class="l16-t1-images-source" id="l16-t1-source">
+                <img src="images/lesson-16-1.png" class="l16-t1-pic" draggable="true" data-type="pigs" id="l16-t1-img6" alt="Дождь">
+                <img src="images/lesson-16-2.png" class="l16-t1-pic" draggable="true" data-type="matches" id="l16-t1-img1" alt="Спички">
+                <img src="images/lesson-16-3.png" class="l16-t1-pic" draggable="true" data-type="goat" id="l16-t1-img2" alt="Коза">
+                <img src="images/lesson-16-4.png" class="l16-t1-pic" draggable="true" data-type="rain" id="l16-t1-img4" alt="Магазин">
+                <img src="images/lesson-16-5.png" class="l16-t1-pic" draggable="true" data-type="shop" id="l16-t1-img3" alt="Поросята">
+                <img src="images/lesson-16-6.png" class="l16-t1-pic" draggable="true" data-type="monkey" id="l16-t1-img5" alt="Обезьяна">
+            </div>
+        </div>
+
+        <div id="res-16-1" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-1" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №2 -->
+ <div class="white-card">
+        <h2 class="card-title">Задание 2. Ответы на вопросы</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Ответь на вопросы и запиши свои ответы в пустые поля.
+        </p>
+
+        <div class="l16-t2-main-list">
+            <div class="l16-t2-item">
+                <p>Когда можно кататься на лыжах?</p>
+                <input type="text" class="l16-t2-input" data-answer="зимой" placeholder="Напиши ответ...">
+            </div>
+
+            <div class="l16-t2-item">
+                <p>Что лечит стоматолог?</p>
+                <input type="text" class="l16-t2-input" data-answer="зубы" placeholder="Напиши ответ...">
+            </div>
+
+            <div class="l16-t2-item">
+                <p>Кто зимой белый, а летом серый?</p>
+                <input type="text" class="l16-t2-input" data-answer="заяц" placeholder="Напиши ответ...">
+            </div>
+
+            <div class="l16-t2-item">
+                <p>Что надо делать по утрам?</p>
+                <input type="text" class="l16-t2-input" data-answer="зарядку" placeholder="Напиши ответ...">
+            </div>
+
+            <div class="l16-t2-item">
+                <p>Что открывают ключом?</p>
+                <input type="text" class="l16-t2-input" data-answer="замок" placeholder="Напиши ответ...">
+            </div>
+        </div>
+
+        <div id="res-16-2" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-2" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>               
+
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 3. Подбери картинки</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Найди одинаковые слова в столбцах. Кликни по слову слева, а потом по такому же слову справа.
+        </p>
+
+        <div class="l16-t3-tables-container">
+            <div class="l16-t3-column" id="l16-t3-col-left">
+                <div class="l16-t3-word" data-word="knyaz">КНЯЗЬ</div>
+                <div class="l16-t3-word" data-word="zyablik">ЗЯБЛИК</div>
+                <div class="l16-t3-word" data-word="kozel">КОЗЁЛ</div>
+                <div class="l16-t3-word" data-word="gryaz">ГРЯЗЬ</div>
+                <div class="l16-t3-word" data-word="zerno">ЗЕРНО</div>
+                <div class="l16-t3-word" data-word="zima">ЗИМА</div>
+                <div class="l16-t3-word" data-word="maz">МАЗЬ</div>
+                <div class="l16-t3-word" data-word="zemlya">ЗЕМЛЯ</div>
+            </div>
+
+            <div class="l16-t3-column" id="l16-t3-col-right">
+                <div class="l16-t3-word" data-word="kozel">КОЗЁЛ</div>
+                <div class="l16-t3-word" data-word="zemlya">ЗЕМЛЯ</div>
+                <div class="l16-t3-word" data-word="maz">МАЗЬ</div>
+                <div class="l16-t3-word" data-word="knyaz">КНЯЗЬ</div>
+                <div class="l16-t3-word" data-word="zyablik">ЗЯБЛИК</div>
+                <div class="l16-t3-word" data-word="gryaz">ГРЯЗЬ</div>
+                <div class="l16-t3-word" data-word="zerno">ЗЕРНО</div>
+                <div class="l16-t3-word" data-word="zima">ЗИМА</div>
+            </div>
+        </div>
+
+        <div class="l16-t3-images-grid">
+            <div class="l16-t3-img-box" data-word="knyaz"><img src="images/knyaz.png" alt=""><span>князь</span></div>
+            <div class="l16-t3-img-box" data-word="gryaz"><img src="images/gryaz.png" alt=""><span>грязь</span></div>
+            <div class="l16-t3-img-box" data-word="maz"><img src="images/maz.png" alt=""><span>мазь</span></div>
+            <div class="l16-t3-img-box" data-word="zyablik"><img src="images/chaffinch.png" alt=""><span>зяблик</span></div>
+            <div class="l16-t3-img-box" data-word="kozel"><img src="images/koza.png" alt=""><span>козёл</span></div>
+            <div class="l16-t3-img-box" data-word="zerno"><img src="images/zerno.png" alt=""><span>зерно</span></div>
+            <div class="l16-t3-img-box" data-word="zemlya"><img src="images/zemlya.png" alt=""><span>земля</span></div>
+            <div class="l16-t3-img-box" data-word="zima"><img src="images/zima.png" alt=""><span>зима</span></div>
+        </div>
+
+        <div id="res-16-3" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-3" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 4. Найди лишнее</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">В каждом ряду найди лишнюю картинку.</p>
+
+        <div class="l16-t4-grid">
+            <div class="l16-t4-row">
+                <div class="l16-t4-item" data-status="ok"><img src="images/zebra15.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/korzina.png"></div>
+                <div class="l16-t4-item" data-status="odd"><img src="images/lebed.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/raisins.png"></div>
+            </div>
+
+            <div class="l16-t4-row">
+                <div class="l16-t4-item" data-status="odd"><img src="images/karandash.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/maz.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/mirror.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/newspaper.png"></div>
+            </div>
+
+            <div class="l16-t4-row">
+                <div class="l16-t4-item" data-status="ok"><img src="images/shop.png"></div>
+                <div class="l16-t4-item" data-status="odd"><img src="images/kreslo.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/monkey.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/zima.png"></div>
+            </div>
+
+            <div class="l16-t4-row">
+                <div class="l16-t4-item" data-status="ok"><img src="images/strawberry.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/zelenka.png"></div>
+                <div class="l16-t4-item" data-status="odd"><img src="images/frog.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/зефир.png"></div>
+            </div>
+
+            <div class="l16-t4-row">
+                <div class="l16-t4-item" data-status="ok"><img src="images/basket15.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/koza.png"></div>
+                <div class="l16-t4-item" data-status="odd"><img src="images/shary.png"></div>
+                <div class="l16-t4-item" data-status="ok"><img src="images/kingfisher.png"></div>
+            </div>
+        </div>
+
+        <div id="res-16-4" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-4" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 5. Рассказываем вместе</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Заменяй картинки словами во время чтения. Когда закончишь — нажми кнопку.
+        </p>
+
+        <div class="l16-t5-container">
+            <img src="images/lesson-16_5.png" alt="Чтение с картинками" class="l16-t5-image">
+        </div>
+
+        <div id="res-16-5" class="result-text"></div>
+
+        <div class="btn-box">
+            <button id="btn-16-5" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 6. Кто есть кто</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Разложи картинки по категориям «МОЙ», «МОЁ» и «МОЯ».
+        </p>
+
+        <div class="l16-t6-zones">
+            <div class="l16-t6-drop-zone blue" data-rod="my-masc">
+                <div class="zone-title">МОЙ</div>
+            </div>
+            <div class="l16-t6-drop-zone yellow" data-rod="my-neut">
+                <div class="zone-title">МОЁ</div>
+            </div>
+            <div class="l16-t6-drop-zone pink" data-rod="my-fem">
+                <div class="zone-title">МОЯ</div>
+            </div>
+        </div>
+
+        <div class="l16-t6-items-pool" id="l16-t6-pool">
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-fem">
+                <img src="images/korzina.png" alt="Корзина">
+            </div>
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-fem">
+                <img src="images/maz.png" alt="Мазь">
+            </div>
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-masc">
+                <img src="images/chaffinch.png" alt="Зяблик">
+            </div>
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-masc">
+                <img src="images/knyaz.png" alt="Князь">
+            </div>
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-neut">
+                <img src="images/зелье.png" alt="Зелье">
+            </div>
+            <div class="l16-t6-drag-item" draggable="true" data-rod="my-neut">
+                <img src="images/mirror.png" alt="Зеркало">
+            </div>
+        </div>
+
+        <div id="res-16-6" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-6" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 7. Предложения</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Придумай и запиши предложения с картинками.
+        </p>
+
+        <div class="l16-t7-images-row">
+            <div class="l16-t7-img-item"><img src="images/monkey.png" alt="Обезьяна"></div>
+            <div class="l16-t7-img-item"><img src="images/korzina.png" alt="Корзина"></div>
+            <div class="l16-t7-img-item"><img src="images/knyaz.png" alt="Князь"></div>
+            <div class="l16-t7-img-item"><img src="images/зелье.png" alt="Зелье"></div>
+        </div>
+
+        <div class="l16-t7-inputs-column">
+            <input type="text" class="l16-t7-input" placeholder="Предложение 1...">
+            <input type="text" class="l16-t7-input" placeholder="Предложение 2...">
+            <input type="text" class="l16-t7-input" placeholder="Предложение 3...">
+            <input type="text" class="l16-t7-input" placeholder="Предложение 4...">
+        </div>
+
+        <div id="res-16-7" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-7" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+    
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 8. Сыщик</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Найди все картинки со звуком [З'] и посчитай, сколько раз они встречаются.
+        </p>
+
+        <div class="l16-t8-panorama">
+            <img src="images/lesson-16_6.png" alt="Панорама для поиска" class="l16-t8-main-img">
+        </div>
+
+        <div class="l16-t8-grid">
+            <div class="l16-t8-item">
+                <img src="images/землеройка.png" alt="Мышка">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/zemlya.png" alt="Земля">
+                <input type="number" class="l16-t8-input" data-answer="6">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/maz.png" alt="Мазь">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/chaffinch.png" alt="Зяблик">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/зелье.png" alt="Зелье">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/knyaz.png" alt="Князь">
+                <input type="number" class="l16-t8-input" data-answer="4">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/raisins.png" alt="Изюм">
+                <input type="number" class="l16-t8-input" data-answer="5">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/korzina.png" alt="Корзина">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/zelenka.png" alt="Зелёнка">
+                <input type="number" class="l16-t8-input" data-answer="3">
+            </div>
+            <div class="l16-t8-item">
+                <img src="images/грязь.png" alt="Грязь">
+                <input type="number" class="l16-t8-input" data-answer="4">
+            </div>
+        </div>
+
+        <div id="res-16-8" class="result-text"></div>
+        <div class="btn-box">
+            <button id="btn-16-8" class="orange-check-btn">ПРОВЕРИТЬ</button>
+        </div>
+    </div>
+
+
+</div>
+
+<script src="lesson-16.js"></script>
+</body>
+</html>
