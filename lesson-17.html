@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 17 - Звук [3'] в словах</title>
+    <link rel="stylesheet" href="lesson-17.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 17. Звук [3'] в словах</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 1. Закончи слова</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Найди 10 слов, правильно соединив блоки <b>ЗИ</b> или <b>ЗЕ</b> с подходящими окончаниями.
+        </p>
+
+        <div class="l17-t1-game-box">
+            <div class="l17-t1-starts">
+                <div class="l17-t1-block start-block" draggable="true" data-syllable="зи">зи-</div>
+                <div class="l17-t1-block start-block" draggable="true" data-syllable="зе">зе-</div>
+            </div>
+            
+            <div class="l17-t1-ends" id="t1-ends-container">
+                <div class="l17-t1-block end-block" data-valid="зи">-мовка</div>
+                <div class="l17-t1-block end-block" data-valid="зи">-мний</div>
+                <div class="l17-t1-block end-block" data-valid="зи">-пун</div>
+                <div class="l17-t1-block end-block" data-valid="зи">-ма</div>
+                <div class="l17-t1-block end-block" data-valid="зи">-на</div>
+                <div class="l17-t1-block end-block" data-valid="зи">-мовать</div>
+                <div class="l17-t1-block end-block" data-valid="зе">-мля</div>
+                <div class="l17-t1-block end-block" data-valid="зе">-бра</div>
+                <div class="l17-t1-block end-block" data-valid="зе">-вс</div>
+                <div class="l17-t1-block end-block" data-valid="зе">-ло</div>
+            </div>
+        </div>
+
+        <div id="res-17-1" class="result-text"></div>
+        
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkTask1()">Проверить</button>
+        </div>
+    </div>
+
+
+    <div class="white-card">
+        <h2 class="card-title">Задание 2. Ряды слогов и слов</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Запомни и повтори ряды слогов и слов.
+        </p>
+
+        <div class="l17-t2-container">
+            <div class="l17-t2-column">
+                <p>змя-зме-змю-зми</p>
+                <p>зме-змю-зми-змя</p>
+                <p>змю-зми-змя-зме</p>
+                <p>зми-змя-зме-змю</p>
+                <div class="l17-t2-spacer"></div>
+                <p>азмь-озмь-узмь-ызмь</p>
+                <p>озмь-узмь-ызмь-азмь</p>
+                <p>узмь-ызмь-азмь-озмь</p>
+                <p>ызмь-азмь-озмь-узмь</p>
+            </div>
+
+            <div class="l17-t2-column">
+                <p>зня-зне-зню-зни</p>
+                <p>зне-зню-зни-зня</p>
+                <p>зню-зни-зня-зне</p>
+                <p>зни-зня-зне-зню</p>
+                <div class="l17-t2-spacer"></div>
+                <p>азнь-ознь-узнь-ызнь</p>
+                <p>ознь-узнь-ызнь-азнь</p>
+                <p>узнь-ызнь-азнь-ознь</p>
+                <p>ызнь-азнь-ознь-узнь</p>
+            </div>
+        </div>
+
+        <div class="l17-t2-footer">
+            <b>змея — возня — болезни — возьми</b>
+        </div>
+
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkTask2()">Проверить</button>
+        </div>
+        <div id="res-17-2" class="result-text"></div>
+    </div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 3. Игра «Путаница»</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Составь правильные предложения из предложенных слов и запиши их.
+        </p>
+
+        <div class="l17-t3-container">
+            <div class="l17-t3-row">
+                <p class="l17-t3-words">Дети, забавы, любить, зимние —</p>
+                <input type="text" class="l17-t3-input" data-answer="Дети любят зимние забавы" placeholder="Введите предложение...">
+            </div>
+
+            <div class="l17-t3-row">
+                <p class="l17-t3-words">Зина, санки, зимой, кататься, на —</p>
+                <input type="text" class="l17-t3-input" data-answer="Зина зимой катается на санках" placeholder="Введите предложение...">
+            </div>
+
+            <div class="l17-t3-row">
+                <p class="l17-t3-words">Кузя, день, снеговик, зимний, лепить, сад, в —</p>
+                <input type="text" class="l17-t3-input" data-answer="В зимний день Кузя лепит снеговика в саду" placeholder="Введите предложение...">
+            </div>
+
+            <div class="l17-t3-row">
+                <p class="l17-t3-words">Мама, Зина, пальто, магазин, зимнее, в, покупать —</p>
+                <input type="text" class="l17-t3-input" data-answer="Мама и Зина покупают зимнее пальто в магазине" placeholder="Введите предложение...">
+            </div>
+
+            <div class="l17-t3-row">
+                <p class="l17-t3-words">Мама, Кузя, костюм, магазин, зимний, в, покупать —</p>
+                <input type="text" class="l17-t3-input" data-answer="Мама и Кузя покупают зимний костюм в магазине" placeholder="Введите предложение...">
+            </div>
+        </div>
+
+        <div id="res-17-3" class="result-text"></div>
+
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkTask3()">Проверить</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 4. Игра «Эхо»</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Образуй по образцу признаки к предметам в скобках. Образец: <b>звезда — звёздное (небо).</b>
+        </p>
+
+        <div class="l17-t4-single-column">
+            <div class="l17-t4-row">
+                <span>Звезда — </span>
+                <input type="text" class="l17-t4-input" data-answer="звездное" placeholder="...">
+                <span> (небо)</span>
+            </div>
+            <div class="l17-t4-row">
+                <span>Обезьяна — </span>
+                <input type="text" class="l17-t4-input" data-answer="обезьяний" placeholder="...">
+                <span> (питомник)</span>
+            </div>
+            <div class="l17-t4-row">
+                <span>Змея — </span>
+                <input type="text" class="l17-t4-input" data-answer="змеиный" placeholder="...">
+                <span> (яд)</span>
+            </div>
+            <div class="l17-t4-row">
+                <span>Зелень — </span>
+                <input type="text" class="l17-t4-input" data-answer="зеленая" placeholder="...">
+                <span> (звезда)</span>
+            </div>
+            <div class="l17-t4-row">
+                <span>Болезнь — </span>
+                <input type="text" class="l17-t4-input" data-answer="болезненный" placeholder="...">
+                <span> (человек)</span>
+            </div>
+            <div class="l17-t4-row">
+                <span>Земля — </span>
+                <input type="text" class="l17-t4-input" data-answer="земляная" placeholder="...">
+                <span> (жаба)</span>
+            </div>
+        </div>
+
+        <div id="res-17-4" class="result-text"></div>
+
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkTask4()">Проверить</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+        <h2 class="card-title">Задание 5. Внимательные глазки</h2>
+        <div class="yellow-divider"></div>
+        <p class="card-instruction">
+            Внимательно рассмотри обезьян. Найди двух <b>одинаковых</b> обезьян и нажми на них.
+        </p>
+
+        <div class="l17-t5-row-container">
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="1" style="background-image: url('images/lesson-17-5-1.png');"></div>
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="correct" style="background-image: url('images/lesson-17-5-2.png');"></div>
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="3" style="background-image: url('images/lesson-17-5-3.png');"></div>
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="4" style="background-image: url('images/lesson-17-5-4.png');"></div>
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="correct" style="background-image: url('images/lesson-17-5-2.png');"></div>
+            <div class="l17-t5-item-vert" onclick="selectMonkey(this)" data-monkey-id="6" style="background-image: url('images/lesson-17-5-6.png');"></div>
+        </div>
+
+        <div id="res-17-5" class="result-text"></div>
+
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkTask5()">Проверить</button>
+        </div>
+    </div>
+
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Подбери в кроссворд слова со звуком <b>З'</b>. Ключевое слово уже подскажет тебе путь!
+    </p>
+
+    <div class="l17-t6-main-wrap">
+        <div class="l17-t6-grid-container">
+            <div class="l17-t6-row">
+                <span class="l17-t6-num">1</span>
+                <div class="l17-t6-cell-empty"></div>
+                <div class="l17-t6-cell-empty"></div>
+                <div class="l17-t6-cell-empty"></div>
+                <div class="l17-t6-cell-empty"></div> <input type="text" class="l17-t6-cell key-cell" value="З" readonly>
+                <input type="text" class="l17-t6-cell" data-letter="е" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="б" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="р" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="а" maxlength="1">
+            </div>
+
+            <div class="l17-t6-row">
+                <span class="l17-t6-num">2</span>
+                <input type="text" class="l17-t6-cell" data-letter="б" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="е" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="н" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="з" maxlength="1">
+                <input type="text" class="l17-t6-cell key-cell" value="И" readonly>
+                <input type="text" class="l17-t6-cell" data-letter="н" maxlength="1">
+            </div>
+
+            <div class="l17-t6-row">
+                <span class="l17-t6-num">3</span>
+                <div class="l17-t6-cell-empty"></div>
+                <input type="text" class="l17-t6-cell" data-letter="и" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="з" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="ю" maxlength="1">
+                <input type="text" class="l17-t6-cell key-cell" value="М" readonly>
+            </div>
+
+            <div class="l17-t6-row">
+                <span class="l17-t6-num">4</span>
+                <div class="l17-t6-cell-empty"></div>
+                <input type="text" class="l17-t6-cell" data-letter="м" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="а" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="г" maxlength="1">
+                <input type="text" class="l17-t6-cell key-cell" value="А" readonly>
+                <input type="text" class="l17-t6-cell" data-letter="з" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="и" maxlength="1">
+                <input type="text" class="l17-t6-cell" data-letter="н" maxlength="1">
+            </div>
+        </div>
+
+        <div class="l17-t6-hints">
+            <p>1. Животное жарких стран.</p>
+            <p>2. Жидкое топливо.</p>
+            <p>3. Сухофрукт из винограда.</p>
+            <p>4. Торговое предприятие.</p>
+        </div>
+    </div>
+
+    <div id="res-17-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask6()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Найди место звука</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Рассмотри картинки и напиши названия предметов.</p>
+
+    <div class="l17-t7-grid">
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/basket.png" alt="Корзина"></div>
+            <input type="text" class="l17-t7-input" data-answer="корзина" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/strawberry.png" alt="Земляника"></div>
+            <input type="text" class="l17-t7-input" data-answer="земляника" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/knot.png" alt="Узел"></div>
+            <input type="text" class="l17-t7-input" data-answer="узел" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/mirror.png" alt="Зеркало"></div>
+            <input type="text" class="l17-t7-input" data-answer="зеркало" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/monkey.png" alt="Обезьяна"></div>
+            <input type="text" class="l17-t7-input" data-answer="обезьяна" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/zebra15.png" alt="Зебра"></div>
+            <input type="text" class="l17-t7-input" data-answer="зебра" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/зелье.png" alt="Зелье"></div>
+            <input type="text" class="l17-t7-input" data-answer="зелье" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/zerno.png" alt="Зерно"></div>
+            <input type="text" class="l17-t7-input" data-answer="зерно" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/shop.png" alt="Магазин"></div>
+            <input type="text" class="l17-t7-input" data-answer="магазин" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/zemlya.png" alt="Земля"></div>
+            <input type="text" class="l17-t7-input" data-answer="земля" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/goat.png" alt="Козёл"></div>
+            <input type="text" class="l17-t7-input" data-answer="козёл" placeholder="Назови...">
+        </div>
+        <div class="l17-t7-item">
+            <div class="img-wrapper"><img src="images/zipun.png" alt="Зипун"></div>
+            <input type="text" class="l17-t7-input" data-answer="зипун" placeholder="Назови...">
+        </div>
+    </div>
+
+    <div id="res-17-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask7()">Проверить</button>
+    </div>
+</div>
+    
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Найди 5 предметов</h2>
+    <div class="yellow-divider"></div>
+    
+    <div class="l17-t8-click-zone" onclick="handleImageClick()">
+        <img src="images/lesson-17-8.png" alt="Задание 8" class="l17-t8-simple-img">
+    </div>
+
+    <p class="card-instruction">Найдено предметов: <span id="click-counter">0</span> из 5</p>
+    
+    <div id="res-17-8" class="result-text"></div>
+    
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask8()">Проверить</button>
+    </div>
+</div>
+
+
+</div>
+
+<script src="lesson-17.js"></script>
+</body>
+</html>
