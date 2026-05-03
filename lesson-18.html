@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 18 - Звук [Ц] в словах</title>
+    <link rel="stylesheet" href="lesson-18.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 18. Звук [Ц] в словах</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Проговори слоги и слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Читай слоги и слова громко и четко, стараясь правильно произносить звук <b>[Ц]</b>.</p>
+
+    <div class="l18-t1-container">
+        <!-- Первый столбец -->
+        <div class="l18-t1-column">
+            <p>ац-ац-ац — бац</p>
+            <p>яц-яц-яц — заяц</p>
+            <p>яц-яц-яц — паяц</p>
+            <p>ец-ец-ец — боец</p>
+            <p>ец-ец-ец — питомец</p>
+        </div>
+
+        <!-- Второй столбец -->
+        <div class="l18-t1-column">
+            <p>ец-ец-ец — тунец</p>
+            <p>ец-ец-ец — китаец</p>
+            <p>ец-ец-ец — пехотинец</p>
+            <p>ец-ец-ец — вьетнамец</p>
+            <p>ец-ец-ец — купец</p>
+        </div>
+
+        <!-- Третий столбец -->
+        <div class="l18-t1-column">
+            <p>ец-ец-ец — конец</p>
+            <p>ец-ец-ец — отец</p>
+            <p>ец-ец-ец — певец</p>
+            <p>ец-ец-ец — танец</p>
+            <p>ец-ец-ец — гонец</p>
+        </div>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №2 -->
+ <div class="white-card">
+    <h2 class="card-title">Задание 2. Запомни и повтори</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Послушай внимательно и повтори ряд слов 4 раза!
+    </p>
+
+    <div class="l18-t2-rows">
+        <p class="l18-t2-text">индеец — птенец — мизинец — кузнец</p>
+        <p class="l18-t2-text">птенец — мизинец — кузнец — индеец</p>
+        <p class="l18-t2-text">мизинец — кузнец — индеец — птенец</p>
+        <p class="l18-t2-text">кузнец — индеец — птенец — мизинец</p>
+    </div>
+</div>   
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Договори предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинку, послушай начало предложения и догадайся, какого слова не хватает. Напиши его.
+    </p>
+
+    <div class="l18-t3-container">
+        <div class="l18-t3-row">
+            <span>Собака укусила Соню за </span>
+            <input type="text" class="l18-t3-input" data-answer="мизинец" placeholder="...">
+        </div>
+
+        <div class="l18-t3-row">
+            <span>На высокой сосне сидит маленький </span>
+            <input type="text" class="l18-t3-input" data-answer="птенец" placeholder="...">
+        </div>
+
+        <div class="l18-t3-row">
+            <span>В кузнице подковал коней </span>
+            <input type="text" class="l18-t3-input" data-answer="кузнец" placeholder="...">
+        </div>
+
+        <div class="l18-t3-row">
+            <span>На пороге вигвама стоит </span>
+            <input type="text" class="l18-t3-input" data-answer="индеец" placeholder="...">
+        </div>
+    </div>
+
+    <!-- Общая картинка-подсказка под предложениями -->
+    <div class="l18-t3-image-box">
+        <img src="images/lesson-18-3.png" alt="Герои задания" class="l18-t3-hint-img">
+    </div>
+
+    <div id="res-18-3" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask3()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Внимательные глазки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Найди двух одинаковых зайцев и нажми на них.</p>
+
+    <div class="l18-t5-row">
+        <!-- 1-я картинка (Правильная) -->
+        <img src="images/lesson-18-4-6.png" class="l18-t5-img" onclick="selectBunny(this)" data-is-correct="true">
+        
+        <!-- 2, 3, 4 картинки (Разные) -->
+        <img src="images/lesson-18-4-4.png" class="l18-t5-img" onclick="selectBunny(this)">
+        <img src="images/lesson-18-4-3.png" class="l18-t5-img" onclick="selectBunny(this)">
+        <img src="images/lesson-18-4-2.png" class="l18-t5-img" onclick="selectBunny(this)">
+        
+        <!-- 5-я картинка (Правильная, копия 1-й) -->
+        <img src="images/lesson-18-4-6.png" class="l18-t5-img" onclick="selectBunny(this)" data-is-correct="true">
+        
+        <!-- 6-я картинка (Разная) -->
+        <img src="images/lesson-18-4-1.png" class="l18-t5-img" onclick="selectBunny(this)">
+    </div>
+
+    <div id="res-18-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask5()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Саня и Соня</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай предложения про Саню и скажи так же про Соню. Запиши пропущенные слова. </b>
+    </p>
+
+    <div class="l18-t6-main-container">
+        <!-- Рисунок мальчика слева -->
+        <div class="l18-t6-char">
+            <img src="images/lesson-18-5-1.png" alt="Саня" class="l18-t6-img">
+        </div>
+
+        <!-- Список предложений -->
+        <div class="l18-t6-list">
+            <div class="l18-t6-row">
+                <span>Саня — умник, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="умница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — охотник, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="охотница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — писатель, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="писательница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — певец, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="певица" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — модник, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="модница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — затейник, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="затейница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — воспитатель, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="воспитательница" placeholder="...">
+            </div>
+            <div class="l18-t6-row">
+                <span>Саня — спутник, Соня — </span>
+                <input type="text" class="l18-t6-input" data-answer="спутница" placeholder="...">
+            </div>
+        </div>
+
+        <!-- Рисунок девочки справа -->
+        <div class="l18-t6-char">
+            <img src="images/lesson-18-5-2.png" alt="Соня" class="l18-t6-img">
+        </div>
+    </div>
+
+    <div id="res-18-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask6()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Зоркий глаз</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        В названиях каких предметов слышится звук <b>[Ц]</b>? Произнеси слова и нажми на них на картинке.
+    </p>
+
+    <!-- Контейнер для регистрации кликов по общему файлу -->
+    <div class="l18-t7-click-zone" onclick="handleTask7Click()">
+        <img src="images/lesson-18-6.png" alt="Найди звук Ц" class="l18-t7-main-img">
+    </div>
+
+    <!-- Счетчик для визуального контроля -->
+    <p class="card-instruction">Найдено предметов: <span id="t7-click-counter">0</span> </p>
+    
+    <div id="res-18-7" class="result-text"></div>
+    
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask7()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Чистоговорки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Повтори чистоговорки. Нажми на текст, а потом на картинку, которая к нему подходит.</p>
+
+    <div class="l18-t8-container">
+        <!-- Первый блок чистоговорок -->
+        <div class="l18-t8-group">
+            <div class="l18-t8-texts">
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="birds">ЦА-ЦА-ЦА — у синицы два птенца.</div>
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="egg">ЦО-ЦО-ЦО — снесла курица яйцо.</div>
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="rain">ЦУ-ЦУ-ЦУ — стучит дождик по крыльцу.</div>
+            </div>
+            <div class="l18-t8-tiles">
+                <img src="images/lesson-18-7-1.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="birds">
+                <img src="images/lesson-18-7-3.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="rain">
+                <img src="images/lesson-18-7-2.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="egg">
+            </div>
+        </div>
+
+        <!-- Второй блок чистоговорок -->
+        <div class="l18-t8-group">
+            <div class="l18-t8-texts">
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="cat">ЦЕ-ЦЕ-ЦЕ — сидит кошка на крыльце.</div>
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="cucumber">ЕЦ-ЕЦ-ЕЦ — очень вкусный огурец.</div>
+                <div class="l18-t8-phrase" onclick="selectPhrase(this)" data-match="kids">ЦЫ-ЦЫ-ЦЫ — наши дети молодцы.</div>
+            </div>
+            <div class="l18-t8-tiles">
+                <img src="images/lesson-18-7-4.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="cat">
+                <img src="images/lesson-18-7-5.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="kids">
+                <img src="images/lesson-18-7-6.png" class="l18-t8-tile" onclick="selectTile(this)" data-id="cucumber">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-18-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask8()">Проверить</button>
+    </div>
+</div>  
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Где спрятался звук?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Определи место звука <b>[Ц]</b> в названиях предметов. Нажми на картинку, а потом на нужную схему.
+    </p>
+
+    <div class="l18-t9-container">
+        <!-- Схемы места звука -->
+        <div class="l18-t9-schemes">
+            <div class="l18-t9-scheme" onclick="selectScheme(this)" data-place="start" title="Звук в начале">
+                <div class="scheme-box filled"></div><div class="scheme-box"></div><div class="scheme-box"></div>
+                <span>В начале</span>
+            </div>
+            <div class="l18-t9-scheme" onclick="selectScheme(this)" data-place="middle" title="Звук в середине">
+                <div class="scheme-box"></div><div class="scheme-box filled"></div><div class="scheme-box"></div>
+                <span>В середине</span>
+            </div>
+            <div class="l18-t9-scheme" onclick="selectScheme(this)" data-place="end" title="Звук в конце">
+                <div class="scheme-box"></div><div class="scheme-box"></div><div class="scheme-box filled"></div>
+                <span>В конце</span>
+            </div>
+        </div>
+
+        <!-- Сетка картинок -->
+        <div class="l18-t9-grid">
+            <img src="images/blacksmith.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="end" title="Кузнец">
+            <img src="images/chicken.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="start" title="Цыпленок">
+            <img src="images/ring.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="middle" title="Кольцо (в логопедии часто 'кольцо' — конец, если 'кольца' — середина)">
+            <img src="images/compasses.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="start" title="Циркуль">
+            <img src="images/well.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="end" title="Колодец">
+            <img src="images/spoke.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="middle" title="Спица">
+            <img src="images/flower.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="start" title="Цветок">
+            <img src="images/circus.png" class="l18-t9-img" onclick="selectObject(this)" data-answer="start" title="Цирк">
+        </div>
+    </div>
+
+    <div id="res-18-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask9()">Проверить</button>
+    </div>
+</div>
+
+
+</div>
+
+<script src="lesson-18.js"></script>
+</body>
+</html>
