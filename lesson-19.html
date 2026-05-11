@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 19 - Звук [Ц] в словах</title>
+    <link rel="stylesheet" href="lesson-19.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 19. Звук [Ц] в словах</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Игра «Путаница»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Составь предложения из слов по образцу и запиши их.
+    </p>
+
+    <div class="l19-t1-container">
+        <div class="l19-t1-grid-row">
+            <div class="l19-t1-col-words">Птицы, земля, над, летать, низко —</div>
+            <div class="l19-t1-col-input">
+                <input type="text" class="l19-t1-input" data-answer="Птицы летают низко над землей" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+        <div class="l19-t1-grid-row">
+            <div class="l19-t1-col-words">гнездо, сидеть, в, птенцы, и, попискивать —</div>
+            <div class="l19-t1-col-input">
+                <input type="text" class="l19-t1-input" data-answer="В гнезде сидят птенцы и попискивают" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+        <div class="l19-t1-grid-row">
+            <div class="l19-t1-col-words">акация, синица, куст, сидеть, на —</div>
+            <div class="l19-t1-col-input">
+                <input type="text" class="l19-t1-input" data-answer="На кусте акации сидит синица" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+        <div class="l19-t1-grid-row">
+            <div class="l19-t1-col-words">наседка, цыплята, ходить, за, гуськом —</div>
+            <div class="l19-t1-col-input">
+                <input type="text" class="l19-t1-input" data-answer="Цыплята ходят гуськом за наседкой" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+        <div class="l19-t1-grid-row">
+            <div class="l19-t1-col-words">цыпленок, водица, блюдце, пить, из —</div>
+            <div class="l19-t1-col-input">
+                <input type="text" class="l19-t1-input" data-answer="Цыпленок пьет водицу из блюдца" placeholder="Напиши предложение...">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-19-1" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask1()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Раскрась половинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Определи место звука <b>[Ц]</b> в словах. Нажми на ту половинку картинки, которую нужно закрасить.
+    </p>
+
+    <div class="l19-t2-grid">
+        <div class="l19-t2-item">
+            <div class="l19-t2-split-box">
+                <div class="l19-t2-half left" onclick="selectHalf(this, 'middle')" data-item="солнце"></div>
+                <div class="l19-t2-half right" onclick="selectHalf(this, 'middle')" data-item="солнце"></div>
+                <img src="images/sun_outline.png" alt="Солнце">
+            </div>
+            <p class="l19-t2-label">Солнце</p>
+        </div>
+
+        <div class="l19-t2-item">
+            <div class="l19-t2-split-box">
+                <div class="l19-t2-half left" onclick="selectHalf(this, 'end')" data-item="заяц"></div>
+                <div class="l19-t2-half right" onclick="selectHalf(this, 'end')" data-item="заяц"></div>
+                <img src="images/hare_outline.png" alt="Заяц">
+            </div>
+            <p class="l19-t2-label">Заяц</p>
+        </div>
+
+        <div class="l19-t2-item">
+            <div class="l19-t2-split-box">
+                <div class="l19-t2-half left" onclick="selectHalf(this, 'start')" data-item="цветок"></div>
+                <div class="l19-t2-half right" onclick="selectHalf(this, 'start')" data-item="цветок"></div>
+                <img src="images/flower_outline.png" alt="Цветок">
+            </div>
+            <p class="l19-t2-label">Цветок</p>
+        </div>
+
+        <div class="l19-t2-item">
+            <div class="l19-t2-split-box">
+                <div class="l19-t2-half left" onclick="selectHalf(this, 'start')" data-item="цыпленок"></div>
+                <div class="l19-t2-half right" onclick="selectHalf(this, 'start')" data-item="цыпленок"></div>
+                <img src="images/chick_outline.png" alt="Цыпленок">
+            </div>
+            <p class="l19-t2-label">Цыпленок</p>
+        </div>
+    </div>
+
+    <div id="res-19-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask2()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Проговори слоги</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Читай слоги четко, стараясь правильно произносить звук <b>[Ц]</b>.</p>
+
+    <div class="l19-t3-container">
+        <div class="l19-t3-column">
+            <p>цва-цво-цву-цвы</p>
+            <p>цво-цву-цвы-цва</p>
+            <p>цву-цвы-цва-цво</p>
+            <p>цвы-цва-цво-цву</p>
+        </div>
+
+        <div class="l19-t3-column">
+            <p>цма-цмо-цму-цмы</p>
+            <p>цмо-цму-цмы-цма</p>
+            <p>цму-цмы-цма-цмо</p>
+            <p>цмы-цма-цмо-цму</p>
+        </div>
+
+        <div class="l19-t3-column">
+            <p>ацм-оцм-уцм-ыцм</p>
+            <p>оцм-уцм-ыцм-ацм</p>
+            <p>уцм-ыцм-ацм-оцм</p>
+            <p>ыцм-ацм-оцм-уцм</p>
+        </div>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Родственные слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Послушай предложения, найди и запомни похожие слова. Подумай, почему они называются родственными.
+    </p>
+
+    <div class="l19-t4-sentences">
+        <p>На лугу одуванчики и другие полевые <b>цветы</b>.</p>
+        <p>Саня подарил маме весенний <b>цветок</b>.</p>
+        <p>Мама рассказала дочке сказку «Аленький <b>цветочек</b>».</p>
+        <p>На площади большая <b>цветочная</b> клумба.</p>
+        <p>Саня работает на огороде, а Соня — в <b>цветнике</b>.</p>
+        <p>Под окном школы куст <b>цветущей</b> сирени.</p>
+    </div>
+
+    <p class="card-instruction">Проговори эти слова:</p>
+
+    <div class="l19-t4-grid">
+        <div class="l19-t4-col">
+            <p>цветы</p>
+            <p>цветок</p>
+        </div>
+        <div class="l19-t4-col">
+            <p>цветочек</p>
+            <p>цветочная</p>
+        </div>
+        <div class="l19-t4-col">
+            <p>цветник</p>
+            <p>цветущая</p>
+        </div>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Театр теней</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Догадайся, что за актёры спрятались в театре теней. Назови их по порядку и запиши названия.
+    </p>
+
+    <div class="l19-t5-grid">
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-heron.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="цапля" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-sheep.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="овца" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-moto.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="мотоцикл" placeholder="Что это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-caterpillar.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="гусеница" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-hen.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="курица" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-hare.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="заяц" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-singer.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="певица" placeholder="Кто это?">
+        </div>
+        <div class="l19-t5-item">
+            <div class="l19-t5-shadow-box"><img src="images/shadow-princess.png" alt="Тень"></div>
+            <input type="text" class="l19-t5-input" data-answer="принцесса" placeholder="Кто это?">
+        </div>
+    </div>
+
+    <div id="res-19-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask5()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Ласковая Цоколочка</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Назови все 10 картинок ласково. Запиши получившиеся слова.
+    </p>
+
+    <div class="l19-t6-grid">
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-window.png" alt="Окно"></div>
+            <input type="text" class="l19-t6-input" data-answer="оконце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-dress.png" alt="Платье"></div>
+            <input type="text" class="l19-t6-input" data-answer="платьице" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-blanket.png" alt="Одеяло"></div>
+            <input type="text" class="l19-t6-input" data-answer="одеяльце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-armchair.png" alt="Кресло"></div>
+            <input type="text" class="l19-t6-input" data-answer="креслице" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-trough.png" alt="Корыто"></div>
+            <input type="text" class="l19-t6-input" data-answer="корытце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-soap.png" alt="Мыло"></div>
+            <input type="text" class="l19-t6-input" data-answer="мыльце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-mirror.png" alt="Зеркало"></div>
+            <input type="text" class="l19-t6-input" data-answer="зеркальце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-butter.png" alt="Масло"></div>
+            <input type="text" class="l19-t6-input" data-answer="маслице" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-hoof.png" alt="Копыто"></div>
+            <input type="text" class="l19-t6-input" data-answer="копытце" placeholder="Назови...">
+        </div>
+        <div class="l19-t6-item">
+            <div class="l19-t6-img-box"><img src="images/t6-swamp.png" alt="Болото"></div>
+            <input type="text" class="l19-t6-input" data-answer="болотце" placeholder="Назови...">
+        </div>
+    </div>
+
+    <div id="res-19-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask6()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. В поисках мамы</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки. Назови маму для каждого детёныша и запиши её название правильно.
+    </p>
+
+    <div class="l19-t7-grid">
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-fox.png" alt="Лиса"></div>
+            <p class="l19-t7-text">У лисёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="лисица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-lioness.png" alt="Львица"></div>
+            <p class="l19-t7-text">У львёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="львица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-bear.png" alt="Медведица"></div>
+            <p class="l19-t7-text">У медвежонка — </p>
+            <input type="text" class="l19-t7-input" data-answer="медведица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-donkey.png" alt="Ослица"></div>
+            <p class="l19-t7-text">У ослёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="ослица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-camel.png" alt="Верблюдица"></div>
+            <p class="l19-t7-text">У верблюжонка — </p>
+            <input type="text" class="l19-t7-input" data-answer="верблюдица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-tiger.png" alt="Тигрица"></div>
+            <p class="l19-t7-text">У тигрёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="тигрица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-eagle.png" alt="Орлица"></div>
+            <p class="l19-t7-text">У орлёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="орлица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-sheep.png" alt="Овца"></div>
+            <p class="l19-t7-text">У ягнёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="овца" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-hen.png" alt="Курица"></div>
+            <p class="l19-t7-text">У цыплёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="курица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-marten.png" alt="Куница"></div>
+            <p class="l19-t7-text">У кунёнка — </p>
+            <input type="text" class="l19-t7-input" data-answer="куница" placeholder="...">
+        </div>
+
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-wolf.png" alt="Волчица"></div>
+            <p class="l19-t7-text">У волчонка — </p>
+            <input type="text" class="l19-t7-input" data-answer="волчица" placeholder="...">
+        </div>
+        <div class="l19-t7-item">
+            <div class="l19-t7-img-box"><img src="images/t7-guineafowl.png" alt="Цесарка"></div>
+            <p class="l19-t7-text">У цесаренка — </p>
+            <input type="text" class="l19-t7-input" data-answer="цесарка" placeholder="...">
+        </div>
+    </div>
+
+    <div id="res-19-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask7()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Подбери слова на слоги</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        На какую часть слова заканчиваются названия картинок? <br>
+        Нажми на картинку, а затем на подходящий слог.
+    </p>
+
+    <div class="l19-t8-container">
+        <div class="l19-t8-grid">
+            <img src="images/пуговица.jpeg" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦА" title="Пуговица">
+            <img src="images/hand.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦЫ" title="Пальцы">
+            <img src="images/scissors.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦЫ" title="Ножницы">
+            <img src="images/lesson-18-7-6.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦЫ" title="Огурцы">
+            <img src="images/egg.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦО" title="Яйцо">
+            <img src="images/ring.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦО" title="Кольцо">
+            <img src="images/lestnica.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦА" title="Лестница">
+            <img src="images/t8-boy.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦО" title="Лицо">
+            <img src="images/mill.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦА" title="Мельница">
+            <img src="images/t8-sheep.png" class="l19-t8-img" onclick="selectT8Img(this)" data-answer="ЦА" title="Овца">
+        </div>
+
+        <div class="l19-t8-syllables">
+            <div class="l19-t8-syllable" onclick="matchT8Syllable('ЦА')">-ЦА</div>
+            <div class="l19-t8-syllable" onclick="matchT8Syllable('ЦО')">-ЦО</div>
+            <div class="l19-t8-syllable" onclick="matchT8Syllable('ЦЫ')">-ЦЫ</div>
+        </div>
+    </div>
+
+    <div id="res-19-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask8()">Проверить</button>
+    </div>
+</div>
+
+<!--Задание 9 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Упражнение «Искатели»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        В этих рядах спрятались слова. Нажимай на буквы, у которых есть пара в этом ряду, чтобы «вычеркнуть» их. Из оставшихся букв сложи слово и запиши его.
+    </p>
+
+    <div class="l19-t9-container">
+        <div class="l19-t9-row">
+            <div class="l19-t9-letters" data-row="1">
+                <span onclick="toggleLetter(this)">А</span><span onclick="toggleLetter(this)">Б</span><span onclick="toggleLetter(this)">У</span><span onclick="toggleLetter(this)">К</span><span onclick="toggleLetter(this)">О</span><span onclick="toggleLetter(this)">А</span><span onclick="toggleLetter(this)">К</span><span onclick="toggleLetter(this)">Е</span><span onclick="toggleLetter(this)">У</span><span onclick="toggleLetter(this)">И</span><span onclick="toggleLetter(this)">Ц</span><span onclick="toggleLetter(this)">И</span>
+            </div>
+            <input type="text" class="l19-t9-input" data-answer="боец" placeholder="Какое слово?">
+        </div>
+
+        <div class="l19-t9-row">
+            <div class="l19-t9-letters" data-row="2">
+                <span onclick="toggleLetter(this)">О</span><span onclick="toggleLetter(this)">Р</span><span onclick="toggleLetter(this)">М</span><span onclick="toggleLetter(this)">А</span><span onclick="toggleLetter(this)">В</span><span onclick="toggleLetter(this)">Н</span><span onclick="toggleLetter(this)">О</span><span onclick="toggleLetter(this)">Е</span><span onclick="toggleLetter(this)">М</span><span onclick="toggleLetter(this)">Ц</span><span onclick="toggleLetter(this)">В</span>
+            </div>
+            <input type="text" class="l19-t9-input" data-answer="ранец" placeholder="Какое слово?">
+        </div>
+
+        <div class="l19-t9-row">
+            <div class="l19-t9-letters" data-row="3">
+                <span onclick="toggleLetter(this)">М</span><span onclick="toggleLetter(this)">В</span><span onclick="toggleLetter(this)">Е</span><span onclick="toggleLetter(this)">Н</span><span onclick="toggleLetter(this)">Г</span><span onclick="toggleLetter(this)">С</span><span onclick="toggleLetter(this)">В</span><span onclick="toggleLetter(this)">А</span><span onclick="toggleLetter(this)">Я</span><span onclick="toggleLetter(this)">Н</span><span onclick="toggleLetter(this)">А</span><span onclick="toggleLetter(this)">Ц</span><span onclick="toggleLetter(this)">Г</span>
+            </div>
+            <input type="text" class="l19-t9-input" data-answer="месяц" placeholder="Какое слово?">
+        </div>
+    </div>
+
+    <div id="res-19-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask9()">Проверить</button>
+    </div>
+</div>
+
+<!--Задание 10-->
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Кто что купил?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки. Посмотри, что купили герои, и запиши предложения.
+    </p>
+
+    <div class="l19-t10-grid">
+        <div class="l19-t10-item">
+            <img src="images/t10-shop-1.png" alt="Магазин" class="l19-t10-img">
+            <p class="l19-t10-label">В магазине было много товаров.</p>
+        </div>
+
+        <div class="l19-t10-item">
+            <img src="images/t10-shop-2.png" alt="Цапля" class="l19-t10-img">
+            <input type="text" class="l19-t10-input" placeholder="Напиши про цаплю...">
+        </div>
+
+        <div class="l19-t10-item">
+            <img src="images/t10-shop-3.png" alt="Индеец" class="l19-t10-img">
+            <input type="text" class="l19-t10-input" placeholder="Напиши про индейца...">
+        </div>
+
+        <div class="l19-t10-item">
+            <img src="images/t10-shop-4.png" alt="Цыпленок" class="l19-t10-img">
+            <input type="text" class="l19-t10-input" placeholder="Напиши про цыпленка...">
+        </div>
+    </div>
+
+    <div id="res-19-10" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask10()">Проверить</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+<script src="lesson-19.js"></script>
+</body>
+</html>
