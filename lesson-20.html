@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 20 - Звук [Ц] в предложениях</title>
+    <link rel="stylesheet" href="lesson-20.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 20. Звук [Ц] в предложениях</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Упражнение «Составь предложение»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри рисунки на коллажах. Составь и запиши отдельное предложение про цыплёнка и царевну к каждой картинке .
+    </p>
+
+    <div class="l20-t1-collage-box">
+        <img src="images/t1-collage-1.png" alt="Коллаж 1: Цыплёнок, курица, гусеница, лестница, пуговица" class="l20-t1-collage-img">
+    </div>
+
+    <div class="l20-t1-sentences-wrapper">
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">1.</span>
+            <input type="text" class="l20-t1-input" placeholder="Цыплёнок ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">2.</span>
+            <input type="text" class="l20-t1-input" placeholder="Цыплёнок ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">3.</span>
+            <input type="text" class="l20-t1-input" placeholder="Цыплёнок ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">4.</span>
+            <input type="text" class="l20-t1-input" placeholder="Цыплёнок ...">
+        </div>
+       
+    </div>
+
+    <div class="l20-t1-collage-box">
+        <img src="images/t1-collage-2.png" alt="Коллаж 2: Царевна, кольцо, замок, заяц, ковёр" class="l20-t1-collage-img">
+    </div>
+
+    <div class="l20-t1-sentences-wrapper">
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">6.</span>
+            <input type="text" class="l20-t1-input" placeholder="Царевна ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">7.</span>
+            <input type="text" class="l20-t1-input" placeholder="Царевна ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">8.</span>
+            <input type="text" class="l20-t1-input" placeholder="Царевна ...">
+        </div>
+        <div class="l20-t1-row">
+            <span class="l20-t1-row-num">9.</span>
+            <input type="text" class="l20-t1-input" placeholder="Царевна ...">
+        </div>
+       
+    </div>
+
+    <div id="res-20-1" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask1()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Цоколочка-художница</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Давай порисуем вместе с Цоколочкой. Нажимай на половинки только тех картинок, которые содержаь звук [Ц], чтобы помочь ей их дорисовать!
+    </p>
+
+    <div class="l20-t2-art-grid">
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/onion.png" alt="Луковица" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Луковица</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/пуговица.jpeg" alt="Пуговица" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Пуговица</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/руковица.jpeg" alt="Рукавица" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Рукавица</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/цветок.jpeg" alt="Цветок" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Цветок</span>
+        </div>
+
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/блюдце.jpeg" alt="Блюдце" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Блюдце</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/конфета.jpeg" alt="Конфета" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Конфета</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/перец.jpeg" alt="Перец" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Перец</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/огурец.jpg" alt="Огурец" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Огурец</span>
+        </div>
+
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/egg.png" alt="Яйцо" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Яйцо</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/circus.png" alt="Цирк" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Цирк</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/ring.png" alt="Кольцо" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Кольцо</span>
+        </div>
+        <div class="l20-t2-art-item" onclick="drawHalf(this)">
+            <div class="l20-t2-canvas-box"><img src="images/bow.png" alt="Бант" class="l20-t2-art-img"></div>
+            <span class="l20-t2-art-label">Бант</span>
+        </div>
+    </div>
+
+    <div id="res-20-2" class="result-text"></div>
+    <div id="res-20-2" class="result-text"></div>
+    
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask2()">Проверить</button>
+    </div>
+</div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Портретная галерея</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри внимательно на портреты и помоги объединить вместе общие сюжеты. Нажми на картинку справа, а затем на подходящую пару слева. Чётко проговаривай, кто нарисован на портрете!
+    </p>
+
+    <div class="l20-t3-gallery-wrapper">
+        <div class="l20-t3-side l20-t3-left-side">
+            <div class="l20-t3-card" data-id="singers" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/певец.jpg" alt="Певец">
+            </div>
+            <div class="l20-t3-card" data-id="gypsies" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/цыган.jpeg" alt="Цыган">
+            </div>
+            <div class="l20-t3-card" data-id="royals" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/принц.jpg" alt="Принц">
+            </div>
+            <div class="l20-t3-card" data-id="rulers" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/царь.jpeg" alt="Царь">
+            </div>
+            <div class="l20-t3-card" data-id="circus" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/канатоходец.jpeg" alt="Канатоходец">
+            </div>
+            <div class="l20-t3-card" data-id="workers" data-side="left" onclick="clickL20T3Card(this)">
+                <img src="images/кузнец.jpeg" alt="Кузнец">
+            </div>
+        </div>
+
+        <div class="l20-t3-side l20-t3-right-side">
+            <div class="l20-t3-card" data-id="royals" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/принцесса.jpeg" alt="Принцесса">
+            </div>
+            <div class="l20-t3-card" data-id="circus" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/укротительница.jpeg" alt="Укротительница">
+            </div>
+            <div class="l20-t3-card" data-id="rulers" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/царица.jpeg" alt="Царица">
+            </div>
+            <div class="l20-t3-card" data-id="gypsies" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/цыганка.jpeg" alt="Цыганка">
+            </div>
+            <div class="l20-t3-card" data-id="singers" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/певица.jpg" alt="Певица">
+            </div>
+            <div class="l20-t3-card" data-id="workers" data-side="right" onclick="clickL20T3Card(this)">
+                <img src="images/молочница.jpeg" alt="Молочница">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-20-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask3()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Игра «Гости»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри жителей и гостей в каждом из 4-х домиков. Найди их названия в словаре и запиши по 4 слова через запятую под каждым домиком. Чётко произноси звук <b>[Ц]</b>!
+        Скажи кто лишний в домике.
+    </p>
+
+    <div class="l20-t4-houses-grid">
+        <div class="l20-t4-house-item">
+            <div class="l20-t4-img-box">
+                <img src="images/домик_1.jpeg" alt="Домик 1">
+            </div>
+            <input type="text" class="l20-t4-input" placeholder="...">
+        </div>
+
+        <div class="l20-t4-house-item">
+            <div class="l20-t4-img-box">
+                <img src="images/домик_2.jpeg" alt="Домик 2">
+            </div>
+            <input type="text" class="l20-t4-input" placeholder="...">
+        </div>
+
+        <div class="l20-t4-house-item">
+            <div class="l20-t4-img-box">
+                <img src="images/домик_3.jpeg" alt="Домик 3">
+            </div>
+            <input type="text" class="l20-t4-input" placeholder="...">
+        </div>
+
+        <div class="l20-t4-house-item">
+            <div class="l20-t4-img-box">
+                <img src="images/домик_4.jpeg" alt="Домик 4">
+            </div>
+            <input type="text" class="l20-t4-input" placeholder="...">
+        </div>
+    </div>
+
+    <div id="res-20-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask4()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Упражнение «Сказочная дорога»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Вместе с Цоколочкой помоги принцу пройти сказочную дорогу к принцессе. Проведи мышкой или пальчиком по дорожке и чётко назови всех, кого он встретит на своём пути!
+    </p>
+
+    <div class="l20-t5-maze-container">
+        <img src="images/lesson-20-5.jpeg" alt="Сказочная дорога лабиринт" class="l20-t5-maze-img">
+    </div>
+
+    <div id="res-20-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask5()">Готово!</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. «Лабиринт 3»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Найди карточку со звёздочкой и начни свой путь по стрелочкам! Проходи лабиринт пальчиком или мышкой и устно выполняй упражнения логопеда для каждой картинки.
+    </p>
+
+    <div class="l20-t6-maze-wrapper">
+        <img src="images/lesson-20-6-1.jpeg" alt="Лабиринт со звуком Ц" class="l20-t6-maze-img">
+    </div>
+
+<div id="res-20-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask6()">Готово!</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Упражнение «Половинки»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Найди на картинке карточку со звёздочкой. Двигайся по стрелочкам лабиринта и устно добавляй недостающую половинку к каждому слову, чтобы произнести его целиком!
+    </p>
+
+    <div class="l20-t7-maze-wrapper">
+        <img src="images/lesson-20-7-1.jpeg" alt="Лабиринт Половинки со звуком Ц" class="l20-t7-maze-img">
+    </div>
+
+    <div id="res-20-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask7()">Готово!</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Игра «Подбери картинку»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги Ивану-царевичу расколдовать Царевну-лягушку! Нажимай на слова-прилагательные и сопоставляй их с подходящими картинками предметов. Когда соберёшь все пары, нажми «Проверить», чтобы узнать финал сказки!
+    </p>
+
+    <div class="l20-t8-transformation-banner">
+        <img src="images/Царевич-9-1.jpeg" id="l20-t8-hero-img" alt="Иван-царевич на болоте" class="l20-t8-story-img">
+    </div>
+
+    <div class="l20-t8-game-container">
+        <div class="l20-t8-words-side">
+            <div class="l20-t8-word-card" data-match="tsvetnoy" onclick="clickL20T8(this)">ЦВЕТНОЙ</div>
+            <div class="l20-t8-word-card" data-match="tsvetnaya" onclick="clickL20T8(this)">ЦВЕТНАЯ</div>
+            <div class="l20-t8-word-card" data-match="tsvetnoye" onclick="clickL20T8(this)">ЦВЕТНОЕ</div>
+            <div class="l20-t8-word-card" data-match="tsvetnyye" onclick="clickL20T8(this)">ЦВЕТНЫЕ</div>
+            
+            <div class="l20-t8-word-card" data-match="tsarskiy" onclick="clickL20T8(this)">ЦАРСКИЙ</div>
+            <div class="l20-t8-word-card" data-match="tsarskaya" onclick="clickL20T8(this)">ЦАРСКАЯ</div>
+            <div class="l20-t8-word-card" data-match="tsarskoye" onclick="clickL20T8(this)">ЦАРСКОЕ</div>
+            <div class="l20-t8-word-card" data-match="tsarskiye" onclick="clickL20T8(this)">ЦАРСКИЕ</div>
+        </div>
+
+        <div class="l20-t8-images-side">
+            <div class="l20-t8-img-card" data-match="tsvetnoye" onclick="clickL20T8(this)">
+                <img src="images/блюдце.jpeg" alt="Блюдце">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsvetnaya" onclick="clickL20T8(this)">
+                <img src="images/пуговица.jpeg" alt="Пуговица">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsvetnoy" onclick="clickL20T8(this)">
+                <img src="images/леденец.jpg" alt="Леденец">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsvetnyye" onclick="clickL20T8(this)">
+                <img src="images/цифры.png" alt="Цифры">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsarskaya" onclick="clickL20T8(this)">
+                <img src="images/mill.png" alt="Мельница">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsarskiy" onclick="clickL20T8(this)">
+                <img src="images/well.png" alt="Колодец">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsarskoye" onclick="clickL20T8(this)">
+                <img src="images/ring.png" alt="Кольцо">
+            </div>
+            <div class="l20-t8-img-card" data-match="tsarskiye" onclick="clickL20T8(this)">
+                <img src="images/дворцы.jpeg" alt="Дворцы">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-20-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask8()">Проверить</button>
+    </div>
+</div>
+<!--Задание 9 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки-подсказки внизу. Впиши в кроссворд слова, в которых встречается звук [Ц]. Буквы автоматически переключаются при вводе!
+    </p>
+
+    <div class="l20-t9-crossword-container">
+        <div class="l20-t9-row" data-word="ЦЫГАН">
+            <span class="l20-t9-num">1</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="ЦЕСАРКА">
+            <span class="l20-t9-num">2</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="ЦАРЬ">
+            <span class="l20-t9-num">3</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="ЦЕРКОВЬ">
+            <span class="l20-t9-num">4</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="ЦЫПЛЁНОК">
+            <span class="l20-t9-num">5</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="ЛЕДЕНЕЦ">
+            <span class="l20-t9-num">6</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="КОЛОДЕЦ">
+            <span class="l20-t9-num">7</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+
+        <div class="l20-t9-row" data-word="НОЖНИЦЫ">
+            <span class="l20-t9-num">8</span>
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+            <input type="text" class="l20-t9-cell" maxlength="1">
+        </div>
+    </div>
+
+    <div class="l20-t9-hints-box">
+        <img src="images/lesson-20-9.png" alt="Картинки подсказки к кроссворду" class="l20-t9-hints-img">
+    </div>
+
+    <div id="res-20-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask9()">Проверить</button>
+    </div>
+</div>
+
+
+<!--Задание 10-->
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+<script src="lesson-20.js"></script>
+</body>
+</html>
