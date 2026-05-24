@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 21 - Звук [Ц] в предложениях</title>
+    <link rel="stylesheet" href="lesson-21.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 21. Звук [Ц] в предложениях</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Загадки Цоколочки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Отгадай, про что или про кого Цоколочка так говорит. Нажимай на карточку с началом фразы, а затем выбирай подходящую картинку-отгадку!
+    </p>
+
+    <div class="l21-t1-game-box">
+        <div class="l21-t1-riddles-column">
+            <div class="l21-t1-text-card" data-match="flowers" data-word="цветы" onclick="clickL21T1(this)"><span>Целебные... </span></div>
+            <div class="l21-t1-text-card" data-match="circus" data-word="канатоходец" onclick="clickL21T1(this)"><span>Цирковой... </span></div>
+            <div class="l21-t1-text-card" data-match="towel" data-word="полотенце" onclick="clickL21T1(this)"><span>Цветное...</span></div>
+            <div class="l21-t1-text-card" data-match="tweezers" data-word="пинцет" onclick="clickL21T1(this)"><span>Медицинский...</span></div>
+            <div class="l21-t1-text-card" data-match="ring" data-word="кольцо" onclick="clickL21T1(this)"><span>Драгоценное...</span></div>
+            <div class="l21-t1-text-card" data-match="face" data-word="лицо" onclick="clickL21T1(this)"><span>Поцарапанное...</span></div>
+            <div class="l21-t1-text-card" data-match="hospital" data-word="больница" onclick="clickL21T1(this)"><span>Детская...</span></div>
+            <div class="l21-t1-text-card" data-match="egg" data-word="яйцо" onclick="clickL21T1(this)"><span>Куриное...</span></div>
+        </div>
+
+        <div class="l21-t1-images-column">
+            <div class="l21-t1-img-card" data-match="tweezers" onclick="clickL21T1(this)">
+                <img src="images/tweezers.jpeg" alt="Пинцет">
+            </div>
+            <div class="l21-t1-img-card" data-match="hospital" onclick="clickL21T1(this)">
+                <img src="images/hospital.jpeg" alt="Больница">
+            </div>
+            <div class="l21-t1-img-card" data-match="circus" onclick="clickL21T1(this)">
+                <img src="images/канатоходец.jpeg" alt="Канатоходец">
+            </div>
+            <div class="l21-t1-img-card" data-match="flowers" onclick="clickL21T1(this)">
+                <img src="images/flowers.png" alt="Цветы">
+            </div>
+            <div class="l21-t1-img-card" data-match="face" onclick="clickL21T1(this)">
+                <img src="images/t8-boy.png" alt="Лицо">
+            </div>
+            <div class="l21-t1-img-card" data-match="egg" onclick="clickL21T1(this)">
+                <img src="images/egg.png" alt="Яйцо">
+            </div>
+            <div class="l21-t1-img-card" data-match="towel" onclick="clickL21T1(this)">
+                <img src="images/towel.jpeg" alt="Полотенце">
+            </div>
+            <div class="l21-t1-img-card" data-match="ring" onclick="clickL21T1(this)">
+                <img src="images/ring.png" alt="Кольцо">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-21-1" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask1()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Зайцы Цуня и Януц</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        У Цоколочки есть друзья: заяц Цуня и заяц Януц. Януц делает всё наоборот! Помоги соединить картинки-противоположности. Кликни на действие Цуни, а затем найди противоположное действие Януца.
+    </p>
+
+    <div class="l21-t2-game-container">
+        <div class="l21-t2-column">
+            <div class="l21-t2-title-side">Заяц Цуня</div>
+            
+            <div class="l21-t2-card" data-match="speed" data-side="left" onclick="clickL21T2(this)">
+                <img src="images/t2-pletesya.png" alt="Плетется">
+                <div class="l21-t2-word-hidden">плетется</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="height" data-side="left" onclick="clickL21T2(this)">
+                <img src="images/t2-podnimaetsya.png" alt="Поднимается">
+                <div class="l21-t2-word-hidden">поднимается</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="social" data-side="left" onclick="clickL21T2(this)">
+                <img src="images/t2-proshyaetsya.png" alt="Прощается">
+                <div class="l21-t2-word-hidden">прощается</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="fight" data-side="left" onclick="clickL21T2(this)">
+                <img src="images/t2-deretsya.png" alt="Дерется">
+                <div class="l21-t2-word-hidden">дерется</div>
+            </div>
+        </div>
+
+        <div class="l21-t2-column">
+            <div class="l21-t2-title-side">Заяц Януц (наоборот)</div>
+            
+            <div class="l21-t2-card" data-match="height" data-side="right" onclick="clickL21T2(this)">
+                <img src="images/t2-spuskaetsya.png" alt="Спускается">
+                <div class="l21-t2-word-hidden">спускается</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="speed" data-side="right" onclick="clickL21T2(this)">
+                <img src="images/t2-nesetsya.png" alt="Несется">
+                <div class="l21-t2-word-hidden">несется</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="fight" data-side="right" onclick="clickL21T2(this)">
+                <img src="images/t2-miritsya.png" alt="Мирится / Здоровается">
+                <div class="l21-t2-word-hidden">мирится</div>
+            </div>
+            
+            <div class="l21-t2-card" data-match="social" data-side="right" onclick="clickL21T2(this)">
+                <img src="images/t2-zdorovaetsya.png" alt="Здоровается / Мирится">
+                <div class="l21-t2-word-hidden">здоровается</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-21-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask2()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Упражнение «Рифмы»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Послушай начало фразы и закончи её подходящим словом. Рассмотри картинки-подсказки, чётко повторяй чистоговорки вслед за взрослым и впиши пропущенные слова в окошки!
+    </p>
+
+    <div class="l21-t3-workspace">
+        <div class="l21-t3-hints-row">
+            <div class="l21-t3-hint-card"><img src="images/ring.png" alt="Кольцо"></div>
+            <div class="l21-t3-hint-card"><img src="images/egg.png" alt="Яйцо"></div>
+            <div class="l21-t3-hint-card"><img src="images/syringe.jpeg" alt="Шприц"></div>
+            <div class="l21-t3-hint-card"><img src="images/леденец.jpg" alt="Леденец"></div>
+            <div class="l21-t3-hint-card"><img src="images/bird-8.png" alt="Птица"></div>
+        </div>
+
+        <div class="l21-t3-rhymes-list">
+            <div class="l21-t3-rhyme-row">
+                <span class="l21-t3-syllables">Цо-цо-цо, цо-цо-цо</span>
+                <span class="l21-t3-dash">—</span>
+                <span class="l21-t3-phrase-text">на руке моей</span>
+                <input type="text" class="l21-t3-box-input" data-answer="кольцо" placeholder="отгадка">
+            </div>
+
+            <div class="l21-t3-rhyme-row">
+                <span class="l21-t3-syllables">Цо-цо-цо, цо-цо-цо</span>
+                <span class="l21-t3-dash">—</span>
+                <span class="l21-t3-phrase-text">снесла курочка</span>
+                <input type="text" class="l21-t3-box-input" data-answer="яйцо" placeholder="отгадка">
+            </div>
+
+            <div class="l21-t3-rhyme-row">
+                <span class="l21-t3-syllables">Иц-иц-иц, иц-иц-иц</span>
+                <span class="l21-t3-dash">—</span>
+                <span class="l21-t3-phrase-text">продают в аптеке</span>
+                <input type="text" class="l21-t3-box-input" data-answer="шприц" placeholder="отгадка">
+            </div>
+
+            <div class="l21-t3-rhyme-row">
+                <span class="l21-t3-syllables">Ец-ец-ец, ец-ец-ец</span>
+                <span class="l21-t3-dash">—</span>
+                <span class="l21-t3-phrase-text">вкусный, сладкий</span>
+                <input type="text" class="l21-t3-box-input" data-answer="леденец" placeholder="отгадка">
+            </div>
+
+            <div class="l21-t3-rhyme-row">
+                <span class="l21-t3-syllables">Ица-ица-ица</span>
+                <span class="l21-t3-dash">—</span>
+                <span class="l21-t3-phrase-text">улетела</span>
+                <input type="text" class="l21-t3-box-input" data-answer="птица" placeholder="отгадка">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-21-3" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask3()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Упражнение «Весёлый поезд»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги пассажирам отправиться в путешествие! Посчитай количество слогов в каждом слове. Перетащи пассажира на подходящий вагончик поезда (количество слогов совпадает с количеством окошек вагона)!
+    </p>
+
+    <div class="l21-t4-workspace">
+        <div class="l21-t4-train-wrapper">
+            <img src="images/train.jpeg" alt="Весёлый поезд" class="l21-t4-train-bg">
+            
+            <div class="l21-t4-virtual-dropzone" id="zone-locomotive" data-wagon="0" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)"></div>
+            <div class="l21-t4-virtual-dropzone" id="zone-wagon1" data-wagon="1" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)"></div>
+            <div class="l21-t4-virtual-dropzone" id="zone-wagon2" data-wagon="2" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)"></div>
+            <div class="l21-t4-virtual-dropzone" id="zone-wagon3" data-wagon="3" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)"></div>
+            <div class="l21-t4-virtual-dropzone" id="zone-wagon4" data-wagon="4" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)"></div>
+        </div>
+
+        <div class="l21-t4-passengers-grid" id="l21-t4-source-zone" ondragover="allowL21T4Drop(event)" ondrop="dropL21T4(event)">
+            <div class="l21-t4-passenger-card" draggable="true" id="p-tsar" data-wagon="1" ondragstart="dragL21T4(event)">
+                <img src="images/царь.jpeg" alt="Царь">
+                <div class="l21-t4-name">Царь</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-bird" data-wagon="2" ondragstart="dragL21T4(event)">
+                <img src="images/bird-8.png" alt="Птица">
+                <div class="l21-t4-name">Птица</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-hare" data-wagon="2" ondragstart="dragL21T4(event)">
+                <img src="images/hare.png" alt="Заяц">
+                <div class="l21-t4-name">Заяц</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-princess" data-wagon="3" ondragstart="dragL21T4(event)">
+                <img src="images/царица.jpeg" alt="Царевна">
+                <div class="l21-t4-name">Царевна</div>
+            </div>
+
+            <div class="l21-t4-passenger-card" draggable="true" id="p-chick" data-wagon="3" ondragstart="dragL21T4(event)">
+                <img src="images/chicken.png" alt="Цыплёнок">
+                <div class="l21-t4-name">Цыплёнок</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-tit" data-wagon="3" ondragstart="dragL21T4(event)">
+                <img src="images/lesson-5-8-3.png" alt="Синица">
+                <div class="l21-t4-name">Синица</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-bear" data-wagon="4" ondragstart="dragL21T4(event)">
+                <img src="images/bear.png" alt="Медведица">
+                <div class="l21-t4-name">Медведица</div>
+            </div>
+            <div class="l21-t4-passenger-card" draggable="true" id="p-lizard" data-wagon="4" ondragstart="dragL21T4(event)">
+                <img src="images/lizard.jpeg" alt="Ящерица">
+                <div class="l21-t4-name">Ящерица</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-21-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask4()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Упражнение «Озорные буквы»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Буквы спрятались в волшебных фигурках! Рассмотри картинку-подсказку, сопоставь контуры и запиши буквы в пустые квадратики в правильном порядке, чтобы получились слова. Буквы переключаются автоматически!
+    </p>
+
+    <div class="l21-t5-workspace">
+        
+        <div class="l21-t5-rebus-block" data-word="ОТЕЦ">
+            <div class="l21-t5-banner-box">
+                <img src="images/t5-rebus-1.jpg" alt="Ребус 1 - Отец" class="l21-t5-rebus-img">
+            </div>
+            <div class="l21-t5-inputs-row">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+            </div>
+        </div>
+
+        <div class="l21-t5-divider"></div>
+
+        <div class="l21-t5-rebus-block" data-word="ОВЦЫ">
+            <div class="l21-t5-banner-box">
+                <img src="images/t5-rebus-2.jpg" alt="Ребус 2 - Овцы" class="l21-t5-rebus-img">
+            </div>
+            <div class="l21-t5-inputs-row">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+            </div>
+        </div>
+
+        <div class="l21-t5-divider"></div>
+
+        <div class="l21-t5-rebus-block" data-word="ЦЕПИ">
+            <div class="l21-t5-banner-box">
+                <img src="images/t5-rebus-3.jpg" alt="Ребус 3 - Цепи" class="l21-t5-rebus-img">
+            </div>
+            <div class="l21-t5-inputs-row">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+                <input type="text" class="l21-t5-cell" maxlength="1">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="res-21-5" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask5()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Блюдца для Цоколочки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        У Цоколочки разбились блюдца. Рассмотри картинку и помоги ей устно найти к каждому блюдцу его недостающий осколок. Посчитай, сколько всего получится целых блюдец!
+    </p>
+
+    <div class="l21-t6-image-container">
+        <img src="images/lesson-21-6.jpg" alt="Разбитые блюдца и осколки" class="l21-t6-main-img">
+    </div>
+
+    <div class="l21-t6-speech-helper">
+        <span class="l21-t6-helper-title">Считай устно так:</span>
+        <p class="l21-t6-helper-text">
+            Одно целое блюдце... два целых блюдца... три целых блюдца...
+        </p>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Упражнение «Собери слово»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Выполни задания Медведицы, и ты узнаешь, какие слова она загадала. Пройди по шагам лабиринта и запиши получившиеся слова в пустые клеточки!
+    </p>
+
+    <div class="l21-t7-workspace">
+        
+        <div class="l21-t7-conditions-grid">
+            <div class="l21-t7-cond-column">
+                <div class="l21-t7-cond-header"><span style="color: #e74c3c;">★</span> Первое слово</div>
+                <p class="l21-t7-cond-text">
+                    <b>Первый ход</b> — буква, отмеченная красной звёздочкой.<br>
+                    <b>Второй ход</b> — три клетки вправо.<br>
+                    <b>Третий ход</b> — три клетки вверх.<br>
+                    <b>Четвёртый ход</b> — одна клетка вправо.<br>
+                    <b>Пятый ход</b> — одна клетка вверх.<br>
+                    <b>Шестой ход</b> — две клетки влево.
+                </p>
+            </div>
+            
+            <div class="l21-t7-cond-column">
+                <div class="l21-t7-cond-header"><span style="color: #2ecc71;">★</span> Второе слово</div>
+                <p class="l21-t7-cond-text">
+                    <b>Первый ход</b> — буква, отмеченная зеленой звёздочкой.<br>
+                    <b>Второй ход</b> — две клетки вверх.<br>
+                    <b>Третий ход</b> — четыре клетки вправо.<br>
+                    <b>Четвёртый ход</b> — одна клетка вниз.<br>
+                    <b>Пятый ход</b> — две клетки вниз.<br>
+                    <b>Шестой ход</b> — одна клетка вправо.
+                </p>
+            </div>
+        </div>
+
+        <div class="l21-t7-image-box">
+            <img src="images/lesson-21-7.jpg" alt="Таблица букв Медведицы" class="l21-t7-main-img">
+        </div>
+
+        <div class="l21-t7-words-container">
+            
+            <div class="l21-t7-word-block" data-word="ЦВЕТОК">
+                <div class="l21-t7-inputs-row">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                </div>
+            </div>
+
+            <div class="l21-t7-word-block" data-word="ИНДЕЕЦ">
+                <div class="l21-t7-inputs-row">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                    <input type="text" class="l21-t7-cell" maxlength="1">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="res-21-7" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask7()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Упражнение «Занимательная фотография»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Иришка сделала замечательную фотографию в деревне, но она получилась чёрно-белой. Найди на картинке предметы, в названиях которых есть звук [Ц], и запиши их в любые строчки внизу. Нажми кнопку «Проверить», чтобы раскрасить фотографию!
+    </p>
+
+    <div class="l21-t8-workspace">
+        <div class="l21-t8-photo-box">
+            <img src="images/lesson-21-8-1.jpg" id="l21-t8-photo-img" alt="Фотография Иришки чёрно-белая" class="l21-t8-main-img">
+        </div>
+
+        <div class="l21-t8-inputs-container">
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">1</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">2</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">3</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">4</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">5</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">6</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">7</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+            <div class="l21-t8-input-wrapper"><span class="l21-t8-num">8</span><input type="text" class="l21-t8-word-input" placeholder="Напиши слово..."></div>
+        </div>
+    </div>
+
+    <div id="res-21-8" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask8()">Проверить</button>
+    </div>
+</div>
+
+<!--Задание 9 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Упражнение «Составь предложения»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки-подсказки. Придумай красивые и длинные предложения с каждым словом. Произноси звук [Ц] чётко и запиши получившиеся фразы в окошки напротив слов!
+    </p>
+
+    <div class="l21-t9-workspace">
+        
+        <div class="l21-t9-hints-row">
+            <div class="l21-t9-hint-card"><img src="images/heron.jpeg" alt="Цапля"></div>
+            <div class="l21-t9-hint-card"><img src="images/царь.jpeg" alt="Царь"></div>
+            <div class="l21-t9-hint-card"><img src="images/number.png" alt="Цифра"></div>
+            <div class="l21-t9-hint-card"><img src="images/circus.png" alt="Цирк"></div>
+            <div class="l21-t9-hint-card"><img src="images/chain.png" alt="Цепь"></div>
+            <div class="l21-t9-hint-card"><img src="images/chicken.png" alt="Цыплёнок"></div>
+            <div class="l21-t9-hint-card"><img src="images/pricetag.png" alt="Ценник"></div>
+        </div>
+
+        <div class="l21-t9-sentences-list">
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Цапля</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «цапля»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Царь</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «царь»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Цифра</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь... предложение со словом «цифра»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Цирк</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «цирк»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Цепь</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «цепь»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Цыплёнок</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «цыплёнок»...">
+            </div>
+
+            <div class="l21-t9-row">
+                <div class="l21-t9-word-badge">Ценник</div>
+                <input type="text" class="l21-t9-sentence-input" placeholder="Составь предложение со словом «ценник»...">
+            </div>
+        </div>
+
+    </div>
+
+    <div id="res-21-9" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkTask9()">Проверить</button>
+    </div>
+</div>
+
+
+<!--Задание 10-->
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+<script src="lesson-21.js"></script>
+</body>
+</html>
