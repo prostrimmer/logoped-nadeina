@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 22 - Звук [Ц] в предложениях</title>
+    <link rel="stylesheet" href="lesson-22.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 22. Звук [Ц] в предложениях</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Повтори чистоговорки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Повтори чистоговорки вслед за взрослым, чётко проговаривая звук [Ц]. Перетащи подходящую картинку-отгадку внутрь карточки с текстом!
+    </p>
+
+    <div class="l22-t1-workspace">
+        <div class="l22-t1-riddles-column">
+            <div class="l22-t1-text-card" data-match="ring" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+                <span class="l22-t1-text">Цо-цо-цо — есть на пальчике кольцо.</span>
+                <div class="l22-t1-drop-slot"></div>
+            </div>
+            
+            <div class="l22-t1-text-card" data-match="cucumbers" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+                <span class="l22-t1-text">Цы-цы-цы — в огороде огурцы.</span>
+                <div class="l22-t1-drop-slot"></div>
+            </div>
+            
+            <div class="l22-t1-text-card" data-match="eggs" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+                <span class="l22-t1-text">Ца-ца-ца — мама варит три яйца.</span>
+                <div class="l22-t1-drop-slot"></div>
+            </div>
+            
+            <div class="l22-t1-text-card" data-match="nest" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+                <span class="l22-t1-text">Цу-цу-цу — птица корм несет птенцу.</span>
+                <div class="l22-t1-drop-slot"></div>
+            </div>
+            
+            <div class="l22-t1-text-card" data-match="porch" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+                <span class="l22-t1-text">Це-це-це — пять ступенек на крыльце.</span>
+                <div class="l22-t1-drop-slot"></div>
+            </div>
+        </div>
+
+        <div class="l22-t1-images-pool" id="l22-t1-pool" ondragover="allowL22T1Drop(event)" ondrop="dropL22T1(event)">
+            <div class="l22-t1-img-card" draggable="true" id="img-cucumbers" data-match="cucumbers" ondragstart="dragL22T1(event)">
+                <img src="images/lesson-22-1-5.jpeg" alt="Огурцы">
+            </div>
+            <div class="l22-t1-img-card" draggable="true" id="img-ring" data-match="ring" ondragstart="dragL22T1(event)">
+                <img src="images/lesson-22-1-2.jpeg" alt="Кольцо">
+            </div>
+            <div class="l22-t1-img-card" draggable="true" id="img-nest" data-match="nest" ondragstart="dragL22T1(event)">
+                <img src="images/lesson-22-1-1.jpeg" alt="Гнездо">
+            </div>
+            <div class="l22-t1-img-card" draggable="true" id="img-porch" data-match="porch" ondragstart="dragL22T1(event)">
+                <img src="images/lesson-22-1-3.jpeg" alt="Крыльцо">
+            </div>
+            <div class="l22-t1-img-card" draggable="true" id="img-eggs" data-match="eggs" ondragstart="dragL22T1(event)">
+                <img src="images/lesson-22-1-4.jpeg" alt="Яйца">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-22-1" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task1()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Игра «Доскажи словечко»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Послушай стихотворения-загадки. Догадайся, какого слова не хватает в конце, и впиши свою отгадку в пустое окошко!
+    </p>
+
+    <div class="l22-t2-workspace">
+        <div class="l22-t2-riddles-list">
+            
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    Мчится без оглядки, лишь сверкают пятки.<br>
+                    Мчится, что есть духу, хвост короче уха.<br>
+                    Кто же этот удалец, ну конечно...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="заяц" placeholder="Отгадка">
+            </div>
+
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    При строительстве он нужен, с кирпичом и балкой дружит.<br>
+                    Как связующий момент, нужен печнику...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="цемент" placeholder="Отгадка">
+            </div>
+
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    Наблюдения просты: никнут, прячутся цветы,<br>
+                    Весь в тумане горный склон – надвигается...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="циклон" placeholder="Отгадка">
+            </div>
+
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    Там всегда веселье, смех, а артистов ждёт успех.<br>
+                    Там енот устал от стирки. Это может быть лишь в...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="цирк" placeholder="Отгадка">
+            </div>
+
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    Жёлтые комочки жмутся возле квочки<br>
+                    Кучкой, как опята. Кто это...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="цыплят" placeholder="Отгадка">
+            </div>
+
+            <div class="l22-t2-row">
+                <div class="l22-t2-text-block">
+                    На Синдбада злой верзила нападает. Вот так сила!<br>
+                    По песку дубиной – хлоп! Проиграл тот бой...
+                </div>
+                <input type="text" class="l22-t2-input" data-answer="циклоп" placeholder="Отгадка">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="res-22-2" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task2()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Упражнение «Кольца»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Нажми на волшебное кольцо, а затем выбери руку! На правых руках кольцо появится на указательном пальце, а на левых — на мизинце. Сосчитай устно все кольца!
+    </p>
+
+    <div class="l22-t3-workspace">
+        <div class="l22-t3-tool-panel">
+            <div class="l22-t3-ring-selector" id="l22-t3-ring-tool" onclick="selectL22T3Ring()">
+                <img src="images/ring-22.png" alt="Волшебное кольцо">
+                <div class="l22-t3-ring-label">Взять кольцо</div>
+            </div>
+        </div>
+
+        <div class="l22-t3-hands-grid">
+            <div class="l22-t3-hand-card" data-side="right" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-right.png" alt="Правая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="left" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-left.png" alt="Левая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="right" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-right.png" alt="Правая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="left" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-left.png" alt="Левая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="right" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-right.png" alt="Правая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="left" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-left.png" alt="Левая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="right" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-right.png" alt="Правая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="left" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-left.png" alt="Левая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="right" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-right.png" alt="Правая рука">
+            </div>
+            <div class="l22-t3-hand-card" data-side="left" data-status="empty" onclick="clickL22T3Hand(this)">
+                <img src="images/hand-left.png" alt="Левая рука">
+            </div>
+        </div>
+    </div>
+
+    <div class="l22-t3-speech-box">
+        <span class="l22-t3-speech-title">Считай колечки вслух:</span>
+        <p class="l22-t3-speech-text">Одно кольцо, два кольца, три кольца... десять колец.</p>
+    </div>
+
+    <div id="res-22-3" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task3()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Блюдца для Цоколочки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        У Цоколочки разбились красивые блюдца. Помоги ей склеить посуду! Перетащи подходящий осколок из жёлтого поля прямо на разбитое блюдце.
+    </p>
+
+    <div class="l22-t4-workspace">
+        <div class="l22-t4-plates-grid">
+            <div class="l22-t4-plate-card" data-id="1" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-1.png" alt="Разбитое блюдце 1">
+            </div>
+            <div class="l22-t4-plate-card" data-id="2" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-2.png" alt="Разбитое блюдце 2">
+            </div>
+            <div class="l22-t4-plate-card" data-id="3" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-3.png" alt="Разбитое блюдце 3">
+            </div>
+            <div class="l22-t4-plate-card" data-id="4" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-4.png" alt="Разбитое блюдце 4">
+            </div>
+            <div class="l22-t4-plate-card" data-id="5" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-5.png" alt="Разбитое блюдце 5">
+            </div>
+            <div class="l22-t4-plate-card" data-id="6" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-6.png" alt="Разбитое блюдце 6">
+            </div>
+            <div class="l22-t4-plate-card" data-id="7" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-7.png" alt="Разбитое блюдце 7">
+            </div>
+            <div class="l22-t4-plate-card" data-id="8" data-status="broken" ondragover="allowL22T4Drop(event)" ondrop="dropL22T4Shard(event)">
+                <img src="images/lesson-22-4-8.png" alt="Разбитое блюдце 8">
+            </div>
+        </div>
+
+        <div class="l22-t4-shards-pool" id="l22-t4-shards-container">
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-10" data-target="1" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-10.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-20" data-target="2" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-20.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-30" data-target="3" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-30.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-40" data-target="4" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-40.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-50" data-target="5" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-50.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-60" data-target="6" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-60.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-70" data-target="7" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-70.png" alt="Осколок"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-80" data-target="8" data-type="correct" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-80.png" alt="Осколок"></div>
+            
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-11" data-target="1" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-11.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-21" data-target="2" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-21.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-31" data-target="3" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-31.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-41" data-target="4" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-41.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-51" data-target="5" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-51.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-61" data-target="6" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-61.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-71" data-target="7" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-71.png" alt="Осколок обманка"></div>
+            <div class="l22-t4-shard-card" draggable="true" id="shard-22-4-81" data-target="8" data-type="wrong" ondragstart="dragL22T4Shard(event)"><img src="images/lesson-22-4-81.png" alt="Осколок обманка"></div>
+        </div>
+    </div>
+
+    <div class="l22-t4-speech-helper">
+        <span class="l22-t4-helper-title">Считай целые блюдца вслух:</span>
+        <p class="l22-t4-helper-text">Одно целое блюдце, два целых блюдца, три целых блюдца...</p>
+    </div>
+
+    <div id="res-22-4" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task4()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №5 -->
+<!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Упражнение «Кому что нужно?»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри людей разных профессий вверху. Перетагивай к каждому человеку нужные ему предметы из жёлтого поля внизу. Повтори фразы вслух!
+    </p>
+
+    <div class="l22-t5-workspace">
+        <!-- Верхний ярус: Карточки профессий в один ряд (Зоны сброса) -->
+        <div class="l22-t5-professions-row">
+            
+            <div class="l22-t5-prof-card" data-match="veggies" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+                <img src="images/lesson-22-5-1.jpeg" class="l22-t5-prof-img" alt="Продавец">
+                <span class="l22-t5-prof-name">Продавец</span>
+                <div class="l22-t5-drop-slot"></div>
+                <div class="l22-t5-speech-hint">Продавцу нужны перцы и огурцы.</div>
+            </div>
+
+            <div class="l22-t5-prof-card" data-match="buttons" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+                <img src="images/lesson-22-5-2.jpeg" class="l22-t5-prof-img" alt="Портниха">
+                <span class="l22-t5-prof-name">Портниха</span>
+                <div class="l22-t5-drop-slot"></div>
+                <div class="l22-t5-speech-hint">Портнихе нужны пуговицы.</div>
+            </div>
+
+            <div class="l22-t5-prof-card" data-match="stage" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+                <img src="images/lesson-22-5-3.jpeg" class="l22-t5-prof-img" alt="Певец">
+                <span class="l22-t5-prof-name">Певец</span>
+                <div class="l22-t5-drop-slot"></div>
+                <div class="l22-t5-speech-hint">Певцу нужна сцена.</div>
+            </div>
+
+            <div class="l22-t5-prof-card" data-match="flowers" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+                <img src="images/lesson-22-5-4.jpeg" class="l22-t5-prof-img" alt="Цветовод">
+                <span class="l22-t5-prof-name">Цветовод</span>
+                <div class="l22-t5-drop-slot"></div>
+                <div class="l22-t5-speech-hint">Цветоводу нужны цветы.</div>
+            </div>
+
+            <div class="l22-t5-prof-card" data-match="chickens" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+                <img src="images/lesson-22-5-5.jpeg" class="l22-t5-prof-img" alt="Птичница">
+                <span class="l22-t5-prof-name">Птичница</span>
+                <div class="l22-t5-drop-slot"></div>
+                <div class="l22-t5-speech-hint">Птичнице нужны курица и цыплята.</div>
+            </div>
+
+        </div>
+
+        <!-- Нижний ярус: Общий жёлтый пул предметов в один горизонтальный ряд -->
+        <div class="l22-t5-items-horiz-pool" id="l22-t5-pool" ondragover="allowL22T5Drop(event)" ondrop="dropL22T5(event)">
+            <div class="l22-t5-item-card" draggable="true" id="item-buttons" data-match="buttons" ondragstart="dragL22T5(event)">
+                <img src="images/lesson-22-5-8.jpeg" alt="Пуговицы">
+            </div>
+            <div class="l22-t5-item-card" draggable="true" id="item-flowers" data-match="flowers" ondragstart="dragL22T5(event)">
+                <img src="images/lesson-22-5-7.jpeg" alt="Цветы">
+            </div>
+            <div class="l22-t5-item-card" draggable="true" id="item-veggies" data-match="veggies" ondragstart="dragL22T5(event)">
+                <img src="images/lesson-22-5-6.jpeg" alt="Перцы и огурцы">
+            </div>
+            <div class="l22-t5-item-card" draggable="true" id="item-chickens" data-match="chickens" ondragstart="dragL22T5(event)">
+                <img src="images/lesson-22-5-9.jpeg" alt="Курица и цыплята">
+            </div>
+            <div class="l22-t5-item-card" draggable="true" id="item-stage" data-match="stage" ondragstart="dragL22T5(event)">
+                <img src="images/lesson-22-5-10.jpeg" alt="Сцена">
+            </div>
+        </div>
+    </div>
+
+    <!-- Результат проверки -->
+    <div id="res-22-5" class="result-text"></div>
+
+    <!-- Кнопка проверки -->
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task5()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Упражнение «Расшифруй слова»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги цыплёнку отгадать слова! Назови каждую картинку, определи первый звук и впиши букву в окошко под ней. Прочитай получившиеся слова!
+    </p>
+
+    <div class="l22-t6-workspace">
+        <!-- Блок первого слова (ЦИРК) -->
+        <div class="l22-t6-word-block">
+            <div class="l22-t6-letters-row" data-word="цирк">
+                <div class="l22-t6-cell">
+                    <img src="images/цифры.png" alt="Цифры">
+                    <input type="text" class="l22-t6-input" data-letter="ц" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/lesson-22-6-2.jpeg" alt="Индеец">
+                    <input type="text" class="l22-t6-input" data-letter="и" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/lesson-22-6-3.jpeg" alt="Роза">
+                    <input type="text" class="l22-t6-input" data-letter="р" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/lesson-22-6-4.jpeg" alt="Кукла">
+                    <input type="text" class="l22-t6-input" data-letter="к" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок второго слова (СИНИЦА) -->
+        <div class="l22-t6-word-block">
+            <div class="l22-t6-letters-row" data-word="синица">
+                <div class="l22-t6-cell">
+                    <img src="images/siren.png" alt="Сирень">
+                    <input type="text" class="l22-t6-input" data-letter="с" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/lesson-5-7-indi.png" alt="Индюк">
+                    <input type="text" class="l22-t6-input" data-letter="и" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/нитки.jpg" alt="Нитки">
+                    <input type="text" class="l22-t6-input" data-letter="н" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/needle.png" alt="Иголка">
+                    <input type="text" class="l22-t6-input" data-letter="и" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/heron.jpeg" alt="Цапля">
+                    <input type="text" class="l22-t6-input" data-letter="ц" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/watermelon12.png" alt="Арбуз">
+                    <input type="text" class="l22-t6-input" data-letter="а" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок третьего слова (КОНЕЦ) -->
+        <div class="l22-t6-word-block">
+            <div class="l22-t6-letters-row" data-word="конец">
+                <div class="l22-t6-cell">
+                    <img src="images/goat.png" alt="Коза">
+                    <input type="text" class="l22-t6-input" data-letter="к" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/облако.jpg" alt="Облако">
+                    <input type="text" class="l22-t6-input" data-letter="о" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/нож.jpeg" alt="Нож">
+                    <input type="text" class="l22-t6-input" data-letter="н" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/raccoon13.png" alt="Енот">
+                    <input type="text" class="l22-t6-input" data-letter="е" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/chicken.png" alt="Цыплёнок">
+                    <input type="text" class="l22-t6-input" data-letter="ц" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок четвёртого слова (ЗАЯЦ) -->
+        <div class="l22-t6-word-block">
+            <div class="l22-t6-letters-row" data-word="заяц">
+                <div class="l22-t6-cell">
+                    <img src="images/castle.png" alt="Замок">
+                    <input type="text" class="l22-t6-input" data-letter="з" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/alphabet.png" alt="Азбука">
+                    <input type="text" class="l22-t6-input" data-letter="а" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/apple.png" alt="Яблоко">
+                    <input type="text" class="l22-t6-input" data-letter="я" maxlength="1">
+                </div>
+                <div class="l22-t6-cell">
+                    <img src="images/lesson-22-5-7.jpeg" alt="Цветы">
+                    <input type="text" class="l22-t6-input" data-letter="ц" maxlength="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Результат проверки -->
+    <div id="res-22-6" class="result-text"></div>
+
+    <!-- Кнопка проверки -->
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task6()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №7 -->
+<!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Упражнение «Лестница»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри и назови картинки. Посчитай количество звуков в каждом слове и запиши буквы в соответствующие клетки кроссворда-«лестницы».
+    </p>
+
+    <div class="l22-t7-workspace">
+        <!-- Левая часть: блок кроссворда -->
+        <div class="l22-t7-crossword">
+            
+            <!-- Строка 1: ЦЕПЬ (4 клетки) -->
+            <div class="l22-t7-row" data-row="1" data-word="цепь">
+                <span class="l22-t7-row-number">1</span>
+                <input type="text" class="l22-t7-input static-letter" value="Ц" readonly>
+                <input type="text" class="l22-t7-input" data-letter="е" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="п" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="ь" maxlength="1">
+            </div>
+
+            <!-- Строка 2: УЛИЦА (5 клеток) -->
+            <div class="l22-t7-row" data-row="2" data-word="улица">
+                <span class="l22-t7-row-number">2</span>
+              
+                <input type="text" class="l22-t7-input" data-letter="у" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="л" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="и" maxlength="1">
+                 <input type="text" class="l22-t7-input static-letter" value="Ц" readonly>
+                <input type="text" class="l22-t7-input" data-letter="а" maxlength="1">                
+             </div>
+
+            <!-- Строка 3: КУРИЦА (6 клеток) -->
+            <div class="l22-t7-row" data-row="3" data-word="курица">
+                  <span class="l22-t7-row-number">3</span>
+               <input type="text" class="l22-t7-input" data-letter="к" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="у" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="р" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="и" maxlength="1">
+                <input type="text" class="l22-t7-input static-letter" value="Ц" readonly>
+                <input type="text" class="l22-t7-input" data-letter="а" maxlength="1">
+            </div>
+
+            <!-- Строка 4: ЦЫПЛЯТА (7 клеток) -->
+            <div class="l22-t7-row" data-row="4" data-word="цыплята">
+                <span class="l22-t7-row-number">4</span>
+                <input type="text" class="l22-t7-input static-letter" value="Ц" readonly>
+                <input type="text" class="l22-t7-input" data-letter="ы" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="п" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="л" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="я" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="т" maxlength="1">
+                <input type="text" class="l22-t7-input" data-letter="а" maxlength="1">
+            </div>
+
+        </div>
+
+        <!-- Правая часть: галерея картинок-подсказок -->
+        <div class="l22-t7-gallery">
+            <div class="l22-t7-img-wrapper"><img src="images/chain.png" alt="Цепь"></div>
+            <div class="l22-t7-img-wrapper"><img src="images/lesson-18-7-2.png" alt="Курица"></div>
+            <div class="l22-t7-img-wrapper"><img src="images/улица.jpeg" alt="Улица"></div>
+            <div class="l22-t7-img-wrapper"><img src="images/lesson-18-7-1.png" alt="Цыплята"></div>
+        </div>
+    </div>
+
+    <!-- Результат проверки -->
+    <div id="res-22-7" class="result-text"></div>
+
+    <!-- Кнопка проверки -->
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task7()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Рассказ «Слова подскажут цифры»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай рассказ вместе со взрослым. Перетащи подходящие картинки из жёлтого поля в окошки с цифрами внутри текста, чтобы расколдовать историю!
+    </p>
+
+    <div class="l22-t8-workspace">
+        <div class="l22-t8-story-box">
+            <p class="l22-t8-story-text">
+                В выходной день Катя купила красивый 
+                <span class="l22-t8-drop-slot" data-match="flowers" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">1</span> 
+                и пошла на концерт. На концерте выступали певцы и танцоры. Были там и цирковые артисты. 
+                Жонглер подбрасывал 
+                <span class="l22-t8-drop-slot" data-match="rings" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">2</span>. 
+                Дрессированные собачки выполняли задания с 
+                <span class="l22-t8-drop-slot" data-match="numbers" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">3</span>. 
+                Медведица танцевала весёлый танец. Смешной клоун раздавал всем 
+                <span class="l22-t8-drop-slot" data-match="candy" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">4</span>. 
+                Кате очень понравился концерт. Она подарила клоуну свои 
+                <span class="l22-t8-drop-slot" data-match="flowers" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">1</span>.
+            </p>
+        </div>
+
+        <div class="l22-t8-images-pool" id="l22-t8-pool" ondragover="allowL22T8Drop(event)" ondrop="dropL22T8Image(event)">
+            <div class="l22-t8-img-card" draggable="true" id="l22-t8-item-flowers" data-match="flowers" ondragstart="dragL22T8Image(event)">
+                <img src="images/lesson-22-5-7.jpeg" alt="Букет цветов">
+            </div>
+            <div class="l22-t8-img-card" draggable="true" id="l22-t8-item-rings" data-match="rings" ondragstart="dragL22T8Image(event)">
+                <img src="images/кольца.jpeg" alt="Кольца">
+            </div>
+            <div class="l22-t8-img-card" draggable="true" id="l22-t8-item-numbers" data-match="numbers" ondragstart="dragL22T8Image(event)">
+                <img src="images/цифры.png" alt="Цифры">
+            </div>
+            <div class="l22-t8-img-card" draggable="true" id="l22-t8-item-candy" data-match="candy" ondragstart="dragL22T8Image(event)">
+                <img src="images/леденец.jpg" alt="Леденец">
+            </div>
+        </div>
+    </div>
+
+    <div class="l22-t8-questions-box">
+        <span class="l22-t8-q-title">Ответь на вопросы полным предложением:</span>
+        <div class="l22-t8-q-grid">
+            <p class="l22-t8-q-item">— Что купила Катя?</p>
+            <p class="l22-t8-q-item">— Как выступали собачки?</p>
+            <p class="l22-t8-q-item">— Куда пошла Катя?</p>
+            <p class="l22-t8-q-item">— Что делала медведица?</p>
+            <p class="l22-t8-q-item">— Кто выступал на концерте?</p>
+            <p class="l22-t8-q-item">— Что делал клоун?</p>
+            <p class="l22-t8-q-item">— Что делал жонглер?</p>
+            <p class="l22-t8-q-item">— Кому Катя подарила букет?</p>
+        </div>
+    </div>
+
+    <div id="res-22-8" class="result-text"></div>
+
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL22Task8()">Проверить</button>
+    </div>
+</div>
+
+
+<!--Задание 9 -->
+
+<!--Задание 10-->
+
+</div>
+
+</div>
+
+<script src="lesson-22.js"></script>
+</body>
+</html>
