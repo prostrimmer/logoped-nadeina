@@ -213,41 +213,84 @@ body {
     color: #2c3e50;                 /* Цвет текста */
 }
 
-/* ЗАДАНИЕ 4: СТИЛИ СЛОТОВ И КАРТИНОК */
-.l23-t4-workspace { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+/* =========================================
+   ЗАДАНИЕ 4: СТИЛИ СЛОТОВ И КАРТИНОК
+   ========================================= */
 
-/* Ряд картинок */
-.l23-t4-images { display: flex; gap: 15px; justify-content: center; min-height: 110px; }
-.l23-t4-img { width: 120px; height: 120px; cursor: grab; border: 2px solid #ff7043; border-radius: 12px; padding: 5px; background: white; }
-/* Важно: картинки не должны перехватывать события, если они внутри контейнера */
-.l23-t4-img img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
-
-/* Зоны с клетками */
-.l23-t4-drop-zones { display: flex; gap: 40px; }
-.zone-wrapper { display: flex; flex-direction: column; align-items: center; gap: 10px; }
-
-.l23-t4-slot { 
-    display: grid; gap: 2px; padding: 5px; border: 2px dashed #3498db; 
-    background: #f0faff; border-radius: 8px; height: 50px; position: relative;
+.l23-t4-workspace { 
+    display: flex;                
+    flex-direction: column;       
+    gap: 20px;                    
+    align-items: center;          
 }
-.l23-t4-slot[data-len="7"] { grid-template-columns: repeat(7, 1fr); width: 300px; }
-.l23-t4-slot[data-len="8"] { grid-template-columns: repeat(8, 1fr); width: 340px; }
 
-.cell { border: 1px solid #3498db; background: white; width: 40px; height: 40px; }
-
-/* Подпись */
-.l23-t4-label { min-height: 30px; font-size: 1.3rem; font-weight: bold; color: #27ae60; text-align: center; }
-
-.l23-t4-workspace { display: flex; flex-direction: column; gap: 30px; align-items: center; }
-.l23-t4-images { display: flex; gap: 10px; justify-content: center; }
-.l23-t4-img { width: 80px; height: 80px; border: 2px solid #ff7043; border-radius: 10px; cursor: grab; background: white; padding: 5px; }
-.l23-t4-img img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
-
-.l23-t4-drop-zones { display: flex; gap: 50px; }
-.l23-t4-slot { 
-    width: 300px; height: 90px; border: 3px dashed #3498db; 
-    background: #f0faff; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+.l23-t4-images { 
+    display: flex;                
+    gap: 15px;                    
+    justify-content: center;      
+    flex-wrap: wrap;              /* Позволяем картинкам переноситься, если экран узкий */
+    min-height: 115px;            
 }
+
+.l23-t4-img { 
+    width: 120px;                  
+    height: 120px;                 
+    border: 2px solid #ff7043;    
+    border-radius: 10px;          
+    cursor: grab;                 
+    background: white;            
+    padding: 5px;                 
+    box-sizing: border-box;       /* Чтобы рамка не увеличивала размер картинки */
+}
+
+.l23-t4-img img { 
+    width: 100%;                  
+    height: 100%;                 
+    object-fit: contain;          
+    pointer-events: none;         
+}
+
+.l23-t4-drop-zones { 
+    display: flex;                
+    gap: 50px;                    
+    justify-content: center;
+    flex-wrap: wrap;              /* Зоны тоже смогут переноситься на узких экранах */
+}
+
+.zone-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.zone-box p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 0;
+}
+
+/* ИСПРАВЛЕННЫЙ СЛОТ ДЛЯ ПРИЕМА КАРТИНОК */
+.l23-t4-slot { 
+    display: flex;                /* Используем Flex вместо Grid */
+    flex-wrap: wrap;              /* Если картинок несколько, они перенесутся на новую строку */
+    gap: 10px;                    /* Отступ между картинками внутри зоны */
+    padding: 15px;                /* Увеличенный внутренний отступ */
+    border: 3px dashed #3498db;   
+    background: #f0faff;          
+    border-radius: 10px;          
+    min-height: 130px;            /* Минимальная высота, чтобы картинка 100px влезла точно */
+    min-width: 250px;             /* Минимальная ширина зоны сброса */
+    align-items: flex-start;      
+    justify-content: center;      
+}
+
+/* Делаем слоты одинаковыми по ширине, чтобы смотрелось красиво */
+.l23-t4-slot[data-len="7"], .l23-t4-slot[data-len="8"] {
+    width: 300px;                 
+}
+
 
 /* ЗАДАНИЕ №5: СТИЛИ ДЛЯ ВСТАВКИ СЛОВ */
 .l23-t5-workspace { 
