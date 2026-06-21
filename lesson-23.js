@@ -164,17 +164,7 @@ function checkL23Task7() {                      /* Функция проверк
     const resArea = document.getElementById('res-23-7');      // Место вывода результата
     let allCorrect = true;                                    // Флаг успешности всех ответов
 
-    inputs.forEach(input => {                   /* Перебираем каждый вопрос */
-        const userVal = input.value.trim().toLowerCase(); // Получаем значение, убирая пробелы
-        const correct = input.dataset.answer;           // Получаем эталон из атрибута
 
-        if (userVal === correct) {              /* Сравниваем ввод с эталоном */
-            input.classList.add('correct');     /* Если верно - красим в зеленый */
-        } else {
-            input.classList.add('wrong');       /* Если ошибка - красим в красный */
-            allCorrect = false;                 // Устанавливаем флаг ошибки
-        }
-    });
 
     resArea.innerHTML = allCorrect ?            // Вывод сообщения результата
         "<b>Молодец! Ты отлично ответил на вопросы!</b>" : 
@@ -188,17 +178,7 @@ function checkL23Task8() {                      /* Запуск проверки
     const resArea = document.getElementById('res-23-8');      // Блок вывода сообщения
     let allCorrect = true;                                    // Флаг успеха
 
-    inputs.forEach(input => {                   /* Цикл по всем вопросам */
-        const userVal = input.value.trim().toLowerCase(); // Значение ребенка
-        const correct = input.dataset.answer;           // Эталонный ответ
 
-        if (userVal === correct) {              /* Проверка совпадения */
-            input.classList.add('correct');     /* Зеленый если верно */
-        } else {
-            input.classList.add('wrong');       /* Красный если нет */
-            allCorrect = false;                 // Сбрасываем флаг
-        }
-    });
 
     resArea.innerHTML = allCorrect ?            /* Вывод результата */
         "<b>Молодец! Ты отлично всё запомнил!</b>" : 
