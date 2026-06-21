@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 23 - Звук [Ц] в предложениях</title>
+    <link rel="stylesheet" href="lesson-23.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 23. Звук [Ц] в предложениях</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Хлопки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Проговори слова. Кликай на те слова, в которых есть оба звука — [С] и [Ц]!
+    </p>
+
+    <div class="l23-t1-workspace">
+        <div class="l23-t1-words-grid" id="l23-t1-grid">
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">умница</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">мыльница</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">десантник</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">гиацинт</div>
+            
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">колесница</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">листственница</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">скамейка</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">станция</div>
+            
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">пуговица</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">теплица</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">заступница</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">спутница</div>
+            
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">невеста</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">пехотинец</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">солнце</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">спица</div>
+            
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">колесо</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">лестница</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">сцена</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">ступенька</div>
+            
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">кумыс</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">певица</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">столица</div>
+            <div class="l23-t1-word" data-has-both="true" onclick="clickL23T1(this)">станица</div>
+            
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">гимнастка</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">цветник</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">птенцы</div>
+            <div class="l23-t1-word" data-has-both="false" onclick="clickL23T1(this)">стадион</div>
+        </div>
+    </div>
+    
+    <div id="res-23-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL23Task1()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Проверь и назови</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Впиши вместо точек подходящие буквы С или Ц, чтобы получилось слово во множественном числе.
+    </p>
+
+    <div class="l23-t2-workspace">
+        <div class="l23-t2-grid" id="l23-t2-grid">
+            <div class="l23-t2-row"><span>Насо</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Кузне</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Пё</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            
+            <div class="l23-t2-row"><span>Ледене</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Пехотине</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Автобу</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            
+            <div class="l23-t2-row"><span>Но</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Анана</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Бое</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            
+            <div class="l23-t2-row"><span>Птене</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Зая</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Фоку</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            
+            <div class="l23-t2-row"><span>Пылесо</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Коко</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Песе</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            
+            <div class="l23-t2-row"><span>Купе</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Тане</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Подно</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            
+            <div class="l23-t2-row"><span>Коне</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Оте</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Меся</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            
+            <div class="l23-t2-row"><span>Поя</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Чте</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Наве</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            
+            <div class="l23-t2-row"><span>Пале</span><input type="text" class="l23-t2-input" data-answer="цы"></div>
+            <div class="l23-t2-row"><span>Какту</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+            <div class="l23-t2-row"><span>Фику</span><input type="text" class="l23-t2-input" data-answer="сы"></div>
+        </div>
+    </div>
+
+    <div id="res-23-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL23Task2()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Рассказ по картинке</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинку. Составь рассказ, используя слова со звуками [З], [З'] и [Ц].
+    </p>
+    
+    <div class="l23-t3-workspace">
+        <!-- Основная картинка задания -->
+        <img src="images/lesson-22-3.jpg" class="l23-t3-image" alt="Картинка к заданию">
+        
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Подбери слово к схеме</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">Посчитай буквы и перетащи картинку в нужную схему!</p>
+    
+    <div class="l23-t4-workspace">
+        <div class="l23-t4-images" id="l23-t4-pool">
+            <div class="l23-t4-img" draggable="true" id="img-vsad" data-len="8" ondragstart="drag(event)"><img src="images/lesson-22-4-2.jpeg" alt="ВСАДНИЦА"></div>
+            <div class="l23-t4-img" draggable="true" id="img-sput" data-len="8" ondragstart="drag(event)"><img src="images/lesson-22-4-1.jpeg" alt="СПУТНИЦА"></div>
+            <div class="l23-t4-img" draggable="true" id="img-sup" data-len="7" ondragstart="drag(event)"><img src="images/lesson-22-4-3.jpeg" alt="СУПНИЦА"></div>
+            <div class="l23-t4-img" draggable="true" id="img-lest" data-len="8" ondragstart="drag(event)"><img src="images/lesson-22-4-4.jpeg" alt="ЛЕСТНИЦА"></div>
+            <div class="l23-t4-img" draggable="true" id="img-soln" data-len="6" ondragstart="drag(event)"><img src="images/lesson-22-4-5.jpeg" alt="СОЛНЦЕ"></div>
+        </div>
+
+        <div class="l23-t4-drop-zones">
+            <div class="zone-box">
+                <p>7 букв</p>
+                <div class="l23-t4-slot" data-len="7" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+            </div>
+            <div class="zone-box">
+                <p>8 букв</p>
+                <div class="l23-t4-slot" data-len="8" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Вставь пропущенные слова</h2>
+    <div class="yellow-divider"></div>
+
+    <img src="images/lesson-22-5.png" style="width:100%; border-radius:15px; margin-bottom:20px;" alt="Задание">
+    
+    <div class="l23-t5-workspace">
+        <div class="l23-t5-row">Санина спутница спускается вниз по скользкой <input type="text" class="l23-t5-input" data-answer="лестнице">.</div>
+        <div class="l23-t5-row">По степи во весь дух несется на гнедой кобылице статная <input type="text" class="l23-t5-input" data-answer="всадница">.</div>
+        <div class="l23-t5-row">Весь день в небе над столицей сияет ясное весеннее <input type="text" class="l23-t5-input" data-answer="солнце">.</div>
+        <div class="l23-t5-row">В сосновом лесу поднялись ввысь две гигантские <input type="text" class="l23-t5-input" data-answer="сосны">.</div>
+        <div class="l23-t5-row">Мама наливает фасолевый суп в фаянсовую <input type="text" class="l23-t5-input" data-answer="супницу">.</div>
+        <div class="l23-t5-row">Дети смеются, глядя в оконце на ясное <input type="text" class="l23-t5-input" data-answer="солнце">.</div>
+        <div class="l23-t5-row">Тень от солнца упала на лицо <input type="text" class="l23-t5-input" data-answer="спутнице">.</div>
+        <div class="l23-t5-row">Поезд останавливается возле маленькой степной <input type="text" class="l23-t5-input" data-answer="станции">.</div>
+    </div>
+
+    <div id="res-23-5" class="result-text"></div>
+    
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL23Task5()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Что изменилось?</h2>
+    <div class="yellow-divider"></div>
+    
+    <div id="l23-t6-img-container">
+        <img id="img-step-1" src="images/lesson-23-6-1.png" style="width:100%; border-radius:15px;" alt="Запомни картинку">
+        <img id="img-step-2" src="images/lesson-23-6-2.png" style="width:100%; border-radius:15px; display:none;" alt="Что изменилось?">
+    </div>
+
+    <div class="btn-box" id="btn-ready-box" style="margin-top:20px;">
+        <button class="orange-check-btn" onclick="showSecondImage()">ГОТОВ</button>
+    </div>
+
+    <div class="l23-t6-workspace" id="l23-t6-workspace" style="display:none; margin-top:20px;">
+        <p>1. Что изменилось в расположении картинок?</p>
+        <div class="l23-t6-question">Сколько картинок на звук <b>С</b>? <input type="number" class="l23-t6-input" id="ans-s"></div>
+        <div class="l23-t6-question">Сколько картинок на звук <b>З</b>? <input type="number" class="l23-t6-input" id="ans-z"></div>
+        <div class="l23-t6-question">Сколько картинок на звук <b>Ц</b>? <input type="number" class="l23-t6-input" id="ans-c"></div>
+        
+        <div id="res-23-6" class="result-text"></div>
+        <button class="orange-check-btn" onclick="checkL23Task6()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Прочитай и ответь на вопросы</h2>
+    <div class="yellow-divider"></div>
+
+    <div id="l23-t6-img-container">
+        <img id="img-step-1" src="images/lesson-22-61.jpeg" style="width:100%; border-radius:15px;" alt="Запомни картинку">
+     
+    </div>
+
+    <div class="l23-t7-text-box" style="padding:15px; background:#f9f9f9; border-radius:10px; margin-bottom:20px; border:1px solid #ddd;">
+        <h3 style="text-align:center;">Заяц</h3>
+        <p>Заяц к зиме готовится по-своему. Он меняет серый мех на белый, более тёплый. Зимой заяц сидит в снегу под кустом, и его не заметно на белом снегу. Питается заяц зимой корой осины и зелёной озимью.</p>
+        <p>Лисицы, совы, волки, люди — все охотятся за зайцем. Заяц всех боится, ему надо многого опасаться. Спасают зайца его быстрые ноги.</p>
+    </div>
+
+    <div class="l23-t7-workspace">
+        <div class="l23-t7-question">1) Как готовится заяц к зиме? <input type="text" class="l23-t7-input" data-answer="меняет серый мех на белый"></div>
+        <div class="l23-t7-question">2) Почему зайца не заметно зимой? <input type="text" class="l23-t7-input" data-answer="он белый на белом снегу"></div>
+        <div class="l23-t7-question">3) Чем питается заяц зимой? <input type="text" class="l23-t7-input" data-answer="корой осины и озимью"></div>
+        <div class="l23-t7-question">4) Кто охотится за зайцем? <input type="text" class="l23-t7-input" data-answer="лисицы, совы, волки, люди"></div>
+        <div class="l23-t7-question">5) Как спит заяц? <input type="text" class="l23-t7-input" data-answer="в снегу под кустом"></div>
+        <div class="l23-t7-question">6) Что спасает зайца? <input type="text" class="l23-t7-input" data-answer="быстрые ноги"></div>
+    </div>
+
+    <div id="res-23-7" class="result-text"></div>         <div class="btn-box">                                 <button class="orange-check-btn" onclick="checkL23Task7()">Проверить</button> </div>
+</div>
+
+    <!-- ЗАДАНИЕ №8 -->
+<!-- ЗАДАНИЕ №8: ИСПАНИЯ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Испания</h2>
+    <div class="yellow-divider"></div>
+
+    <!-- 1. Сначала картинка -->
+    <img src="images/lesson-23-8.png" style="width:100%; border-radius:15px; margin-bottom:20px;" alt="Танцы в Испании">
+
+    <!-- 2. Затем текст рассказа -->
+    <div class="l23-t8-text-box" style="padding:15px; background:#f9f9f9; border-radius:10px; margin-bottom:20px; border:1px solid #ddd;">
+        <p>Страна Испания находится на берегу тёплого моря. Весной, летом и осенью там светит солнце. Испанцы всегда рады гостям, поэтому в Испании бывает много туристов. 
+            Туристы едут из Франции, России, Англии и из других стран. Испанцы любят танцевать, и они готовы всех научить танцевать испанские танцы. 
+            Некоторые иностранцы специально для этого едут в Испанию.</p>
+    </div>
+
+    <!-- 3. Вопросы -->
+    <div class="l23-t8-workspace">
+        <div class="l23-t8-question">1) Где находится Испания? <input type="text" class="l23-t8-input" data-answer="на берегу тёплого моря"></div>
+        <div class="l23-t8-question">2) Когда в Испании светит солнце? <input type="text" class="l23-t8-input" data-answer="весной, летом и осенью"></div>
+        <div class="l23-t8-question">3) Почему в Испании много туристов? <input type="text" class="l23-t8-input" data-answer="испанцы всегда рады гостям"></div>
+        <div class="l23-t8-question">4) Из каких стран едут туристы? <input type="text" class="l23-t8-input" data-answer="франции, россии, англии"></div>
+        <div class="l23-t8-question">5) Что любят делать испанцы? <input type="text" class="l23-t8-input" data-answer="танцевать"></div>
+        <div class="l23-t8-question">6) Для чего едут в Испанию? <input type="text" class="l23-t8-input" data-answer="чтобы научиться танцевать"></div>
+    </div>
+
+    <div id="res-23-8" class="result-text"></div>         <!-- Контейнер результата -->
+    <div class="btn-box">                                 <!-- Контейнер кнопки -->
+        <button class="orange-check-btn" onclick="checkL23Task8()">Проверить</button>
+    </div>
+</div>
+
+<!--Задание 9 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Разгадай кроссворд</h2>
+    <div class="yellow-divider"></div>
+    
+    <div class="l23-t9-workspace">
+        
+        <div class="l23-t9-grid">
+            <div class="num" style="grid-area: 1/4;">1</div>
+            <input type="text" class="cell" data-answer="в" style="grid-area: 1/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 1/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 1/7;" readonly>
+            <input type="text" class="cell" data-answer="а" style="grid-area: 1/8;" maxlength="1">
+
+            <div class="num" style="grid-area: 2/4;">2</div>
+            <input type="text" class="cell" data-answer="г" style="grid-area: 2/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 2/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 2/7;" readonly>
+            <input type="text" class="cell" data-answer="е" style="grid-area: 2/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="т" style="grid-area: 2/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 2/10;" maxlength="1">
+
+            <div class="num" style="grid-area: 3/3;">3</div>
+            <input type="text" class="cell" data-answer="к" style="grid-area: 3/4;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 3/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="р" style="grid-area: 3/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 3/7;" readonly>
+            <input type="text" class="cell" data-answer="и" style="grid-area: 3/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="н" style="grid-area: 3/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 3/10;" maxlength="1">
+
+            <div class="num" style="grid-area: 4/3;">4</div>
+            <input type="text" class="cell" data-answer="г" style="grid-area: 4/4;" maxlength="1">
+            <input type="text" class="cell" data-answer="н" style="grid-area: 4/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="е" style="grid-area: 4/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 4/7;" readonly>
+            <input type="text" class="cell" data-answer="д" style="grid-area: 4/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 4/9;" maxlength="1">
+
+            <div class="num" style="grid-area: 5/4;">5</div>
+            <input type="text" class="cell" data-answer="к" style="grid-area: 5/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 5/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 5/7;" readonly>
+            <input type="text" class="cell" data-answer="а" style="grid-area: 5/8;" maxlength="1">
+
+            <div class="num" style="grid-area: 6/3;">6</div>
+            <input type="text" class="cell" data-answer="о" style="grid-area: 6/4;" maxlength="1">
+            <input type="text" class="cell" data-answer="б" style="grid-area: 6/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="е" style="grid-area: 6/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 6/7;" readonly>
+            <input type="text" class="cell" data-answer="ь" style="grid-area: 6/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="я" style="grid-area: 6/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="н" style="grid-area: 6/10;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 6/11;" maxlength="1">
+
+            <div class="num" style="grid-area: 7/5;">7</div>
+            <input type="text" class="cell" data-answer="а" style="grid-area: 7/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="З" style="grid-area: 7/7;" readonly>
+            <input type="text" class="cell" data-answer="б" style="grid-area: 7/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="у" style="grid-area: 7/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="к" style="grid-area: 7/10;" maxlength="1">
+            <input type="text" class="cell" data-answer="а" style="grid-area: 7/11;" maxlength="1">
+
+            <div class="num" style="grid-area: 8/6;">8</div>
+            <input type="text" class="cell fixed" value="Ц" style="grid-area: 8/7;" readonly>
+            <input type="text" class="cell" data-answer="а" style="grid-area: 8/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="п" style="grid-area: 8/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="л" style="grid-area: 8/10;" maxlength="1">
+            <input type="text" class="cell" data-answer="я" style="grid-area: 8/11;" maxlength="1">
+
+            <div class="num" style="grid-area: 9/2;">9</div>
+            <input type="text" class="cell" data-answer="с" style="grid-area: 9/3;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 9/4;" maxlength="1">
+            <input type="text" class="cell" data-answer="л" style="grid-area: 9/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="н" style="grid-area: 9/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="Ц" style="grid-area: 9/7;" readonly>
+            <input type="text" class="cell" data-answer="е" style="grid-area: 9/8;" maxlength="1">
+
+            <div class="num" style="grid-area: 10/1;">10</div>
+            <input type="text" class="cell" data-answer="о" style="grid-area: 10/2;" maxlength="1">
+            <input type="text" class="cell" data-answer="г" style="grid-area: 10/3;" maxlength="1">
+            <input type="text" class="cell" data-answer="у" style="grid-area: 10/4;" maxlength="1">
+            <input type="text" class="cell" data-answer="р" style="grid-area: 10/5;" maxlength="1">
+            <input type="text" class="cell" data-answer="е" style="grid-area: 10/6;" maxlength="1">
+            <input type="text" class="cell fixed" value="Ц" style="grid-area: 10/7;" readonly>
+
+            <div class="num" style="grid-area: 11/6;">11</div>
+            <input type="text" class="cell fixed" value="Ц" style="grid-area: 11/7;" readonly>
+            <input type="text" class="cell" data-answer="в" style="grid-area: 11/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="е" style="grid-area: 11/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="т" style="grid-area: 11/10;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 11/11;" maxlength="1">
+            <input type="text" class="cell" data-answer="к" style="grid-area: 11/12;" maxlength="1">
+
+            <div class="num" style="grid-area: 12/6;">12</div>
+            <input type="text" class="cell fixed" value="Ц" style="grid-area: 12/7;" readonly>
+            <input type="text" class="cell" data-answer="ы" style="grid-area: 12/8;" maxlength="1">
+            <input type="text" class="cell" data-answer="п" style="grid-area: 12/9;" maxlength="1">
+            <input type="text" class="cell" data-answer="л" style="grid-area: 12/10;" maxlength="1">
+            <input type="text" class="cell" data-answer="е" style="grid-area: 12/11;" maxlength="1">
+            <input type="text" class="cell" data-answer="н" style="grid-area: 12/12;" maxlength="1">
+            <input type="text" class="cell" data-answer="о" style="grid-area: 12/13;" maxlength="1">
+            <input type="text" class="cell" data-answer="к" style="grid-area: 12/14;" maxlength="1">
+        </div>
+
+        <div class="l23-t9-hints">
+            <img src="images/lesson-23-9.png" class="hints-img" alt="Подсказки к кроссворду">
+        </div>
+
+    </div>
+
+    <div id="res-23-9" class="result-text" style="margin-top: 20px;"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkCrossword()">Проверить</button>
+    </div>
+</div>
+
+
+<!--Задание 10-->
+
+</div>
+
+</div>
+
+<script src="lesson-23.js"></script>
+</body>
+</html>

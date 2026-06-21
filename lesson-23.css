@@ -1,0 +1,444 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;                  /* Убираем внешние отступы */
+    padding: 0;                 /* Убираем внутренние отступы по умолчанию */
+    background-color: #99dfff;  /* Основной светло-голубой фон страницы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт, используемый во всех уроках */
+}
+
+.content-wrapper { 
+    padding: 15px 10px;         /* Отступы вокруг всего контента */
+}
+
+.main-header { 
+    text-align: center;         /* Центрирование шапки урока */
+}
+
+.lesson-badge {
+    display: inline-block;      /* Плашка отображается как блочный элемент в строке */
+    background: #fff9c4;        /* Светло-жёлтый фон плашки заголовка урока */
+    padding: 8px 30px;          /* Внутренние отступы плашки */
+    border-radius: 15px;        /* Скругление углов плашки */
+    color: #ff6d00;             /* Ярко-оранжевый цвет текста */
+    font-weight: bold;          /* Жирное начертание текста */
+    font-size: 1.6em;           /* Размер шрифта заголовка урока */
+    margin-bottom: 15px;        /* Отступ снизу от плашки */
+    box-shadow: 0 4px 0 #ffd600; /* Тень под плашкой для объёма */
+}
+
+.white-card {
+    background: #f0faff;        /* Светлый голубовато-белый фон карточки задания */
+    border: 6px solid #ffd600;  /* Толстая жёлтая рамка вокруг карточки */
+    border-radius: 30px;        /* Большое скругление углов карточки */
+    padding: 15px 25px;         /* Внутренние отступы внутри карточки */
+    max-width: 750px;           /* Максимальная ширина карточки */
+    margin: 0 auto 20px;        /* Центрирование и отступ между карточками */
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05); /* Лёгкая тень под карточкой */
+}
+
+.card-title {
+    color: #ff7043;             /* Оранжевый цвет заголовка задания */
+    text-align: center;         /* Центрирование заголовка */
+    font-size: 1.8em;           /* Размер шрифта заголовка */
+    margin: 0 0 10px 0;         /* Отступы вокруг заголовка */
+}
+
+.yellow-divider {
+    height: 4px;                /* Высота разделительной линии */
+    background-color: #ffd600;  /* Жёлтый цвет разделителя */
+    margin-bottom: 20px;        /* Отступ снизу от линии */
+}
+
+.card-instruction {
+    font-size: 1.25rem;         /* Размер текста инструкции */
+    color: #2c3e50;             /* Тёмно-синий цвет текста инструкции */
+    text-align: left;         /* Центрирование инструкции */
+    margin: 15px 0 25px 0;      /* Отступы сверху и снизу */
+    line-height: 1.2;           /* Межстрочный интервал для удобства чтения */
+}
+
+/* СТИЛИ ДЛЯ ЦЕНТРИРОВАНИЯ И ОФОРМЛЕНИЯ КНОПКИ ПРОВЕРКИ */
+
+.btn-box {
+    display: flex;                                              /* Включаем флекс-контейнер для кнопки */
+    justify-content: center;                                    /* Центрируем кнопку строго по горизонтали */
+    margin-top: 0px;                                           /* Добавляем отступ сверху от задания до кнопки */
+}
+
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);   /* Создаем оранжевый градиент как на макете */
+    color: #ffffff;                                             /* Устанавливаем белый цвет текста */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Поддерживаем единый детский шрифт */
+    font-size: 1.5em;                                           /* Устанавливаем крупный, читаемый размер шрифта */
+    font-weight: bold;                                          /* Делаем текст жирным */
+    padding: 12px 60px;                                         /* Задаем внутренние отступы для вытянутой формы */
+    border: none;                                               /* Убираем стандартную браузерную рамку */
+    border-radius: 40px;                                        /* Делаем края сильно скругленными (овальными) */
+    box-shadow: 0 6px 0 #d84315;                                /* Добавляем темный "объем" под кнопкой */
+    cursor: pointer;                                            /* Меняем курсор на палец при наведении */
+    transition: all 0.2s ease;                                  /* Плавная анимация при нажатии */
+}
+
+.orange-check-btn:hover {
+    transform: translateY(-2px);                                /* Легкое приподнятие кнопки при наведении */
+    box-shadow: 0 8px 0 #d84315;                                /* Увеличение тени для эффекта парения */
+}
+
+.orange-check-btn:active {
+    transform: translateY(4px);                                 /* Кнопка "вдавливается" при клике */
+    box-shadow: 0 2px 0 #d84315;                                /* Тень уменьшается при нажатии */
+}
+
+.result-text {
+    text-align: center;                                         /* Центрируем текст результата над кнопкой */
+    font-size: 1.3em;                                           /* Размер шрифта сообщения об успехе */
+    margin: 15px 0;                                             /* Вертикальные отступы для текста */
+    min-height: 1.5em;                                          /* Резервируем место, чтобы контент не прыгал */
+}
+
+/* КНОПКИ */
+.btn-box { display: flex; justify-content: center; }
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 #d84315;
+    cursor: pointer;
+}
+
+
+
+
+
+/* задание 1 */
+.result-text { text-align: center; font-size: 1.3em; margin: 15px 0; min-height: 1.5em; }
+
+.l23-t1-words-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки по бланку */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.l23-t1-word {
+    background: #ffffff;
+    border: 2px solid #bdc3c7;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+/* Бледно-зеленая заливка при клике */
+.l23-t1-word.selected {
+    background: #d4edda !important; /* Бледно-зеленый цвет */
+    border-color: #28a745 !important;
+}
+
+/* Цвет при ошибке (если кликнули не то) */
+.l23-t1-word.error {
+    border-color: #dc3545 !important;
+}
+
+/* ЗАДАНИЕ 2: СТИЛИ ДЛЯ ТАБЛИЦЫ СЛОВ */
+.l23-t2-grid {
+    display: grid;                  /* Включаем сетку для выравнивания */
+    grid-template-columns: repeat(3, 1fr); /* Создаем три колонки в ряд */
+    gap: 15px;                      /* Отступ между элементами сетки */
+    margin-top: 20px;               /* Отступ сверху от инструкций */
+}
+
+.l23-t2-row {
+    display: flex;                  /* Флекс-бокс для выравнивания строки */
+    align-items: center;            /* Центрируем текст и поле ввода */
+    gap: 5px;                       /* Небольшой зазор между словом и полем */
+    font-size: 1.1rem;              /* Размер шрифта слова */
+    font-weight: bold;              /* Жирный шрифт для читаемости */
+}
+
+.l23-t2-input {
+    width: 30px;                    /* Фиксированная ширина поля ввода */
+    height: 30px;                   /* Фиксированная высота поля ввода */
+    text-align: center;             /* Центрируем букву в поле ввода */
+    border: 2px solid #bdc3c7;      /* Серая рамка поля ввода */
+    border-radius: 5px;             /* Скругление углов поля ввода */
+    font-size: 1.2rem;              /* Размер вводимой буквы */
+    outline: none;                  /* Убираем рамку фокуса браузера */
+}
+
+/* Стилизация при правильном ответе */
+.l23-t2-input.correct { 
+    border-color: #27ae60;          /* Зеленая рамка при успехе */
+    background: #d4edda;            /* Зеленый фон при успехе */
+}
+
+/* Стилизация при ошибке */
+.l23-t2-input.wrong { 
+    border-color: #dc3545;          /* Красная рамка при ошибке */
+    background: #f8d7da;            /* Розовый фон при ошибке */
+}
+
+/* ЗАДАНИЕ 3: СТИЛИ ДЛЯ РАССКАЗА ПО КАРТИНКЕ */
+.l23-t3-workspace {
+    display: flex;                  /* Флекс для расположения элементов */
+    flex-direction: column;         /* Картинка над списком слов */
+    align-items: center;            /* Центрируем содержимое */
+    gap: 15px;                      /* Отступ между элементами */
+}
+
+.l23-t3-image {
+    max-width: 100%;                /* Картинка не выходит за пределы */
+    border-radius: 15px;            /* Скругление углов картинки */
+    
+}
+
+.l23-t3-words {
+    background: #ffffff;            /* Белый фон карточки слов */
+    padding: 15px;                  /* Внутренние отступы */
+    border-radius: 15px;            /* Скругление */
+    width: 100%;                    /* Ширина на всю карточку */
+    box-sizing: border-box;         /* Учет отступов */
+}
+
+.l23-t3-list {
+    margin: 5px 0 0 0;              /* Отступы списка */
+    padding-left: 20px;             /* Отступ для маркеров */
+    font-size: 1.1rem;              /* Размер шрифта */
+    color: #2c3e50;                 /* Цвет текста */
+}
+
+/* ЗАДАНИЕ 4: СТИЛИ СЛОТОВ И КАРТИНОК */
+.l23-t4-workspace { display: flex; flex-direction: column; gap: 40px; align-items: center; }
+
+/* Ряд картинок */
+.l23-t4-images { display: flex; gap: 15px; justify-content: center; min-height: 110px; }
+.l23-t4-img { width: 120px; height: 120px; cursor: grab; border: 2px solid #ff7043; border-radius: 12px; padding: 5px; background: white; }
+/* Важно: картинки не должны перехватывать события, если они внутри контейнера */
+.l23-t4-img img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+
+/* Зоны с клетками */
+.l23-t4-drop-zones { display: flex; gap: 40px; }
+.zone-wrapper { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+
+.l23-t4-slot { 
+    display: grid; gap: 2px; padding: 5px; border: 2px dashed #3498db; 
+    background: #f0faff; border-radius: 8px; height: 50px; position: relative;
+}
+.l23-t4-slot[data-len="7"] { grid-template-columns: repeat(7, 1fr); width: 300px; }
+.l23-t4-slot[data-len="8"] { grid-template-columns: repeat(8, 1fr); width: 340px; }
+
+.cell { border: 1px solid #3498db; background: white; width: 40px; height: 40px; }
+
+/* Подпись */
+.l23-t4-label { min-height: 30px; font-size: 1.3rem; font-weight: bold; color: #27ae60; text-align: center; }
+
+.l23-t4-workspace { display: flex; flex-direction: column; gap: 30px; align-items: center; }
+.l23-t4-images { display: flex; gap: 10px; justify-content: center; }
+.l23-t4-img { width: 80px; height: 80px; border: 2px solid #ff7043; border-radius: 10px; cursor: grab; background: white; padding: 5px; }
+.l23-t4-img img { width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+
+.l23-t4-drop-zones { display: flex; gap: 50px; }
+.l23-t4-slot { 
+    width: 300px; height: 90px; border: 3px dashed #3498db; 
+    background: #f0faff; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+}
+
+/* ЗАДАНИЕ №5: СТИЛИ ДЛЯ ВСТАВКИ СЛОВ */
+.l23-t5-workspace { 
+    display: flex;                              /* Flex-контейнер для строк */
+    flex-direction: column;                     /* Расположение элементов в столбик */
+    gap: 15px;                                  /* Отступы между предложениями */
+    font-size: 1.1rem;                          /* Размер шрифта текста */
+}
+
+.l23-t5-input {                                 /* Поле ввода слова */
+    border: none;                               /* Убираем стандартную рамку браузера */
+    border-bottom: 2px solid #2c3e50;           /* Добавляем нижнее подчеркивание */
+    background: transparent;                    /* Прозрачный фон для инпута */
+    width: 120px;                               /* Фиксированная ширина поля */
+    font-family: 'Comic Sans MS', sans-serif;   /* Использование детского шрифта */
+    font-size: 1.1rem;                          /* Размер шрифта в инпуте */
+    text-align: center;                         /* Центрирование текста в инпуте */
+    color: #2c3e50;                             /* Цвет вводимого текста */
+}
+
+.l23-t5-input.correct {                         /* Стили для верного ответа */
+    border-bottom-color: #27ae60;               /* Зеленая линия при успехе */
+    color: #27ae60;                             /* Зеленый цвет текста при успехе */
+}
+
+.l23-t5-input.wrong {                           /* Стили для ошибки */
+    border-bottom-color: #dc3545;               /* Красная линия при ошибке */
+    color: #dc3545;                             /* Красный цвет текста при ошибке */
+}
+
+/* ЗАДАНИЕ №6: СТИЛИ ДЛЯ АНАЛИЗА */
+.l23-t6-workspace { 
+    display: flex;                              /* Flex-контейнер для вопросов */
+    flex-direction: column;                     /* Расположение в столбик */
+    gap: 15px;                                  /* Отступы между вопросами */
+    font-size: 1.2rem;                          /* Размер шрифта вопросов */
+}
+
+.l23-t6-input {                                 /* Поле ввода цифр */
+    width: 60px;                                /* Фиксированная ширина */
+    padding: 5px;                               /* Внутренний отступ */
+    border: 2px solid #3498db;                  /* Синяя рамка */
+    border-radius: 8px;                         /* Скругление углов */
+    text-align: center;                         /* Текст по центру */
+    font-family: 'Comic Sans MS', sans-serif;   /* Детский шрифт */
+    font-size: 1.2rem;                          /* Размер шрифта в инпуте */
+}
+
+.l23-t6-input.correct {                         /* Класс верного ответа */
+    border-color: #27ae60;                      /* Зеленая рамка при успехе */
+    background: #d4edda;                        /* Зеленый фон при успехе */
+}
+
+.l23-t6-input.wrong {                           /* Класс неверного ответа */
+    border-color: #dc3545;                      /* Красная рамка при ошибке */
+    background: #f8d7da;                        /* Розовый фон при ошибке */
+}
+
+/* ЗАДАНИЕ №7: СТИЛИ ДЛЯ ВОПРОСОВ И ТЕКСТА */
+.l23-t7-workspace { 
+    display: flex;                              /* Flex-контейнер */
+    flex-direction: column;                     /* Расположение в столбик */
+    gap: 15px;                                  /* Отступы между вопросами */
+    font-size: 1.1rem;                          /* Размер шрифта */
+}
+
+.l23-t7-input {                                 /* Поле ввода */
+    border: none;                               /* Убираем стандартную рамку */
+    border-bottom: 2px solid #2c3e50;           /* Нижнее подчеркивание */
+    background: transparent;                    /* Прозрачный фон */
+    width: 250px;                               /* Ширина поля */
+    font-family: 'Comic Sans MS', sans-serif;   /* Детский шрифт */
+    font-size: 1.1rem;                          /* Размер текста */
+    text-align: center;                         /* Центрирование */
+}
+
+.l23-t7-input.correct {                         /* Стиль верного ответа */
+    border-bottom-color: #27ae60;               /* Зеленая линия */
+    color: #27ae60;                             /* Зеленый текст */
+}
+
+.l23-t7-input.wrong {                           /* Стиль ошибки */
+    border-bottom-color: #dc3545;               /* Красная линия */
+    color: #dc3545;                             /* Красный текст */
+}
+
+/* ЗАДАНИЕ №8: СТИЛИ ДЛЯ ИСПАНИИ */
+.l23-t8-workspace { 
+    display: flex;                              /* Flex-контейнер для вопросов */
+    flex-direction: column;                     /* Расположение в столбик */
+    gap: 15px;                                  /* Отступы между строками */
+    font-size: 1.1rem;                          /* Размер шрифта */
+}
+
+.l23-t8-input {                                 /* Поле ввода */
+    border: none;                               /* Убираем стандартную рамку */
+    border-bottom: 2px solid #2c3e50;           /* Нижнее подчеркивание */
+    background: transparent;                    /* Прозрачный фон */
+    width: 250px;                               /* Фиксированная ширина */
+    font-family: 'Comic Sans MS', sans-serif;   /* Детский шрифт */
+    font-size: 1.1rem;                          /* Размер текста */
+    text-align: center;                         /* Центрирование */
+}
+
+.l23-t8-input.correct {                         /* Стиль верного ответа */
+    border-bottom-color: #27ae60;               /* Зеленая линия */
+    color: #27ae60;                             /* Зеленый цвет текста */
+}
+
+.l23-t8-input.wrong {                           /* Стиль ошибки */
+    border-bottom-color: #dc3545;               /* Красная линия */
+    color: #dc3545;                             /* Красный цвет текста */
+}
+
+/* =========================================
+   ЗАДАНИЕ 9: СТИЛИ КРОССВОРДА И КАРТИНКИ
+   ========================================= */
+
+/* 1. Общий контейнер (Сетка + Картинка) */
+.l23-t9-workspace { 
+    display: flex; 
+    flex-direction: row;                           /* Элементы строго в ряд (слева направо) */
+    flex-wrap: nowrap;                             /* ЗАПРЕТ на перенос картинки вниз */
+    gap: 40px;                                     /* Отступ между кроссвордом и подсказкой */
+    align-items: flex-start;                       /* Выравнивание по верхнему краю */
+    justify-content: flex-start;                   /* Прижим к левому краю */
+}
+
+/* 2. Сетка кроссворда */
+.l23-t9-grid { 
+    display: grid;                                 
+    grid-template-columns: repeat(14, 32px);       /* 14 колонок по 32px */
+    grid-template-rows: repeat(12, 32px);          /* 12 строк по 32px */
+    gap: 4px;                                      /* Расстояние между клетками */
+    flex-shrink: 0;                                /* Запрет на сжатие сетки */
+}
+
+/* 3. Номера строк (1, 2, 3...) */
+.num { 
+    display: flex;                                 
+    align-items: center;                           
+    justify-content: flex-end;                     
+    padding-right: 5px;                            
+    font-weight: bold;                             
+    font-size: 1.1rem;                             
+}
+
+/* 4. Ячейки для ввода букв */
+.cell {                                            
+    width: 100%;                                   
+    height: 100%;                                  
+    border: 2px solid #3498db;                     /* Синяя рамка */
+    text-align: center;                            
+    font-size: 1.2rem;                             
+    font-weight: bold;                             
+    text-transform: uppercase;                     /* Буквы всегда заглавные */
+    background: #fff;                              
+    box-sizing: border-box;                        
+    padding: 0;                                    /* Убираем внутренние отступы браузера */
+}
+
+/* 5. Зафиксированные буквы (Ось З и Ц) */
+.fixed { 
+    background: #e1f5fe;                           /* Светло-голубой фон */
+    border-color: #2980b9;                         /* Темно-синяя рамка */
+    color: #2c3e50;                                
+}
+
+/* 6. Правильный ответ */
+.cell.correct { 
+    background: #27ae60;                           /* Зеленый фон */
+    color: #fff;                                   
+    border-color: #2ecc71;                         
+}
+
+/* 7. Ошибка */
+.cell.wrong { 
+    background: #e74c3c;                           /* Красный фон */
+    color: #fff;                                   
+    border-color: #c0392b;                         
+}
+
+/* 8. Контейнер для картинки-подсказки */
+.l23-t9-hints {
+    flex: 0 1 auto;                                /* Позволяет сжиматься на узких экранах */
+    max-width: 450px;                              /* Ограничитель ширины картинки */
+}
+
+/* 9. Сама картинка */
+.hints-img {
+    width: 100%;                                   /* Картинка занимает 100% своего контейнера */
+    height: auto;                                  /* Сохранение пропорций */
+    display: block;                                /* Убирает системный отступ снизу картинки */
+}
