@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 24 - Автоматизация звука [Ч]</title>
+    <link rel="stylesheet" href="lesson-24.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 24. Автоматизация звука [Ч]</div>
+    </header>
+
+    <!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Повторилки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Проговори слоги и слова по 2–3 раза. Нажимай на карточку, когда прочитаешь!
+    </p>
+
+    <div class="l24-t1-grid">
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">ач-ач-ач — богач</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">еч-еч-еч — меч</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">оч-оч-оч — ночь</div>
+
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">ач-ач-ач — тягач</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">еч-еч-еч — печь</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">оч-оч-оч — дочь</div>
+
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">ич-ич-ич — дичь</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">уч-уч-уч — могуч</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">яч-яч-яч — мяч</div>
+
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">ич-ич-ич — бич</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">уч-уч-уч — жгуч</div>
+        <div class="l24-t1-card" onclick="toggleReadL24T1(this)">яч-яч-яч — горяч</div>
+    </div>
+
+    <div id="res-24-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task1()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Игра «Назови сына по отчеству»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Образуй от имен отчества. Напиши правильное слово в пустое поле.<br>
+        <b>Образец:</b> У Ивана сын... — Иванович.
+    </p>
+
+    <div class="l24-t2-workspace">
+        <div class="l24-t2-grid">
+            <div class="l24-t2-item">
+                У Ивана сын <input type="text" class="l24-t2-input" data-answer="иванович">
+            </div>
+            <div class="l24-t2-item">
+                У Вадима сын <input type="text" class="l24-t2-input" data-answer="вадимович">
+            </div>
+            <div class="l24-t2-item">
+                У Олега сын <input type="text" class="l24-t2-input" data-answer="олегович">
+            </div>
+
+            <div class="l24-t2-item">
+                У Никиты сын <input type="text" class="l24-t2-input" data-answer="никитич">
+            </div>
+            <div class="l24-t2-item">
+                У Якова сын <input type="text" class="l24-t2-input" data-answer="яковлевич">
+            </div>
+            <div class="l24-t2-item">
+                У Василия сын <input type="text" class="l24-t2-input" data-answer="васильевич">
+            </div>
+
+            <div class="l24-t2-item">
+                У Ефима сын <input type="text" class="l24-t2-input" data-answer="ефимович">
+            </div>
+            <div class="l24-t2-item">
+                У Фомы сын <input type="text" class="l24-t2-input" data-answer="фомич">
+            </div>
+            <div class="l24-t2-item">
+                У Ильи сын <input type="text" class="l24-t2-input" data-answer="ильич">
+            </div>
+        </div>
+    </div>
+
+    <div id="res-24-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task2()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Расшифруй слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Определи первый звук в каждом слове на картинке. Впиши в клеточки соответствующие буквы по порядку. Прочитай получившиеся слова!
+    </p>
+
+    <div class="l24-t3-workspace">
+        
+        <div class="l24-t3-image-box">
+            <img src="images/lesson-24-3.png" class="l24-t3-img" alt="Ребусы по первым звукам">
+        </div>
+
+        <div class="l24-t3-inputs-container">
+            
+            <div class="l24-t3-word-group">
+                <span class="l24-t3-num">1.</span>
+                <input type="text" class="l24-t3-cell" data-answer="ч" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="у" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="д" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="о" maxlength="1">
+            </div>
+
+            <div class="l24-t3-word-group">
+                <span class="l24-t3-num">2.</span>
+                <input type="text" class="l24-t3-cell" data-answer="к" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="у" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="ч" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="а" maxlength="1">
+            </div>
+
+            <div class="l24-t3-word-group">
+                <span class="l24-t3-num">3.</span>
+                <input type="text" class="l24-t3-cell" data-answer="ч" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="е" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="с" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="н" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="о" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="к" maxlength="1">
+            </div>
+
+            <div class="l24-t3-word-group">
+                <span class="l24-t3-num">4.</span>
+                <input type="text" class="l24-t3-cell" data-answer="ч" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="е" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="р" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="д" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="а" maxlength="1">
+                <input type="text" class="l24-t3-cell" data-answer="к" maxlength="1">
+            </div>
+
+        </div>
+    </div>
+
+    <div id="res-24-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task3()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Игра «Назови картинки»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Назови и выбери (нажми) только те предметы, названия которых <b>заканчиваются</b> на звук <b>[Ч]</b>.<br>
+        <i>Не забывай чётко произносить звук [Ч]!</i>
+    </p>
+
+    <div class="l24-t4-workspace">
+        <div class="l24-t4-grid">
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/мяч.png" class="l24-t4-img" alt="Мяч">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/меч.png" class="l24-t4-img" alt="Меч">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/ключ.png" class="l24-t4-img" alt="Ключ">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/врач.png" class="l24-t4-img" alt="Врач">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/ворон.png" class="l24-t4-img" alt="Грач">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/кулич.png" class="l24-t4-img" alt="Кулич">
+            </div>
+            <div class="l24-t4-card" data-correct="true" onclick="toggleL24T4(this)">
+                <img src="images/печь.png" class="l24-t4-img" alt="Печь">
+            </div>
+
+            <div class="l24-t4-card" data-correct="false" onclick="toggleL24T4(this)">
+                <img src="images/очки.png" class="l24-t4-img" alt="Очки">
+            </div>
+            <div class="l24-t4-card" data-correct="false" onclick="toggleL24T4(this)">
+                <img src="images/бочка.png" class="l24-t4-img" alt="Бочка">
+            </div>
+            <div class="l24-t4-card" data-correct="false" onclick="toggleL24T4(this)">
+                <img src="images/ручка.png" class="l24-t4-img" alt="Ручка">
+            </div>
+            <div class="l24-t4-card" data-correct="false" onclick="toggleL24T4(this)">
+                <img src="images/бабочка.png" class="l24-t4-img" alt="Бабочка">
+            </div>
+            <div class="l24-t4-card" data-correct="false" onclick="toggleL24T4(this)">
+                <img src="images/удочка.png" class="l24-t4-img" alt="Удочка">
+            </div>
+        </div>
+    </div>
+    
+    <p class="card-instruction" style="margin-top: 20px; font-size: 1.1rem; color: #7f8c8d;">
+        <b>А теперь поиграй в игру «Жадина»!</b><br>
+        <i>Например: ключ — он мой, бабочка — она моя и т.д.</i>
+    </p>
+
+    <div id="res-24-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task4()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №5 -->
+<!-- ЗАДАНИЕ №5: ПРИДУМАЙ ПРЕДЛОЖЕНИЯ (С КАРТИНКАМИ) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Придумай предложения</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки и составь интересные предложения с каждой парой слов. Напиши их в пустые поля!
+    </p>
+
+    <!-- Рабочая область в виде сетки карточек -->
+    <div class="l24-t5-workspace">
+        
+        <!-- Пара 1 (Девочка и мяч) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/lesson-18-5-2.png" class="l24-t5-pic" alt="Девочка">
+                <img src="images/мяч.png" class="l24-t5-pic" alt="Мяч">
+            </div>
+            <div class="l24-t5-label">девочка — мяч</div>
+            <input type="text" class="l24-t5-input" data-w1="девочк" data-w2="мяч" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Пара 2 (Печка и кулич) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/печь.png" class="l24-t5-pic" alt="Печка">
+                <img src="images/кулич.png" class="l24-t5-pic" alt="Кулич">
+            </div>
+            <div class="l24-t5-label">печка — кулич</div>
+            <input type="text" class="l24-t5-input" data-w1="печ" data-w2="кулич" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Пара 3 (Бабочка и кочка) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/бабочка.png" class="l24-t5-pic" alt="Бабочка">
+                <img src="images/кочка.png" class="l24-t5-pic" alt="Кочка">
+            </div>
+            <div class="l24-t5-label">бабочка — кочка</div>
+            <input type="text" class="l24-t5-input" data-w1="бабочк" data-w2="кочк" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Пара 4 (Врач и ключ) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/врач.png" class="l24-t5-pic" alt="Врач">
+                <img src="images/ключ.png" class="l24-t5-pic" alt="Ключ">
+            </div>
+            <div class="l24-t5-label">врач — ключ</div>
+            <input type="text" class="l24-t5-input" data-w1="врач" data-w2="ключ" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Пара 5 (Очки и ручка) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/очки.png" class="l24-t5-pic" alt="Очки">
+                <img src="images/ручка.png" class="l24-t5-pic" alt="Ручка">
+            </div>
+            <div class="l24-t5-label">очки — ручка</div>
+            <input type="text" class="l24-t5-input" data-w1="очк" data-w2="ручк" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Пара 6 (Грач и булочка) -->
+        <div class="l24-t5-pair-card">
+            <div class="l24-t5-images">
+                <img src="images/ворон.png" class="l24-t5-pic" alt="Грач">
+                <img src="images/булочка.png" class="l24-t5-pic" alt="Булочка">
+            </div>
+            <div class="l24-t5-label">грач — булочка</div>
+            <input type="text" class="l24-t5-input" data-w1="грач" data-w2="булочк" placeholder="Напиши предложение...">
+        </div>
+
+    </div>
+
+    <!-- Вывод результата -->
+    <div id="res-24-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task5()">Проверить</button>
+    </div>
+</div>
+    <!-- ЗАДАНИЕ №6 -->
+<!-- ЗАДАНИЕ №6: ДОСКАЖИ СЛОВЕЧКО -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Доскажи словечко</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Произнеси предложения, чётко выделяя звук <b>[Ч']</b>. Какого слова не хватает? Назови его и впиши в пустые поля, опираясь на картинки.
+    </p>
+
+    <!-- Блок с отдельными картинками -->
+    <div class="l24-t6-images-row">
+        <img src="images/врач.png" class="l24-t6-pic" alt="Врач">
+        <img src="images/часы.png" class="l24-t6-pic" alt="Часы">
+        <img src="images/качели.png" class="l24-t6-pic" alt="Качели">
+        <img src="images/чайник.png" class="l24-t6-pic" alt="Чайник">
+        <img src="images/зайчик.png" class="l24-t6-pic" alt="Зайчик">
+    </div>
+
+    <!-- Блок с предложениями и полями ввода -->
+    <div class="l24-t6-workspace">
+        <div class="l24-t6-row">
+            Мальчика Ванечку лечит <input type="text" class="l24-t6-input" data-answer="врач"> .
+        </div>
+        <div class="l24-t6-row">
+            Часовщик Сычёв чинит <input type="text" class="l24-t6-input" data-answer="часы"> .
+        </div>
+        <div class="l24-t6-row">
+            Верочка часто качается на <input type="text" class="l24-t6-input" data-answer="качелях"> .
+        </div>
+        <div class="l24-t6-row">
+            Девочка включила электрический <input type="text" class="l24-t6-input" data-answer="чайник"> .
+        </div>
+        <div class="l24-t6-row">
+            У Танечки на даче белочка и <input type="text" class="l24-t6-input" data-answer="зайчик"> .
+        </div>
+    </div>
+
+    <!-- Блок вывода результата -->
+    <div id="res-24-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task6()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №7 -->
+<!-- ЗАДАНИЕ №7: НАЙДИ ЛИШНЮЮ КАРТИНКУ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Найди «лишнюю» картинку</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        В каждом ряду найди и нажми на одну «лишнюю» картинку. Объясни, почему она не подходит.
+    </p>
+
+    <div class="l24-t7-workspace">
+        
+        <!-- Ряд 1 -->
+        <div class="l24-t7-row">
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/бабочка.png" class="l24-t7-img" alt="Бабочка">
+            </div>
+            <!-- Чашка лишняя (звук в начале, у остальных в середине) или Кружка (вообще нет звука Ч) -->
+            <div class="l24-t7-card" data-correct="true" onclick="selectL24T7(this)">
+                <img src="images/чашка.png" class="l24-t7-img" alt="Чашка">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/бочка.png" class="l24-t7-img" alt="Бочка">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/ручка.png" class="l24-t7-img" alt="Ручка">
+            </div>
+        </div>
+
+        <!-- Ряд 2 -->
+        <div class="l24-t7-row">
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/чайник.png" class="l24-t7-img" alt="Чайник">
+            </div>
+            <!-- Яблоко лишнее (нет звука Ч) -->
+            <div class="l24-t7-card" data-correct="true" onclick="selectL24T7(this)">
+                <img src="images/apple.png" class="l24-t7-img" alt="Яблоко">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/черепаха.png" class="l24-t7-img" alt="Черепаха">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/червяк.png" class="l24-t7-img" alt="Червяк">
+            </div>
+        </div>
+
+        <!-- Ряд 3 -->
+        <div class="l24-t7-row">
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/меч.png" class="l24-t7-img" alt="Меч">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/ключ.png" class="l24-t7-img" alt="Ключ">
+            </div>
+            <!-- Свеча лишняя (звук в середине, у остальных в конце) -->
+            <div class="l24-t7-card" data-correct="true" onclick="selectL24T7(this)">
+                <img src="images/candle-8.png" class="l24-t7-img" alt="Свеча">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/мяч.png" class="l24-t7-img" alt="Мяч">
+            </div>
+        </div>
+
+        <!-- Ряд 4 -->
+        <div class="l24-t7-row">
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/качели.png" class="l24-t7-img" alt="Качели">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/сачок.png" class="l24-t7-img" alt="Сачок">
+            </div>
+            <div class="l24-t7-card" data-correct="true" onclick="selectL24T7(this)">
+                <img src="images/обруч.png" class="l24-t7-img" alt="Обруч">
+            </div>
+            <!-- Книга лишняя (нет звука Ч) -->
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/учебник.png" class="l24-t7-img" alt="Книга">
+            </div>
+        </div>
+
+        <!-- Ряд 5 -->
+        <div class="l24-t7-row">
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/крючок.png" class="l24-t7-img" alt="Крючок">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/перчатки.png" class="l24-t7-img" alt="Перчатки">
+            </div>
+            <div class="l24-t7-card" data-correct="false" onclick="selectL24T7(this)">
+                <img src="images/пчела.png" class="l24-t7-img" alt="Пчела">
+            </div>
+            <!-- Бублик/Баранка лишние (нет звука Ч) -->
+            <div class="l24-t7-card" data-correct="true" onclick="selectL24T7(this)">
+                <img src="images/калач.png" class="l24-t7-img" alt="Бублик">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата -->
+    <div id="res-24-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task7()">Проверить</button>
+    </div>
+</div>
+
+    <!-- ЗАДАНИЕ №8 -->
+<!-- ЗАДАНИЕ №9: ЛАБИРИНТ И ИГРА "УГАДАЙ" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Лабиринт</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Пройди лабиринт по стрелочкам и назови все слова. Затем выполни упражнение <b>«Угадай»</b>: прочитай слово-действие и впиши подходящее слово-предмет из лабиринта!
+    </p>
+
+    <!-- Изображение лабиринта -->
+    <img src="images/lesson-24-9.jpeg" class="l24-t9-main-img" alt="Лабиринт со звуком Ч">
+
+    <!-- Подсказка для родителей/педагогов -->
+    <p class="card-instruction" style="font-size: 1.1rem; color: #7f8c8d; text-align: center; margin-bottom: 20px;">
+        <i>Устно поиграйте в игры «Живое — неживое» и «Один — много» (волшебная палочка), используя картинки из лабиринта.</i>
+    </p>
+
+    <!-- Рабочая область (игра Угадай) -->
+    <div class="l24-t9-workspace">
+        <div class="l24-t9-row">
+            <span>Пьют...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чай" placeholder="что?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Летает...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чайка" placeholder="кто?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Кипит...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чайник" placeholder="что?">
+        </div>
+         <div class="l24-t9-row">
+            <span>Ползёт...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чулки" placeholder="что?">
+        </div>       
+        <div class="l24-t9-row">
+            <span>Надевают...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чулки" placeholder="что?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Едят...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чеснок" placeholder="что?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Несут...</span> 
+            <input type="text" class="l24-t9-input" data-answer="чемодан" placeholder="что?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Идёт...</span> 
+            <input type="text" class="l24-t9-input" data-answer="человек" placeholder="кто?">
+        </div>
+        <div class="l24-t9-row">
+            <span>Крадётся...</span> 
+            <input type="text" class="l24-t9-input" data-answer="черепаха" placeholder="кто?">
+        </div>
+       <div class="l24-t9-row">
+    </div>
+
+    <!-- Блок вывода результата -->
+    <div id="res-24-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task9()">Проверить</button>
+    </div>
+</div>   
+</div>
+
+
+<!-- ЗАДАНИЕ №10: ЛАБИРИНТ НА БУКВУ "Ч" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Лабиринт на букву «Ч»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги цыпленку пройти лабиринт! Кликай на слова по порядку, следуя за дорожкой от «СТАРТА» до «ФИНИША».
+    </p>
+
+    <img src="images/lesson-24-10.png" class="l24-t10-img" alt="Лабиринт на букву Ч">
+
+    <div id="res-24-10" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL24Task10()">Проверить путь</button>
+    </div>
+</div>
+</div>
+
+<script src="lesson-24.js"></script>
+</body>
+</html>
