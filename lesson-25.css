@@ -1,0 +1,635 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;                  /* Убираем внешние отступы */
+    padding: 0;                 /* Убираем внутренние отступы по умолчанию */
+    background-color: #99dfff;  /* Основной светло-голубой фон страницы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт, используемый во всех уроках */
+}
+
+.content-wrapper { 
+    padding: 15px 10px;         /* Отступы вокруг всего контента */
+}
+
+.main-header { 
+    text-align: center;         /* Центрирование шапки урока */
+}
+
+.lesson-badge {
+    display: inline-block;      /* Плашка отображается как блочный элемент в строке */
+    background: #fff9c4;        /* Светло-жёлтый фон плашки заголовка урока */
+    padding: 8px 30px;          /* Внутренние отступы плашки */
+    border-radius: 15px;        /* Скругление углов плашки */
+    color: #ff6d00;             /* Ярко-оранжевый цвет текста */
+    font-weight: bold;          /* Жирное начертание текста */
+    font-size: 1.6em;           /* Размер шрифта заголовка урока */
+    margin-bottom: 15px;        /* Отступ снизу от плашки */
+    box-shadow: 0 4px 0 #ffd600; /* Тень под плашкой для объёма */
+}
+
+.white-card {
+    background: #f0faff;        /* Светлый голубовато-белый фон карточки задания */
+    border: 6px solid #ffd600;  /* Толстая жёлтая рамка вокруг карточки */
+    border-radius: 30px;        /* Большое скругление углов карточки */
+    padding: 15px 25px;         /* Внутренние отступы внутри карточки */
+    max-width: 750px;           /* Максимальная ширина карточки */
+    margin: 0 auto 20px;        /* Центрирование и отступ между карточками */
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05); /* Лёгкая тень под карточкой */
+}
+
+.card-title {
+    color: #ff7043;             /* Оранжевый цвет заголовка задания */
+    text-align: center;         /* Центрирование заголовка */
+    font-size: 1.8em;           /* Размер шрифта заголовка */
+    margin: 0 0 10px 0;         /* Отступы вокруг заголовка */
+}
+
+.yellow-divider {
+    height: 4px;                /* Высота разделительной линии */
+    background-color: #ffd600;  /* Жёлтый цвет разделителя */
+    margin-bottom: 20px;        /* Отступ снизу от линии */
+}
+
+.card-instruction {
+    font-size: 1.25rem;         /* Размер текста инструкции */
+    color: #2c3e50;             /* Тёмно-синий цвет текста инструкции */
+    text-align: left;         /* Центрирование инструкции */
+    margin: 15px 0 25px 0;      /* Отступы сверху и снизу */
+    line-height: 1.2;           /* Межстрочный интервал для удобства чтения */
+}
+
+/* СТИЛИ ДЛЯ ЦЕНТРИРОВАНИЯ И ОФОРМЛЕНИЯ КНОПКИ ПРОВЕРКИ */
+
+.btn-box {
+    display: flex;                                              /* Включаем флекс-контейнер для кнопки */
+    justify-content: center;                                    /* Центрируем кнопку строго по горизонтали */
+    margin-top: 0px;                                           /* Добавляем отступ сверху от задания до кнопки */
+}
+
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);   /* Создаем оранжевый градиент как на макете */
+    color: #ffffff;                                             /* Устанавливаем белый цвет текста */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Поддерживаем единый детский шрифт */
+    font-size: 1.5em;                                           /* Устанавливаем крупный, читаемый размер шрифта */
+    font-weight: bold;                                          /* Делаем текст жирным */
+    padding: 12px 60px;                                         /* Задаем внутренние отступы для вытянутой формы */
+    border: none;                                               /* Убираем стандартную браузерную рамку */
+    border-radius: 40px;                                        /* Делаем края сильно скругленными (овальными) */
+    box-shadow: 0 6px 0 #d84315;                                /* Добавляем темный "объем" под кнопкой */
+    cursor: pointer;                                            /* Меняем курсор на палец при наведении */
+    transition: all 0.2s ease;                                  /* Плавная анимация при нажатии */
+}
+
+.orange-check-btn:hover {
+    transform: translateY(-2px);                                /* Легкое приподнятие кнопки при наведении */
+    box-shadow: 0 8px 0 #d84315;                                /* Увеличение тени для эффекта парения */
+}
+
+.orange-check-btn:active {
+    transform: translateY(4px);                                 /* Кнопка "вдавливается" при клике */
+    box-shadow: 0 2px 0 #d84315;                                /* Тень уменьшается при нажатии */
+}
+
+.result-text {
+    text-align: center;                                         /* Центрируем текст результата над кнопкой */
+    font-size: 1.3em;                                           /* Размер шрифта сообщения об успехе */
+    margin: 15px 0;                                             /* Вертикальные отступы для текста */
+    min-height: 1.5em;                                          /* Резервируем место, чтобы контент не прыгал */
+}
+
+/* КНОПКИ */
+.btn-box { display: flex; justify-content: center; }
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 #d84315;
+    cursor: pointer;
+}
+
+
+/* НАЧАЛО ОСНОВНОГО БЛОКА CSS */
+/* ========================================
+   ЗАДАНИЕ 1: ВЫБЕРИ УГОЩЕНИЯ СО ЗВУКОМ Ч
+   ======================================== */
+
+.l25-t1-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.l25-t1-card {
+    background: #ffffff;
+    border: 3px solid #bdc3c7;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    aspect-ratio: 1 / 1;                  /* Квадратная карточка */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.l25-t1-card img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;                  /* Сохраняем пропорции */
+    pointer-events: none;                 /* Клик перехватывает карточка */
+}
+
+.l25-t1-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+/* Выбрано */
+.l25-t1-card.selected {
+    border-color: #3498db;
+    background-color: #e1f5fe;
+}
+
+/* Правильно */
+.l25-t1-card.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+}
+
+/* Неправильно */
+.l25-t1-card.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .l25-t1-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .l25-t1-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ЗАДАНИЕ 2: ЧУЛАН Ч (ВЕЩИ СО ЗВУКОМ Ч)
+   ======================================== */
+
+.l25-t2-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 колонки */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.l25-t2-card {
+    background: #ffffff;
+    border: 3px solid #bdc3c7;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.l25-t2-card img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.l25-t2-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.l25-t2-card.selected {
+    border-color: #3498db;
+    background-color: #e1f5fe;
+}
+
+.l25-t2-card.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+}
+
+.l25-t2-card.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .l25-t2-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .l25-t2-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ЗАДАНИЕ 3: ЛЕТОМ НА ДАЧЕ (С КАРТИНКОЙ И ПОЛЯМИ)
+   ======================================== */
+
+.l25-t3-img {
+    width: 100%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.l25-t3-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 колонки */
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.l25-t3-input {
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 10px 8px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    outline: none;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.l25-t3-input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52,152,219,0.2);
+}
+
+.l25-t3-input.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.l25-t3-input.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .l25-t3-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .l25-t3-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ЗАДАНИЕ 4: ЛЕТОМ НА ДАЧЕ (ПРОДОЛЖЕНИЕ)
+   ======================================== */
+
+.l25-t4-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  /* 4 колонки */
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.l25-t4-card {
+    background: #ffffff;
+    border: 3px solid #bdc3c7;
+    border-radius: 15px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.l25-t4-card img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+.l25-t4-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.l25-t4-card.selected {
+    border-color: #3498db;
+    background-color: #e1f5fe;
+}
+
+.l25-t4-card.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+}
+
+.l25-t4-card.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .l25-t4-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .l25-t4-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ========================================
+   ЗАДАНИЕ 5: НЕДОСТАЮЩИЕ ВЕЩИ (СЕТКА 3x3)
+   ======================================== */
+
+.l25-t5-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 10px;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.l25-t5-cell {
+    background: #f9f3e6;
+    border: 4px solid #8B5A2B;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 6px 0 #6B4226;
+    transition: all 0.5s ease;
+}
+
+.l25-t5-cell.full {
+    background: #f0f7e8;
+    border-color: #2E7D32;
+}
+
+.l25-t5-img {
+    width: 100%;
+    max-width: 180px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.l25-t5-label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #4E342E;
+    margin-top: 8px;
+}
+
+/* Состояние после нажатия "ГОТОВО" – все неполные чемоданы становятся полными */
+.l25-t5-cell.done:not(.full) {
+    opacity: 0.8;
+    transform: scale(0.95);
+    border-color: #2E7D32;
+    background: #e8f5e9;
+}
+
+.l25-t5-cell.done:not(.full) .l25-t5-img {
+    content: url('images/чемодан_полный.png'); /* заменится через JS */
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .l25-t5-grid {
+        gap: 10px;
+    }
+    .l25-t5-cell {
+        padding: 5px;
+    }
+    .l25-t5-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* ========================================
+   ЗАДАНИЕ 6: СОБЕРИ СЛОВО (ТОЛЬКО КАРТИНКА + ПОЛЯ)
+   ======================================== */
+
+.l25-t6-image-wrapper {
+    text-align: center;
+    margin: 10px 0 20px;
+}
+
+.l25-t6-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.l25-t6-words {
+    margin: 20px 0 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.l25-t6-word-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.l25-t6-star {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.l25-t6-star.red {
+    color: #e74c3c;
+}
+
+.l25-t6-star.green {
+    color: #2ecc71;
+}
+
+.l25-t6-input {
+    flex: 1;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.l25-t6-input:focus {
+    border-color: #3498db;
+}
+
+.l25-t6-input.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+}
+
+.l25-t6-input.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+}
+
+/* ========================================
+   ЗАДАНИЕ 7: ЛАБИРИНТ (ЕДИНАЯ КАРТИНКА)
+   ======================================== */
+
+.l25-t7-instruction-list {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding-left: 20px;
+    margin: 10px 0 20px;
+    line-height: 1.6;
+}
+
+.l25-t7-instruction-list li {
+    margin-bottom: 8px;
+}
+
+.l25-t7-image-wrapper {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.l25-t7-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.l25-t7-word-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 20px;
+    margin-top: 15px;
+    padding: 10px;
+    background: #fff9c4;
+    border-radius: 15px;
+}
+
+.l25-t7-word {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    background: white;
+    padding: 4px 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* ========================================
+   ЗАДАНИЕ 8: НОВЫЕ СЛОВА (ЗАМЕНА ЗВУКОВ)
+   ======================================== */
+
+.l25-t8-part {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 10px 0 5px;
+}
+
+.l25-t8-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+.l25-t8-original {
+    font-weight: bold;
+    min-width: 110px;
+    color: #2c3e50;
+}
+
+.l25-t8-input {
+    flex: 1;
+    max-width: 200px;
+    border: 2px solid #bdc3c7;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.2rem;
+    text-align: center;
+    outline: none;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.l25-t8-input:focus {
+    border-color: #3498db;
+}
+
+.l25-t8-input.correct {
+    border-color: #27ae60;
+    background-color: #d4edda;
+}
+
+.l25-t8-input.wrong {
+    border-color: #e74c3c;
+    background-color: #f8d7da;
+}
+
+/* Адаптивность */
+@media (max-width: 500px) {
+    .l25-t8-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .l25-t8-original {
+        min-width: 80px;
+        font-size: 1.1rem;
+    }
+    .l25-t8-input {
+        max-width: 150px;
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+}

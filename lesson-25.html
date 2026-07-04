@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 25 - Автоматизация звука [Ч] в словах</title>
+    <link rel="stylesheet" href="lesson-25.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 25. Автоматизация звука [Ч] в словах</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1 -->
+<!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Выбери угощения только со звуком [Ч]</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Нажми на картинки тех угощений, в названиях которых есть звук <b>[Ч]</b>.<br>
+        <i>Назови их вслух!</i>
+    </p>
+
+    <div class="l25-t1-grid">
+        <!-- Правильные (со звуком Ч) – data-correct="true" -->
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/чебуреки.png" alt="чебуреки">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/пончик.png" alt="пончики">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/калач.png" alt="калач">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/кулич.png" alt="кулич">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/черешня.png" alt="черешня">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/чай.png" alt="чай">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/печенье.png" alt="печенье">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/булочка.png" alt="булочка">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/мясо.jpg" alt="ветчина">
+        </div>
+
+        <!-- Неправильные (без звука Ч) – data-correct="false" -->
+        <div class="l25-t1-card" data-correct="false" onclick="toggleL25T1(this)">
+            <img src="images/конфета.jpeg" alt="конфеты">
+        </div>
+        <div class="l25-t1-card" data-correct="true" onclick="toggleL25T1(this)">
+            <img src="images/чизкейк.png" alt="чизкейк">
+        </div>
+        <div class="l25-t1-card" data-correct="false" onclick="toggleL25T1(this)">
+            <img src="images/apple.png" alt="яблоко">
+        </div>
+    </div>
+
+    <div id="res-25-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2 -->
+<!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Чулан Ч</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Нажми на картинки тех вещей, в названиях которых есть звук <b>[Ч]</b>.<br>
+        <i>«Спрячь их в чехол» – отметь их!</i>
+    </p>
+
+    <div class="l25-t2-grid">
+        <!-- Все слова со звуком Ч (правильные) -->
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/кольчуга.png" alt="кольчуга">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/меч.png" alt="меч">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чарка.png" alt="чарка">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/четки.png" alt="четки">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чешки.png" alt="чувяки">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чалма.png" alt="чалма">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чернильница.png" alt="чернильница">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/zipun.png" alt="чуйка">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чуни.png" alt="чуни">
+        </div>
+        <div class="l25-t2-card" data-correct="true" onclick="toggleL25T2(this)">
+            <img src="images/чеботы.png" alt="чёботы">
+        </div>
+
+        <!-- Слова без звука Ч (неправильные) -->
+        <div class="l25-t2-card" data-correct="false" onclick="toggleL25T2(this)">
+            <img src="images/шляпа.png" alt="шляпа">
+        </div>
+        <div class="l25-t2-card" data-correct="false" onclick="toggleL25T2(this)">
+            <img src="images/корона.png" alt="корона">
+        </div>
+
+    </div>
+
+    <div id="res-25-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3 -->
+<!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Летом на даче</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на фотографию, назови все предметы со звуком <b>[Ч]</b> и запомни их.<br>
+        Когда будешь готов, нажми <b>«ГОТОВ»</b>, чтобы записать все слова.
+    </p>
+
+    <!-- Блок с картинкой и кнопкой "ГОТОВ" -->
+    <div id="l25-t3-image-area">
+        <img src="images/лето_на_даче.png" class="l25-t3-img" alt="Летом на даче">
+        <div class="btn-box" style="margin-top: 20px;">
+            <button class="orange-check-btn" onclick="showL25T3Inputs()">ГОТОВ</button>
+        </div>
+    </div>
+
+    <!-- Блок с полями ввода (изначально скрыт) -->
+    <div id="l25-t3-input-area" style="display: none;">
+        <p class="card-instruction" style="margin-bottom: 15px;">
+            Впиши все слова со звуком <b>[Ч]</b>, которые ты запомнил (по одному слову в поле).
+        </p>
+        <div class="l25-t3-grid">
+            <!-- 19 полей для слов (все правильные, порядок не важен) -->
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+            <input type="text" class="l25-t3-input" placeholder="слово...">
+        </div>
+        <div id="res-25-3" class="result-text"></div>
+        <div class="btn-box">
+            <button class="orange-check-btn" onclick="checkL25Task3()">Проверить</button>
+        </div>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №4 -->
+<!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Летом на даче (продолжение)</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Вспомни, какие предметы были на фотографии из задания 3.<br>
+        Нажми на те картинки, которые <b>были</b> на даче у Ч.
+    </p>
+
+    <div class="l25-t4-grid">
+        <!-- Правильные (были на фото) – data-correct="true" -->
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/кирпичи.png" alt="кирпичи">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/крючок.png" alt="крючок">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/червяк.png" alt="червяк">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/пчела.png" alt="пчелки">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/бочка.png" alt="бочки">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/колокольчики.png" alt="колокольчики">
+        </div>
+        <div class="l25-t4-card" data-correct="true" onclick="toggleL25T4(this)">
+            <img src="images/юбка.png" alt="юбочка">
+        </div>
+
+        <!-- Неправильные (не было на фото) – data-correct="false" -->
+        <div class="l25-t4-card" data-correct="false" onclick="toggleL25T4(this)">
+            <img src="images/гроза.png" alt="туча">
+        </div>
+        <div class="l25-t4-card" data-correct="false" onclick="toggleL25T4(this)">
+            <img src="images/чайник.png" alt="чайник">
+        </div>
+        <div class="l25-t4-card" data-correct="false" onclick="toggleL25T4(this)">
+            <img src="images/lesson-18-5-1.png" alt="мальчик">
+        </div>
+        <div class="l25-t4-card" data-correct="false" onclick="toggleL25T4(this)">
+            <img src="images/кабачки.png" alt="кабачки">
+        </div>
+        <div class="l25-t4-card" data-correct="false" onclick="toggleL25T4(this)">
+            <img src="images/черешня.png" alt="черешня">
+        </div>
+    </div>
+
+    <div id="res-25-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5 -->
+<!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Недостающие вещи</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри чемодан <b>Ч</b> (в центре верхнего ряда) – в нём все вещи на месте.<br>
+        В остальных чемоданах чего-то не хватает. Назови вслух, каких предметов нет в каждом.<br>
+        <i>Например: «не хватает мячей».</i><br>
+        Когда будешь готов, нажми <b>«ГОТОВО»</b>.
+    </p>
+
+    <!-- Сетка 3x3 с чемоданами -->
+    <div class="l25-t5-grid">
+        <!-- Верхний ряд -->
+        <div class="l25-t5-cell" data-missing="очки">
+            <img src="images/чемодан_1.png" alt="Чемодан без очков" class="l25-t5-img">
+            <div class="l25-t5-label">Друг 1</div>
+        </div>
+        <div class="l25-t5-cell full" data-missing="">
+            <img src="images/чемодан_0.png" alt="Чемодан Ч" class="l25-t5-img">
+            <div class="l25-t5-label">Ч</div>
+        </div>
+        <div class="l25-t5-cell" data-missing="ключи">
+            <img src="images/чемодан_2.png" alt="Чемодан без ключей" class="l25-t5-img">
+            <div class="l25-t5-label">Друг 2</div>
+        </div>
+
+        <!-- Средний ряд -->
+        <div class="l25-t5-cell" data-missing="ручки,перчатки">
+            <img src="images/чемодан_3.png" alt="Чемодан без ручек и перчаток" class="l25-t5-img">
+            <div class="l25-t5-label">Друг 3</div>
+        </div>
+        <div class="l25-t5-cell" data-missing="мячики">
+            <img src="images/чемодан_4.png" alt="Чемодан без мячиков" class="l25-t5-img">
+            <div class="l25-t5-label">Друг 4</div>
+        </div>
+        <div class="l25-t5-cell" data-missing="удочки,тапочки">
+            <img src="images/чемодан_5.png" alt="Чемодан без удочек и тапочек" class="l25-t5-img">
+            <div class="l25-t5-label">Друг 5</div>
+        </div>
+
+
+    </div>
+
+    <!-- Блок результата и кнопка -->
+    <div id="res-25-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task5()">ГОТОВО</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6 -->
+<!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Собери слово</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на картинку с буквами. Помоги Зайчонку собрать слова по инструкции:<br>
+        <b>Красная звёздочка</b> → 3 вправо → 3 вниз → 1 вправо → 3 вверх → 3 влево.<br>
+        <b>Зелёная звёздочка</b> → 1 вниз → 1 вправо → 2 вниз → 1 влево → 4 вверх.<br>
+        Запиши получившиеся слова в поля ниже. <i>(Слова назови вслух!)</i>
+    </p>
+
+    <!-- Картинка с буквенной сеткой -->
+    <div class="l25-t6-image-wrapper">
+        <img src="images/lesson-25-6.png" alt="Буквенная сетка для сбора слов" class="l25-t6-img">
+    </div>
+
+    <!-- Поля для ввода слов -->
+    <div class="l25-t6-words">
+        <div class="l25-t6-word-row">
+            <span class="l25-t6-star red">★</span>
+            <input type="text" class="l25-t6-input" id="l25-t6-word-red" placeholder="Слово по красной звезде">
+        </div>
+        <div class="l25-t6-word-row">
+            <span class="l25-t6-star green">★</span>
+            <input type="text" class="l25-t6-input" id="l25-t6-word-green" placeholder="Слово по зелёной звезде">
+        </div>
+    </div>
+
+    <div id="res-25-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task6()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Новые слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Замени первый звук в словах на звук <b>[Ч]</b> и запиши новые слова.<br>
+        <b>Образец:</b> худо → чудо.
+    </p>
+
+    <!-- Часть 1: Замена первого звука -->
+    <div class="l25-t8-part">
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ХУДО →</span>
+            <input type="text" class="l25-t8-input" data-answer="чудо" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">БАС →</span>
+            <input type="text" class="l25-t8-input" data-answer="час" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ГАЙКА →</span>
+            <input type="text" class="l25-t8-input" data-answer="чайка" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ШАРЫ →</span>
+            <input type="text" class="l25-t8-input" data-answer="чары" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ТАЙНИК →</span>
+            <input type="text" class="l25-t8-input" data-answer="чайник" placeholder="?">
+        </div>
+    </div>
+
+    <div class="yellow-divider" style="margin: 20px 0;"></div>
+
+    <p class="card-instruction">
+        Замени последний звук в словах на звук <b>[Ч]</b> и запиши новые слова.<br>
+        <b>Образец:</b> мел → меч.
+    </p>
+
+    <!-- Часть 2: Замена последнего звука -->
+    <div class="l25-t8-part">
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">МЕЛ →</span>
+            <input type="text" class="l25-t8-input" data-answer="меч" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ВРАГ →</span>
+            <input type="text" class="l25-t8-input" data-answer="врач" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ПЛАН →</span>
+            <input type="text" class="l25-t8-input" data-answer="плач" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">КУЛИК →</span>
+            <input type="text" class="l25-t8-input" data-answer="кулич" placeholder="?">
+        </div>
+        <div class="l25-t8-row">
+            <span class="l25-t8-original">ГРАД →</span>
+            <input type="text" class="l25-t8-input" data-answer="грач" placeholder="?">
+        </div>
+    </div>
+
+    <div id="res-25-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL25Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №8 -->
+<
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Лабиринт и игры со словами</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри лабиринт. Назови все картинки, которые в нём спрятаны.<br>
+        Затем выполняй упражнения вместе с логопедом:
+    </p>
+   
+    <!-- Единая картинка лабиринта -->
+    <div class="l25-t7-image-wrapper">
+        <img src="images/lesson-25-7.png" alt="Лабиринт со звуком Ч" class="l25-t7-img">
+    </div>
+
+</div>
+
+
+<!-- ЗАДАНИЕ №9: ЛАБИРИНТ НА БУКВУ "Ч" -->
+
+</div>
+
+<script src="lesson-25.js"></script>
+
+</body>
+
+</html>
