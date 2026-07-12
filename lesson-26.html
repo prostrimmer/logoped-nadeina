@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 26 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-26.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 26. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Ласковые мамочки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на картинки. Это мамы и их детёныши. Назови, как мамы ласково называют своих детёнышей.<br>
+        <i>А как тебя называют ласково дома?</i>
+    </p>
+
+    <div class="l26-t1-grid" id="l26-t1-grid">
+        <!-- Карточка 1: Собака и щенок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-6.png" alt="Собака со щенком" class="l26-t1-img">
+            <div class="l26-t1-label">щенок</div>
+        </div>
+        <!-- Карточка 2: Волчица и волчонок -->
+        <div class="l26-t1-card">
+            <img src="images/t7-wolf.png" alt="Волчица с волчонком" class="l26-t1-img">
+            <div class="l26-t1-label">волчонок</div>
+        </div>
+        <!-- Карточка 3: Медведица и медвежонок -->
+        <div class="l26-t1-card">
+            <img src="images/t7-bear.png" alt="Медведица с медвежонком" class="l26-t1-img">
+            <div class="l26-t1-label">медвежонок</div>
+        </div>
+        <!-- Карточка 4: Белка и бельчонок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-2.png" alt="Белка с бельчонком" class="l26-t1-img">
+            <div class="l26-t1-label">бельчонок</div>
+        </div>
+        <!-- Карточка 5: Овца и ягнёнок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-5.png" alt="Овца с ягнёнком" class="l26-t1-img">
+            <div class="l26-t1-label">ягнёнок</div>
+        </div>
+        <!-- Карточка 6: Олениха и оленёнок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-4.png" alt="Олениха с оленёнком" class="l26-t1-img">
+            <div class="l26-t1-label">оленёнок</div>
+        </div>
+        <!-- Карточка 7: Львица и львёнок -->
+        <div class="l26-t1-card">
+            <img src="images/t7-lioness.png" alt="Львица со львёнком" class="l26-t1-img">
+            <div class="l26-t1-label">львёнок</div>
+        </div>
+        <!-- Карточка 8: Лошадь и жеребёнок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-3.png" alt="Лошадь с жеребёнком" class="l26-t1-img">
+            <div class="l26-t1-label">жеребёнок</div>
+        </div>
+        <!-- Карточка 9: Ежиха и ежонок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-1.png" alt="Ежиха с ежонком" class="l26-t1-img">
+            <div class="l26-t1-label">ежонок</div>
+        </div>
+        <!-- Карточка 10: Корова и телёнок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-7.png" alt="Корова с телёнком" class="l26-t1-img">
+            <div class="l26-t1-label">телёнок</div>
+        </div>
+        <!-- Карточка 11: Черепаха и черепашонок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-8.png" alt="Черепаха с черепашонком" class="l26-t1-img">
+            <div class="l26-t1-label">черепашонок</div>
+        </div>
+        <!-- Карточка 12: Паучиха и паучонок -->
+        <div class="l26-t1-card">
+            <img src="images/lesson-26-1-9.png" alt="Паучиха с паучонком" class="l26-t1-img">
+            <div class="l26-t1-label">паучонок</div>
+        </div>
+    </div>
+
+    <div id="res-26-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Чудо-печка</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на картинку. Назови, что и где находится.<br>
+        <b>Например:</b> «половичок у печки», «чугунок в печке».<br>
+        <i>Когда назовёшь всё, нажми «Проверить» и проверь себя.</i>
+    </p>
+
+    <!-- Картинка печки -->
+    <div class="l26-t2-image-wrapper">
+        <img src="images/lesson-26-2.png" alt="Чудо-печка" class="l26-t2-img">
+    </div>
+
+    <!-- Блок с правильными ответами (изначально скрыт) -->
+    <div id="l26-t2-answers" class="l26-t2-answers" style="display: none;">
+        <h3 class="l26-t2-answers-title">Правильные ответы</h3>
+        <ul class="l26-t2-answers-list">
+            <li>половичок <b>у</b> печки</li>
+            <li>чугунок <b>в</b> печке</li>
+            <li>чесночок <b>на</b> печке</li>
+            <li>лучок <b>на</b> печке</li>
+            <li>кочерга <b>около</b> печки</li>
+            <li>удочка <b>за</b> печкой</li>
+            <li>перчатки <b>на</b> печке</li>
+            <li>ключ <b>около</b> печки</li>
+            <li>мячик <b>слева от</b> печки</li>
+        </ul>
+    </div>
+
+    <div id="res-26-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Дачи для зверят</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на домики. Догадайся, кто в них живёт, и напиши ответ на вопрос: <b>«Чья дача?»</b><br>
+    
+    </p>
+
+    <div class="l26-t3-grid">
+        <!-- Ряд 1 -->
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-1.png" alt="Беличья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="беличья" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-2.png" alt="Волчья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="волчья" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-3.png" alt="Черепашья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="черепашья" placeholder="Чья дача?">
+        </div>
+
+        <!-- Ряд 2 -->
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-4.png" alt="Овечья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="овечья" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-5.png" alt="Кроличья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="кроличья" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-6.png" alt="Кошачья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="кошачья" placeholder="Чья дача?">
+        </div>
+
+        <!-- Ряд 3 -->
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-7.png" alt="Пчелиная дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="пчелиная" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-8.png" alt="Заячья дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="заячья" placeholder="Чья дача?">
+        </div>
+        <div class="l26-t3-item">
+            <img src="images/lesson-26-3-9.png" alt="Мышиная дача" class="l26-t3-img">
+            <input type="text" class="l26-t3-input" data-answer="мышиная" placeholder="Чья дача?">
+        </div>
+    </div>
+
+    <div id="res-26-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Загадки Ч</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на картинки. Назови, кто на них нарисован.<br>
+        Затем отгадай загадки: <b>кто лечит? кто мычит? кто рычит? кто плачет? кто отвечает? кто кричит? кто печёт? кто стучит? кто молчит?</b><br>
+        <i>Назови словосочетание полностью, например: «врач лечит».</i><br>
+        Когда назовёшь всё, нажми <b>«Проверить»</b>.
+    </p>
+
+    <div class="l26-t4-grid" id="l26-t4-grid">
+        <!-- Карточка 1: Врач → лечит -->
+        <div class="l26-t4-card">
+            <img src="images/врач.png" alt="Врач" class="l26-t4-img">
+            <div class="l26-t4-label">лечит</div>
+        </div>
+        <!-- Карточка 2: Бычок → мычит -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-6-1.png" alt="Бычок" class="l26-t4-img">
+            <div class="l26-t4-label">мычит</div>
+        </div>
+        <!-- Карточка 3: Овчарка → рычит -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-6-2.png" alt="Овчарка" class="l26-t4-img">
+            <div class="l26-t4-label">рычит</div>
+        </div>
+        <!-- Карточка 4: Девочка → плачет -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-3.png" alt="Девочка" class="l26-t4-img">
+            <div class="l26-t4-label">плачет</div>
+        </div>
+        <!-- Карточка 5: Ученик → отвечает -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-4.png" alt="Ученик" class="l26-t4-img">
+            <div class="l26-t4-label">отвечает</div>
+        </div>
+        <!-- Карточка 6: Мальчики → кричат -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-6.png" alt="Мальчики" class="l26-t4-img">
+            <div class="l26-t4-label">кричат</div>
+        </div>
+        <!-- Карточка 7: Печка → печёт -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-7.png" alt="Печка" class="l26-t4-img">
+            <div class="l26-t4-label">печёт</div>
+        </div>
+        <!-- Карточка 8: Дятел → стучит (или другая картинка, например "молоток") -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-5.png" alt="Плотник" class="l26-t4-img">
+            <div class="l26-t4-label">стучит</div>
+        </div>
+        <!-- Карточка 9: Рыба → молчит (или "мальчик с пальцем у губ") -->
+        <div class="l26-t4-card">
+            <img src="images/lesson-26-4-8.png" alt="Тишина" class="l26-t4-img">
+            <div class="l26-t4-label">молчит</div>
+        </div>
+    </div>
+
+    <div id="res-26-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Загадочные картинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на картинку. Назови предметы и придумай с каждым словом интересные предложения.<br>
+        <i>Затем напиши небольшой рассказ по картинке в поле ниже.</i>
+    </p>
+
+    <!-- Единая картинка -->
+    <div class="l26-t5-image-wrapper">
+        <img src="images/lesson-26-5.png" alt="Загадочные картинки" class="l26-t5-img">
+    </div>
+
+    <!-- Поле для ввода текста -->
+    <div class="l26-t5-textarea-wrapper">
+        <label for="l26-t5-story" class="l26-t5-label">Твой рассказ по картинке:</label>
+        <textarea id="l26-t5-story" class="l26-t5-textarea" placeholder="Напиши здесь свой рассказ…"></textarea>
+    </div>
+
+    <div id="res-26-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Читаем и отвечаем</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction" style="font-size:1.0rem; line-height:1.4;">
+        Прочитай рассказ внимательно. Запомни слова со звуком <b>[Ч]</b>. Затем ответь на вопросы полными предложениями (запиши их в поля).
+    </p>
+
+    <!-- Текст рассказа -->
+    <div class="l26-t6-text">
+        <p><b>На даче</b></p>
+        <p>Летом Вовочка и Танечка жили на даче. Утром они пили чай с булочками и печеньем, а потом бежали на речку. На речке Вовочка ловил удочкой рыбу, а Танечка качалась на качелях или играла с мячом. Вечером Вовочка читал Танечке сказку «Курочка Ряба».</p>
+        <p style="text-align:right; font-style:italic; font-size:0.9rem;">По В. Волиной</p>
+    </div>
+
+    <!-- Вопросы -->
+    <div class="l26-t6-questions">
+        <div class="l26-t6-q">
+            <label>1. Где жили летом дети?</label>
+            <input type="text" class="l26-t6-input" data-answer="на даче">
+        </div>
+        <div class="l26-t6-q">
+            <label>2. Как их звали?</label>
+            <input type="text" class="l26-t6-input" data-answer="вовочка и танечка">
+        </div>
+        <div class="l26-t6-q">
+            <label>3. Что они делали утром?</label>
+            <input type="text" class="l26-t6-input" data-answer="пили чай с булочками и печеньем">
+        </div>
+        <div class="l26-t6-q">
+            <label>4. Куда они бежали после завтрака?</label>
+            <input type="text" class="l26-t6-input" data-answer="на речку">
+        </div>
+        <div class="l26-t6-q">
+            <label>5. Что делал Вовочка на речке?</label>
+            <input type="text" class="l26-t6-input" data-answer="ловил удочкой рыбу">
+        </div>
+        <div class="l26-t6-q">
+            <label>6. Что делала Танечка на речке?</label>
+            <input type="text" class="l26-t6-input" data-answer="качалась на качелях или играла с мячом">
+        </div>
+        <div class="l26-t6-q">
+            <label>7. Что делали дети вечером?</label>
+            <input type="text" class="l26-t6-input" data-answer="вовочка читал танечке сказку">
+        </div>
+    </div>
+
+    <div id="res-26-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task6()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Назови ласково</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Измени слова по образцу. <b>Образец:</b> овца → овечка.<br>
+        Назови ласково каждое слово, затем нажми <b>«Проверить»</b> и проверь себя.
+    </p>
+
+    <div class="l26-t7-grid" id="l26-t7-grid">
+        <!-- Слова с атрибутами: data-original – исходное, data-laskovo – ласковое -->
+        <div class="l26-t7-card" data-original="овца" data-laskovo="овечка">овца</div>
+        <div class="l26-t7-card" data-original="задача" data-laskovo="задачка">задача</div>
+        <div class="l26-t7-card" data-original="Лена" data-laskovo="Леночка">Лена</div>
+        <div class="l26-t7-card" data-original="блюдце" data-laskovo="блюдечко">блюдце</div>
+        <div class="l26-t7-card" data-original="шапка" data-laskovo="шапочка">шапка</div>
+        <div class="l26-t7-card" data-original="Оля" data-laskovo="Оленька">Оля</div>
+        <div class="l26-t7-card" data-original="собака" data-laskovo="собачка">собака</div>
+        <div class="l26-t7-card" data-original="коса" data-laskovo="косочка">коса</div>
+        <div class="l26-t7-card" data-original="Таня" data-laskovo="Танечка">Таня</div>
+        <div class="l26-t7-card" data-original="кольцо" data-laskovo="колечко">кольцо</div>
+        <div class="l26-t7-card" data-original="пуговица" data-laskovo="пуговичка">пуговица</div>
+        <div class="l26-t7-card" data-original="Соня" data-laskovo="Сонечка">Соня</div>
+        <div class="l26-t7-card" data-original="сумка" data-laskovo="сумочка">сумка</div>
+        <div class="l26-t7-card" data-original="лиса" data-laskovo="лисичка">лиса</div>
+        <div class="l26-t7-card" data-original="Валя" data-laskovo="Валечка">Валя</div>
+        <div class="l26-t7-card" data-original="яйцо" data-laskovo="яичко">яйцо</div>
+        <div class="l26-t7-card" data-original="утка" data-laskovo="уточка">утка</div>
+        <div class="l26-t7-card" data-original="Женя" data-laskovo="Женечка">Женя</div>
+        <div class="l26-t7-card" data-original="майка" data-laskovo="маечка">майка</div>
+        <div class="l26-t7-card" data-original="тапка" data-laskovo="тапочка">тапка</div>
+        <div class="l26-t7-card" data-original="Саня" data-laskovo="Санечка">Саня</div>
+        <div class="l26-t7-card" data-original="туча" data-laskovo="тучка">туча</div>
+        <div class="l26-t7-card" data-original="линейка" data-laskovo="линеечка">линейка</div>
+        <div class="l26-t7-card" data-original="Петя" data-laskovo="Петечка">Петя</div>
+        <div class="l26-t7-card" data-original="дочь" data-laskovo="дочка">дочь</div>
+        <div class="l26-t7-card" data-original="ночь" data-laskovo="ночка">ночь</div>
+        <div class="l26-t7-card" data-original="Ваня" data-laskovo="Ванечка">Ваня</div>
+        <div class="l26-t7-card" data-original="дача" data-laskovo="дачка">дача</div>
+        <div class="l26-t7-card" data-original="печь" data-laskovo="печка">печь</div>
+        <div class="l26-t7-card" data-original="Вова" data-laskovo="Вовочка">Вова</div>
+        <div class="l26-t7-card" data-original="миска" data-laskovo="мисочка">миска</div>
+        <div class="l26-t7-card" data-original="курица" data-laskovo="курочка">курица</div>
+    </div>
+
+    <div id="res-26-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task7()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Путаница</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай слова в каждой строке. Составь из них правильное предложение и запиши его в поле.<br>
+            <i>Когда составишь все предложения, нажми «Проверить».</i>
+    </p>
+
+    <div class="l26-t8-grid">
+        <!-- Предложение 1 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Чайник, и, чашки, стол, стоять, на.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Чайник и чашки стоят на столе.</div>
+        </div>
+        <!-- Предложение 2 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Катя, чай, чашки, пить, из.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Катя пьёт чай из чашки.</div>
+        </div>
+        <!-- Предложение 3 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Каждый, бить, час, часы.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Каждый час бьют часы.</div>
+        </div>
+        <!-- Предложение 4 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Чемодан, Миша, станция, большой, на, нести.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Миша несёт большой чемодан на станцию.</div>
+        </div>
+        <!-- Предложение 5 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Мама, пепел, дочка, покупать, ночной.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Мама купила дочке ночную пепел.</div>
+        </div>
+        <!-- Предложение 6 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Читальная, Чехов, Тютчев, книги, в, читать, ученики.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Ученики читают книги Чехова и Тютчева в читальной.</div>
+        </div>
+        <!-- Предложение 7 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Тютчев, дети, стихи, учить, любить.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">Дети любят учить стихи Тютчева.</div>
+        </div>
+        <!-- Предложение 8 -->
+        <div class="l26-t8-item">
+            <div class="l26-t8-words">Чайник, печка, чай, на, кипеть, в.</div>
+            <input type="text" class="l26-t8-input" placeholder="Твоё предложение...">
+            <div class="l26-t8-answer" style="display:none;">В печке кипит чайник.</div>
+        </div>
+    </div>
+
+    <div id="res-26-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №9 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Подбери общее начало</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Посмотри на слова в каждом столбике. Придумай и напиши общее начало (слог), которое подходит ко всем словам в столбике.<br>
+        <i>Например, если добавить начало «ЧИ» к словам «тать, хать, ж, сто, н», то получатся слова: читать, чихать, чиж, чисто, чин.</i>
+    </p>
+
+    <div class="l26-t9-grid">
+        <!-- Столбик 1 -->
+        <div class="l26-t9-column">
+            <h3 class="l26-t9-col-title">Столбик 1</h3>
+            <ul class="l26-t9-words-list">
+                <li>тать</li>
+                <li>тальня</li>
+                <li>хать</li>
+                <li>ж</li>
+                <li>сто</li>
+               
+            </ul>
+            <div class="l26-t9-input-wrapper">
+                <label for="l26-t9-start1">Общее начало:</label>
+                <input type="text" id="l26-t9-start1" class="l26-t9-input" data-answer="чи" placeholder="Впиши слог...">
+            </div>
+            <div class="l26-t9-result" style="display:none;">
+                <p><b>Правильные слова:</b></p>
+                <ul class="l26-t9-result-list">
+                    <li>читать</li>
+                    <li>читальня</li>
+                    <li>чихать</li>
+                    <li>чиж</li>
+                    <li>чисто</li>
+                   
+                </ul>
+            </div>
+        </div>
+
+        <!-- Столбик 2 -->
+        <div class="l26-t9-column">
+            <h3 class="l26-t9-col-title">Столбик 2</h3>
+            <ul class="l26-t9-words-list">
+                <li>жик</li>
+                <li>бис</li>
+                <li>нить</li>
+                <li>псы</li>
+                <li>н</li>
+            </ul>
+            <div class="l26-t9-input-wrapper">
+                <label for="l26-t9-start2">Общее начало:</label>
+                <input type="text" id="l26-t9-start2" class="l26-t9-input" data-answer="чи" placeholder="Впиши слог...">
+            </div>
+            <div class="l26-t9-result" style="display:none;">
+                <p><b>Правильные слова:</b></p>
+                <ul class="l26-t9-result-list">
+                    <li>чижик</li>
+                    <li>чибис</li>
+                    <li>чинить</li>
+                    <li>чипсы</li>
+                    <li>чин</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="res-26-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL26Task9()">Проверить</button>
+    </div>
+</div>
+
+</div>
+
+<script src="lesson-26.js"></script>
+
+</body>
+
+</html>
