@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 27 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-27.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 27. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Проговори слоги и слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно посмотри на слоги и слова. Прочитай их чётко и выразительно.
+    </p>
+
+    <!-- Текстовый блок для чтения -->
+    <div class="l27-t1-workspace">
+        <div class="l27-t1-col">
+            <div class="l27-t1-row">ча-ча-ча — чай, чага</div>
+            <div class="l27-t1-row">ча-ча-ча — час, чадо</div>
+            <div class="l27-t1-row">ча-ча-ча — чайник, чабан</div>
+            <div class="l27-t1-row">ча-ча-ча — чайка, чан</div>
+            <div class="l27-t1-row">чи-чи-чи — чиж, чин</div>
+            <div class="l27-t1-row">чи-чи-чи — чисто, читатель</div>
+            <div class="l27-t1-row">чи-чи-чи — читать, чихать</div>
+        </div>
+        <div class="l27-t1-col">
+            <div class="l27-t1-row">че-че-че — чек, чей</div>
+            <div class="l27-t1-row">че-че-че — чех, чепуха</div>
+            <div class="l27-t1-row">че-че-че — чешки, чемпион</div>
+            <div class="l27-t1-row">чу-чу-чу — чудо, чуб</div>
+            <div class="l27-t1-row">чу-чу-чу — чугун, чум</div>
+            <div class="l27-t1-row">чу-чу-чу — чудеса, чудак</div>
+            <div class="l27-t1-row">чу-чу-чу — чукча, чубук</div>
+        </div>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Где спрятался звук?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки. Сначала назови слова со звуком [Ч] в начале, а потом в середине. Отметь кружочком место звука [Ч] на схеме под каждой картинкой.
+    </p>
+
+    <!-- Сетка картинок (3 столбца, 2 строки) -->
+    <div class="l27-t2-grid">
+        
+        <!-- Карточка 1: Чайник (звук в начале -> 1 круг) -->
+        <div class="l27-t2-item" data-answer="0">
+            <img src="images/чайник.png" class="l27-t2-img" alt="Чайник">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- Карточка 2: Пчела/Шмель (звук в середине -> 2 круг) -->
+        <div class="l27-t2-item" data-answer="1">
+            <img src="images/пчела.png" class="l27-t2-img" alt="Пчела">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- Карточка 3: Чашка (звук в начале -> 1 круг) -->
+        <div class="l27-t2-item" data-answer="0">
+            <img src="images/чашка.png" class="l27-t2-img" alt="Чашка">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- Карточка 4: Чемодан (звук в начале -> 1 круг) -->
+        <div class="l27-t2-item" data-answer="0">
+            <img src="images/чемодан.png" class="l27-t2-img" alt="Чемодан">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- Карточка 5: Чайка (звук в начале -> 1 круг) -->
+        <div class="l27-t2-item" data-answer="0">
+            <img src="images/чайка.png" class="l27-t2-img" alt="Чайка">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- Карточка 6: Сачок (звук в конце -> 3 круг) -->
+        <div class="l27-t2-item" data-answer="1">
+            <img src="images/сачок.png" class="l27-t2-img" alt="Сачок">
+            <div class="l27-t2-scheme">
+                <input type="checkbox" class="l27-t2-cb" data-index="0">
+                <input type="checkbox" class="l27-t2-cb" data-index="1">
+                <input type="checkbox" class="l27-t2-cb" data-index="2">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Игра «Назови ласково»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Измени слова по образцу. Напиши ласковое слово в пустое поле.<br>
+        <b>Образец:</b> мяч — мячик.
+    </p>
+
+    <!-- Сетка для задания (располагаем в несколько колонок, как в учебнике) -->
+    <div class="l27-t3-grid">
+        
+        <!-- Пара 1: мяч -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">мяч —</span>
+            <input type="text" class="l27-t3-input" data-answer="мячик" placeholder="...">
+        </div>
+
+        <!-- Пара 2: палец -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">палец —</span>
+            <input type="text" class="l27-t3-input" data-answer="пальчик" placeholder="...">
+        </div>
+
+        <!-- Пара 3: бык -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">бык —</span>
+            <input type="text" class="l27-t3-input" data-answer="бычок" placeholder="...">
+        </div>
+
+        <!-- Пара 4: заяц -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">заяц —</span>
+            <input type="text" class="l27-t3-input" data-answer="зайчик" placeholder="...">
+        </div>
+
+        <!-- Пара 5: чуб -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">чуб —</span>
+            <input type="text" class="l27-t3-input" data-answer="чубчик" placeholder="...">
+        </div>
+
+        <!-- Пара 6: бок -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">бок —</span>
+            <input type="text" class="l27-t3-input" data-answer="бочок" placeholder="...">
+        </div>
+
+        <!-- Пара 7: стакан -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">стакан —</span>
+            <input type="text" class="l27-t3-input" data-answer="стаканчик" placeholder="...">
+        </div>
+
+        <!-- Пара 8: ключ -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">ключ —</span>
+            <input type="text" class="l27-t3-input" data-answer="ключик" placeholder="...">
+        </div>
+
+        <!-- Пара 9: бак -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">бак —</span>
+            <input type="text" class="l27-t3-input" data-answer="бачок" placeholder="...">
+        </div>
+
+        <!-- Пара 10: замок -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">замок —</span>
+            <input type="text" class="l27-t3-input" data-answer="замочек" placeholder="...">
+        </div>
+
+        <!-- Пара 11: носок -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">носок —</span>
+            <input type="text" class="l27-t3-input" data-answer="носочек" placeholder="...">
+        </div>
+
+        <!-- Пара 12: лук -->
+        <div class="l27-t3-item">
+            <span class="l27-t3-word">лук —</span>
+            <input type="text" class="l27-t3-input" data-answer="лучок" placeholder="...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №4 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Близнецы</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Найди двух одинаковых мальчиков. Нажми на них левой кнопкой мыши, чтобы выделить, а затем нажми кнопку «Проверить».
+    </p>
+
+    <!-- Сетка для картинок мальчиков (например, 3 столбца и 2 строки) -->
+    <div class="l27-t4-grid">
+        
+        <!-- Картинка 1 (Близнец №1) - отмечаем как правильный выбор: data-correct="true" -->
+        <div class="l27-t4-card" data-correct="true" onclick="toggleL27T4(this)">
+            <img src="images/lesson-27-4-1.png" class="l27-t4-img" alt="Мальчик 1">
+        </div>
+
+        <!-- Картинка 2 (Отвлекающая) - data-correct="false" -->
+        <div class="l27-t4-card" data-correct="false" onclick="toggleL24T4_fixed(this)"> <!-- используем общую функцию -->
+            <img src="images/lesson-27-4-2.png" class="l27-t4-img" alt="Мальчик 2">
+        </div>
+
+        <!-- Картинка 3 (Отвлекающая) - data-correct="false" -->
+        <div class="l27-t4-card" data-correct="false" onclick="toggleL27T4(this)">
+            <img src="images/lesson-27-4-3.png" class="l27-t4-img" alt="Мальчик 3">
+        </div>
+
+        <!-- Картинка 4 (Отвлекающая) - data-correct="false" -->
+        <div class="l27-t4-card" data-correct="false" onclick="toggleL27T4(this)">
+            <img src="images/lesson-27-4-4.png" class="l27-t4-img" alt="Мальчик 4">
+        </div>
+
+        <!-- Картинка 5 (Отвлекающая) - data-correct="false" -->
+        <div class="l27-t4-card" data-correct="false" onclick="toggleL27T4(this)">
+            <img src="images/lesson-27-4-5.png" class="l27-t4-img" alt="Мальчик 5">
+        </div>
+
+        <!-- Картинка 6 (Близнец №2) - отмечаем как правильный выбор: data-correct="true" -->
+        <div class="l27-t4-card" data-correct="true" onclick="toggleL27T4(this)">
+            <img src="images/lesson-27-4-6.png" class="l27-t4-img" alt="Мальчик 6">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Дополни предложения</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинку и послушай текст. Дополни каждое предложение словами <b>зайчонок</b> или <b>бельчонок</b>, изменив их так, чтобы предложение не потеряло смысл.
+    </p>
+
+    <!-- Картинка-иллюстрация перед текстом -->
+    <div class="l27-t5-img-box">
+        <img src="images/lesson-27-5.png" class="l27-t5-img" alt="Зайчата и бельчата в лесу">
+    </div>
+
+    <!-- Текстовый блок с интерактивными полями ввода -->
+    <div class="l27-t5-workspace">
+        
+        <div class="l27-t5-row">
+            <span>Под кустом сидит зайчиха с</span>
+            <input type="text" class="l27-t5-input" data-answer="зайчонком" placeholder="...">
+            <span>.</span>
+        </div>
+
+        <div class="l27-t5-row">
+            <span>Из-под куста выглядывают маленькие</span>
+            <input type="text" class="l27-t5-input" data-answer="зайчата" placeholder="...">
+            <span>.</span>
+        </div>
+
+        <div class="l27-t5-row">
+            <span>С ветки на ветку скачет белочка с</span>
+            <input type="text" class="l27-t5-input" data-answer="бельчонком" placeholder="...">
+            <span>.</span>
+        </div>
+
+        <div class="l27-t5-row">
+            <span>Белочка заботится о своих маленьких</span>
+            <input type="text" class="l27-t5-input" data-answer="бельчатах" placeholder="...">
+            <span>.</span>
+        </div>
+
+        <div class="l27-t5-row">
+            <span>Она приносит грибы и орехи своим</span>
+            <input type="text" class="l27-t5-input" data-answer="бельчатам" placeholder="...">
+            <span>.</span>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Запомни и повтори ряды слогов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно посмотри на ряды слогов. Постарайся их запомнить и чётко, без ошибок повтори вслед за взрослым.
+    </p>
+
+    <!-- Главный контейнер для рядов слогов, разбитый на колонки -->
+    <div class="l27-t6-workspace">
+        
+        <!-- Первая группа рядов (начинаются на согласный/гласный) -->
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">чта-что-чту-чти</div>
+            <div class="l27-t6-row">что-чту-чты-чта</div>
+            <div class="l27-t6-row">чту-чти-чта-что</div>
+            <div class="l27-t6-row">чты-чта-что-чту</div>
+        </div>
+
+        <!-- Вторая группа рядов (обратные слоги) -->
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">ачт-очт-учт-ычт</div>
+            <div class="l27-t6-row">очт-учт-ычт-ачт</div>
+            <div class="l27-t6-row">учт-ычт-ачт-очт</div>
+            <div class="l27-t6-row">ычт-ачт-очт-учт</div>
+        </div>
+
+        <!-- Третья группа рядов (сочетания с носовыми) -->
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">нча-нчо-нчу-нчи</div>
+            <div class="l27-t6-row">нчи-нча-нчо-нчу</div>
+            <div class="l27-t6-row">нчо-нчу-нчи-нча</div>
+            <div class="l27-t6-row">нчу-нчи-нча-нчо</div>
+        </div>
+
+    </div>
+
+    <!-- Вторая часть упражнения со второй половинки страницы -->
+    <div class="l27-t6-workspace" style="margin-top: 15px;">
+        
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">тча-тчо-тчу-тчи</div>
+            <div class="l27-t6-row">тчо-тчу-тчи-тча</div>
+            <div class="l27-t6-row">тчу-тчи-тча-тчо</div>
+            <div class="l27-t6-row">тчи-тча-тчо-тчу</div>
+        </div>
+
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">атч-отч-утч-ытч</div>
+            <div class="l27-t6-row">отч-утч-ытч-атч</div>
+            <div class="l27-t6-row">утч-ытч-атч-отч</div>
+            <div class="l27-t6-row">ытч-атч-отч-утч</div>
+        </div>
+
+        <div class="l27-t6-col">
+            <div class="l27-t6-row">анч-онч-унч-ынч</div>
+            <div class="l27-t6-row">унч-ынч-анч-онч</div>
+            <div class="l27-t6-row">онч-унч-ынч-анч</div>
+            <div class="l27-t6-row">ынч-анч-онч-унч</div>
+        </div>
+
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №7 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Игра «Эхо»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Образуй от слов-предметов слова-признаки. Слова в скобках помогут тебе справиться с заданием.<br>
+        <b>Образец:</b> рука — ручная (медведица).
+    </p>
+
+    <!-- Сетка для пар слов (2 колонки) -->
+    <div class="l27-t7-grid">
+        
+        <!-- Пара 1 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">рука —</span>
+            <input type="text" class="l27-t7-input" data-answer="ручная" placeholder="...">
+            <span class="l27-t7-hint">(медведица)</span>
+        </div>
+
+        <!-- Пара 2 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">ночь —</span>
+            <input type="text" class="l27-t7-input" data-answer="ночная" placeholder="...">
+            <span class="l27-t7-hint">(тишина)</span>
+        </div>
+
+        <!-- Пара 3 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">печь —</span>
+            <input type="text" class="l27-t7-input" data-answer="печное" placeholder="...">
+            <span class="l27-t7-hint">(отопление)</span>
+        </div>
+
+        <!-- Пара 4 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">мука —</span>
+            <input type="text" class="l27-t7-input" data-answer="мучное" placeholder="...">
+            <span class="l27-t7-hint">(блюдо)</span>
+        </div>
+
+        <!-- Пара 5 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">аптека —</span>
+            <input type="text" class="l27-t7-input" data-answer="аптечный" placeholder="...">
+            <span class="l27-t7-hint">(киоск)</span>
+        </div>
+
+        <!-- Пара 6 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">конец —</span>
+            <input type="text" class="l27-t7-input" data-answer="конечная" placeholder="...">
+            <span class="l27-t7-hint">(остановка автобуса)</span>
+        </div>
+
+        <!-- Пара 7 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">чеснок —</span>
+            <input type="text" class="l27-t7-input" data-answer="чесночный" placeholder="...">
+            <span class="l27-t7-hint">(соус)</span>
+        </div>
+
+        <!-- Пара 8 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">мечта —</span>
+            <input type="text" class="l27-t7-input" data-answer="мечтательный" placeholder="...">
+            <span class="l27-t7-hint">(человек)</span>
+        </div>
+
+        <!-- Пара 9 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">почта —</span>
+            <input type="text" class="l27-t7-input" data-answer="почтовая" placeholder="...">
+            <span class="l27-t7-hint">(марка)</span>
+        </div>
+
+        <!-- Пара 10 -->
+        <div class="l27-t7-item">
+            <span class="l27-t7-text">две мачты —</span>
+            <input type="text" class="l27-t7-input" data-answer="двухмачтовый" placeholder="...">
+            <span class="l27-t7-hint">(корабль)</span>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task7()">Проверить</button>
+    </div>
+</div>
+
+
+<!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Составь предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Составь предложения о Ванечке и Танечке по схемам с опорой на картинки. Заполни все поля ввода!<br>
+        <b>Образец:</b> Ванечка... часы. — <i>Ванечке подарили часы.</i>
+    </p>
+
+    <!-- Общая картинка-подсказка к заданию -->
+    <div class="l27-t8-img-box">
+        <img src="images/lesson-27-8.png" class="l27-t8-img" alt="Ванечка, Танечка и предметы">
+    </div>
+
+    <!-- Рабочая область с полями для ввода предложений -->
+    <div class="l27-t8-workspace">
+        
+        <!-- Блок предложений для Ванечки -->
+        <div class="l27-t8-group">
+            <h3 class="l27-t8-subtitle">Про Ванечку:</h3>
+            
+            <div class="l27-t8-row">
+                <span>Ванечка — часы:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+            <div class="l27-t8-row">
+                <span>Ванечка — ключи:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+            <div class="l27-t8-row">
+                <span>Ванечка — кисточка:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+            <div class="l27-t8-row">
+                <span>Ванечка — мяч:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+        <!-- Блок предложений для Танечки -->
+        <div class="l27-t8-group">
+            <h3 class="l27-t8-subtitle">Про Танечку:</h3>
+            
+            <div class="l27-t8-row">
+                <span>Танечка — бабочка — чашка:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+            <div class="l27-t8-row">
+                <span>Танечка — чашка — колокольчик:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+             <div class="l27-t8-row">
+                <span>Танечка — бабочка — бабочка:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+
+            <div class="l27-t8-row">
+                <span>Танечка — чашка — ручка:</span>
+                <input type="text" class="l27-t8-input" placeholder="Напиши предложение...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №9 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Игра «Скажи, кто это?»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Образуй слова-предметы от слов-действий или словосочетаний.<br>
+        <b>Образец:</b> работает в буфете — буфетчик.
+    </p>
+
+    <!-- Сетка для заданий (3 столбца, как на картинке) -->
+    <div class="l27-t9-grid">
+        
+        <!-- Колонка 1 -->
+        <div class="l27-t9-col">
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">учит —</span>
+                <input type="text" class="l27-t9-input" data-answer="учитель" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">учится на двойки —</span>
+                <input type="text" class="l27-t9-input" data-answer="двоечник" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">переводит —</span>
+                <input type="text" class="l27-t9-input" data-answer="переводчик" placeholder="...">
+            </div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l27-t9-col">
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">учится отлично —</span>
+                <input type="text" class="l27-t9-input" data-answer="отличник" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">работает на пасеке —</span>
+                <input type="text" class="l27-t9-input" data-answer="пасечник" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">стреляет из пулемёта —</span>
+                <input type="text" class="l27-t9-input" data-answer="пулемётчик" placeholder="...">
+            </div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l27-t9-col">
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">летает —</span>
+                <input type="text" class="l27-t9-input" data-answer="лётчик" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">налаживает станки —</span>
+                <input type="text" class="l27-t9-input" data-answer="наладчик" placeholder="...">
+            </div>
+            <div class="l27-t9-item">
+                <span class="l27-t9-text">переплетает книги —</span>
+                <input type="text" class="l27-t9-input" data-answer="переплётчик" placeholder="...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task9()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №10: ИСПРАВЬ ПРЕДЛОЖЕНИЯ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Исправь предложение</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Черепашонок придумал предложения, но перепутал в них все слова. Рассмотри картинку, найди и исправи ошибки, написав правильный вариант!
+    </p>
+
+    <!-- Картинка-иллюстрация к заданию расположена строго перед блоками ввода -->
+    <div class="l27-t10-img-box">
+        <img src="images/lesson-27-10.png" class="l27-t10-img" alt="Сюжетная картинка к предложениям">
+    </div>
+
+    <!-- Рабочая область с предложениями и полями ввода -->
+    <div class="l27-t10-workspace">
+        
+        <!-- Предложение 1 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Почта принесла почтальона.</span>
+            <input type="text" class="l27-t10-input" data-answer="почтальон принес почту" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 2 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Задача решила ученика.</span>
+            <input type="text" class="l27-t10-input" data-answer="ученик решил задачу" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 3 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Овечки пасут чабана.</span>
+            <input type="text" class="l27-t10-input" data-answer="чабан пасет овечек" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 4 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Черника собирала внучку в лесу.</span>
+            <input type="text" class="l27-t10-input" data-answer="внучка собирала чернику в лесу" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 5 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Мы взяли на чемодан дачу с вещами.</span>
+            <input type="text" class="l27-t10-input" data-answer="мы взяли на дачу чемодан с вещами" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 6 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Бабочка ловит девочку сачком.</span>
+            <input type="text" class="l27-t10-input" data-answer="девочка ловит бабочку сачком" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Предложение 7 -->
+        <div class="l27-t10-row">
+            <span class="l27-t10-wrong">Рыбка поймала Вовочку на удочку.</span>
+            <input type="text" class="l27-t10-input" data-answer="вовочка поймал рыбку на удочку" placeholder="Напиши правильно...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-27-10" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL27Task10()">Проверить</button>
+    </div>
+</div>
+
+
+
+</div>
+
+<script src="lesson-27.js"></script>
+
+</body>
+
+</html>
