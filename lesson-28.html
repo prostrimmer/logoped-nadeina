@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 28 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-28.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 28. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Выучи скороговорки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай скороговорки. Постарайся их запомнить и чётко, выразительно произнести.
+    </p>
+
+    <!-- Контейнер для скороговорок -->
+    <div class="l28-t1-workspace">
+        <div class="l28-t1-row">Ча-ча-ча́ — на столé стоит свеча́</div>
+        <div class="l28-t1-row">Ча-ча́-ча — у нас лё́гкая зада́ча</div>
+        <div class="l28-t1-row">Чё-чё-чё — со́лнце на не́бе печёт</div>
+        <div class="l28-t1-row">Чо-чо-чо — по доске́ идёт бычо́к</div>
+        <div class="l28-t1-row">Чу-чу-чу — я на да́чу покачу́</div>
+        <div class="l28-t1-row">Чу-чу-чу — я до до́ма долечу́</div>
+        <div class="l28-t1-row">Че-че-че — сиди́т му́ха на плече́</div>
+    </div>
+</div>
+<!-- ЗАДАНИЕ №2 -->
+
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Назови картинки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Речевичок нарисовал предметы. Выбери и нажми мышкой <b>только на те предметы</b>, в названиях которых звук <b>[ч]</b> стоит в <b>начале</b> слова. Картинка обведется зеленым контуром!
+    </p>
+
+    <!-- Сетка картинок для выбора (предметы со звуком [ч] в начале и отвлекающие) -->
+    <div class="l28-t2-grid">
+        
+        <!-- 1. Чемодан (Звук в НАЧАЛЕ -> Правильный выбор: data-correct="true") -->
+        <div class="l28-t2-card" data-correct="true" onclick="toggleL28T2(this)">
+            <img src="images/чемодан.png" class="l28-t2-img" alt="Чемодан">
+        </div>
+
+        <!-- 4. Чайник (Звук в НАЧАЛЕ -> Правильный выбор: data-correct="true") -->
+        <div class="l28-t2-card" data-correct="true" onclick="toggleL28T2(this)">
+            <img src="images/чайник.png" class="l28-t2-img" alt="Чайник">
+        </div>
+
+
+        <!-- 6. Кабачок (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/кабачки.png" class="l28-t2-img" alt="Кабачок">
+        </div>
+
+        <!-- 7. Дом / Дача (Ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/дача.png" class="l28-t2-img" alt="Дача">
+        </div>
+        
+        <!-- 3. Чайка (Звук в НАЧАЛЕ -> Правильный выбор: data-correct="true") -->
+        <div class="l28-t2-card" data-correct="true" onclick="toggleL28T2(this)">
+            <img src="images/чайка.png" class="l28-t2-img" alt="Чайка">
+        </div>
+
+        <!-- 8. Мочалка (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/мочалка.png" class="l28-t2-img" alt="Мочалка">
+        </div>
+
+        <!-- 2. Чай / Банка чая (Звук в НАЧАЛЕ -> Правильный выбор: data-correct="true") -->
+        <div class="l28-t2-card" data-correct="true" onclick="toggleL28T2(this)">
+            <img src="images/чай.png" class="l28-t2-img" alt="Чай">
+        </div>
+
+        <!-- 9. Печенье (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/печенье.png" class="l28-t2-img" alt="Печенье">
+        </div>
+
+        <!-- 10. Качели (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/качели.png" class="l28-t2-img" alt="Качели">
+        </div>
+
+        <!-- 11. Мальчик (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/lesson-18-5-1.png" class="l28-t2-img" alt="Мальчик">
+        </div>
+
+        <!-- 12. Кольчуга (Звук в середине — ложный выбор: data-correct="false") -->
+        <div class="l28-t2-card" data-correct="false" onclick="toggleL28T2(this)">
+            <img src="images/кольчуга.png" class="l28-t2-img" alt="Кольчуга">
+        </div>
+
+        <!-- 5. Черника (Звук в НАЧАЛЕ -> Правильный выбор: data-correct="true") -->
+        <div class="l28-t2-card" data-correct="true" onclick="toggleL28T2(this)">
+            <img src="images/черника.png" class="l28-t2-img" alt="Черника">
+        </div>        
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task2()">Проверить</button>
+    </div>
+</div>
+<!-- ЗАДАНИЕ №3 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Ч запуталась</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки и словарик. Дополни словосочетания, вписав правильное слово-предмет.<br>
+        <b>Словарь:</b> ключ, печка, чертополох, чай, дача, чепчик, очи, чуб, кулич.
+    </p>
+
+    <!-- Сетка для заданий: 2 колонки, карточки с картинками сверху и полями снизу -->
+    <div class="l28-t3-grid">
+        
+        <!-- Пара 1: Ключ -->
+        <div class="l28-t3-card">
+            <img src="images/ключ.png" class="l28-t3-img" alt="Ключ">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Металлический ...</span>
+                <input type="text" class="l28-t3-input" data-answer="ключ" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 2: Печка -->
+        <div class="l28-t3-card">
+            <img src="images/печь3.png" class="l28-t3-img" alt="Печка">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Кирпичная ...</span>
+                <input type="text" class="l28-t3-input" data-answer="печка" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 3: Чертополох -->
+        <div class="l28-t3-card">
+            <img src="images/чертополох.png" class="l28-t3-img" alt="Чертополох">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Колючий ...</span>
+                <input type="text" class="l28-t3-input" data-answer="чертополох" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 4: Чай -->
+        <div class="l28-t3-card">
+            <img src="images/чай2.png" class="l28-t3-img" alt="Чай">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Горячий ...</span>
+                <input type="text" class="l28-t3-input" data-answer="чай" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 5: Дача -->
+        <div class="l28-t3-card">
+            <img src="images/дача.png" class="l28-t3-img" alt="Дача">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Бревенчатая ...</span>
+                <input type="text" class="l28-t3-input" data-answer="дача" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 6: Чепчик -->
+        <div class="l28-t3-card">
+            <img src="images/чепчик.png" class="l28-t3-img" alt="Чепчик">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Девчачий ...</span>
+                <input type="text" class="l28-t3-input" data-answer="чепчик" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 7: Очи -->
+        <div class="l28-t3-card">
+            <img src="images/глаза.png" class="l28-t3-img" alt="Очи">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Черные ...</span>
+                <input type="text" class="l28-t3-input" data-answer="очи" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 8: Чуб -->
+        <div class="l28-t3-card">
+            <img src="images/чуб.png" class="l28-t3-img" alt="Чуб">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Кучерявый ...</span>
+                <input type="text" class="l28-t3-input" data-answer="чуб" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 9: Кулич -->
+        <div class="l28-t3-card">
+            <img src="images/кулич.png" class="l28-t3-img" alt="Кулич">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Печеный ...</span>
+                <input type="text" class="l28-t3-input" data-answer="кулич" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Пара 9: Кулич -->
+        <div class="l28-t3-card">
+            <img src="images/калач.png" class="l28-t3-img" alt="Кулич">
+            <div class="l28-t3-row">
+                <span class="l28-t3-label">Хрустящий ...</span>
+                <input type="text" class="l28-t3-input" data-answer="калач" placeholder="слово...">
+            </div>
+        </div>        
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task3()">Проверить</button>
+    </div>
+</div>
+<!-- ЗАДАНИЕ №4 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Где спрятался звук?</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри картинки. Отметь кружочком место звука <b>[ч]</b> на схеме под каждым предметом (начало, середина или конец слова).
+    </p>
+
+    <!-- Сетка картинок со схемами (3 столбца, 3 строки под 9 карточек) -->
+    <div class="l28-t4-grid">
+        
+        <!-- 1. Часы (звук в начале -> 1 кружок) -->
+        <div class="l28-t4-item" data-answer="0">
+            <img src="images/часы.png" class="l28-t4-img" alt="Часы">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 2. Черника (звук в начале -> 1 кружок) -->
+        <div class="l28-t4-item" data-answer="0">
+            <img src="images/черника.png" class="l28-t4-img" alt="Черника">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 3. Свеча (звук в конце -> 3 кружок) -->
+        <div class="l28-t4-item" data-answer="2">
+            <img src="images/свеча.png" class="l28-t4-img" alt="Свеча">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 4. Чеснок (звук в начале -> 1 кружок) -->
+        <div class="l28-t4-item" data-answer="0">
+            <img src="images/чеснок.png" class="l28-t4-img" alt="Чеснок">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 5. Саранча (звук в конце -> 3 кружок) -->
+        <div class="l28-t4-item" data-answer="2">
+            <img src="images/саранча.png" class="l28-t4-img" alt="Саранча">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 6. Мальчик (звук в середине -> 2 кружок) -->
+        <div class="l28-t4-item" data-answer="1">
+            <img src="images/lesson-18-5-1.png" class="l28-t4-img" alt="Мальчик">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 7. Ночь (звук в конце -> 3 кружок) -->
+        <div class="l28-t4-item" data-answer="2">
+            <img src="images/ночь.png" class="l28-t4-img" alt="Ночь">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 8. Удочка (звук в середине -> 2 кружок) -->
+        <div class="l28-t4-item" data-answer="1">
+            <img src="images/удочка.png" class="l28-t4-img" alt="Удочка">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+        <!-- 9. Печка (звук в середине -> 2 кружок) -->
+        <div class="l28-t4-item" data-answer="2">
+            <img src="images/печь.png" class="l28-t4-img" alt="Печка">
+            <div class="l28-t4-scheme">
+                <input type="checkbox" class="l28-t4-cb" data-index="0">
+                <input type="checkbox" class="l28-t4-cb" data-index="1">
+                <input type="checkbox" class="l28-t4-cb" data-index="2">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Вспомни и назови слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Вспомни и назови слова, начинающиеся и заканчивающиеся на <b>ЧА</b> и <b>ЧУ</b>. Впиши их в нужные колонки таблицы!
+    </p>
+
+    <!-- Таблица с полями ввода по колонкам -->
+    <div class="l28-t5-table">
+        
+        <!-- Шапка таблицы -->
+        <div class="l28-t5-header">Начинаются на ЧА</div>
+        <div class="l28-t5-header">Начинаются на ЧУ</div>
+        <div class="l28-t5-header">Оканчиваются на ЧА</div>
+        <div class="l28-t5-header">Оканчиваются на ЧУ</div>
+
+        <!-- Строка 1 (образцы из учебника, уже заполнены как подсказка) -->
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input" value="чашка" disabled></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input" value="чугун" disabled></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input" value="туча" disabled></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input" value="лечу" disabled></div>
+
+        <!-- Строка 2 (образцы из учебника) -->
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-end" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-end" placeholder="..."></div>
+
+        <!-- Строка 3 (интерактивная для ввода ребенком) -->
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-end" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-end" placeholder="..."></div>
+
+        <!-- Строка 4 (интерактивная для ввода ребенком) -->
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-end" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-end" placeholder="..."></div>
+
+        <!-- Строка 5 (интерактивная для ввода ребенком) -->
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-start" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="cha-end" placeholder="..."></div>
+        <div class="l28-t5-cell"><input type="text" class="l28-t5-input interactive" data-col="chu-end" placeholder="..."></div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Игра «Профессии»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно посмотри на картинки. Какие профессии здесь нарисованы? Выбери профессию, а затем  предмет, который ей нужен для работы. Цвета радуги подскажут пары!
+    </p>
+
+    <!-- Секция 1: Профессии (вверху, вертикальные карточки) -->
+    <h3 class="l28-t6-subtitle">Профессии:</h3>
+    <div class="l28-t6-prof-grid">
+        <div class="l28-t6-card prof-card" data-id="1" data-color="#ff4d4d" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/vrach.png" class="l28-t6-img vertical" alt="Врач">
+           
+        </div>
+        <div class="l28-t6-card prof-card" data-id="2" data-color="#ffa500" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/pochitalon.png" class="l28-t6-img vertical" alt="Почтальон">
+  
+        </div>
+        <div class="l28-t6-card prof-card" data-id="3" data-color="#ffd700" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/letchik.png" class="l28-t6-img vertical" alt="Лётчик">
+ 
+        </div>
+        <div class="l28-t6-card prof-card" data-id="4" data-color="#2ecc71" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/tkach.png" class="l28-t6-img vertical" alt="Ткач">
+ 
+        </div>
+        <div class="l28-t6-card prof-card" data-id="5" data-color="#3498db" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/pogranichnik.png" class="l28-t6-img vertical" alt="Пограничник">
+
+        </div>
+        <div class="l28-t6-card prof-card" data-id="6" data-color="#9b59b6" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/plitochnik.png" class="l28-t6-img vertical" alt="Плиточник">
+  
+        </div>
+        <div class="l28-t6-card prof-card" data-id="7" data-color="#ff69b4" onclick="selectProf(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/pchelovod.png" class="l28-t6-img vertical" alt="Пчеловод">
+ 
+        </div>
+    </div>
+
+    <!-- Секция 2: Предметы (внизу, квадратные карточки 1:1) -->
+    <h3 class="l28-t6-subtitle" style="margin-top: 25px;">Предметы для работы:</h3>
+    <div class="l28-t6-item-grid">
+
+        <div class="l28-t6-card item-card" data-match="7" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/uley.png" class="l28-t6-img square" alt="Улей">
+        </div>        
+
+        <div class="l28-t6-card item-card" data-match="2" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/pismo.png" class="l28-t6-img square" alt="Письма">
+        </div>
+
+        <div class="l28-t6-card item-card" data-match="1" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/Медчемодан.png" class="l28-t6-img square" alt="Чемодан">
+        </div>
+
+        <div class="l28-t6-card item-card" data-match="6" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/plitka.png" class="l28-t6-img square" alt="Плитка">
+        </div>
+
+
+        <div class="l28-t6-card item-card" data-match="3" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/plane-8.png" class="l28-t6-img square" alt="Самолёт">
+        </div>
+
+
+
+        <div class="l28-t6-card item-card" data-match="5" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/lesson-26-6-2.png" class="l28-t6-img square" alt="Овчарка">
+        </div>
+
+        <div class="l28-t6-card item-card" data-match="4" onclick="selectItem(this)" oncontextmenu="clearSelection(event, this)">
+            <img src="images/stanok.png" class="l28-t6-img square" alt="Станок">
+        </div>
+
+
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task6()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №7 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Вовочка-чудак</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        У Ч есть сосед-дачник Вовочка-чудак. Он говорит всё не так! Рассмотри картинку, найди ошибки и напиши правильные предложения.
+    </p>
+
+    <!-- Верхняя часть: единый рисунок-коллаж -->
+    <div class="l28-t7-img-box">
+        <img src="images/lesson-28-8.png" class="l28-t7-collage" alt="Коллаж к заданию Вовочка-чудак">
+    </div>
+
+    <!-- Нижняя часть: две колонки (слева — неверные предложения, справа — поля ввода) -->
+    <div class="l28-t7-workspace">
+        
+        <!-- Пара 1 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">1. В чугунке печка.</span>
+            <input type="text" class="l28-t7-input" data-answer="в печке чугунок" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 2 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">2. Карандаш точит точилку.</span>
+            <input type="text" class="l28-t7-input" data-answer="точилка точит карандаш" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 3 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">3. На печенье блюдечко.</span>
+            <input type="text" class="l28-t7-input" data-answer="на блюдечке печенье" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 4 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">4. В перчатках карманчик.</span>
+            <input type="text" class="l28-t7-input" data-answer="в карманчике перчатки" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 5 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">5. Ручей над бабочкой.</span>
+            <input type="text" class="l28-t7-input" data-answer="бабочка над ручьем" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 6 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">6. На почках лопнули веточки.</span>
+            <input type="text" class="l28-t7-input" data-answer="на веточках лопнули почки" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 7 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">7. Булочка печет булочника.</span>
+            <input type="text" class="l28-t7-input" data-answer="булочник печет булочку" placeholder="Напиши правильно...">
+        </div>
+
+        <!-- Пара 8 -->
+        <div class="l28-t7-row">
+            <span class="l28-t7-wrong">8. Тачка держит мальчика.</span>
+            <input type="text" class="l28-t7-input" data-answer="мальчик везет тачку" placeholder="Напиши правильно...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task7()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №8 -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Найди предметы со звуком [Ч]</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно рассмотри раскраску. Найди <b> предметы</b> со звуком <b>[ч]</b>  и впиши их в поля ниже.
+    </p>
+
+    <!-- Картинка-раскраска (черно-белая по умолчанию, меняется на цветную при успехе) -->
+    <div class="l28-t8-img-box">
+        <img id="l28-t8-image" src="images/lesson-28-9-0.png" class="l28-t8-img" alt="Раскраска со звуком Ч">
+    </div>
+
+    <!-- Таблица для ввода 12 слов (3 столбца по 4 строки) -->
+    <div class="l28-t8-grid">
+        
+        <!-- Колонка 1 (4 строки) -->
+        <div class="l28-t8-col">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 1...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 2...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 3...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 4...">
+        </div>
+
+        <!-- Колонка 2 (4 строки) -->
+        <div class="l28-t8-col">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 5...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 6...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 7...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 8...">
+        </div>
+
+        <!-- Колонка 3 (4 строки) -->
+        <div class="l28-t8-col">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 9...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 10...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 11...">
+            <input type="text" class="l28-t8-input" placeholder="Предмет 12...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task8()">Проверить</button>
+    </div>
+</div>
+<!-- ЗАДАНИЕ №9 -->
+<!-- ЗАДАНИЕ №9: ИГРА "СЫЩИК" (ПОСЧИТАЙ ПРЕДМЕТЫ) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Игра «Сыщик»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Будь внимателен, как настоящий сыщик! Посмотри на большую картинку, сосчитай, сколько раз встречается каждый предмет со звуком <b>[ч]</b>, и впиши цифру в клеточку снизу.
+    </p>
+
+    <!-- Большая картинка-коллаж для поиска -->
+    <div class="l28-t9-img-box">
+        <img src="images/lesson-28-10.png" class="l28-t9-collage" alt="Большая картинка сыщика">
+    </div>
+
+    <!-- Таблица-панель счетчика: иконки и поля ввода под ними -->
+    <div class="l28-t9-table">
+        
+        <!-- Элемент 1: Чеснок -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/чеснок.png" class="l28-t9-icon" alt="Чеснок"></div>
+            <input type="number" class="l28-t9-input" data-answer="4" placeholder="?">
+        </div>
+
+        <!-- Элемент 2: Чайка -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/чайка.png" class="l28-t9-icon" alt="Чайка"></div>
+            <input type="number" class="l28-t9-input" data-answer="3" placeholder="?">
+        </div>
+
+        <!-- Элемент 3: Чемодан -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/чемодан.png" class="l28-t9-icon" alt="Чемодан"></div>
+            <input type="number" class="l28-t9-input" data-answer="4" placeholder="?">
+        </div>
+
+        <!-- Элемент 4: Черника -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/черника.png" class="l28-t9-icon" alt="Черника"></div>
+            <input type="number" class="l28-t9-input" data-answer="2" placeholder="?">
+        </div>
+
+        <!-- Элемент 5: Червячок -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/червяк.png" class="l28-t9-icon" alt="Червячок"></div>
+            <input type="number" class="l28-t9-input" data-answer="3" placeholder="?">
+        </div>
+
+        <!-- Элемент 6: Меч -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/меч.png" class="l28-t9-icon" alt="Меч"></div>
+            <input type="number" class="l28-t9-input" data-answer="3" placeholder="?">
+        </div>
+
+        <!-- Элемент 7: Кабачок -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/кабачки.png" class="l28-t9-icon" alt="Кабачок"></div>
+            <input type="number" class="l28-t9-input" data-answer="3" placeholder="?">
+        </div>
+
+        <!-- Элемент 8: Мяч -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/мяч.png" class="l28-t9-icon" alt="Мяч"></div>
+            <input type="number" class="l28-t9-input" data-answer="7" placeholder="?">
+        </div>
+
+        <!-- Элемент 9: Чайник -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/чайник.png" class="l28-t9-icon" alt="Чайник"></div>
+            <input type="number" class="l28-t9-input" data-answer="3" placeholder="?">
+        </div>
+
+        <!-- Элемент 10: Кирпичик -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/кирпичи.png" class="l28-t9-icon" alt="Кирпичик"></div>
+            <input type="number" class="l28-t9-input" data-answer="5" placeholder="?">
+        </div>
+
+        <!-- Элемент 11: Ключ -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/ключ.png" class="l28-t9-icon" alt="Ключ"></div>
+            <input type="number" class="l28-t9-input" data-answer="4" placeholder="?">
+        </div>
+
+        <!-- Элемент 12: Чучело -->
+        <div class="l28-t9-col">
+            <div class="l28-t9-icon-box"><img src="images/чучело.png" class="l28-t9-icon" alt="Чучело"></div>
+            <input type="number" class="l28-t9-input" data-answer="2" placeholder="?">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-28-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL28Task9()">Проверить</button>
+    </div>
+</div>
+<!-- ЗАДАНИЕ №10 -->
+
+
+</div>
+
+<script src="lesson-28.js"></script>
+
+</body>
+
+</html>
