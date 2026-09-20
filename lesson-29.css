@@ -1,0 +1,959 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;                  /* Убираем внешние отступы */
+    padding: 0;                 /* Убираем внутренние отступы по умолчанию */
+    background-color: #99dfff;  /* Основной светло-голубой фон страницы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт, используемый во всех уроках */
+}
+
+.content-wrapper { 
+    padding: 15px 10px;         /* Отступы вокруг всего контента */
+}
+
+.main-header { 
+    text-align: center;         /* Центрирование шапки урока */
+}
+
+.lesson-badge {
+    display: inline-block;      /* Плашка отображается как блочный элемент в строке */
+    background: #fff9c4;        /* Светло-жёлтый фон плашки заголовка урока */
+    padding: 8px 30px;          /* Внутренние отступы плашки */
+    border-radius: 15px;        /* Скругление углов плашки */
+    color: #ff6d00;             /* Ярко-оранжевый цвет текста */
+    font-weight: bold;          /* Жирное начертание текста */
+    font-size: 1.6em;           /* Размер шрифта заголовка урока */
+    margin-bottom: 15px;        /* Отступ снизу от плашки */
+    box-shadow: 0 4px 0 #ffd600; /* Тень под плашкой для объёма */
+}
+
+.white-card {
+    background: #f0faff;        /* Светлый голубовато-белый фон карточки задания */
+    border: 6px solid #ffd600;  /* Толстая жёлтая рамка вокруг карточки */
+    border-radius: 30px;        /* Большое скругление углов карточки */
+    padding: 15px 25px;         /* Внутренние отступы внутри карточки */
+    max-width: 750px;           /* Максимальная ширина карточки */
+    margin: 0 auto 20px;        /* Центрирование и отступ между карточками */
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05); /* Лёгкая тень под карточкой */
+}
+
+.card-title {
+    color: #ff7043;             /* Оранжевый цвет заголовка задания */
+    text-align: center;         /* Центрирование заголовка */
+    font-size: 1.8em;           /* Размер шрифта заголовка */
+    margin: 0 0 10px 0;         /* Отступы вокруг заголовка */
+}
+
+.yellow-divider {
+    height: 4px;                /* Высота разделительной линии */
+    background-color: #ffd600;  /* Жёлтый цвет разделителя */
+    margin-bottom: 20px;        /* Отступ снизу от линии */
+}
+
+.card-instruction {
+    font-size: 1.25rem;         /* Размер текста инструкции */
+    color: #2c3e50;             /* Тёмно-синий цвет текста инструкции */
+    text-align: left;         /* Центрирование инструкции */
+    margin: 15px 0 25px 0;      /* Отступы сверху и снизу */
+    line-height: 1.2;           /* Межстрочный интервал для удобства чтения */
+}
+
+/* СТИЛИ ДЛЯ ЦЕНТРИРОВАНИЯ И ОФОРМЛЕНИЯ КНОПКИ ПРОВЕРКИ */
+
+.btn-box {
+    display: flex;                                              /* Включаем флекс-контейнер для кнопки */
+    justify-content: center;                                    /* Центрируем кнопку строго по горизонтали */
+    margin-top: 0px;                                           /* Добавляем отступ сверху от задания до кнопки */
+}
+
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);   /* Создаем оранжевый градиент как на макете */
+    color: #ffffff;                                             /* Устанавливаем белый цвет текста */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Поддерживаем единый детский шрифт */
+    font-size: 1.5em;                                           /* Устанавливаем крупный, читаемый размер шрифта */
+    font-weight: bold;                                          /* Делаем текст жирным */
+    padding: 12px 60px;                                         /* Задаем внутренние отступы для вытянутой формы */
+    border: none;                                               /* Убираем стандартную браузерную рамку */
+    border-radius: 40px;                                        /* Делаем края сильно скругленными (овальными) */
+    box-shadow: 0 6px 0 #d84315;                                /* Добавляем темный "объем" под кнопкой */
+    cursor: pointer;                                            /* Меняем курсор на палец при наведении */
+    transition: all 0.2s ease;                                  /* Плавная анимация при нажатии */
+}
+
+.orange-check-btn:hover {
+    transform: translateY(-2px);                                /* Легкое приподнятие кнопки при наведении */
+    box-shadow: 0 8px 0 #d84315;                                /* Увеличение тени для эффекта парения */
+}
+
+.orange-check-btn:active {
+    transform: translateY(4px);                                 /* Кнопка "вдавливается" при клике */
+    box-shadow: 0 2px 0 #d84315;                                /* Тень уменьшается при нажатии */
+}
+
+.result-text {
+    text-align: center;                                         /* Центрируем текст результата над кнопкой */
+    font-size: 1.3em;                                           /* Размер шрифта сообщения об успехе */
+    margin: 15px 0;                                             /* Вертикальные отступы для текста */
+    min-height: 1.5em;                                          /* Резервируем место, чтобы контент не прыгал */
+}
+
+/* КНОПКИ */
+.btn-box { display: flex; justify-content: center; }
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 #d84315;
+    cursor: pointer;
+}
+
+
+/* НАЧАЛО ОСНОВНОГО БЛОКА CSS */
+/* =========================================
+   ЗАДАНИЕ 1: СТИЛИ ДЛЯ РЯДОВ СЛОГОВ
+   ========================================= */
+
+/* Главная сетка для колонок слогов */
+.l29-t1-grid {
+    display: grid;                            /* Включаем двухмерную сетку Grid */
+    grid-template-columns: repeat(4, 1fr);    /* Создаем 4 равных столбца */
+    gap: 12px;                                /* Отступы между колонками */
+    margin-top: 15px;                         /* Отступ сверху от инструкции */
+}
+
+/* Колонка, объединяющая строки слогов */
+.l29-t1-col {
+    display: flex;                            /* Включаем флексбокс */
+    flex-direction: column;                   /* Располагаем строки друг под другом */
+    gap: 8px;                                 /* Расстояние между строками */
+}
+
+/* Отдельная интерактивная строка со слогами */
+.l29-t1-row {
+    background: #ffffff;                      /* Белый фон строки */
+    border: 2px solid #b3e5fc;                /* Светло-синяя рамка */
+    border-radius: 10px;                      /* Скругление углов */
+    padding: 8px 4px;                         /* Внутренние отступы */
+    font-size: 1.05rem;                       /* Комфортный размер шрифта для чтения */
+    color: #2c3e50;                           /* Темно-синий цвет текста */
+    font-weight: bold;                        /* Жирное начертание */
+    text-align: center;                       /* Выравнивание по центру */
+    cursor: pointer;                          /* Указатель мыши в виде палочки */
+    transition: all 0.2s ease;                /* Плавная анимация при клике */
+    user-select: none;                        /* Запрещаем выделение текста мышкой при кликах */
+    box-sizing: border-box;                   /* Учитываем рамки в размерах */
+}
+
+/* Эффект при наведении мыши на строку */
+.l29-t1-row:hover {
+    border-color: #3498db;                    /* Яркая синяя рамка при наведении */
+    background-color: #f0f9ff;                /* Легкое осветление фона */
+    transform: translateY(-2px);              /* Легкий подъем вверх */
+}
+
+/* Класс для отмеченной (прочитанной) строки */
+.l29-t1-row.completed {
+    background-color: #d4edda !important;     /* Светло-зеленый фон выполненной строки */
+    border-color: #27ae60 !important;         /* Зеленая рамка */
+    color: #155724 !important;                /* Темно-зеленый текст */
+}
+
+/* Адаптивность для планшетов и мобильных устройств */
+@media (max-width: 800px) {
+    .l29-t1-grid {
+        grid-template-columns: repeat(2, 1fr); /* На планшетах делаем 2 колонки */
+    }
+}
+@media (max-width: 500px) {
+    .l29-t1-grid {
+        grid-template-columns: 1fr;            /* На смартфонах выстраиваем в 1 колонку */
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 2: СТИЛИ ДЛЯ ИГРЫ "ПУТАНИЦА"
+   ========================================= */
+
+/* Контейнер рабочей области задания */
+.l29-t2-workspace {
+    display: flex;                            /* Включаем флексбокс */
+    flex-direction: column;                   /* Располагаем ряды друг под другом */
+    gap: 12px;                                /* Расстояние между строками */
+    background: #ffffff;                      /* Белый фон подложки */
+    padding: 20px;                            /* Внутренние отступы */
+    border-radius: 15px;                      /* Скругление углов */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+}
+
+/* Строка задания: набор слов слева, поле ввода справа */
+.l29-t2-row {
+    display: grid;                            /* Используем Grid для деления на 2 колонки */
+    grid-template-columns: 1.1fr 1.4fr;       /* Колонка со словами чуть уже, поле ввода шире */
+    gap: 15px;                                /* Отступ между колонками */
+    align-items: center;                      /* Выравнивание по центру по вертикали */
+    border-bottom: 1px dashed #e0f0f8;        /* Пунктирная линия между строками */
+    padding-bottom: 10px;                     /* Отступ снизу */
+}
+
+/* Текст с рассыпанными словами */
+.l29-t2-words {
+    font-size: 1rem;                          /* Комфортный размер шрифта */
+    color: #34495e;                           /* Темно-серый цвет текста слов */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Поле ввода составленного предложения */
+.l29-t2-input {
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 7px 12px;                        /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 0.95rem;                       /* Размер шрифта текста */
+    color: #2980b9;                           /* Цвет вводимого текста */
+    outline: none;                            /* Убираем стандартную обводку */
+    width: 100%;                              /* На всю ширину правой колонки */
+    box-sizing: border-box;                   /* Учитываем отступы в размерах */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Стиль для заблокированного инпута-образца */
+.l29-t2-input:disabled {
+    background-color: #f8fafc;
+    color: #64748b;
+    border-color: #cbd5e1;
+    font-weight: bold;
+}
+
+/* Эффект фокуса на инпуте */
+.l29-t2-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Класс правильного ответа (зеленое оформление) */
+.l29-t2-input.correct {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+/* Класс ошибочного ответа (красное оформление при пустых полях) */
+.l29-t2-input.wrong {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 650px) {
+    .l29-t2-row {
+        grid-template-columns: 1fr;           /* На узких экранах слова и поле идут друг под другом */
+        gap: 6px;
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 3: СТИЛИ ДЛЯ ИГРЫ С ТЕНЯМИ (8 ТЕНЕЙ)
+   ========================================= */
+
+/* Подзаголовки блоков задания */
+.l29-t3-subtitle {
+    font-size: 1.1rem;                        /* Комфортный размер шрифта */
+    color: #2c3e50;                           /* Темно-синий цвет текста */
+    margin: 10px 0 8px 0;                     /* Отступы */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Область для теней (верхняя часть) */
+.l29-t3-shadows-area {
+    background: #ffffff;                      /* Белый фон подложки */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    border-radius: 15px;                      /* Скругление углов */
+    padding: 10px;                            /* Внутренние отступы */
+    margin-bottom: 10px;                      /* Отступ до нижней панели */
+}
+
+/* Сетка для теней: ровно 4 колонки (под 8 теней) */
+.l29-t3-shadows-grid {
+    display: grid;                            /* Включаем Grid-сетку */
+    grid-template-columns: repeat(4, 1fr);    /* 4 колонки в ряд */
+    gap: 10px;                                /* Отступы между карточками теней */
+}
+
+/* Зона сброса (карточка с тенью) */
+.l29-t3-dropzone {
+    background: #f8fafc;                      /* Светло-серый фон ячейки */
+    border: 2px dashed #cbd5e1;               /* Пунктирная рамка для перетаскивания */
+    border-radius: 10px;                      /* Скругление углов */
+    padding: 8px;                             /* Внутренние отступы */
+    min-height: 100px;                        /* Минимальная высота */
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Элементы друг под другом */
+    align-items: center;                      /* Центрирование по горизонтали */
+    justify-content: center;                  /* Центрирование по вертикали */
+    gap: 6px;                                 /* Отступ между тенью и текстом */
+    position: relative;                       /* Относительное позиционирование */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Картинка тени */
+.l29-t3-shadow-img {
+    max-width: 95px;                          /* Максимальная ширина тени */
+    max-height: 90px;                         /* Максимальная высота тени */
+    object-fit: contain;                      /* Сохранение пропорций */
+    pointer-events: none;                     /* Клик проходит сквозь картинку */
+}
+
+/* Текстовое название предмета под тенью (появляется после совпадения) */
+.l29-t3-word-label {
+    font-size: 0.85rem;                       /* Компактный размер шрифта */
+    font-weight: bold;                        /* Жирный шрифт */
+    color: #2980b9;                           /* Синий цвет текста */
+    background: #e1f5fe;                      /* Нежно-голубой фон подложки текста */
+    padding: 2px 8px;                         /* Внутренние отступы текста */
+    border-radius: 6px;                       /* Скругление углов */
+    display: none;                            /* Изначально скрыто до правильного перетаскивания */
+    text-align: center;                       /* По центру */
+}
+
+/* Класс отображения текста после успешного сброса */
+.l29-t3-dropzone.matched .l29-t3-word-label {
+    display: block;                           /* Делаем текст видимым */
+}
+
+/* Область с цветными картинками (нижняя панель, 10 картинок) */
+.l29-t3-items-area {
+    background: #ffffff;                      /* Белый фон подложки */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    border-radius: 15px;                      /* Скругление углов */
+    padding: 10px;                            /* Внутренние отступы */
+}
+
+/* Сетка для цветных картинок: по 5 в ряд */
+.l29-t3-items-grid {
+    display: grid;                            /* Включаем Grid-сетку */
+    grid-template-columns: repeat(5, 1fr);    /* 5 колонок в ряд */
+    gap: 12px;                                /* Отступы между картинками */
+}
+
+/* Перетаскиваемая цветная картинка */
+.l29-t3-draggable-img {
+    width: 100px;                              /* Фиксированная ширина */
+    height: 90px;                             /* Фиксированная высота */
+    object-fit: contain;                      /* Сохранение пропорций */
+    cursor: grab;                             /* Курсор в виде руки для захвата */
+    background: #ffffff;                      /* Белый фон */
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 4px;                             /* Внутренние отступы */
+    transition: transform 0.2s ease;          /* Плавная анимация */
+    margin: 0 auto;                           /* Центрирование в ячейке */
+}
+
+/* Эффект при наведении на картинку */
+.l29-t3-draggable-img:hover {
+    transform: scale(1.08);                   /* Легкое увеличение */
+    border-color: #2980b9;                    /* Затемнение рамки */
+}
+
+/* Состояние во время перетаскивания */
+.l29-t3-draggable-img:active {
+    cursor: grabbing;                         /* Курсор сжатой руки */
+}
+
+/* Адаптивность для планшетов и мобильных устройств */
+@media (max-width: 768px) {
+    .l29-t3-shadows-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    .l29-t3-items-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+@media (max-width: 480px) {
+    .l29-t3-shadows-grid, .l29-t3-items-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 4: СТИЛИ ДЛЯ ЗАВЕРШЕНИЯ ПРЕДЛОЖЕНИЙ
+   ========================================= */
+
+/* Контейнер рабочей области предложений */
+.l29-t4-workspace {
+    display: flex;                            /* Включаем флексбокс */
+    flex-direction: column;                   /* Располагаем строки друг под другом */
+    gap: 12px;                                /* Расстояние между строками */
+    background: #ffffff;                      /* Белый фон подложки */
+    padding: 20px;                            /* Внутренние отступы */
+    border-radius: 15px;                      /* Скругление углов */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+}
+
+/* Строка задания: начало предложения слева, поле ввода справа */
+.l29-t4-row {
+    display: grid;                            /* Используем Grid для деления на 2 колонки */
+    grid-template-columns: 1.5fr 1fr;         /* Левая часть шире под текст, правая под инпут */
+    gap: 15px;                                /* Отступ между колонками */
+    align-items: center;                      /* Выравнивание по центру по вертикали */
+    border-bottom: 1px dashed #e0f0f8;        /* Пунктирная линия между строками */
+    padding-bottom: 10px;                     /* Отступ снизу */
+}
+
+/* Текст начала предложения */
+.l29-t4-text {
+    font-size: 1rem;                          /* Комфортный размер шрифта */
+    color: #2c3e50;                           /* Темно-синий цвет текста */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Поле ввода окончания предложения */
+.l29-t4-input {
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 7px 12px;                        /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 0.95rem;                       /* Размер шрифта текста */
+    color: #2980b9;                           /* Цвет вводимого текста */
+    outline: none;                            /* Убираем стандартную обводку */
+    width: 100%;                              /* На всю ширину правой колонки */
+    box-sizing: border-box;                   /* Учитываем отступы в размерах */
+    text-align: center;                       /* Текст по центру */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Стиль для заблокированного инпута-образца */
+.l29-t4-input:disabled {
+    background-color: #f8fafc;
+    color: #64748b;
+    border-color: #cbd5e1;
+    font-weight: bold;
+}
+
+/* Эффект фокуса на инпуте */
+.l29-t4-input.interactive:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Класс правильного ответа (зеленое оформление) */
+.l29-t4-input.correct {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+/* Класс ошибочного ответа (красное оформление) */
+.l29-t4-input.wrong {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 650px) {
+    .l29-t4-row {
+        grid-template-columns: 1fr;           /* На узких экранах текст и поле идут друг под другом */
+        gap: 6px;
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 5: СТИЛИ ДЛЯ КРОССВОРДА И КАРТИНОК
+   ========================================= */
+
+/* Контейнер кроссворда */
+.l29-t5-crossword-box {
+    display: flex;                            /* Включаем флексбокс */
+    flex-direction: column;                   /* Строки кроссворда друг под другом */
+    gap: 6px;                                 /* Отступ между рядами */
+    align-items: center;                      /* Центрируем кроссворд по горизонтали */
+    background: #ffffff;                      /* Белый фон подложки */
+    padding: 10px;                            /* Внутренние отступы */
+    border-radius: 15px;                      /* Скругление углов */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    margin-bottom: 10px;                      /* Отступ снизу до блока с картинками */
+    overflow-x: auto;                         /* Горизонтальная прокрутка на мобильных */
+}
+
+/* Ряд кроссворда */
+.l29-t5-row {
+    display: flex;                            /* Флексбокс для ячеек в ряду */
+    gap: 4px;                                 /* Расстояние между клеточками */
+    justify-content: center;                  /* Центрирование ряда */
+}
+
+/* Фиксированная первая ячейка с буквой "Ч" */
+.l29-t5-fixed {
+    width: 40px;                              /* Ширина клеточки */
+    height: 40px;                             /* Высота клеточки */
+    background-color: #e1f5fe;                /* Нежно-голубой фон для буквы Ч */
+    color: #2980b9;                           /* Синий цвет буквы */
+    font-weight: bold;                        /* Жирный шрифт */
+    font-size: 1.3rem;                        /* Размер буквы */
+    display: flex;                            /* Флексбокс для центрирования */
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 6px;                       /* Скругление углов */
+}
+
+/* Интерактивная ячейка для ввода буквы */
+.l29-t5-cell {
+    width: 40px;                              /* Ширина клеточки */
+    height: 40px;                             /* Высота клеточки */
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 6px;                       /* Скругление углов */
+    text-align: center;                       /* Буква строго по центру */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 1.3rem;                        /* Размер введенной буквы */
+    font-weight: bold;                        /* Жирное начертание */
+    color: #2c3e50;                           /* Цвет текста */
+    outline: none;                            /* Убираем стандартный обвод */
+    box-sizing: border-box;                   /* Учитываем размеры рамок */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Эффект при фокусе на ячейку */
+.l29-t5-cell:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.4);
+    background-color: #f0f9ff;
+}
+
+/* Класс правильного ответа для ячейки */
+.l29-t5-cell.correct {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+/* Класс ошибочного ответа для ячейки */
+.l29-t5-cell.wrong {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* Контейнер галереи картинок-подсказок (расположен ниже кроссворда) */
+.l29-t5-images-container {
+    background: #ffffff;                      /* Белый фон подложки */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    border-radius: 15px;                      /* Скругление углов */
+    padding: 15px;                            /* Внутренние отступы */
+    margin-bottom: 15px;                      /* Отступ до кнопки проверки */
+}
+
+/* Подзаголовок галереи */
+.l29-t5-subtitle {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+/* Сетка картинок под кроссвордом */
+.l29-t5-images-grid {
+    display: grid;                            /* Grid-сетка */
+    grid-template-columns: repeat(7, 1fr);    /* 7 картинок в один ряд */
+    gap: 10px;                                /* Отступы между карточками */
+}
+
+/* Карточка отдельной картинки с именем файла */
+.l29-t5-img-card {
+    background: #f8fafc;                      /* Нежный светлый фон */
+    border: 1px solid #cbd5e1;                /* Аккуратная рамка */
+    border-radius: 10px;                      /* Скругление углов */
+    padding: 8px 4px;                         /* Внутренние отступы */
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Картинка и подпись друг под другом */
+    align-items: center;                      /* Центрирование */
+    gap: 6px;
+}
+
+/* Изображение предмета */
+.l29-t5-img {
+    width: 80px;                              /* Фиксированная ширина */
+    height: 90px;                             /* Фиксированная высота */
+    object-fit: contain;                      /* Сохранение пропорций */
+}
+
+/* Текстовая подпись с именем файла */
+.l29-t5-img-name {
+    font-size: 0.7rem;                        /* Мелкий читаемый шрифт */
+    color: #64748b;                           /* Серо-синий цвет */
+    font-weight: bold;                        /* Жирное начертание */
+    text-align: center;
+    word-break: break-all;                    /* Перенос имени файла при необходимости */
+}
+
+/* Адаптивность для планшетов и телефонов */
+@media (max-width: 800px) {
+    .l29-t5-images-grid {
+        grid-template-columns: repeat(4, 1fr); /* По 4 картинки в ряд на планшетах */
+    }
+}
+@media (max-width: 500px) {
+    .l29-t5-images-grid {
+        grid-template-columns: repeat(2, 1fr); /* По 2 картинки в ряд на смартфонах */
+    }
+}
+
+
+/* =========================================
+   ЗАДАНИЕ 6: СТИЛИ ДЛЯ ПЕРЕШАННЫХ СЛОГОВ
+   ========================================= */
+
+/* Общая игровая доска задания */
+.l29-t6-game-board {
+    background: #ffffff;                      /* Белый фон подложки */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    border-radius: 15px;                      /* Скругление углов */
+    padding: 20px;                            /* Внутренние отступы */
+}
+
+/* Подзаголовки рядов */
+.l29-t6-subtitle {
+    font-size: 1.05rem;                       /* Размер шрифта */
+    color: #2c3e50;                           /* Темно-синий цвет */
+    margin: 0 0 10px 0;                       /* Отступы */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Верхний ряд: зоны для сброса первых слогов */
+.l29-t6-top-row {
+    display: grid;                            /* Grid-сетка */
+    grid-template-columns: repeat(5, 1fr);    /* 5 элементов в ряд */
+    gap: 10px;                                /* Отступы между блоками */
+}
+
+/* Зона сброса (карточка первого слога) */
+.l29-t6-dropzone {
+    background: #f8fafc;                      /* Светло-серый фон */
+    border: 2px dashed #3498db;               /* Пунктирная синяя рамка */
+    border-radius: 10px;                      /* Скругление углов */
+    height: 60px;                             /* Фиксированная высота */
+    display: flex;                            /* Флексбокс */
+    align-items: center;                      /* Центрирование по вертикали */
+    justify-content: center;                  /* Центрирование по горизонтали */
+    font-size: 1.2rem;                        /* Размер текста слога */
+    font-weight: bold;                        /* Жирный шрифт */
+    color: #2980b9;                           /* Синий цвет текста */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Состояние при успешном соединении в слово */
+.l29-t6-dropzone.success {
+    background-color: #d4edda !important;     /* Светло-зеленый фон */
+    border: 2px solid #27ae60 !important;     /* Сплошная зеленая рамка */
+    color: #155724 !important;                /* Темно-зеленый цвет готового слова */
+    font-size: 1.1rem;                        /* Немного уменьшаем шрифт для полного слова */
+}
+
+/* Нижний ряд: перетаскиваемые вторые слоги */
+.l29-t6-bottom-row {
+    display: grid;                            /* Grid-сетка */
+    grid-template-columns: repeat(5, 1fr);    /* 5 элементов в ряд */
+    gap: 10px;                                /* Отступы между блоками */
+}
+
+/* Блок перетаскиваемого слога */
+.l29-t6-drag-item {
+    background: #e1f5fe;                      /* Нежно-голубой фон */
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 10px;                      /* Скругление углов */
+    height: 60px;                             /* Фиксированная высота */
+    display: flex;                            /* Флексбокс */
+    align-items: center;                      /* Центрирование по вертикали */
+    justify-content: center;                  /* Центрирование по горизонтали */
+    font-size: 1.2rem;                        /* Размер шрифта */
+    font-weight: bold;                        /* Жирный шрифт */
+    color: #2980b9;                           /* Цвет текста */
+    cursor: grab;                             /* Курсор в виде руки для захвата */
+    transition: transform 0.2s ease;          /* Плавная анимация */
+}
+
+/* Эффект при наведении на перетаскиваемый слог */
+.l29-t6-drag-item:hover {
+    transform: scale(1.05);                   /* Легкое увеличение */
+    background-color: #b3e5fc;                /* Затемнение фона */
+}
+
+/* Состояние во время перетаскивания мышкой */
+.l29-t6-drag-item:active {
+    cursor: grabbing;
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 700px) {
+    .l29-t6-top-row, .l29-t6-bottom-row {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+@media (max-width: 450px) {
+    .l29-t6-top-row, .l29-t6-bottom-row {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 7: СТИЛИ ДЛЯ ПРЕВРАЩЕНИЯ ЗАГАДОК В КАРТИНКИ
+   ========================================= */
+
+/* Главная двухколоночная сетка для загадок */
+.l29-t7-grid {
+    display: grid;                            /* Включаем Grid-сетку */
+    grid-template-columns: repeat(2, 1fr);    /* Создаем 2 равных столбца */
+    gap: 15px;                                /* Отступ между столбцами */
+    margin-top: 15px;                         /* Отступ сверху */
+}
+
+/* Колонка, объединяющая карточки загадок */
+.l29-t7-column {
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Карточки друг под другом */
+    gap: 15px;                                /* Расстояние между карточками */
+}
+
+/* Отдельная карточка загадки */
+.l29-t7-riddle-card {
+    background: #ffffff;                      /* Белый фон карточки */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+    border-radius: 12px;                      /* Скругление углов */
+    padding: 15px;                            /* Внутренние отступы */
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Элементы вертикально */
+    gap: 8px;                                 /* Отступы внутри карточки */
+    box-sizing: border-box;                   /* Учитываем рамки */
+    transition: all 0.3s ease;                /* Плавная анимация при превращении */
+}
+
+/* Номер загадки */
+.l29-t7-number {
+    font-size: 0.85rem;                       /* Мелкий шрифт */
+    color: #3498db;                           /* Синий цвет номера */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Текст загадки */
+.l29-t7-text {
+    font-size: 0.95rem;                       /* Комфортный размер текста */
+    color: #2c3e50;                           /* Темно-синий цвет */
+    margin: 0;                                /* Убираем лишние отступы */
+    line-height: 1.35;                        /* Межстрочный интервал */
+}
+
+/* Поле ввода отгадки */
+.l29-t7-input {
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 6px 10px;                        /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 0.95rem;                       /* Размер текста */
+    color: #2980b9;                           /* Цвет введенного слова */
+    outline: none;                            /* Убираем стандартную обводку */
+    width: 100%;                              /* На всю ширину карточки */
+    box-sizing: border-box;                   /* Учитываем размеры */
+    text-align: center;                       /* Отгадка по центру */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Эффект фокуса на инпуте */
+.l29-t7-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Стили для карточки после превращения в картинку с отгадкой */
+.l29-t7-riddle-card.revealed {
+    background-color: #f0fff4;                /* Нежно-зеленый фон успешной отгадки */
+    border-color: #27ae60;                    /* Зеленая рамка */
+    align-items: center;                      /* Центрирование содержимого по горизонтали */
+    justify-content: center;                  /* Центрирование по вертикали */
+    padding: 10px;                            /* Компактные отступы */
+}
+
+/* Картинка-отгадка, которая появляется внутри карточки */
+.l29-t7-answer-img {
+    max-width: 100px;                         /* Ограничение максимальной ширины картинки */
+    max-height: 100px;                        /* Ограничение максимальной высоты картинки */
+    object-fit: contain;                      /* Сохранение пропорций */
+    border-radius: 8px;                       /* Скругление углов картинки */
+    margin-top: 5px;
+}
+
+/* Адаптивность для мобильных телефонов (перевод в 1 колонку) */
+@media (max-width: 768px) {
+    .l29-t7-grid {
+        grid-template-columns: 1fr;           /* На узких экранах делаем один столбец */
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 8: СТИЛИ ДЛЯ РАССКАЗА И ВОПРОСОВ
+   ========================================= */
+
+/* Контейнер для единого изображения с текстом */
+.l28-t8-img-box {
+    width: 100%;                              /* На всю ширину карточки */
+    display: flex;                            /* Флексбокс для центрирования */
+    justify-content: center;                  /* Центрирование по горизонтали */
+    margin-bottom: 10px;                      /* Отступ снизу до вопросов */
+}
+
+/* Изображение рассказа */
+.l28-t8-img {
+    width: 100%;                              /* Адаптивная ширина */
+    max-width: 750px;                         /* Максимальное ограничение размера */
+    height: auto;                             /* Сохранение пропорций */
+    border-radius: 15px;                      /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);  /* Мягкая тень */
+}
+
+/* Блок с вопросами */
+.l29-t8-questions-box {
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Вопросы друг под другом */
+    gap: 12px;                                /* Расстояние между строками */
+    background: #ffffff;                      /* Белый фон подложки */
+    padding: 10px;                            /* Внутренние отступы */
+    border-radius: 15px;                      /* Скругление углов */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+}
+
+/* Строка с вопросом и полем для ответа */
+.l29-t8-q-row {
+    display: flex;                            /* Флексбокс для строки */
+    flex-direction: column;                   /* Текст вопроса сверху, инпут снизу */
+    gap: 6px;                                 /* Отступ между вопросом и полем ввода */
+    border-bottom: 1px dashed #e0f0f8;        /* Пунктирная разделительная линия */
+    padding-bottom: 10px;                     /* Отступ снизу */
+}
+
+/* Текст вопроса */
+.l29-t8-q-text {
+    font-size: 0.95rem;                       /* Размер шрифта вопроса */
+    color: #2c3e50;                           /* Темно-синий цвет */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Поле ввода ответа */
+.l29-t8-input {
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 7px 12px;                        /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 0.95rem;                       /* Размер шрифта текста */
+    color: #2980b9;                           /* Цвет вводимого текста */
+    outline: none;                            /* Убираем стандартную обводку */
+    width: 100%;                              /* На всю ширину */
+    box-sizing: border-box;                   /* Учитываем отступы */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Эффект фокуса на инпуте */
+.l29-t8-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Класс заполненного поля (зеленое оформление) */
+.l29-t8-input.filled {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+/* Класс незаполненного поля (красное оформление) */
+.l29-t8-input.empty {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+}
+
+/* =========================================
+   ЗАДАНИЕ 9: СТИЛИ ДЛЯ РАССКАЗА И ВОПРОСОВ
+   ========================================= */
+
+/* Контейнер для единого изображения с текстом рассказа */
+.l29-t9-img-box {
+    width: 100%;                              /* На всю ширину карточки */
+    display: flex;                            /* Флексбокс для центрирования */
+    justify-content: center;                  /* Центрирование по горизонтали */
+    margin-bottom: 10px;                      /* Отступ снизу до вопросов */
+}
+
+/* Изображение рассказа */
+.l29-t9-img {
+    width: 100%;                              /* Адаптивная ширина */
+    max-width: 750px;                         /* Максимальное ограничение размера */
+    height: auto;                             /* Сохранение пропорций */
+    border-radius: 15px;                      /* Скругление углов */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);  /* Мягкая тень */
+}
+
+/* Блок с вопросами */
+.l29-t9-questions-box {
+    display: flex;                            /* Флексбокс */
+    flex-direction: column;                   /* Вопросы друг под другом */
+    gap: 12px;                                /* Расстояние между строками */
+    background: #ffffff;                      /* Белый фон подложки */
+    padding: 10px;                            /* Внутренние отступы */
+    border-radius: 15px;                      /* Скругление углов */
+    border: 2px solid #e0f0f8;                /* Светло-синяя рамка */
+}
+
+/* Строка с вопросом и полем для ответа */
+.l29-t9-q-row {
+    display: flex;                            /* Флексбокс для строки */
+    flex-direction: column;                   /* Текст вопроса сверху, инпут снизу */
+    gap: 6px;                                 /* Отступ между вопросом и полем ввода */
+    border-bottom: 1px dashed #e0f0f8;        /* Пунктирная разделительная линия */
+    padding-bottom: 10px;                     /* Отступ снизу */
+}
+
+/* Текст вопроса */
+.l29-t9-q-text {
+    font-size: 0.95rem;                       /* Размер шрифта вопроса */
+    color: #2c3e50;                           /* Темно-синий цвет */
+    font-weight: bold;                        /* Жирное начертание */
+}
+
+/* Поле ввода ответа */
+.l29-t9-input {
+    border: 2px solid #3498db;                /* Синяя рамка */
+    border-radius: 8px;                       /* Скругление углов */
+    padding: 7px 12px;                        /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт */
+    font-size: 0.95rem;                       /* Размер шрифта текста */
+    color: #2980b9;                           /* Цвет вводимого текста */
+    outline: none;                            /* Убираем стандартную обводку */
+    width: 100%;                              /* На всю ширину */
+    box-sizing: border-box;                   /* Учитываем отступы */
+    transition: all 0.2s ease;                /* Плавная анимация */
+}
+
+/* Эффект фокуса на инпуте */
+.l29-t9-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Класс заполненного поля (зеленое оформление) */
+.l29-t9-input.filled {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+/* Класс незаполненного поля (красное оформление) */
+.l29-t9-input.empty {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+}
+
+
+

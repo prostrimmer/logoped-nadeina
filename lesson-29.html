@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 28 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-29.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 29. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1: РЯДЫ СЛОГОВ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Ряды слогов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай и повтори ряды слогов. Нажми на строчку, чтобы отметить её как прочитанную!
+    </p>
+
+    <div class="l29-t1-grid">
+        
+        <!-- Колонка 1 -->
+        <div class="l29-t1-col">
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ча-чо-чу-чи</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">чо-чу-чи-ча</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">чу-чи-ча-чо</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">чи-ча-чо-чу</div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l29-t1-col">
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ач-оч-уч-ич</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">оч-уч-ич-ач</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">уч-ич-ач-оч</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ич-ач-оч-уч</div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l29-t1-col">
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">тя-тё-тю-ти</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">тё-тю-ти-тя</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">тю-ти-тя-тё</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ти-тя-тё-тю</div>
+        </div>
+
+        <!-- Колонка 4 -->
+        <div class="l29-t1-col">
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ать-оть-уть-ить</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">оть-уть-ить-ать</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">уть-ить-ать-оть</div>
+            <div class="l29-t1-row" onclick="toggleL29Row(this)">ить-ать-оть-уть</div>
+        </div>
+
+    </div>
+
+
+    <div id="res-29-1" class="result-text">Прочитай все ряды слогов!</div>
+</div>
+
+<!-- ЗАДАНИЕ №2: ИГРА "ПУТАНИЦА" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Игра «Путаница»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Послушай слова. Составь из них правильное предложение и впиши его в поле справа.<br>
+        
+    </p>
+
+    <!-- Рабочая область с набором слов и полями ввода -->
+    <div class="l29-t2-workspace">
+        
+        <!-- Строка 1 (Образец из учебника, уже заполнен как подсказка) -->
+        <div class="l29-t2-row">
+            <span class="l29-t2-words">Стихи, Тютчев, Катя, читать, любить</span>
+            <input type="text" class="l29-t2-input" value="Катя любит читать стихи Тютчева" disabled>
+        </div>
+
+        <!-- Строка 2 -->
+        <div class="l29-t2-row">
+            <span class="l29-t2-words">Дети, школа, учитель, в, учить</span>
+            <input type="text" class="l29-t2-input" placeholder="Составь предложение..." data-required="true">
+        </div>
+
+        <!-- Строка 3 -->
+        <div class="l29-t2-row">
+            <span class="l29-t2-words">Книги, Ася, читальня, в, ходить, читать</span>
+            <input type="text" class="l29-t2-input" placeholder="Составь предложение..." data-required="true">
+        </div>
+
+        <!-- Строка 4 -->
+        <div class="l29-t2-row">
+            <span class="l29-t2-words">Птичка, летать, птенчик, учить</span>
+            <input type="text" class="l29-t2-input" placeholder="Составь предложение..." data-required="true">
+        </div>
+
+        <!-- Строка 5 -->
+        <div class="l29-t2-row">
+            <span class="l29-t2-words">Ученик, отлично, мечтать, учиться</span>
+            <input type="text" class="l29-t2-input" placeholder="Составь предложение..." data-required="true">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и обязательная кнопка Проверить -->
+    <div id="res-29-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3: СОПОСТАВЬ КАРТИНКИ С ТЕНЯМИ И НАЙДИ ЛИШНИЕ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Слова со звуком [ч] и лишние предметы</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги сопоставить картинки с тенями. Перетащи цветную картинку на её тень, прочитай появившееся название и найди два лишних предмета, для которых нет теней!
+    </p>
+
+    <!-- Игровая зона: область теней (8 теней для предметов со звуком Ч) -->
+    <div class="l29-t3-shadows-area">
+        <h3 class="l29-t3-subtitle">Тени предметов:</h3>
+        <div class="l29-t3-shadows-grid">
+
+            <div class="l29-t3-dropzone" data-id="2" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_2_t.png" class="l29-t3-shadow-img" alt="Тень 2">
+                <span class="l29-t3-word-label">часы</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="4" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_4_t.png" class="l29-t3-shadow-img" alt="Тень 4">
+                <span class="l29-t3-word-label">чемодан</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="1" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_1_t.png" class="l29-t3-shadow-img" alt="Тень 1">
+                <span class="l29-t3-word-label">чашка</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="7" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_7_t.png" class="l29-t3-shadow-img" alt="Тень 7">
+                <span class="l29-t3-word-label">чулок</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="3" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_3_t.png" class="l29-t3-shadow-img" alt="Тень 3">
+                <span class="l29-t3-word-label">чайник</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="5" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_5_t.png" class="l29-t3-shadow-img" alt="Тень 5">
+                <span class="l29-t3-word-label">черепаха</span>
+            </div>
+
+
+            <div class="l29-t3-dropzone" data-id="8" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_8_t.png" class="l29-t3-shadow-img" alt="Тень 8">
+                <span class="l29-t3-word-label">чеснок</span>
+            </div>
+
+            <div class="l29-t3-dropzone" data-id="6" ondragover="allowDrop(event)" ondrop="dropItem(event)">
+                <img src="images/lesson_29_3_6_t.png" class="l29-t3-shadow-img" alt="Тень 6">
+                <span class="l29-t3-word-label">черника</span>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Панель с цветными картинками (10 штук, включая грушу (9) и лису (10)) -->
+    <div class="l29-t3-items-area">
+        <h3 class="l29-t3-subtitle">Цветные картинки (найди 2 лишних):</h3>
+        <div class="l29-t3-items-grid">
+            <img src="images/чашка.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-1" data-id="1" alt="Чашка">
+            <img src="images/часы.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-2" data-id="2" alt="Часы">
+            <img src="images/чайник.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-3" data-id="3" alt="Чайник">
+            <img src="images/чемодан.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-4" data-id="4" alt="Чемодан">
+            <img src="images/черепаха.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-5" data-id="5" alt="Черепаха">
+            <img src="images/черника.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-6" data-id="6" alt="Черника">
+            <img src="images/чулок.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-7" data-id="7" alt="Чулок">
+            <img src="images/чеснок.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-8" data-id="8" alt="Чеснок">
+            <img src="images/груша.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-9" data-id="9" alt="Груша (Лишнее)">
+            <img src="images/fox-8.png" class="l29-t3-draggable-img" draggable="true" ondragstart="dragItem(event)" id="item-10" data-id="10" alt="Лиса (Лишнее)">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-3" class="result-text">Сопоставь картинки со звуком [ч] с их тенями!</div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №4: АВТОМАТИЗАЦИЯ ЗВУКА Ч В ПРЕДЛОЖЕНИЯХ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Закончи предложения</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай начало предложения и закончи его по образцу, образовав правильное словосочетание со звуком <b>[ч]</b>.<br>
+
+    </p>
+
+    <!-- Рабочая область задания -->
+    <div class="l29-t4-workspace">
+        
+        <!-- Образец (уже заполнен) -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Мама варит кашу на молоке, будет</span>
+            <input type="text" class="l29-t4-input" value="молочная каша" disabled>
+        </div>
+
+        <!-- Строка 1 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Мама варит компот из яблок, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="яблочный компот" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 2 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Мама варит повидло из клубники, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="клубничное повидло" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 3 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Мама варит варенье из земляники, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="земляничное варенье" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 4 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Ребята сажают парк для больницы, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="больничный парк" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 5 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Оля покупает ручку для подарка, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="подарочная ручка" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 6 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Рабочие готовят вагон для почты, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="почтовый вагон" placeholder="впиши продолжение...">
+        </div>
+
+        <!-- Строка 7 -->
+        <div class="l29-t4-row">
+            <span class="l29-t4-text">Вова набирает воду из реки, будет</span>
+            <input type="text" class="l29-t4-input interactive" data-answer="речная вода" placeholder="впиши продолжение...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5: КРОССВОРД С КАРТИНКАМИ СНИЗУ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Заполни кроссворд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Впиши в кроссворд слова, которые начинаются на букву <b>ч</b>. Картинки-подсказки находятся сразу под кроссвордом
+    </p>
+
+    <!-- Сетка кроссворда (ступенчатая) -->
+    <div class="l29-t5-crossword-box">
+        
+        <!-- Строка 1 (3 буквы: ч - а - й) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="й">
+        </div>
+
+        <!-- Строка 2 (4 буквы: ч - а - с - ы) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="с">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="ы">
+        </div>
+
+        <!-- Строка 3 (5 букв: ч - у - л - о - к) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="у">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="л">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="к">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="и">
+        </div>
+
+        <!-- Строка 4 (6 букв: ч - а - й - н - и - к) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="й">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="н">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="и">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="к">
+        </div>
+
+        <!-- Строка 5 (7 букв: ч - е - м - о - д - а - н) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="е">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="м">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="о">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="д">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="н">
+        </div>
+
+        <!-- Строка 6 (8 букв: ч - е - р - е - п - а - х - а) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="е">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="р">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="е">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="п">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="х">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+        </div>
+
+        <!-- Строка 7 (10 букв: ч - е - б - у - р - а - ш - к - а) -->
+        <div class="l29-t5-row">
+            <div class="l29-t5-fixed">ч</div>
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="е">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="б">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="у">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="р">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="ш">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="к">
+            <input type="text" maxlength="1" class="l29-t5-cell" data-answer="а">
+        </div>
+
+    </div>
+
+    <!-- Галерея картинок-подсказок РОВНО ПОД КРОССВОРДОМ с соответствующими именами файлов -->
+    <div class="l29-t5-images-container">
+        <h3 class="l29-t5-subtitle">Картинки-подсказки:</h3>
+        <div class="l29-t5-images-grid">
+            <div class="l29-t5-img-card">
+                <img src="images/чай2.png" class="l29-t5-img" alt="Чай">
+              
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/часы.png" class="l29-t5-img" alt="Часы">
+         
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/чулок.png" class="l29-t5-img" alt="Чулки">
+           
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/чайник.png" class="l29-t5-img" alt="Чайник">
+         
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/чемодан.png" class="l29-t5-img" alt="Чемодан">
+             
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/черепаха.png" class="l29-t5-img" alt="Черепаха">
+             
+            </div>
+            <div class="l29-t5-img-card">
+                <img src="images/чебурашка.png" class="l29-t5-img" alt="Чебурашка">
+            
+            </div>
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6: СОЕДИНИ СЛОГИ (ПЕРЕШАННЫЙ НИЖНИЙ РЯД) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Соедини слоги</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Найди пару для каждого слога! Перетащи нижний слог к правильному верхнему, чтобы получилось слово.
+    </p>
+
+    <!-- Игровая зона соединения слогов -->
+    <div class="l29-t6-game-board">
+        
+        <!-- Верхний ряд: первые слоги (зоны для сброса) -->
+        <h3 class="l29-t6-subtitle">Первые слоги:</h3>
+        <div class="l29-t6-top-row">
+            <div class="l29-t6-dropzone" data-first="чу" data-match="до" ondragover="allowDropSyllable(event)" ondrop="dropSyllable(event)">
+                <span class="syllable-text">чу</span>
+            </div>
+            <div class="l29-t6-dropzone" data-first="мя" data-match="та" ondragover="allowDropSyllable(event)" ondrop="dropSyllable(event)">
+                <span class="syllable-text">мя</span>
+            </div>
+            <div class="l29-t6-dropzone" data-first="ча" data-match="сы" ondragover="allowDropSyllable(event)" ondrop="dropSyllable(event)">
+                <span class="syllable-text">ча</span>
+            </div>
+            <div class="l29-t6-dropzone" data-first="чер" data-match="дак" ondragover="allowDropSyllable(event)" ondrop="dropSyllable(event)">
+                <span class="syllable-text">чер</span>
+            </div>
+            <div class="l29-t6-dropzone" data-first="мач" data-match="чи" ondragover="allowDropSyllable(event)" ondrop="dropSyllable(event)">
+                <span class="syllable-text">мач</span>
+            </div>
+        </div>
+
+        <!-- Нижний ряд: вторые слоги (перемешанные окончания) -->
+        <h3 class="l29-t6-subtitle" style="margin-top: 20px;">Вторые слоги:</h3>
+        <div class="l29-t6-bottom-row" id="l29-bottom-syllables">
+            <!-- Элементы перемешаны случайным образом, чтобы нельзя было соединить по порядку -->
+            <div class="l29-t6-drag-item" draggable="true" ondragstart="dragSyllable(event)" id="syl-sy" data-syllable="сы">сы</div>
+            <div class="l29-t6-drag-item" draggable="true" ondragstart="dragSyllable(event)" id="syl-chi" data-syllable="чи">чи</div>
+            <div class="l29-t6-drag-item" draggable="true" ondragstart="dragSyllable(event)" id="syl-do" data-syllable="до">до</div>
+            <div class="l29-t6-drag-item" draggable="true" ondragstart="dragSyllable(event)" id="syl-dak" data-syllable="дак">дак</div>
+            <div class="l29-t6-drag-item" draggable="true" ondragstart="dragSyllable(event)" id="syl-ta" data-syllable="та">та</div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-6" class="result-text">Найди окончания для каждого слога!</div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task6()">Проверить</button>
+    </div>
+</div>
+
+
+<!-- ЗАДАНИЕ №7: ЗАГАДКИ (В ДВА СТОЛБЦА) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Отгадай загадки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай загадки, отгадай их и впиши ответы. После нажатия кнопки «Проверить» загадки превратятся в картинки-отгадки!
+    </p>
+
+    <!-- Сетка загадок в 2 столбца -->
+    <div class="l29-t7-grid">
+        
+        <!-- Левый столбец -->
+        <div class="l29-t7-column">
+            
+            <!-- Загадка 1 -->
+            <div class="l29-t7-riddle-card" id="riddle-card-1" data-image="images/чай.png">
+                <div class="l29-t7-number">Загадка #1</div>
+                <p class="l29-t7-text">
+                    Первая буква – это сорт сыра,<br>
+                    Буква вторая везет пассажиров,<br>
+                    Буковкой третьей ран мажут края,<br>
+                    Сложи и получишь названье питья.
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чай" placeholder="Твоя отгадка...">
+            </div>
+
+            <!-- Загадка 2 -->
+            <div class="l29-t7-riddle-card" id="riddle-card-2" data-image="images/червяк.png">
+                <div class="l29-t7-number">Загадка #2</div>
+                <p class="l29-t7-text">
+                    Мой хвост не отличишь от головы,<br>
+                    Меня всегда в земле найдёте вы.
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="червяк" placeholder="Твоя отгадка...">
+            </div>
+
+            <!-- Загадка 3 -->
+            <div class="l29-t7-riddle-card" id="riddle-card-3" data-image="images/чайник.png">
+                <div class="l29-t7-number">Загадка #3</div>
+                <p class="l29-t7-text">
+                    Я пыхчу, пыхчу, пыхчу,<br>
+                    Больше греться не хочу.<br>
+                    Крышка громко зазвенела:<br>
+                    «Пейте чай, вода вскипела!»
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чайник" placeholder="Твоя отгадка...">
+            </div>
+
+            <!-- Загадка 4 -->
+            <div class="l29-t7-riddle-card" id="riddle-card-4" data-image="images/черепаха.png">
+                <div class="l29-t7-number">Загадка #4</div>
+                <p class="l29-t7-text">
+                    Ей не страшен зверь любой,<br>
+                    Панцирь носит за спиной.<br>
+                    Триста лет живет без страха.<br>
+                    Кто же это?
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="черепаха" placeholder="Твоя отгадка...">
+            </div>
+
+            <div class="l29-t7-riddle-card" id="riddle-card-5" data-image="images/черешня.png">
+                <div class="l29-t7-number">Загадка #5</div>
+                <p class="l29-t7-text">
+                    Была зелёной, маленькой, Потом я стала аленькой.<br>
+                    На солнце почернела я, И вот теперь я спелая<br>
+                    Кто же я?
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="черешня" placeholder="Твоя отгадка...">
+            </div>
+        </div>
+
+        <!-- Правый столбец -->
+        <div class="l29-t7-column">
+            
+           
+            <div class="l29-t7-riddle-card" id="riddle-card-6" data-image="images/чеснок.png">
+                <div class="l29-t7-number">Загадка #6</div>
+                <p class="l29-t7-text">
+                    Вырастает он в земле,<br>
+                    Убирается к зиме,<br>
+                    Головой на лук похож.<br>
+                    Если только пожуёшь<br>
+                    Даже маленькую дольку –<br>
+                    Будешь пахнуть очень долго.
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чеснок" placeholder="Твоя отгадка...">
+            </div>
+
+
+            <div class="l29-t7-riddle-card" id="riddle-card-7" data-image="images/чердак.png">
+                <div class="l29-t7-number">Загадка #7</div>
+                <p class="l29-t7-text">
+                    Помещение прям под крышей,<br>
+                    Где храним мы летом лыжи.<br>
+                    Старый бабушкин сундук<br>
+                    Тоже обитает тут.<br>
+                    Назовём его мы как?<br>
+                    Ну конечно же, ...
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чердак" placeholder="Твоя отгадка...">
+            </div>
+
+
+            <div class="l29-t7-riddle-card" id="riddle-card-8" data-image="images/чебурашка.png">
+                <div class="l29-t7-number">Загадка #8</div>
+                <p class="l29-t7-text">
+                    Я веселый и занятный,<br>
+                    Только кто я, не понятно.<br>
+                    Обойди хоть целый свет,<br>
+                    На меня похожих нет.<br>
+                    На мои большие уши<br>
+                    Не натянешь шапку в стужу.<br>
+                    Холодно зимой бедняжке<br>
+                    Другу Гены – ...
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чебурашка" placeholder="Твоя отгадка...">
+            </div>
+
+
+            <div class="l29-t7-riddle-card" id="riddle-card-9" data-image="images/дыра.jpeg">
+                <div class="l29-t7-number">Загадка #0</div>
+                <p class="l29-t7-text">
+                    Звезды есть и есть планеты,<br>
+                    А меня как будто нету.<br>
+                    В телескоп я не видна.<br>
+                    Но сильна я и жадна.<br>
+                    И ко мне, поверьте, братцы,<br>
+                    Вам не стоит приближаться...<br>
+                    Я ведь ...
+                </p>
+                <input type="text" class="l29-t7-input" data-answer="чёрная дыра" placeholder="Твоя отгадка...">
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task7()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №8: РАССКАЗ "ЗАЙЧАТА" И ВОПРОСЫ К НЕМУ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Зайчата</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай рассказ и рассмотри картинку. Ответь на вопросы, записав свои ответы в поля ниже.
+    </p>
+
+    <!-- Единая картинка с текстом и иллюстрацией -->
+    <div class="l28-t8-img-box">
+        <img src="images/lesson_29_8.jpeg" class="l28-t8-img" alt="Рассказ Зайчата с иллюстрацией">
+    </div>
+
+    <!-- Блок с вопросами и полями для ответов -->
+    <div class="l29-t8-questions-box">
+        
+        <!-- Вопрос 1 -->
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">1) Где мальчики обнаружили четырёх зайчат?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">2) Откуда мальчики наблюдали за зайчатами?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">3) Кто прискакал через полчаса?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">4) Что делала зайчиха?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">5) О чём рассказали мальчики вечером?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №9: РАССКАЗ "НЕУДАЧНОЕ ДЕЖУРСТВО" И ВОПРОСЫ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Неудачное дежурство</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай рассказ и внимательно рассмотри картинку. Ответь на вопросы, записав свои ответы в поля ниже.
+    </p>
+
+    <!-- Единая картинка с текстом рассказа и иллюстрацией -->
+    <div class="l29-t9-img-box">
+        <img src="images/lesson_29_9.jpeg" class="l29-t9-img" alt="Рассказ Неудачное дежурство">
+    </div>
+
+    <!-- Блок с 6 вопросами и полями для ответов -->
+    <div class="l29-t9-questions-box">
+        
+        <!-- Вопрос 1 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">1) Когда дежурила Людочка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">2) Что должна была делать Людочка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">3) Какая у чайника была ручка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">4) Почему Людочка уронила чайник?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">5) Что случилось с чайником и чашками?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">6) Почему девочки и мальчики долго утешали Людочку?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-29-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL29Task9()">Проверить</button>
+    </div>
+</div>
+
+
+
+
+
+</div>
+
+<script src="lesson-29.js"></script>
+
+</body>
+
+</html>
