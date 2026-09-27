@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 30 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-30.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 30. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1: РАССКАЗ "ЗАЙЧАТА" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Зайчата</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай текст рассказа, рассмотри картинку и ответь на вопросы, записав их в поля ниже.
+    </p>
+
+    <!-- Текст рассказа, вынесенный для удобства чтения -->
+    <div class="story-text-box">
+        <p><b>Было лето.</b> Два мальчика зашли в дремучий лес. Там они обнаружили четырёх зайчат. Мальчики спрятались за пенёчком и начали наблюдать.</p>
+        <p>Через полчаса к зайчатам прискакала зайчиха. И мальчики смогли увидеть, как зайчиха кормит и учит своих зайчат.</p>
+        <p>Вечером мальчики вернулись домой и всем рассказали о заячьей семье.</p>
+    </div>
+
+    <!-- Картинка-иллюстрация -->
+    <div class="l29-t8-img-box">
+       <img src="images/lesson_29_8.jpeg" class="l28-t8-img" alt="Иллюстрация Зайчата">
+    </div>
+
+    <!-- Блок с вопросами и полями для ответов -->
+    <div class="l29-t8-questions-box">
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">1) Где мальчики обнаружили четырёх зайчат?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">2) Откуда мальчики наблюдали за зайчатами?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">3) Кто прискакал через полчаса?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">4) Что делала зайчиха?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t8-q-row">
+            <span class="l29-t8-q-text">5) О чём рассказали мальчики вечером?</span>
+            <input type="text" class="l29-t8-input" placeholder="Напиши ответ...">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-30-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2: РАССКАЗ "НЕУДАЧНОЕ ДЕЖУРСТВО" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Неудачное дежурство</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Прочитай текст рассказа, рассмотри картинку и ответь на вопросы, записав их в поля ниже.
+    </p>
+
+    <!-- Текст рассказа, вынесенный для удобства чтения -->
+    <div class="story-text-box">
+        <p><b>Людочка вчера дежурила.</b> Она должна была разливать чай. Людочка взяла чайник, а ручка у чайника очень горячая. Людочка обожгла пальчики и уронила чайник.</p>
+        <p>Чайник упал очень неудачно: он задел и разбил четыре чашки и у самого чайника отбилась ручка.</p>
+        <p>Людочка сильно расстроилась. Девочкам и мальчикам пришлось долго утешать Людочку.</p>
+    </div>
+
+    <!-- Картинка-иллюстрация -->
+    <div class="l29-t9-img-box">
+        <img src="images/lesson_29_9.jpeg" class="l29-t9-img" alt="Иллюстрация Неудачное дежурство">
+    </div>
+
+    <!-- Блок с вопросами и полями для ответов -->
+    <div class="l29-t9-questions-box">
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">1) Когда дежурила Людочка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">2) Что должна была делать Людочка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">3) Какая у чайника была ручка?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">4) Почему Людочка уронила чайник?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">5) Что случилось с чайником и чашками?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l29-t9-q-row">
+            <span class="l29-t9-q-text">6) Почему девочки и мальчики долго утешали Людочку?</span>
+            <input type="text" class="l29-t9-input" placeholder="Напиши ответ...">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-30-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3: ПРОИЗНОСИТЬ (ЧИТАТЬ) СЛОГИ (Ч - Ц) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Ряды слогов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно читай пары слогов, различай звуки [ч] и [ц]. Нажми на строчку, чтобы отметить её как прочитанную!
+    </p>
+
+    <!-- Сетка слогов (4 строки по 5 пар) -->
+    <div class="l30-t3-grid">
+        
+        <!-- Ряд 1 -->
+        <div class="l30-t3-row" onclick="toggleL30Row(this, 'res-30-3', 20)">
+            <span>ча — ца</span> &nbsp; | &nbsp; <span>чо — цо</span> &nbsp; | &nbsp; <span>чу — цу</span> &nbsp; | &nbsp; <span>чи — цы</span> &nbsp; | &nbsp; <span>че — це</span>
+        </div>
+
+        <!-- Ряд 2 -->
+        <div class="l30-t3-row" onclick="toggleL30Row(this, 'res-30-3', 20)">
+            <span>ца — ча</span> &nbsp; | &nbsp; <span>цо — чо</span> &nbsp; | &nbsp; <span>цу — чу</span> &nbsp; | &nbsp; <span>цы — чи</span> &nbsp; | &nbsp; <span>це — че</span>
+        </div>
+
+        <!-- Ряд 3 -->
+        <div class="l30-t3-row" onclick="toggleL30Row(this, 'res-30-3', 20)">
+            <span>ач — ац</span> &nbsp; | &nbsp; <span>еч — ец</span> &nbsp; | &nbsp; <span>ац — ач</span> &nbsp; | &nbsp; <span>оц — оч</span>
+        </div>
+
+        <!-- Ряд 4 -->
+        <div class="l30-t3-row" onclick="toggleL30Row(this, 'res-30-3', 20)">
+            <span>уц — уч</span> &nbsp; | &nbsp; <span>яц — яч</span> &nbsp; | &nbsp; <span>иц — ич</span> &nbsp; | &nbsp; <span>ец — еч</span>
+        </div>
+
+        <!-- Ряд 5 -->
+        <div class="l30-t3-row" onclick="toggleL30Row(this, 'res-30-3', 20)">
+            <span>ич — иц</span> &nbsp; | &nbsp; <span>оч — оц</span> &nbsp; | &nbsp; <span>уч — уц</span> &nbsp; | &nbsp; <span>яч — яц</span>
+        </div>
+
+    </div>
+
+    <!-- Блок статуса выполнения -->
+    <div id="res-30-3" class="result-text">Прочитай все ряды слогов!</div>
+</div>
+
+<!-- ЗАДАНИЕ №4: ПРОИЗНОСИТЬ (ЧИТАТЬ) СОЧЕТАНИЯ СЛОВ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Сочетания слов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Читай сочетания слов чётко и выразительно. Нажми на строку, когда прочтёшь её!
+    </p>
+
+    <!-- Сетка сочетаний слов (в 3 колонки, как на картинке) -->
+    <div class="l30-t4-grid">
+        
+        <!-- Колонка 1 -->
+        <div class="l30-t4-col">
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">дача — яйца</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">чеки — цепи</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">чех — цех</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">чайка — цапля</div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l30-t4-col">
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">плечо — лицо</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">челюсть — целый</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">чиркнуть — циркуль</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">жарче — сальце</div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l30-t4-col">
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">бахча — овца</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">добыча — водица</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">меч — жнец</div>
+            <div class="l30-t4-row" onclick="toggleL30Row(this, 'res-30-4', 4)">гречка — грецкий</div>
+        </div>
+
+    </div>
+
+    <!-- Блок статуса выполнения -->
+    <div id="res-30-4" class="result-text">Прочитай все сочетания слов!</div>
+</div>
+
+<!-- ЗАДАНИЕ №5: 16 КАРТИНОК ДЛЯ ВСТАВКИ ПРОПУЩЕННЫХ СЛОГОВ И БУКВ [Ч] И [Ц] -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Вставь пропущенные слоги и буквы</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри все 16 картинок и напиши слова, вставляя пропущенные слоги и буквы.
+    </p>
+
+    <!-- Единая сетка для всех 16 карточек -->
+    <div class="l30-t5-words-grid">
+        
+        <!-- 1. Боец -->
+        <div class="l30-t5-card">
+            <img src="images/боец.png" class="l30-t5-img" alt="Боец">
+            <div class="l30-t5-word-row"><span>бо</span><input type="text" class="l30-t5-input" data-answer="ец" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 2. Яйцо -->
+        <div class="l30-t5-card">
+            <img src="images/яйцо.png" class="l30-t5-img" alt="Яйцо">
+            <div class="l30-t5-word-row"><span>яй</span><input type="text" class="l30-t5-input" data-answer="цо" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 3. Пончик -->
+        <div class="l30-t5-card">
+            <img src="images/калач.png" class="l30-t5-img" alt="Калач">
+            <div class="l30-t5-word-row"><span>ка</span><input type="text" class="l30-t5-input" data-answer="лач" placeholder="..." maxlength="4"></div>
+        </div>
+
+        <!-- 4. Силач -->
+        <div class="l30-t5-card">
+            <img src="images/силач.png" class="l30-t5-img" alt="Силач">
+            <div class="l30-t5-word-row"><span>си</span><input type="text" class="l30-t5-input" data-answer="лач" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 5. Церковь -->
+        <div class="l30-t5-card">
+            <img src="images/церковь.png" class="l30-t5-img" alt="Церковь">
+            <div class="l30-t5-word-row"><input type="text" class="l30-t5-input" data-answer="цер" placeholder="..." maxlength="4"><span>ковь</span></div>
+        </div>
+
+        <!-- 6. Точка -->
+        <div class="l30-t5-card">
+            <img src="images/точка.png" class="l30-t5-img" alt="Точка">
+            <div class="l30-t5-word-row"><input type="text" class="l30-t5-input" data-answer="то" placeholder="..." maxlength="3"><span>чка</span></div>
+        </div>
+
+        <!-- 7. Циркуль -->
+        <div class="l30-t5-card">
+            <img src="images/циркуль.png" class="l30-t5-img" alt="Циркуль">
+            <div class="l30-t5-word-row"><input type="text" class="l30-t5-input" data-answer="ци" placeholder="..." maxlength="3"><span>ркуль</span></div>
+        </div>
+
+        <!-- 8. Бочка -->
+        <div class="l30-t5-card">
+            <img src="images/бочка.png" class="l30-t5-img" alt="Бочка">
+            <div class="l30-t5-word-row"><input type="text" class="l30-t5-input" data-answer="боч" placeholder="..." maxlength="4"><span>ка</span></div>
+        </div>
+
+        <!-- 9. Качели -->
+        <div class="l30-t5-card">
+            <img src="images/качели.png" class="l30-t5-img" alt="Качели">
+            <div class="l30-t5-word-row"><span>ка</span><input type="text" class="l30-t5-input" data-answer="че" placeholder="..." maxlength="3"><span>ли</span></div>
+        </div>
+
+        <!-- 10. Индеец -->
+        <div class="l30-t5-card">
+            <img src="images/lesson-22-6-2.jpeg" class="l30-t5-img" alt="Индеец">
+            <div class="l30-t5-word-row"><span>инде</span><input type="text" class="l30-t5-input" data-answer="ец" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 11. Мальчики -->
+        <div class="l30-t5-card">
+            <img src="images/мальчики.png" class="l30-t5-img" alt="Мальчики">
+            <div class="l30-t5-word-row"><span>маль</span><input type="text" class="l30-t5-input" data-answer="чи" placeholder="..." maxlength="3"><span>ки</span></div>
+        </div>
+
+        <!-- 12. Ножницы -->
+        <div class="l30-t5-card">
+            <img src="images/ножницы.png" class="l30-t5-img" alt="Ножницы">
+            <div class="l30-t5-word-row"><span>ножни</span><input type="text" class="l30-t5-input" data-answer="цы" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 13. Ученица -->
+        <div class="l30-t5-card">
+            <img src="images/ученица.png" class="l30-t5-img" alt="Ученица">
+            <div class="l30-t5-word-row"><span>у</span><input type="text" class="l30-t5-input" data-answer="че" placeholder="..." maxlength="3"><span>ни</span><input type="text" class="l30-t5-input" data-answer="ца" placeholder="..." maxlength="3"></div>
+        </div>
+
+        <!-- 14. Циркачка -->
+        <div class="l30-t5-card">
+            <img src="images/циркачи.png" class="l30-t5-img" alt="Циркачи">
+            <div class="l30-t5-word-row"><input type="text" class="l30-t5-input" data-answer="ци" placeholder="..." maxlength="3"><span>рка</span><input type="text" class="l30-t5-input" data-answer="чи" placeholder="..." maxlength="2"></div>
+        </div>
+
+        <!-- 15. Цепочка -->
+        <div class="l30-t5-card">
+            <img src="images/chain.png" class="l30-t5-img" alt="Цепочка">
+            <div class="l30-t5-word-row"><span>це</span><input type="text" class="l30-t5-input" data-answer="поч" placeholder="..." maxlength="6"><span>ка</span></div>
+        </div>
+
+        <!-- 16. Учительница -->
+        <div class="l30-t5-card">
+            <img src="images/учительница.png" class="l30-t5-img" alt="Учительница">
+            <div class="l30-t5-word-row"><span>у</span><input type="text" class="l30-t5-input" data-answer="чи" placeholder="..." maxlength="3"><span>тельни</span><input type="text" class="l30-t5-input" data-answer="ца" placeholder="..." maxlength="3"></div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-30-5-words" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task5Words()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6: СОСТАВЬ СЛОВА ИЗ СЛОГОВ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Составь слова из слогов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно посмотри на слоги, составь из них правильные слова и впиши их в поля для ответа.
+    </p>
+
+    <!-- Сетка заданий в 3 колонки (как на картинке) -->
+    <div class="l30-t6-grid">
+        
+        <!-- Колонка 1 -->
+        <div class="l30-t6-column">
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">ки, чул</span>
+                <input type="text" class="l30-t6-input" data-answer="чулки" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">дак, чу</span>
+                <input type="text" class="l30-t6-input" data-answer="чудак" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">гун, чу</span>
+                <input type="text" class="l30-t6-input" data-answer="чугун" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">коль, цо</span>
+                <input type="text" class="l30-t6-input" data-answer="цоколь" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l30-t6-column">
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">че, дан, мо</span>
+                <input type="text" class="l30-t6-input" data-answer="чемодан" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">че, ня, реш</span>
+                <input type="text" class="l30-t6-input" data-answer="черешня" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">бег, цы, ле</span>
+                <input type="text" class="l30-t6-input" data-answer="беглецы" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">цып, та, ля</span>
+                <input type="text" class="l30-t6-input" data-answer="цыплята" placeholder="слово...">
+            </div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l30-t6-column">
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">гор, ца, чи</span>
+                <input type="text" class="l30-t6-input" data-answer="горчица" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">ча, чек, со</span>
+                <input type="text" class="l30-t6-input" data-answer="часочек" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">цве, то, чек</span>
+                <input type="text" class="l30-t6-input" data-answer="цветочек" placeholder="слово...">
+            </div>
+            <div class="l30-t6-row">
+                <span class="l30-t6-parts">лоч, бу, ка</span>
+                <input type="text" class="l30-t6-input" data-answer="булочка" placeholder="слово...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-30-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task6()">Проверить</button>
+    </div>
+</div>
+
+
+<!-- ЗАДАНИЕ №7: ЗАГАДКИ С ПОЛЯМИ ДЛЯ ОТВЕТОВ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Отгадай загадки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай каждую загадку и впиши отгадку в поле ниже.
+    </p>
+
+    <div class="l30-t7-riddles-container">
+        
+        <!-- Загадка 1 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Первая буква – без окон кладовка,<br>
+                Буква вторая – хитрость, уловка,<br>
+                Третья – звук в речке текущей водицы,<br>
+                А все это вместе – певчая птица.
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Чиж" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 2 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Первая буква медленно ходит,<br>
+                Вторая – суть робот, но нас с вами вроде,<br>
+                Третья – сражение взглядов и мнений,<br>
+                А все это вместе лишь сумма мгновений.
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Час" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 3 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Белая эта птица<br>
+                С криком над морем кружится.<br>
+                Случая не упускает –<br>
+                Рыбку из волн таскает.
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Чайка" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 4 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                У кого стальные нервы?<br>
+                Он стоит на пьедестале,<br>
+                На груди горит медаль.<br>
+                Ну, конечно, это он –<br>
+                Олимпийский ... .
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Чемпион" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 5 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Эта ягода для вас<br>
+                И полезная для глаз,<br>
+                Хоть сладка не как клубника,<br>
+                А черна кустом - ... .
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Черника" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 6 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Было время, так писали:<br>
+                Перья в склянку опускали,<br>
+                А на дне её, смотри,<br>
+                Жидкость синяя внутри.
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Чернила" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 7 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Вот прошла уже суббота,<br>
+                В школу снова неохота.<br>
+                Но среда не за горой.<br>
+                А за нею день какой?
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Четверг" placeholder="Напиши отгадку...">
+        </div>
+
+        <!-- Загадка 8 -->
+        <div class="l30-t7-riddle-card">
+            <p class="l30-t7-riddle-text">
+                Если вдруг семейством Вишен<br>
+                Старый Тыква был обижен,<br>
+                То спешил на помощь<br>
+                Огородный овощ.<br>
+                Он и мальчик, он и лук,<br>
+                Беднякам надёжный друг.<br>
+                С перьевой причёской длинной,<br>
+                Этот мальчик - ... .
+            </p>
+            <input type="text" class="l30-t7-riddle-input" data-answer="Чиполлино" placeholder="Напиши отгадку...">
+        </div>
+
+    </div>
+
+    <!-- Кнопка проверки -->
+    <div id="res-30-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task7Riddles()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №8: ЖАДНЫЕ ЧЕРВЯЧКИ (DRAG-AND-DROP ИЛИ КЛИК) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Жадные червячки</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Распредели предметы по червячкам, перетащив их (или нажав на предмет, а затем на нужного червячка). Говори: «Он мой...», «Она моя...»
+    </p>
+
+    <!-- 4 зоны червячков сверху -->
+    <div class="l30-t8-drop-zones">
+        <div class="l30-t8-zone" data-category="мой" ondragover="allowDrop(event)" ondrop="dropItem(event)" onclick="selectCategory('мой')">
+            <div class="l30-t8-zone-title" style="color: #7b1fa2;">🐛 МОЙ (он)</div>
+            <div class="l30-t8-zone-items" id="zone-мой"></div>
+        </div>
+        <div class="l30-t8-zone" data-category="моя" ondragover="allowDrop(event)" ondrop="dropItem(event)" onclick="selectCategory('моя')">
+            <div class="l30-t8-zone-title" style="color: #2e7d32;">🐛 МОЯ (она)</div>
+            <div class="l30-t8-zone-items" id="zone-моя"></div>
+        </div>
+        <div class="l30-t8-zone" data-category="моё" ondragover="allowDrop(event)" ondrop="dropItem(event)" onclick="selectCategory('моё')">
+            <div class="l30-t8-zone-title" style="color: #0277bd;">🐛 МОЁ (оно)</div>
+            <div class="l30-t8-zone-items" id="zone-моё"></div>
+        </div>
+        <div class="l30-t8-zone" data-category="мои" ondragover="allowDrop(event)" ondrop="dropItem(event)" onclick="selectCategory('мои')">
+            <div class="l30-t8-zone-title" style="color: #ef6c00;">🐛 МОИ (они)</div>
+            <div class="l30-t8-zone-items" id="zone-мои"></div>
+        </div>
+    </div>
+
+    <!-- Контейнер с 12 предметами снизу -->
+    <p style="font-weight: bold; color: #2c3e50; margin: 15px 0 8px 0;">Предметы для распределения:</p>
+    <div class="l30-t8-source-pool" id="source-pool" ondragover="allowDrop(event)" ondrop="dropToPool(event)">
+        
+        <!-- Предметы с привязкой к категориям (data-answer) -->
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-1" data-answer="мой">
+            <img src="images/мячик.png" alt="Мячик" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Мячик</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-2" data-answer="мой">
+            <img src="images/кузнечик.png" alt="Кузнечик" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Кузнечик</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-3" data-answer="мои">
+            <img src="images/качели.png" alt="Качели" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Качели</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-4" data-answer="моя">
+            <img src="images/свеча.png" alt="Свеча" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Свеча</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-5" data-answer="моё">
+            <img src="images/печенье.png" alt="Печенье" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Печенье</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-6" data-answer="мои">
+            <img src="images/колокольчики.png" alt="Колокольчики" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Колокольчики</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-7" data-answer="мой">
+            <img src="images/жемчуг.png" alt="Жемчуг" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Жемчуг</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-8" data-answer="моя">
+            <img src="images/cloude.png" alt="Туча" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Туча</span>
+        </div>
+        <div class="l30-t8-drag-item" draggable="true" ondragstart="dragItem(event)" onclick="clickItem(this)" id="item-9" data-answer="мой">
+            <img src="images/зайчик.png" alt="Зайчик" onerror="this.src='images/lesson_29_8.jpeg'">
+            <span>Зайчик</span>
+        </div>
+    </div>
+
+    <!-- Кнопка проверки -->
+    <div id="res-30-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task8Drop()">Проверить</button>
+    </div>
+</div>
+
+
+
+<!-- ЗАДАНИЕ №9: КРОССВОРД -->
+
+
+
+<!-- ЗАДАНИЕ №9: КРОССВОРД -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+
+    <p class="card-instruction">
+        Разгадай кроссворд. Впиши ответы в клетки.
+    </p>
+
+    <div class="l30-t9-hints">
+        <!-- ЛЕВАЯ колонка: По горизонтали -->
+        <div class="l30-t9-hint-col">
+            <b>По горизонтали:</b><br>
+            1. 1-е лицо, единственное число глагола «учить».<br>
+            2. Синоним слова «прекрасный».<br>
+            3. Синоним слова «глаза» (устаревшее слово).<br>
+            4. Место, где зимой выращивают овощи.<br>
+            5. Заглянуло солнце в твоё ... .<br>
+            6. Синоним слова «больница».<br>
+            7. Синоним слова «грусть».<br>
+            8. Антоним слова «быль».<br>
+            9. Перелётные птицы.<br>
+            10. Люди ходят молиться в ... .<br>
+            11. Ученица, которая учится на «отлично».
+        </div>
+
+        <!-- ПРАВАЯ колонка: По вертикали + картинка -->
+        <div class="l30-t9-hint-col">
+            <b>По вертикали:</b><br>
+            1. Она учит детей в школе.
+
+            <div class="l30-t9-image-box">
+                <img src="images/учительница.png" class="l30-t9-image" alt="Учительница">
+            </div>
+        </div>
+    </div>
+
+    <div class="l30-t9-crossword-wrapper">
+        <table class="l30-t9-table">
+            <!-- Строка 1 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td>
+                <td class="num">1</td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 2 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td>
+                <td class="num">1</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="у" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="у" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 3 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">2</td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="у" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="д" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="с" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="н" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ы" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="й" maxlength="1"></td>
+                <td class="z"></td>
+            </tr>
+            <!-- Строка 4 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td>
+                <td class="num">3</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 5 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">4</td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="т" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="п" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="л" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 6 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">5</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="к" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="н" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 7 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">6</td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="л" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="б" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="н" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+            </tr>
+            <!-- Строка 8 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">7</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="п" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="л" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="ь" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 9 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">8</td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="н" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="б" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ы" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="л" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+                <td class="z"></td>
+            </tr>
+            <!-- Строка 10 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">9</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="г" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="р" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 11 -->
+            <tr>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="num">10</td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="р" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="к" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="в" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ь" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td>
+            </tr>
+            <!-- Строка 12 -->
+            <tr>
+                <td class="num">11</td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="т" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="л" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="н" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l30-t9-input" data-answer="ц" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l30-t9-input" data-answer="а" maxlength="1"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+                <td class="z"></td><td class="z"></td><td class="z"></td><td class="z"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div id="res-30-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL30Task9Crossword()">Проверить</button>
+    </div>
+</div>
+
+</div>
+
+<script src="lesson-30.js"></script>
+</body>
+</html>
