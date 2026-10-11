@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 31 - Автоматизация звука [Ч] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-31.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 31. Автоматизация звука [Ч] в словах и предложениях</div>
+    </header>
+<!-- ЗАДАНИЕ №1: ВСТАВЬ БУКВУ Ч ИЛИ Ш -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Буквы Ч и Ш</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Вставь букву <b style="color:#27ae60;">Ч</b> зелёным цветом, <b style="color:#2980b9;">Ш</b> — синим.
+    </p>
+
+    <!-- Сетка из трёх колонок по 6 слов -->
+    <div class="l31-t1-grid">
+
+        <!-- Колонка 1 -->
+        <div class="l31-t1-col">
+            <div class="l31-t1-row">лап<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">а</div>
+            <div class="l31-t1-row"><input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ахта</div>
+            <div class="l31-t1-row">сту<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">ит</div>
+            <div class="l31-t1-row"><input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">ервяк</div>
+            <div class="l31-t1-row">ко<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ка</div>
+            <div class="l31-t1-row">о<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">ки</div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l31-t1-col">
+            <div class="l31-t1-row">клю<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1"></div>
+            <div class="l31-t1-row">ви<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ня</div>
+            <div class="l31-t1-row">кирпи<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1"></div>
+            <div class="l31-t1-row">мо<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ка</div>
+            <div class="l31-t1-row">по<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">та</div>
+            <div class="l31-t1-row">кала<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1"></div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l31-t1-col">
+            <div class="l31-t1-row">малы<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1"></div>
+            <div class="l31-t1-row"><input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">околад</div>
+            <div class="l31-t1-row">ча<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ка</div>
+            <div class="l31-t1-row"><input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">емодан</div>
+            <div class="l31-t1-row">по<input type="text" class="l31-t1-input" data-answer="ч" maxlength="1">ка</div>
+            <div class="l31-t1-row">пы<input type="text" class="l31-t1-input" data-answer="ш" maxlength="1">ка</div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2: СОСТАВЬ СЛОВОСОЧЕТАНИЯ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Составь словосочетания</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        К каждому слову из левого столбика подберите подходящее по смыслу слово из второго столбика. Перетащите слово из правого столбика в строку к подходящему слову слева. Затем прочитайте получившиеся словосочетания. Буквы Ч и Ш раскрасьте маркерами: Ч — зелёным, Ш — синим.
+    </p>
+
+    <!-- БЛОК 1 -->
+    <div class="l31-t2-block">
+        <div class="l31-t2-block-inner">
+
+            <!-- Левый столбик блока 1 -->
+            <div class="l31-t2-left">
+                <div class="l31-t2-row" data-answer="груша">
+                    <span class="l31-t2-word">со<span class="l31-t2-letter" data-letter="ч">ч</span>ная</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="мышка">
+                    <span class="l31-t2-word">кроше<span class="l31-t2-letter" data-letter="ч">ч</span>ная</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="каша">
+                    <span class="l31-t2-word">моло<span class="l31-t2-letter" data-letter="ч">ч</span>ная</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="карандаш">
+                    <span class="l31-t2-word">зато<span class="l31-t2-letter" data-letter="ч">ч</span>енный</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="шляпа">
+                    <span class="l31-t2-word">кори<span class="l31-t2-letter" data-letter="ч">ч</span>невая</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+            </div>
+
+            <!-- Правый столбик блока 1 -->
+            <div class="l31-t2-right">
+                <p class="l31-t2-pool-title">Слова для выбора:</p>
+                <div class="l31-t2-pool" data-pool="1" ondragover="allowDrop31T2(event)" ondrop="dropToPool31T2(event)">
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="шляпа"><span class="l31-t2-letter" data-letter="ш">ш</span>ляпа</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="каша">ка<span class="l31-t2-letter" data-letter="ш">ш</span>а</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="груша">гру<span class="l31-t2-letter" data-letter="ш">ш</span>а</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="карандаш">каранда<span class="l31-t2-letter" data-letter="ш">ш</span></div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="мышка">мы<span class="l31-t2-letter" data-letter="ш">ш</span>ка</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- БЛОК 2 -->
+    <div class="l31-t2-block">
+        <div class="l31-t2-block-inner">
+
+            <!-- Левый столбик блока 2 -->
+            <div class="l31-t2-left">
+                <div class="l31-t2-row" data-answer="каша">
+                    <span class="l31-t2-word">гре<span class="l31-t2-letter" data-letter="ч">ч</span>невая</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="ладошки">
+                    <span class="l31-t2-word"><span class="l31-t2-letter" data-letter="ч">ч</span>истые</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="чашка">
+                    <span class="l31-t2-word">боль<span class="l31-t2-letter" data-letter="ш">ш</span>ая</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="ручка">
+                    <span class="l31-t2-word"><span class="l31-t2-letter" data-letter="ш">ш</span>кольная</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+                <div class="l31-t2-row" data-answer="ручей">
+                    <span class="l31-t2-word"><span class="l31-t2-letter" data-letter="ш">ш</span>ирокий</span>
+                    <div class="l31-t2-slot" ondragover="allowDrop31T2(event)" ondrop="dropItem31T2(event)" onclick="returnToPool31T2(event)"></div>
+                </div>
+            </div>
+
+            <!-- Правый столбик блока 2 -->
+            <div class="l31-t2-right">
+                <p class="l31-t2-pool-title">Слова для выбора:</p>
+                <div class="l31-t2-pool" data-pool="2" ondragover="allowDrop31T2(event)" ondrop="dropToPool31T2(event)">
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="ручка">ру<span class="l31-t2-letter" data-letter="ч">ч</span>ка</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="ручей">ру<span class="l31-t2-letter" data-letter="ч">ч</span>ей</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="каша">ка<span class="l31-t2-letter" data-letter="ш">ш</span>а</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="ладошки">ладо<span class="l31-t2-letter" data-letter="ш">ш</span>ки</div>
+                    <div class="l31-t2-drag" draggable="true" ondragstart="dragItem31T2(event)" data-word="чашка">ча<span class="l31-t2-letter" data-letter="ш">ш</span>ка</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="res-31-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3: СОСТАВЬ ПРЕДЛОЖЕНИЯ ИЗ ДАННЫХ СЛОВ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Составь предложения из данных слов</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай слова в строчках, составь из них правильные предложения и запиши их в поля ниже.
+    </p>
+
+    <!-- Список предложений для составления -->
+    <div class="l31-t3-container">
+        
+        <!-- Предложение 1 -->
+        <div class="l31-t3-row">
+            <div class="l31-t3-words-source">В, шуршит, углу, мышка, крошечная.</div>
+            <input type="text" class="l31-t3-input" data-answer="в углу шуршит крошечная мышка" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Предложение 2 -->
+        <div class="l31-t3-row">
+            <div class="l31-t3-words-source">Со, упала, разбилась, и, стола, чашка.</div>
+            <input type="text" class="l31-t3-input" data-answer="со стола упала и разбилась чашка" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Предложение 3 -->
+        <div class="l31-t3-row">
+            <div class="l31-t3-words-source">Под, течёт, горой, ручей, широкий.</div>
+            <input type="text" class="l31-t3-input" data-answer="под горой течет широкий ручей" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Предложение 4 -->
+        <div class="l31-t3-row">
+            <div class="l31-t3-words-source">Надел, Миша, голову, коричневую, на, шляпу.</div>
+            <input type="text" class="l31-t3-input" data-answer="миша надел на голову коричневую шляпу" placeholder="Напиши предложение...">
+        </div>
+
+        <!-- Предложение 5 -->
+        <div class="l31-t3-row">
+            <div class="l31-t3-words-source">Белой, у, кошки, одно, было, чёрное, пятнышко.</div>
+            <input type="text" class="l31-t3-input" data-answer="у белой кошки было одно черное пятнышко" placeholder="Напиши предложение...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №4: ОБРАЗОВАНИЕ СЛОВ С СУФФИКСОМ -ЕЧК- -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Добавь суффикс -ечк-</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Добавь суффикс -ечк- к данным словам. Напиши слова парами. Обозначь в словах суффикс -ечк-. Образец: кошка — кошечка.
+    </p>
+
+    <!-- Сетка из 3 колонок с парами слов -->
+    <div class="l31-t4-grid">
+
+        <!-- Колонка 1 -->
+        <div class="l31-t4-col">
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">кошка —</span>
+                <input type="text" class="l31-t4-input" data-answer="кошечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">мошка —</span>
+                <input type="text" class="l31-t4-input" data-answer="мошечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">кочка —</span>
+                <input type="text" class="l31-t4-input" data-answer="кочечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">бочка —</span>
+                <input type="text" class="l31-t4-input" data-answer="бочечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- Колонка 2 -->
+        <div class="l31-t4-col">
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">крошка —</span>
+                <input type="text" class="l31-t4-input" data-answer="крошечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">опушка —</span>
+                <input type="text" class="l31-t4-input" data-answer="опушечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">плюшка —</span>
+                <input type="text" class="l31-t4-input" data-answer="плюшечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">плошка —</span>
+                <input type="text" class="l31-t4-input" data-answer="плошечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- Колонка 3 -->
+        <div class="l31-t4-col">
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">подушка —</span>
+                <input type="text" class="l31-t4-input" data-answer="подушечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">кукушка —</span>
+                <input type="text" class="l31-t4-input" data-answer="кукушечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">катушка —</span>
+                <input type="text" class="l31-t4-input" data-answer="катушечка" placeholder="...">
+            </div>
+            <div class="l31-t4-row">
+                <span class="l31-t4-word">лягушка —</span>
+                <input type="text" class="l31-t4-input" data-answer="лягушечка" placeholder="...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №5: РАССКАЗ "ШКОЛЬНИЦА" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Школьница</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай текст рассказа, рассмотри картинку и ответь на вопросы, записав их в поля ниже.
+    </p>
+
+    <!-- Текст рассказа -->
+    <div class="story-text-box">
+        <p><b>Верочка учится в первом классе.</b> Она уже научилась читать, считать и писать. Верочка часто вечером читает сестричке и маме свои учебники. Ей нравится решать задачи. Верочка пишет очень чисто и красиво.</p>
+        <p>Верочка хочет получать пятёрки, чтобы стать отличницей. Мама всегда хвалит Верочку за учёбу.</p>
+    </div>
+
+    <!-- Картинка-иллюстрация из файла -->
+    <div class="l31-t5-img-box">
+       <img src="images/lesson_31_5.jpeg" class="l31-t5-img" alt="Иллюстрация Школьница">
+    </div>
+
+    <!-- Блок с вопросами и полями для ответов -->
+    <div class="l31-t5-questions-box">
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">1) В каком классе учится Верочка?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">2) Чему уже научилась Верочка?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">3) Кому часто вечером читает Верочка свои учебники?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">4) Что нравится решать Верочке?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">5) Как пишет Верочка?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">6) Зачем Верочка хочет получать пятёрки?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t5-q-row">
+            <span class="l31-t5-q-text">7) За что всегда мама хвалит Верочку?</span>
+            <input type="text" class="l31-t5-input" placeholder="Напиши ответ...">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №6: РАССКАЗ "ЧАЕПИТИЕ" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Чаепитие</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно прочитай текст рассказа, рассмотри картинку и ответь на вопросы, записав их в поля ниже.
+    </p>
+
+    <!-- Текст рассказа -->
+    <div class="story-text-box">
+        <p><b>Олечка пригласила девочек в гости.</b> Девочки пришли после учёбы, немного поучили уроки, почитали, поиграли.</p>
+        <p>— Давайте, я поставлю чайник. Очень хочется горячего чаю, — предложила Олечка.</p>
+        <p>Она включила электрический чайник, постелила на стол чистую скатерть, расставила чашки. К чаю Олечка достала пачку земляничного печенья, булочки и клубничный джем.</p>
+        <p>— Девочки, идите пить чай! — позвала Олечка.</p>
+        <p>Вчетвером девочки с удовольствием попили чаю.</p>
+    </div>
+
+    <!-- Картинка-иллюстрация из файла -->
+    <div class="l31-t6-img-box">
+       <img src="images/lesson_31_6.jpeg" class="l31-t6-img" alt="Иллюстрация Чаепитие" onerror="this.src='images/lesson_31_5.jpeg'">
+    </div>
+
+    <!-- Блок с вопросами и полями для ответов -->
+    <div class="l31-t6-questions-box">
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">1) Кого пригласила в гости Олечка?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">2) Когда пришли девочки?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">3) Что девочки делали у Олечки сначала?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">4) Что предложила Олечка девочкам?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">5) Как Олечка готовилась к чаепитию?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">6) Что достала Олечка к чаю?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+        <div class="l31-t6-q-row">
+            <span class="l31-t6-q-text">7) Сколько всего девочек пили чай?</span>
+            <input type="text" class="l31-t6-input" placeholder="Напиши ответ...">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task6()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №7: НАЗОВИ ДЕТЕЙ ЛАСКОВО -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Назови детей ласково</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Рассмотри портреты детей и напиши их имена ласково.
+    </p>
+
+    <!-- Сетка 3х3 для портретов -->
+    <div class="l31-t7-grid">
+        
+        <!-- 1. Аня -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_1.jpeg" class="l31-t7-img" alt="Аня">
+            <div class="l31-t7-row">
+                <span>Аня —</span>
+                <input type="text" class="l31-t7-input" data-answer="анечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 2. Ваня -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_2.jpeg" class="l31-t7-img" alt="Ваня">
+            <div class="l31-t7-row">
+                <span>Ваня —</span>
+                <input type="text" class="l31-t7-input" data-answer="ванечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 3. Оля -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_3.jpeg" class="l31-t7-img" alt="Оля">
+            <div class="l31-t7-row">
+                <span>Оля —</span>
+                <input type="text" class="l31-t7-input" data-answer="олечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 4. Коля -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_4.jpeg" class="l31-t7-img" alt="Коля">
+            <div class="l31-t7-row">
+                <span>Коля —</span>
+                <input type="text" class="l31-t7-input" data-answer="колечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 5. Света -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_5.jpeg" class="l31-t7-img" alt="Света">
+            <div class="l31-t7-row">
+                <span>Света —</span>
+                <input type="text" class="l31-t7-input" data-answer="светочка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 6. Петя -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_6.jpeg" class="l31-t7-img" alt="Петя">
+            <div class="l31-t7-row">
+                <span>Петя —</span>
+                <input type="text" class="l31-t7-input" data-answer="петечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 7. Нина -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_7.jpeg" class="l31-t7-img" alt="Нина">
+            <div class="l31-t7-row">
+                <span>Нина —</span>
+                <input type="text" class="l31-t7-input" data-answer="ниночка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 8. Соня -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_8.jpeg" class="l31-t7-img" alt="Соня">
+            <div class="l31-t7-row">
+                <span>Соня —</span>
+                <input type="text" class="l31-t7-input" data-answer="сонечка" placeholder="...">
+            </div>
+        </div>
+
+        <!-- 9. Рома -->
+        <div class="l31-t7-card">
+            <img src="images/lesson_31_7_9.jpeg" class="l31-t7-img" alt="Рома">
+            <div class="l31-t7-row">
+                <span>Рома —</span>
+                <input type="text" class="l31-t7-input" data-answer="ромочка" placeholder="...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task7()">Проверить</button>
+    </div>
+</div>
+
+
+<!-- ЗАДАНИЕ №8: КРОССВОРД -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Кроссворд</h2>
+    <div class="yellow-divider"></div>
+
+    <p class="card-instruction">
+        Разгадай кроссворд. Впиши ответы в клетки.
+    </p>
+
+    <div class="l31-t8-hints">
+        <div class="l31-t8-hint-col">
+            <b>По вертикали:</b><br>
+            1. Небольшие народные сатирические песенки, состоящие из четырёх строчек.
+        </div>
+        <div class="l31-t8-hint-col">
+            <b>По горизонтали:</b><br>
+            1. Предмет посуды для чаепития.<br>
+            2. Крупа, которую получают из гречихи.<br>
+            3. Они горят в церкви.<br>
+            4. Его готовят из печени. С ним получаются вкусные бутерброды.<br>
+            5. Приспособление для ловли рыбы. Она есть у каждого рыбака.<br>
+            6. Синоним слова «маленький».<br>
+            7. Острый, приятный соус. С ним едят макароны, сосиски, мясо.<br>
+            8. Плоды ёлки и сосны.
+        </div>
+    </div>
+
+    <div class="l31-t8-crossword-wrapper">
+        <table class="l31-t8-table">
+
+            <!-- Строка 1 -->
+            <tr>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+                <td class="z">w</td><td class="z">w</td>
+                <td class="num">1</td>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+            </tr>
+
+            <!-- Строка 2: ЧАШКА -->
+            <tr>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+                <td class="num">1</td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ш" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="к" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+                <td class="z">w</td>
+            </tr>
+
+            <!-- Строка 3: ГРЕЧКА -->
+            <tr>
+                <td class="num">2</td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="г" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="р" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="к" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+            </tr>
+
+            <!-- Строка 4: СВЕЧИ -->
+            <tr>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+                <td class="num">3</td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="с" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="в" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="и" maxlength="1"></td>
+                <td class="z">w</td>
+            </tr>
+
+            <!-- Строка 5: ПАШТЕТ -->
+            <tr>
+                <td class="num">4</td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="п" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ш" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="т" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="е" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="т" maxlength="1"></td>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+            </tr>
+
+            <!-- Строка 6: УДОЧКА -->
+            <tr>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+                <td class="num">5</td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="у" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="д" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="о" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="к" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+            </tr>
+
+            <!-- Строка 7: МАЛЫШ -->
+            <tr>
+                <td class="z">w</td>
+                <td class="num">6</td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="м" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="а" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="л" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ы" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="ш" maxlength="1"></td>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+            </tr>
+
+            <!-- Строка 8: КЕТЧУП -->
+            <tr>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+                <td class="num">7</td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="к" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="е" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="т" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ч" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="у" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="п" maxlength="1"></td>
+            </tr>
+
+            <!-- Строка 9: ШИШКИ -->
+            <tr>
+                <td class="z">w</td>
+                <td class="num">8</td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ш" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="и" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="ш" maxlength="1"></td>
+                <td class="letter"><input type="text" class="l31-t8-input" data-answer="к" maxlength="1"></td>
+                <td class="letter vert"><input type="text" class="l31-t8-input" data-answer="и" maxlength="1"></td>
+                <td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td><td class="z">w</td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="res-31-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task8Crossword()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №9: АВТОМАТИЗАЦИЯ ЗВУКА [Ч] В ПРЕДЛОЖЕНИЯХ -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Автоматизация звука «Ч» в предложениях</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Произнеси все слова в предложениях правильно, чётко выделяя звук <b>[ч]</b>. Рассмотри картинки и нажимай на кнопку, когда предложение прочитано без ошибок.
+    </p>
+
+    <!-- Контейнер для строк с предложениями и картинками -->
+    <div class="l31-t9-container">
+
+        <!-- Строка 1: Картинка слева, предложение справа -->
+        <div class="l31-t9-row">
+            <div class="l31-t9-img-box">
+                <img src="images/lesson_31_9_1.jpeg" class="l31-t9-img" alt="Чашка горячего чая" onerror="this.src='images/lesson_31_8_1.jpeg'">
+            </div>
+            <div class="l31-t9-text-box">
+                <div class="l31-t9-sentence">
+                    На столе <span class="l31-t9-ch-word">чашка</span> горя<span class="l31-t9-ch-word">чего</span> <span class="l31-t9-ch-word">чая</span>.
+                </div>
+                <button type="button" class="l31-t9-say-btn" onclick="toggleL31T9Done(this)">
+                    <span class="l31-t9-icon">⭐</span> Произнёс чисто!
+                </button>
+            </div>
+        </div>
+
+        <!-- Строка 2: Предложение слева, картинка справа -->
+        <div class="l31-t9-row l31-t9-row-reverse">
+            <div class="l31-t9-text-box">
+                <div class="l31-t9-sentence">
+                    Маль<span class="l31-t9-ch-word">чик</span> кормит соба<span class="l31-t9-ch-word">чку</span> Жу<span class="l31-t9-ch-word">чку</span>.
+                </div>
+                <button type="button" class="l31-t9-say-btn" onclick="toggleL31T9Done(this)">
+                    <span class="l31-t9-icon">⭐</span> Произнёс чисто!
+                </button>
+            </div>
+            <div class="l31-t9-img-box">
+                <img src="images/lesson_31_9_2.jpeg" class="l31-t9-img" alt="Мальчик кормит собачку" onerror="this.src='images/lesson_31_8_2.jpeg'">
+            </div>
+        </div>
+
+        <!-- Строка 3: Картинка слева, предложение справа -->
+        <div class="l31-t9-row">
+            <div class="l31-t9-img-box">
+                <img src="images/lesson_31_9_3.jpeg" class="l31-t9-img" alt="Девочка заплела косички" onerror="this.src='images/lesson_31_8_3.jpeg'">
+            </div>
+            <div class="l31-t9-text-box">
+                <div class="l31-t9-sentence">
+                    Дево<span class="l31-t9-ch-word">чка</span> заплела две коси<span class="l31-t9-ch-word">чки</span>.
+                </div>
+                <button type="button" class="l31-t9-say-btn" onclick="toggleL31T9Done(this)">
+                    <span class="l31-t9-icon">⭐</span> Произнёс чисто!
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка завершения -->
+    <div id="res-31-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task9()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №10: ИГРА "СЫЩИК" -->
+<div class="white-card">
+    <h2 class="card-title">Задание 10. Игра «Сыщик»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Будь внимателен, как настоящий сыщик! Посмотри на большую картинку, сосчитай, сколько раз встречается каждый предмет со звуками <b>[ч]</b>, <b>[ш]</b> и впиши цифру в клеточку снизу.
+    </p>
+
+    <!-- Большая картинка с предметами -->
+    <div class="l31-t10-img-box">
+        <img src="images/lesson-31_10.png" class="l31-t10-main-img" alt="Игра Сыщик" onerror="this.onerror=null; this.src='images/lesson_31_10.jpg';">
+    </div>
+
+    <!-- Сетка карточек для подсчёта предметов -->
+    <div class="l31-t10-grid">
+
+        <!-- 1. Подушка -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Поду<span class="l31-t10-highlight">ш</span>ка</span>
+            <input type="number" class="l31-t10-input" data-answer="4" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 2. Мышка -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Мы<span class="l31-t10-highlight">ш</span>ка</span>
+            <input type="number" class="l31-t10-input" data-answer="3" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 3. Кошелёк -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Ко<span class="l31-t10-highlight">ш</span>елёк</span>
+            <input type="number" class="l31-t10-input" data-answer="3" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 4. Чемодан -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name"><span class="l31-t10-highlight">Ч</span>емодан</span>
+            <input type="number" class="l31-t10-input" data-answer="2" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 5. Шишка -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name"><span class="l31-t10-highlight">Ш</span>и<span class="l31-t10-highlight">ш</span>ка</span>
+            <input type="number" class="l31-t10-input" data-answer="3" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 6. Шуруп -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name"><span class="l31-t10-highlight">Ш</span>уруп</span>
+            <input type="number" class="l31-t10-input" data-answer="4" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 7. Чайник -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name"><span class="l31-t10-highlight">Ч</span>айник</span>
+            <input type="number" class="l31-t10-input" data-answer="2" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 8. Кошка -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Ко<span class="l31-t10-highlight">ш</span>ка</span>
+            <input type="number" class="l31-t10-input" data-answer="2" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 9. Кувшин -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Кув<span class="l31-t10-highlight">ш</span>ин</span>
+            <input type="number" class="l31-t10-input" data-answer="2" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 10. Шапка -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name"><span class="l31-t10-highlight">Ш</span>апка</span>
+            <input type="number" class="l31-t10-input" data-answer="1" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 11. Кабачок -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">Каба<span class="l31-t10-highlight">ч</span>ок</span>
+            <input type="number" class="l31-t10-input" data-answer="3" min="0" max="9" placeholder="?">
+        </div>
+
+        <!-- 12. Очки -->
+        <div class="l31-t10-card">
+            <span class="l31-t10-item-name">О<span class="l31-t10-highlight">ч</span>ки</span>
+            <input type="number" class="l31-t10-input" data-answer="2" min="0" max="9" placeholder="?">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-31-10" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL31Task10()">Проверить</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script src="lesson-31.js"></script>
+</body>
+</html>

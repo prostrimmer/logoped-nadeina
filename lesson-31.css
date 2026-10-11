@@ -1,0 +1,1242 @@
+/* ОБЩИЕ СТИЛИ СТРАНИЦЫ */
+body {
+    margin: 0;                  /* Убираем внешние отступы */
+    padding: 0;                 /* Убираем внутренние отступы по умолчанию */
+    background-color: #99dfff;  /* Основной светло-голубой фон страницы */
+    font-family: 'Comic Sans MS', sans-serif; /* Детский шрифт, используемый во всех уроках */
+}
+
+.content-wrapper { 
+    padding: 15px 10px;         /* Отступы вокруг всего контента */
+}
+
+.main-header { 
+    text-align: center;         /* Центрирование шапки урока */
+}
+
+.lesson-badge {
+    display: inline-block;      /* Плашка отображается как блочный элемент в строке */
+    background: #fff9c4;        /* Светло-жёлтый фон плашки заголовка урока */
+    padding: 8px 30px;          /* Внутренние отступы плашки */
+    border-radius: 15px;        /* Скругление углов плашки */
+    color: #ff6d00;             /* Ярко-оранжевый цвет текста */
+    font-weight: bold;          /* Жирное начертание текста */
+    font-size: 1.6em;           /* Размер шрифта заголовка урока */
+    margin-bottom: 15px;        /* Отступ снизу от плашки */
+    box-shadow: 0 4px 0 #ffd600; /* Тень под плашкой для объёма */
+}
+
+.white-card {
+    background: #f0faff;        /* Светлый голубовато-белый фон карточки задания */
+    border: 6px solid #ffd600;  /* Толстая жёлтая рамка вокруг карточки */
+    border-radius: 30px;        /* Большое скругление углов карточки */
+    padding: 15px 25px;         /* Внутренние отступы внутри карточки */
+    max-width: 750px;           /* Максимальная ширина карточки */
+    margin: 0 auto 20px;        /* Центрирование и отступ между карточками */
+    box-shadow: 0 10px 0 rgba(0,0,0,0.05); /* Лёгкая тень под карточкой */
+}
+
+.card-title {
+    color: #ff7043;             /* Оранжевый цвет заголовка задания */
+    text-align: center;         /* Центрирование заголовка */
+    font-size: 1.8em;           /* Размер шрифта заголовка */
+    margin: 0 0 10px 0;         /* Отступы вокруг заголовка */
+}
+
+.yellow-divider {
+    height: 4px;                /* Высота разделительной линии */
+    background-color: #ffd600;  /* Жёлтый цвет разделителя */
+    margin-bottom: 20px;        /* Отступ снизу от линии */
+}
+
+.card-instruction {
+    font-size: 1.25rem;         /* Размер текста инструкции */
+    color: #2c3e50;             /* Тёмно-синий цвет текста инструкции */
+    text-align: left;         /* Центрирование инструкции */
+    margin: 15px 0 25px 0;      /* Отступы сверху и снизу */
+    line-height: 1.2;           /* Межстрочный интервал для удобства чтения */
+}
+
+/* СТИЛИ ДЛЯ ЦЕНТРИРОВАНИЯ И ОФОРМЛЕНИЯ КНОПКИ ПРОВЕРКИ */
+
+.btn-box {
+    display: flex;                                              /* Включаем флекс-контейнер для кнопки */
+    justify-content: center;                                    /* Центрируем кнопку строго по горизонтали */
+    margin-top: 0px;                                           /* Добавляем отступ сверху от задания до кнопки */
+}
+
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);   /* Создаем оранжевый градиент как на макете */
+    color: #ffffff;                                             /* Устанавливаем белый цвет текста */
+    font-family: 'Comic Sans MS', sans-serif;                   /* Поддерживаем единый детский шрифт */
+    font-size: 1.5em;                                           /* Устанавливаем крупный, читаемый размер шрифта */
+    font-weight: bold;                                          /* Делаем текст жирным */
+    padding: 12px 60px;                                         /* Задаем внутренние отступы для вытянутой формы */
+    border: none;                                               /* Убираем стандартную браузерную рамку */
+    border-radius: 40px;                                        /* Делаем края сильно скругленными (овальными) */
+    box-shadow: 0 6px 0 #d84315;                                /* Добавляем темный "объем" под кнопкой */
+    cursor: pointer;                                            /* Меняем курсор на палец при наведении */
+    transition: all 0.2s ease;                                  /* Плавная анимация при нажатии */
+}
+
+.orange-check-btn:hover {
+    transform: translateY(-2px);                                /* Легкое приподнятие кнопки при наведении */
+    box-shadow: 0 8px 0 #d84315;                                /* Увеличение тени для эффекта парения */
+}
+
+.orange-check-btn:active {
+    transform: translateY(4px);                                 /* Кнопка "вдавливается" при клике */
+    box-shadow: 0 2px 0 #d84315;                                /* Тень уменьшается при нажатии */
+}
+
+.result-text {
+    text-align: center;                                         /* Центрируем текст результата над кнопкой */
+    font-size: 1.3em;                                           /* Размер шрифта сообщения об успехе */
+    margin: 15px 0;                                             /* Вертикальные отступы для текста */
+    min-height: 1.5em;                                          /* Резервируем место, чтобы контент не прыгал */
+}
+
+/* КНОПКИ */
+.btn-box { display: flex; justify-content: center; }
+.orange-check-btn {
+    background: linear-gradient(to bottom, #ff9244, #f57c00);
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 12px 60px;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 0 6px 0 #d84315;
+    cursor: pointer;
+}
+
+
+/* НАЧАЛО ОСНОВНОГО БЛОКА CSS */
+/* =========================================
+   ЗАДАНИЕ 1: БУКВЫ Ч И Ш
+   ========================================= */
+
+/* Сетка из трёх колонок со словами */
+.l31-t1-grid {                                       /* Контейнер всех колонок */
+    display: grid;                                   /* Включаем Grid-раскладку */
+    grid-template-columns: repeat(3, 1fr);           /* Три равные колонки */
+    gap: 15px;                                       /* Отступы между колонками */
+    margin-top: 15px;                                /* Отступ сверху от инструкции */
+}
+
+/* Одна колонка со словами */
+.l31-t1-col {                                        /* Колонка слов */
+    display: flex;                                   /* Флексбокс */
+    flex-direction: column;                          /* Элементы друг под другом */
+    gap: 10px;                                       /* Отступ между строками */
+}
+
+/* Строка со словом и полем ввода */
+.l31-t1-row {                                        /* Одна строка задания */
+    background: #ffffff;                             /* Белый фон строки */
+    border: 2px solid #b3e5fc;                       /* Светло-синяя рамка */
+    border-radius: 10px;                             /* Скругление углов */
+    padding: 8px 10px;                               /* Внутренние отступы */
+    font-size: 1.15rem;                              /* Размер шрифта */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2c3e50;                                  /* Тёмно-синий цвет текста */
+    display: flex;                                   /* Флексбокс в строку */
+    align-items: center;                             /* Центрирование по вертикали */
+    justify-content: center;                         /* Центрирование по горизонтали */
+    box-sizing: border-box;                          /* Учитываем рамку в размерах */
+}
+
+/* Поле ввода одной буквы */
+.l31-t1-input {                                      /* Инпут для буквы */
+    border: 2px solid #3498db;                       /* Синяя рамка */
+    border-radius: 6px;                              /* Скругление углов */
+    padding: 2px 0;                                  /* Минимальные внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.15rem;                              /* Размер буквы */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2c3e50;                                  /* Тёмный цвет текста */
+    outline: none;                                   /* Убираем стандартную обводку */
+    width: 34px;                                     /* Компактная ширина под одну букву */
+    text-align: center;                              /* Буква по центру */
+    box-sizing: border-box;                          /* Учитываем рамку */
+    margin: 0 2px;                                   /* Небольшой отступ от соседних букв */
+    transition: all 0.2s ease;                       /* Плавная анимация */
+}
+
+/* Фокус на поле */
+.l31-t1-input:focus {                                /* При вводе */
+    border-color: #2980b9;                           /* Тёмно-синяя рамка */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);     /* Лёгкое свечение */
+}
+
+/* Правильная буква Ч — зелёный цвет текста */
+.l31-t1-input.correct-ch {                           /* Верно введена Ч */
+    border-color: #27ae60 !important;                /* Зелёная рамка */
+    background-color: #d4edda !important;            /* Светло-зелёный фон */
+    color: #27ae60 !important;                       /* Зелёный цвет буквы */
+}
+
+/* Правильная буква Ш — синий цвет текста */
+.l31-t1-input.correct-sh {                           /* Верно введена Ш */
+    border-color: #2980b9 !important;                /* Синяя рамка */
+    background-color: #d6eaf8 !important;            /* Светло-синий фон */
+    color: #2980b9 !important;                       /* Синий цвет буквы */
+}
+
+/* Неправильный ответ или пустое поле */
+.l31-t1-input.wrong {                                /* Ошибка */
+    border-color: #e74c3c !important;                /* Красная рамка */
+    background-color: #f8d7da !important;            /* Светло-красный фон */
+    color: #721c24 !important;                       /* Тёмно-красный текст */
+}
+
+/* Адаптивность: на планшетах две колонки */
+@media (max-width: 800px) {                          /* Планшеты и уже */
+    .l31-t1-grid {                                   /* Сетка задания */
+        grid-template-columns: repeat(2, 1fr);       /* Две колонки */
+    }
+}
+
+/* Адаптивность: на телефонах одна колонка */
+@media (max-width: 500px) {                          /* Смартфоны */
+    .l31-t1-grid {                                   /* Сетка задания */
+        grid-template-columns: 1fr;                  /* Одна колонка */
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 2: СОСТАВЬ СЛОВОСОЧЕТАНИЯ
+   ========================================= */
+
+/* Панель маркеров */
+.l31-t2-markers {                                     /* Контейнер маркеров */
+    display: flex;                                    /* Флексбокс в строку */
+    align-items: center;                              /* Центрирование по вертикали */
+    gap: 12px;                                        /* Отступ между элементами */
+    margin: 10px 0 20px 0;                            /* Отступы сверху и снизу */
+    flex-wrap: wrap;                                  /* Разрешаем перенос */
+}
+
+.l31-t2-markers-label {                               /* Надпись "Маркеры:" */
+    font-size: 1.15rem;                               /* Размер шрифта */
+    font-weight: bold;                                /* Жирное начертание */
+    color: #2c3e50;                                   /* Тёмно-синий цвет */
+}
+
+.l31-t2-marker {                                      /* Маркер-кнопка */
+    padding: 6px 16px;                                /* Внутренние отступы */
+    border-radius: 20px;                              /* Скруглённые края */
+    font-size: 1.05rem;                               /* Размер шрифта */
+    font-weight: bold;                                /* Жирное начертание */
+    cursor: pointer;                                  /* Курсор-рука */
+    user-select: none;                                /* Запрет выделения */
+    border: 3px solid transparent;                    /* Прозрачная рамка по умолчанию */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+}
+
+.l31-t2-marker-green {                                /* Зелёный маркер */
+    background: #d4edda;                              /* Светло-зелёный фон */
+    color: #27ae60;                                   /* Зелёный текст */
+    border-color: #27ae60;                            /* Зелёная рамка */
+}
+
+.l31-t2-marker-blue {                                 /* Синий маркер */
+    background: #d6eaf8;                              /* Светло-синий фон */
+    color: #2980b9;                                   /* Синий текст */
+    border-color: #2980b9;                            /* Синяя рамка */
+}
+
+.l31-t2-marker.active {                               /* Активный маркер */
+    box-shadow: 0 0 0 3px #ffd600;                    /* Жёлтая обводка вокруг */
+    transform: scale(1.05);                           /* Лёгкое увеличение */
+}
+
+/* Блок задания — рамка вокруг двух столбиков */
+.l31-t2-block {                                       /* Внешняя рамка блока */
+    background: #ffffff;                              /* Белый фон */
+    border: 2px solid #b3e5fc;                        /* Светло-синяя рамка */
+    border-radius: 12px;                              /* Скругление углов */
+    padding: 12px;                                    /* Внутренние отступы */
+    margin-bottom: 15px;                              /* Отступ между блоками */
+}
+
+/* Сетка: левый и правый столбики */
+.l31-t2-block-inner {                                 /* Двухколоночная сетка */
+    display: grid;                                    /* Grid-раскладка */
+    grid-template-columns: 1fr 1fr;                   /* Две равные колонки */
+    gap: 15px;                                        /* Отступ между колонками */
+    align-items: start;                               /* Выравнивание по верху */
+}
+
+/* ЛЕВАЯ КОЛОНКА */
+.l31-t2-left {                                        /* Контейнер строк */
+    display: flex;                                    /* Флексбокс */
+    flex-direction: column;                           /* Строки друг под другом */
+    gap: 8px;                                         /* Отступ между строками */
+}
+
+.l31-t2-row {                                         /* Одна строка задания */
+    background: #f0faff;                              /* Светло-голубой фон */
+    border: 2px solid #b3e5fc;                        /* Светло-синяя рамка */
+    border-radius: 10px;                              /* Скругление углов */
+    padding: 6px 10px;                                /* Внутренние отступы */
+    display: flex;                                    /* Флексбокс в строку */
+    align-items: center;                              /* Центрирование по вертикали */
+    justify-content: space-between;                   /* Слово слева, слот справа */
+    gap: 10px;                                        /* Отступ между словом и слотом */
+    min-height: 46px;                                 /* Минимальная высота */
+    box-sizing: border-box;                           /* Учитываем рамку */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+}
+
+.l31-t2-word {                                        /* Левое слово */
+    font-size: 1.15rem;                               /* Размер шрифта */
+    font-weight: bold;                                /* Жирное начертание */
+    color: #2c3e50;                                   /* Тёмно-синий цвет */
+    white-space: nowrap;                              /* Не переносим слово */
+}
+
+/* Буквы Ч и Ш, доступные для раскраски */
+.l31-t2-letter {                                      /* Буква внутри слова */
+    cursor: pointer;                                  /* Курсор-рука */
+    padding: 0 1px;                                   /* Небольшой отступ */
+    border-radius: 3px;                               /* Скругление */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+}
+
+.l31-t2-letter:hover {                                /* При наведении */
+    background: #fff9c4;                              /* Лёгкая жёлтая подсветка */
+}
+
+.l31-t2-letter.painted-green {                        /* Раскрашено зелёным */
+    color: #27ae60;                                   /* Зелёный цвет буквы */
+    font-weight: bold;                                /* Жирное начертание */
+}
+
+.l31-t2-letter.painted-blue {                         /* Раскрашено синим */
+    color: #2980b9;                                   /* Синий цвет буквы */
+    font-weight: bold;                                /* Жирное начертание */
+}
+
+.l31-t2-letter.wrong-color {                          /* Неверно раскрашено */
+    text-decoration: underline wavy #e74c3c;          /* Красное волнистое подчёркивание */
+}
+
+/* Слот под перетаскиваемое слово */
+.l31-t2-slot {                                        /* Зона для слова */
+    flex: 1;                                          /* Растягивается на остаток */
+    min-height: 36px;                                 /* Минимальная высота */
+    border: 2px dashed #90caf9;                       /* Пунктирная голубая рамка */
+    border-radius: 8px;                               /* Скругление углов */
+    display: flex;                                    /* Флексбокс */
+    align-items: center;                              /* Центрирование по вертикали */
+    justify-content: center;                          /* Центрирование по горизонтали */
+    padding: 2px 8px;                                 /* Внутренние отступы */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+}
+
+.l31-t2-slot.over {                                   /* Подсветка при наведении */
+    background: #e3f2fd;                              /* Голубой фон */
+    border-color: #2980b9;                            /* Тёмно-синяя рамка */
+}
+
+/* Буквы в слоте — кликабельны */
+.l31-t2-slot .l31-t2-letter {                         /* Буквы внутри слова в слоте */
+    cursor: pointer;                                  /* Курсор-рука */
+    pointer-events: auto;                             /* Клики по букве разрешены */
+}
+
+/* ПРАВАЯ КОЛОНКА */
+.l31-t2-right {                                       /* Контейнер пула */
+    display: flex;                                    /* Флексбокс */
+    flex-direction: column;                           /* Заголовок сверху, пул снизу */
+    gap: 8px;                                         /* Отступ между заголовком и пулом */
+}
+
+.l31-t2-pool-title {                                  /* Заголовок "Слова для выбора" */
+    margin: 0;                                        /* Убираем внешние отступы */
+    font-size: 1.15rem;                               /* Размер шрифта */
+    font-weight: bold;                                /* Жирное начертание */
+    color: #2c3e50;                                   /* Тёмно-синий цвет */
+}
+
+/* Пул слов — вертикальный список */
+.l31-t2-pool {                                        /* Контейнер слов для выбора */
+    background: #f0faff;                              /* Светло-голубой фон */
+    border: 2px solid #b3e5fc;                        /* Светло-синяя рамка */
+    border-radius: 12px;                              /* Скругление углов */
+    padding: 12px;                                    /* Внутренние отступы */
+    display: flex;                                    /* Флексбокс */
+    flex-direction: column;                           /* Слова друг под другом */
+    gap: 8px;                                         /* Отступ между словами */
+    min-height: 200px;                                /* Минимальная высота пула */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+}
+
+.l31-t2-pool.over {                                   /* Подсветка при перетаскивании */
+    background: #e3f2fd;                              /* Голубой фон */
+}
+
+/* Карточка перетаскиваемого слова */
+.l31-t2-drag {                                        /* Слово в пуле или в слоте */
+    background: #fff9c4;                              /* Светло-жёлтый фон */
+    border: 2px solid #ffd600;                        /* Жёлтая рамка */
+    border-radius: 8px;                               /* Скругление углов */
+    padding: 6px 12px;                                /* Внутренние отступы */
+    font-size: 1.15rem;                               /* Размер шрифта */
+    font-weight: bold;                                /* Жирное начертание */
+    color: #2c3e50;                                   /* Тёмно-синий цвет */
+    cursor: grab;                                     /* Курсор «рука» */
+    user-select: none;                                /* Запрет выделения */
+    transition: all 0.2s ease;                        /* Плавная анимация */
+    white-space: nowrap;                              /* Не переносим слово */
+    text-align: center;                               /* Текст по центру */
+}
+
+.l31-t2-drag:active {                                 /* В момент захвата */
+    cursor: grabbing;                                 /* Курсор «сжатая рука» */
+}
+
+/* В слоте: слово без жёлтой карточки */
+.l31-t2-slot .l31-t2-drag {                           /* Слово, лежащее в слоте */
+    background: transparent;                          /* Убираем фон */
+    border: none;                                     /* Убираем рамку */
+    padding: 0;                                       /* Убираем отступы */
+    cursor: pointer;                                  /* Курсор-рука для возврата */
+}
+
+/* Проверка: правильная строка */
+.l31-t2-row.correct {                                 /* Правильно собрано */
+    border-color: #27ae60 !important;                 /* Зелёная рамка */
+    background-color: #d4edda !important;             /* Светло-зелёный фон */
+}
+
+.l31-t2-row.correct .l31-t2-slot {                    /* Слот правильной строки */
+    border-color: #27ae60 !important;                 /* Зелёная рамка */
+    border-style: solid;                              /* Сплошная рамка */
+}
+
+/* Проверка: неправильная строка */
+.l31-t2-row.wrong {                                   /* Собрано неверно */
+    border-color: #e74c3c !important;                 /* Красная рамка */
+    background-color: #f8d7da !important;             /* Светло-красный фон */
+}
+
+.l31-t2-row.wrong .l31-t2-slot {                      /* Слот неправильной строки */
+    border-color: #e74c3c !important;                 /* Красная рамка */
+    border-style: solid;                              /* Сплошная рамка */
+}
+
+/* =========================================
+   ЗАДАНИЕ 3: СТИЛИ ДЛЯ СОСТАВЛЕНИЯ ПРЕДЛОЖЕНИЙ
+   ========================================= */
+
+.l31-t3-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.l31-t3-row {
+    background: #ffffff;
+    border: 2px solid #b3e5fc;
+    border-radius: 10px;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    display: block; /* Убираем флекс-колонку, чтобы строка вела себя как стандартный блок */
+}
+
+.l31-t3-words-source {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 8px; /* Отступ до поля ввода */
+    display: block;
+}
+
+.l31-t3-input {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #2980b9;
+    outline: none;
+    width: 100%; /* Гарантированно на всю ширину */
+    box-sizing: border-box;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.l31-t3-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.l31-t3-input.correct {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+.l31-t3-input.wrong {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* =========================================
+   ЗАДАНИЕ 4: СЛОВА С СУФФИКСОМ -ЕЧК-
+   ========================================= */
+
+/* Сетка из трёх колонок с парами слов */
+.l31-t4-grid {                                       /* Контейнер всех колонок */
+    display: grid;                                   /* Включаем Grid-раскладку */
+    grid-template-columns: repeat(3, 1fr);           /* Три равные колонки */
+    gap: 15px;                                       /* Отступы между колонками */
+    margin-top: 15px;                                /* Отступ сверху от инструкции */
+}
+
+/* Одна колонка с парами */
+.l31-t4-col {                                        /* Колонка пар слов */
+    display: flex;                                   /* Флексбокс */
+    flex-direction: column;                          /* Элементы друг под другом */
+    gap: 10px;                                       /* Отступ между строками */
+}
+
+/* Строка с парой: исходное слово — поле ввода */
+.l31-t4-row {                                        /* Одна строка задания */
+    background: #ffffff;                             /* Белый фон строки */
+    border: 2px solid #b3e5fc;                       /* Светло-синяя рамка */
+    border-radius: 10px;                             /* Скругление углов */
+    padding: 8px 10px;                               /* Внутренние отступы */
+    display: flex;                                   /* Флексбокс в строку */
+    align-items: center;                             /* Центрирование по вертикали */
+    justify-content: space-between;                  /* Слово слева, поле справа */
+    gap: 8px;                                        /* Отступ между словом и полем */
+    box-sizing: border-box;                          /* Учитываем рамку в размерах */
+}
+
+/* Исходное слово с тире */
+.l31-t4-word {                                       /* Надпись "кошка —" */
+    font-size: 1.15rem;                              /* Размер шрифта */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2c3e50;                                  /* Тёмно-синий цвет */
+    white-space: nowrap;                             /* Не переносим слово */
+}
+
+/* Поле ввода получившегося слова */
+.l31-t4-input {                                      /* Инпут для ответа */
+    border: 2px solid #3498db;                       /* Синяя рамка */
+    border-radius: 6px;                              /* Скругление углов */
+    padding: 4px 8px;                                /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.1rem;                               /* Размер текста */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2980b9;                                  /* Синий цвет текста */
+    outline: none;                                   /* Убираем стандартную обводку */
+    width: 120px;                                    /* Ширина поля под слово */
+    text-align: center;                              /* Текст по центру */
+    box-sizing: border-box;                          /* Учитываем рамку */
+    transition: all 0.2s ease;                       /* Плавная анимация */
+}
+
+/* Фокус на поле */
+.l31-t4-input:focus {                                /* При вводе */
+    border-color: #2980b9;                           /* Тёмно-синяя рамка */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);     /* Лёгкое свечение */
+}
+
+/* Правильный ответ */
+.l31-t4-input.correct {                              /* Верное слово */
+    border-color: #27ae60 !important;                /* Зелёная рамка */
+    background-color: #d4edda !important;            /* Светло-зелёный фон */
+    color: #155724 !important;                       /* Тёмно-зелёный текст */
+}
+
+/* Неправильный ответ */
+.l31-t4-input.wrong {                                /* Ошибка или пусто */
+    border-color: #e74c3c !important;                /* Красная рамка */
+    background-color: #f8d7da !important;            /* Светло-красный фон */
+    color: #721c24 !important;                       /* Тёмно-красный текст */
+}
+
+/* Адаптивность: на планшетах две колонки */
+@media (max-width: 800px) {                          /* Планшеты и уже */
+    .l31-t4-grid {                                   /* Сетка задания */
+        grid-template-columns: repeat(2, 1fr);       /* Две колонки */
+    }
+}
+
+/* Адаптивность: на телефонах одна колонка */
+@media (max-width: 500px) {                          /* Смартфоны */
+    .l31-t4-grid {                                   /* Сетка задания */
+        grid-template-columns: 1fr;                  /* Одна колонка */
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 5: СТИЛИ ДЛЯ РАССКАЗА "ШКОЛЬНИЦА"
+   ========================================= */
+
+.l31-t5-img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.l31-t5-img {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.l31-t5-questions-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #e0f0f8;
+}
+
+.l31-t5-q-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-bottom: 1px dashed #e0f0f8;
+    padding-bottom: 10px;
+}
+
+.l31-t5-q-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.l31-t5-q-text {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.l31-t5-input {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #2980b9;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.l31-t5-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.l31-t5-input.filled {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+.l31-t5-input.empty {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+}
+
+/* =========================================
+   ЗАДАНИЕ 6: СТИЛИ ДЛЯ РАССКАЗА "ЧАЕПИТИЕ"
+   ========================================= */
+
+.l31-t6-img-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.l31-t6-img {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.l31-t6-questions-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #ffffff;
+    padding: 12px;
+    border-radius: 15px;
+    border: 2px solid #e0f0f8;
+}
+
+.l31-t6-q-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    border-bottom: 1px dashed #e0f0f8;
+    padding-bottom: 10px;
+}
+
+.l31-t6-q-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.l31-t6-q-text {
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+.l31-t6-input {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #2980b9;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    transition: all 0.2s ease;
+}
+
+.l31-t6-input:focus {
+    border-color: #2980b9;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.l31-t6-input.filled {
+    border-color: #27ae60 !important;
+    background-color: #d4edda !important;
+    color: #155724 !important;
+}
+
+.l31-t6-input.empty {
+    border-color: #e74c3c !important;
+    background-color: #f8d7da !important;
+}
+
+/* =========================================
+   ЗАДАНИЕ 7: СТИЛИ ДЛЯ СЕТКИ 3Х3 (ПОРТРЕТЫ ДЕТЕЙ)
+   ========================================= */
+
+/* Контейнер сетки: ровно 3 колонки */
+.l31-t7-grid {
+    display: grid;                                   /* Включаем Grid-раскладку */
+    grid-template-columns: repeat(3, 1fr);           /* Три равных столбца */
+    gap: 12px;                                       /* Отступы между карточками */
+    margin-top: 15px;                                /* Отступ сверху */
+    margin-bottom: 15px;                             /* Отступ снизу */
+}
+
+/* Отдельная карточка ребёнка */
+.l31-t7-card {
+    background: #ffffff;                             /* Белый фон карточки */
+    border: 2px solid #b3e5fc;                       /* Светло-синяя рамка */
+    border-radius: 12px;                             /* Скругление углов */
+    padding: 10px;                                   /* Внутренние отступы */
+    display: flex;                                   /* Флексбокс */
+    flex-direction: column;                          /* Картинка сверху, строка снизу */
+    align-items: center;                             /* Центрирование по горизонтали */
+    gap: 8px;                                        /* Расстояние между картинкой и строкой */
+    box-sizing: border-box;                          /* Учитываем рамку в размерах */
+}
+
+/* Картинка (портрет) ребёнка — жесткие ограничения размеров, чтобы не ломать верстку */
+.l31-t7-img {
+    width: 110px;                                    /* Фиксированная ширина */
+    height: 110px;                                   /* Фиксированная высота */
+    max-width: 100%;                                 /* Защита от расширения */
+    object-fit: cover;                               /* Аккуратное заполнение без искажений */
+    border-radius: 8px;                              /* Скругление углов картинки */
+    border: 1px solid #e0f0f8;                       /* Тонкая рамка вокруг портрета */
+}
+
+/* Строка с именем и полем ввода */
+.l31-t7-row {
+    display: flex;                                   /* Флексбокс в строку */
+    align-items: center;                             /* Выравнивание по вертикали */
+    justify-content: center;                         /* Центрирование */
+    gap: 6px;                                        /* Отступ между текстом и инпутом */
+    width: 100%;                                     /* На всю ширину карточки */
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.05rem;                              /* Размер шрифта */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2c3e50;                                  /* Тёмно-синий цвет текста */
+}
+
+/* Поле ввода ласкового имени */
+.l31-t7-input {
+    border: 2px solid #3498db;                       /* Синяя рамка */
+    border-radius: 6px;                              /* Скругление углов */
+    padding: 4px 6px;                                /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.05rem;                              /* Размер текста */
+    font-weight: bold;                               /* Жирное начертание */
+    color: #2980b9;                                  /* Синий цвет текста */
+    outline: none;                                   /* Убираем стандартную обводку */
+    width: 110px;                                    /* Ширина поля под имя */
+    text-align: center;                              /* Текст строго по центру */
+    box-sizing: border-box;                          /* Учитываем рамку */
+    transition: all 0.2s ease;                       /* Плавная анимация */
+}
+
+/* Фокус на поле ввода */
+.l31-t7-input:focus {
+    border-color: #2980b9;                           /* Тёмно-синяя рамка */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);     /* Лёгкое свечение */
+}
+
+/* Правильный ответ (зелёное оформление) */
+.l31-t7-input.correct {
+    border-color: #27ae60 !important;                /* Зелёная рамка */
+    background-color: #d4edda !important;            /* Светло-зелёный фон */
+    color: #155724 !important;                       /* Тёмно-зелёный текст */
+}
+
+/* Неправильный ответ или пустое поле (красное оформление) */
+.l31-t7-input.wrong {
+    border-color: #e74c3c !important;                /* Красная рамка */
+    background-color: #f8d7da !important;            /* Светло-красный фон */
+    color: #721c24 !important;                       /* Тёмно-красный текст */
+}
+
+/* Адаптивность для планшетов: 2 колонки */
+@media (max-width: 800px) {
+    .l31-t7-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Адаптивность для мобильных телефонов: 1 колонка */
+@media (max-width: 500px) {
+    .l31-t7-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   ЗАДАНИЕ 8: КРОССВОРД
+   ========================================= */
+
+.l31-t8-hints {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    color: #2c3e50;
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border: 2px solid #b3e5fc;
+    align-items: flex-start;
+}
+
+.l31-t8-hint-col {
+    flex: 1;
+    line-height: 1.4;
+    min-width: 0;
+}
+
+.l31-t8-crossword-wrapper {
+    background: #ffffff;
+    border: 2px solid #b3e5fc;
+    border-radius: 12px;
+    padding: 20px;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Таблица: 12 колонок × 9 строк */
+.l31-t8-table {
+    border-collapse: collapse;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+.l31-t8-table td {
+    width: 38px;
+    min-width: 38px;
+    max-width: 38px;
+    height: 38px;
+    min-height: 38px;
+    max-height: 38px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-sizing: border-box;
+    border: none;
+    background: transparent;
+    color: #2c3e50;
+}
+
+/* Номера — красные, без рамки */
+.l31-t8-table td.num {
+    color: #e74c3c;
+    font-size: 0.9rem;
+}
+
+/* Пустые клетки — символ w белым, невидим на фоне */
+.l31-t8-table td.z {
+    color: #ffffff;
+    font-weight: bold;
+    background: transparent;
+}
+
+/* Клетки с буквами — с рамкой */
+.l31-t8-table td.letter {
+    border: 2px solid #3498db;
+    background: #ffffff;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Жёлтый столбец (вертикальное слово) */
+.l31-t8-table td.letter.vert {
+    background: #fff9c4;
+    border: 2px solid #fbc02d;
+}
+
+/* Поле ввода внутри клетки */
+.l31-t8-input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+.l31-t8-input:focus {
+    background: #e3f2fd;
+}
+
+.l31-t8-input.correct {
+    background: #d4edda !important;
+    color: #155724 !important;
+}
+
+.l31-t8-input.wrong {
+    background: #f8d7da !important;
+    color: #721c24 !important;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 600px) {
+    .l31-t8-hints { flex-direction: column; gap: 10px; }
+    .l31-t8-table td {
+        width: 30px;
+        min-width: 30px;
+        max-width: 30px;
+        height: 30px;
+        min-height: 30px;
+        max-height: 30px;
+    }
+    .l31-t8-input { font-size: 0.9rem; }
+}
+
+/* =========================================================
+   ЗАДАНИЕ 9: АВТОМАТИЗАЦИЯ ЗВУКА [Ч] В ПРЕДЛОЖЕНИЯХ
+   ========================================================= */
+
+/* Общий вертикальный контейнер для карточек предложений */
+.l31-t9-container {
+    display: flex;                                   /* Включаем Flexbox раскладку */
+    flex-direction: column;                          /* Карточки располагаются строго друг под другом */
+    gap: 16px;                                       /* Расстояние между строками */
+    margin-top: 15px;                                /* Отступ сверху от инструкции */
+    margin-bottom: 15px;                             /* Отступ снизу до кнопки проверки */
+}
+
+/* Отдельная карточка строки: содержит картинку и фразу */
+.l31-t9-row {
+    background: #ffffff;                             /* Чистый белый фон карточки */
+    border: 2px solid #b3e5fc;                       /* Светло-голубая детская окантовка */
+    border-radius: 14px;                             /* Скругленные мягкие углы */
+    padding: 12px 18px;                              /* Внутренние поля внутри плашки */
+    display: flex;                                   /* Flexbox для горизонтального ряда */
+    align-items: center;                             /* Выравнивание по центру высоты */
+    justify-content: space-between;                  /* Распределение элементов по краям */
+    gap: 20px;                                       /* Отступ между картинкой и текстом */
+    box-sizing: border-box;                          /* Границы входят в ширину карточки */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);       /* Мягкая легкая тень карточки */
+    transition: all 0.25s ease;                      /* Плавная анимация при наведении */
+}
+
+/* Модификатор для строки с зеркальным расположением */
+.l31-t9-row-reverse {
+    flex-direction: row;                             /* Сохраняем строку (порядок блоков в HTML) */
+}
+
+/* Блок-обёртка под картинку с жёсткими габаритами */
+.l31-t9-img-box {
+    flex-shrink: 0;                                  /* Запрещаем сжатие картинки во flex */
+    width: 140px;                                    /* Фиксированная ширина контейнера */
+    height: 110px;                                   /* Фиксированная высота контейнера */
+    display: flex;                                   /* Центрируем картинку внутри */
+    align-items: center;                             /* По вертикали */
+    justify-content: center;                         /* По горизонтали */
+}
+
+/* Само изображение к предложению */
+.l31-t9-img {
+    width: 100%;                                     /* Заполняет весь бокс по ширине */
+    height: 100%;                                    /* Заполняет весь бокс по высоте */
+    object-fit: cover;                               /* Обрезка без нарушения пропорций рисунка */
+    border-radius: 10px;                             /* Скругленные уголки у изображения */
+    border: 1px solid #d4edf9;                       /* Нежная рамка вокруг портрета */
+}
+
+/* Блок с текстом предложения и кнопкой отметки */
+.l31-t9-text-box {
+    flex: 1;                                         /* Занимает всю оставшуюся ширину */
+    display: flex;                                   /* Flexbox для текста и кнопки */
+    flex-direction: column;                          /* Текст сверху, кнопка снизу */
+    align-items: flex-start;                         /* Выравнивание по левому краю */
+    gap: 10px;                                       /* Промежуток между фразой и кнопкой */
+}
+
+/* Текст предложения */
+.l31-t9-sentence {
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.3rem;                               /* Крупный размер для лёгкого чтения */
+    font-weight: bold;                               /* Полужирный шрифт */
+    color: #2c3e50;                                  /* Темно-синий контрастный цвет букв */
+    line-height: 1.4;                                /* Комфортный интервал между строками */
+}
+
+/* Подсветка звука и буквы [ч] */
+.l31-t9-ch-word {
+    color: #e67e22;                                  /* Оранжевый акцентный цвет на звуке [ч] */
+    background: #fff3e0;                             /* Тёплый светло-оранжевый фон */
+    padding: 1px 4px;                                /* Отступы вокруг буквы */
+    border-radius: 6px;                              /* Скругление фона буквы */
+}
+
+/* Кнопка отметки чистоты произношения */
+.l31-t9-say-btn {
+    border: 2px solid #3498db;                       /* Синяя граница кнопки */
+    background-color: #f0f9ff;                       /* Нежно-голубой фон */
+    color: #2980b9;                                  /* Синий цвет текста */
+    font-family: 'Comic Sans MS', sans-serif;        /* Детский шрифт */
+    font-size: 1.05rem;                              /* Чёткий размер шрифта */
+    font-weight: bold;                               /* Жирный текст */
+    padding: 6px 14px;                               /* Внутренние поля для нажатия */
+    border-radius: 10px;                             /* Округлые края */
+    cursor: pointer;                                 /* Курсор клика */
+    display: inline-flex;                            /* Flexbox под иконку и текст */
+    align-items: center;                             /* Выравнивание по вертикали */
+    gap: 6px;                                        /* Промежуток между значком и текстом */
+    outline: none;                                   /* Убираем контур фокуса */
+    transition: all 0.2s ease;                       /* Плавный переход стилей */
+}
+
+/* Наведение мыши на кнопку */
+.l31-t9-say-btn:hover {
+    background-color: #e1f5fe;                       /* Осветление фона */
+    border-color: #2980b9;                           /* Более глубокий синий контур */
+    transform: translateY(-1px);                     /* Микроподъём при наведении */
+}
+
+/* Активное состояние кнопки (успешно проговорено) */
+.l31-t9-say-btn.done {
+    background-color: #d4edda !important;            /* Приятный зеленый фон успеха */
+    border-color: #27ae60 !important;                /* Зеленая рамка */
+    color: #155724 !important;                       /* Темно-зеленый текст */
+    box-shadow: 0 2px 6px rgba(39, 174, 96, 0.2);   /* Зеленое свечение */
+}
+
+/* Иконка звёздочки внутри кнопки */
+.l31-t9-icon {
+    font-size: 1.15rem;                              /* Размер иконки */
+}
+
+/* Адаптив под мобильные устройства и экраны до 650px */
+@media (max-width: 650px) {
+    .l31-t9-row,
+    .l31-t9-row-reverse {
+        flex-direction: column;                      /* Ставим картинку и текст в одну колонку */
+        align-items: center;                         /* Центрируем карточку */
+        text-align: center;                          /* Текст строго по центру */
+    }
+
+    .l31-t9-text-box {
+        align-items: center;                         /* Центрируем кнопку и фразу */
+    }
+
+    .l31-t9-img-box {
+        width: 100%;                                 /* Картинка на всю доступную ширину */
+        height: 160px;                               /* Высота картинки на смартфонах */
+    }
+}
+
+/* =========================================================
+   ЗАДАНИЕ 10: СТИЛИ ДЛЯ ИГРЫ «СЫЩИК»
+   ========================================================= */
+
+/* Блок-обёртка для большого изображения задания */
+.l31-t10-img-box {
+    width: 100%;                                     /* Занимает всю ширину карточки */
+    display: flex;                                   /* Флексбокс */
+    justify-content: center;                         /* Центрирование изображения */
+    margin-bottom: 20px;                             /* Отступ снизу до клеточек */
+}
+
+/* Главное изображение со всеми спрятанными предметами */
+.l31-t10-main-img {
+    width: 100%;                                     /* Адаптивная ширина на 100% */
+    max-width: 720px;                                /* Ограничение по максимальной ширине */
+    height: auto;                                    /* Автоматическая пропорциональная высота */
+    border-radius: 14px;                             /* Скругление краев картинки */
+    border: 2px solid #b3e5fc;                       /* Светло-голубая аккуратная рамка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);      /* Мягкая детская тень */
+    box-sizing: border-box;                          /* Рамка учитывается в размере */
+}
+
+/* Сетка для 12 предметов: 4 колонки на компьютерах */
+.l31-t10-grid {
+    display: grid;                                   /* Сетка Grid */
+    grid-template-columns: repeat(4, 1fr);           /* 4 одинаковые колонки */
+    gap: 10px;                                       /* Отступы между карточками */
+    margin-top: 15px;                                /* Отступ сверху */
+    margin-bottom: 15px;                             /* Отступ снизу */
+}
+
+/* Отдельная карточка предмета с полем для цифры */
+.l31-t10-card {
+    background: #ffffff;                             /* Чистый белый фон карточки */
+    border: 2px solid #b3e5fc;                       /* Светло-синяя рамка */
+    border-radius: 10px;                             /* Скругление углов */
+    padding: 8px 10px;                               /* Внутренние поля */
+    display: flex;                                   /* Флексбокс */
+    align-items: center;                             /* Выравнивание по центру вертикали */
+    justify-content: space-between;                  /* Название слева, поле ввода справа */
+    gap: 8px;                                        /* Промежуток между названием и инпутом */
+    box-sizing: border-box;                          /* Учитываем границы */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);       /* Легкая тень */
+}
+
+/* Название предмета */
+.l31-t10-item-name {
+    font-family: 'Comic Sans MS', sans-serif;        /* Фирменный детский шрифт */
+    font-size: 1.05rem;                              /* Четкий читаемый размер */
+    font-weight: bold;                               /* Полужирное начертание */
+    color: #2c3e50;                                  /* Темно-синий текст */
+    white-space: nowrap;                             /* Запрет переноса коротких слов */
+}
+
+/* Выделение звуков Ч и Ш в названии предмета */
+.l31-t10-highlight {
+    color: #e67e22;                                  /* Оранжевый акцентный цвет */
+}
+
+/* Поле для ввода сосчитанного количества */
+.l31-t10-input {
+    border: 2px solid #3498db;                       /* Синяя детская рамка */
+    border-radius: 8px;                              /* Скругленные уголки */
+    padding: 4px 0;                                  /* Внутренние отступы */
+    font-family: 'Comic Sans MS', sans-serif;        /* Шрифт урока */
+    font-size: 1.15rem;                              /* Крупный размер для цифры */
+    font-weight: bold;                               /* Жирная цифра */
+    color: #2980b9;                                  /* Насыщенный синий цвет */
+    outline: none;                                   /* Убираем браузерный контур */
+    width: 48px;                                     /* Компактная ширина под одну-две цифры */
+    height: 38px;                                    /* Квадратная форма клеточки */
+    text-align: center;                              /* Цифра строго по центру */
+    box-sizing: border-box;                          /* Рамка входит в габариты */
+    transition: all 0.2s ease;                       /* Плавная анимация подсветки */
+    -moz-appearance: textfield;                      /* Убираем стрелочки спиннера в Firefox */
+}
+
+/* Убираем стрелочки спиннера у числового поля в Chrome/Safari/Edge */
+.l31-t10-input::-webkit-outer-spin-button,
+.l31-t10-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;                        /* Скрываем стрелки */
+    margin: 0;                                       /* Без отступов */
+}
+
+/* Фокус на поле ввода */
+.l31-t10-input:focus {
+    border-color: #2980b9;                           /* Темно-синяя рамка */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.35);    /* Свечение при вводе */
+    background-color: #f0f9ff;                       /* Легкий голубой фон */
+}
+
+/* Правильно сосчитанный предмет (зелёная индикация) */
+.l31-t10-input.correct {
+    border-color: #27ae60 !important;                /* Зеленая рамка */
+    background-color: #d4edda !important;            /* Светло-зеленый фон успеха */
+    color: #155724 !important;                       /* Темно-зеленый цвет цифры */
+}
+
+/* Ошибка в счете или пустое поле (красная индикация) */
+.l31-t10-input.wrong {
+    border-color: #e74c3c !important;                /* Красная рамка */
+    background-color: #f8d7da !important;            /* Светло-красный предупреждающий фон */
+    color: #721c24 !important;                       /* Темно-красный цвет цифры */
+}
+
+/* Адаптивность для планшетов (3 колонки) */
+@media (max-width: 768px) {
+    .l31-t10-grid {
+        grid-template-columns: repeat(3, 1fr);       /* 3 колонки на средних экранах */
+    }
+}
+
+/* Адаптивность для смартфонов (2 колонки) */
+@media (max-width: 520px) {
+    .l31-t10-grid {
+        grid-template-columns: repeat(2, 1fr);       /* 2 колонки на мобильных */
+        gap: 8px;                                    /* Меньший отступ между карточками */
+    }
+    
+    .l31-t10-card {
+        padding: 6px 8px;                            /* Компактные отступы */
+    }
+
+    .l31-t10-item-name {
+        font-size: 0.95rem;                          /* Чуть меньший шрифт для мобильных */
+    }
+
+    .l31-t10-input {
+        width: 40px;                                 /* Компактный инпут */
+        height: 34px;                                /* Компактная высота */
+        font-size: 1rem;                             /* Размер цифры */
+    }
+}
+
