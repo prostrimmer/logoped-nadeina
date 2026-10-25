@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 31 - Автоматизация звука [Щ] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-32.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 32. Автоматизация звука [Щ] в словах и предложениях</div>
+    </header>
+
+<!-- ЗАДАНИЕ №1: ЧТЕНИЕ СЛОГОВ И СЛОВ СО ЗВУКОМ [Щ] -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Прочитай слоги и слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Чётко произноси звук <b>[щ]</b>. Прочитай слоги парами, затем слоги с ударением в трёх столбиках, а в конце — слоги со словами. Нажимай на строчки, чтобы отметить прочитанное!
+    </p>
+
+    <!-- Блок 1: Слоговые цепочки (пары) -->
+    <div class="l32-t1-subtitle">1. Слоговые цепочки:</div>
+    <div class="l32-t1-pairs-grid">
+        <div class="l32-t1-item" onclick="toggleL32T1Read(this)">
+            <span class="l32-t1-check-icon">⚪</span>
+            <span><b class="l32-t1-shch">ща</b>-<b class="l32-t1-shch">ща</b> — <b class="l32-t1-shch">ща</b>-<b class="l32-t1-shch">ща</b>-<b class="l32-t1-shch">ща</b></span>
+        </div>
+        <div class="l32-t1-item" onclick="toggleL32T1Read(this)">
+            <span class="l32-t1-check-icon">⚪</span>
+            <span><b class="l32-t1-shch">що</b>-<b class="l32-t1-shch">що</b> — <b class="l32-t1-shch">що</b>-<b class="l32-t1-shch">що</b>-<b class="l32-t1-shch">що</b></span>
+        </div>
+        <div class="l32-t1-item" onclick="toggleL32T1Read(this)">
+            <span class="l32-t1-check-icon">⚪</span>
+            <span><b class="l32-t1-shch">щу</b>-<b class="l32-t1-shch">щу</b> — <b class="l32-t1-shch">щу</b>-<b class="l32-t1-shch">щу</b>-<b class="l32-t1-shch">щу</b></span>
+        </div>
+        <div class="l32-t1-item" onclick="toggleL32T1Read(this)">
+            <span class="l32-t1-check-icon">⚪</span>
+            <span><b class="l32-t1-shch">щи</b>-<b class="l32-t1-shch">щи</b> — <b class="l32-t1-shch">щи</b>-<b class="l32-t1-shch">щи</b>-<b class="l32-t1-shch">щи</b></span>
+        </div>
+    </div>
+
+    <!-- Блок 2: Три вертикальных блока со смещением ударения -->
+    <div class="l32-t1-subtitle">2. Выделяй голосом ударный слог:</div>
+    <div class="l32-t1-columns-3">
+
+        <!-- Столбик 1: слог ЩА -->
+        <div class="l32-t1-col-card">
+            <div class="l32-t1-col-title">Слог «ЩА»</div>
+            <div class="l32-t1-col-list">
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>ща-ща-<b>ща́</b></span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>ща-<b>ща́</b>-ща</span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span><b>ща́</b>-ща-ща</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Столбик 2: слог ЩЕ -->
+        <div class="l32-t1-col-card">
+            <div class="l32-t1-col-title">Слог «ЩЕ»</div>
+            <div class="l32-t1-col-list">
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>ще-ще-<b>ще́</b></span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>ще-<b>ще́</b>-ще</span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span><b>ще́</b>-ще-ще</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Столбик 3: слог ЩУ -->
+        <div class="l32-t1-col-card">
+            <div class="l32-t1-col-title">Слог «ЩУ»</div>
+            <div class="l32-t1-col-list">
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>щу-щу-<b>щу́</b></span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span>щу-<b>щу́</b>-щу</span>
+                </div>
+                <div class="l32-t1-stress-row" onclick="toggleL32T1Read(this)">
+                    <span class="l32-t1-check-icon">⚪</span>
+                    <span><b>щу́</b>-щу-щу</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок 3: Повтори слоги и слова -->
+    <div class="l32-t1-subtitle">3. Повтори слоги и слова:</div>
+    <div class="l32-t1-words-grid">
+
+        <!-- Левый столбик слов -->
+        <div class="l32-t1-words-col">
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>ща-ща-ща — <b>щаве́ль</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щи-щи-щи — <b>щит</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щи-щи-щи — <b>щипцы́</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щё-щё-щё — <b>щёки</b></span>
+            </div>
+        </div>
+
+        <!-- Правый столбик слов -->
+        <div class="l32-t1-words-col">
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щё-щё-щё — <b>щётка</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>ще-ще-ще — <b>ще́пка</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щу-щу-щу — <b>щу́ка</b></span>
+            </div>
+            <div class="l32-t1-word-row" onclick="toggleL32T1Read(this)">
+                <span class="l32-t1-check-icon">⚪</span>
+                <span>щу-щу-щу — <b>щу́пальцы</b></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка завершения -->
+    <div id="res-32-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №2: ИГРА «НАЗОВИ КАРТИНКИ» СО ЗВУКОМ [Щ] -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Игра «Назови картинки»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Речевичок подумал и нарисовал для Иришки картинки со звуком <b>[щ]</b>. Рассмотри каждую картинку, назови предмет вслух и впиши его название в поле под картинкой.
+    </p>
+
+    <!-- Сетка картинок: 3 колонки в 4 ряда (12 карточек) -->
+    <div class="l32-t2-grid">
+
+        <!-- 1. Щётка / щётки -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_1.jpeg" class="l32-t2-img" alt="Щётки" onerror="this.onerror=null; this.src='images/lesson_32_2_1.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щётка|щётки|щетка|щетки" placeholder="Назови...">
+        </div>
+
+        <!-- 2. Щавель -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_2.jpeg" class="l32-t2-img" alt="Щавель" onerror="this.onerror=null; this.src='images/lesson_32_2_2.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щавель" placeholder="Назови...">
+        </div>
+
+        <!-- 3. Щука -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_3.jpeg" class="l32-t2-img" alt="Щука" onerror="this.onerror=null; this.src='images/lesson_32_2_3.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щука" placeholder="Назови...">
+        </div>
+
+        <!-- 4. Щенок -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_4.jpeg" class="l32-t2-img" alt="Щенок" onerror="this.onerror=null; this.src='images/lesson_32_2_4.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щенок|щеночек" placeholder="Назови...">
+        </div>
+
+        <!-- 5. Щит -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_5.jpeg" class="l32-t2-img" alt="Щит" onerror="this.onerror=null; this.src='images/lesson_32_2_5.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щит" placeholder="Назови...">
+        </div>
+
+        <!-- 6. Ящик -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_6.jpeg" class="l32-t2-img" alt="Ящик" onerror="this.onerror=null; this.src='images/lesson_32_2_6.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="ящик|ящичек" placeholder="Назови...">
+        </div>
+
+        <!-- 7. Кощей -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_7.jpeg" class="l32-t2-img" alt="Кощей" onerror="this.onerror=null; this.src='images/lesson_32_2_7.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="кощей|кащей|кощей бессмертный" placeholder="Назови...">
+        </div>
+
+        <!-- 8. Ущелье -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_8.jpeg" class="l32-t2-img" alt="Ущелье" onerror="this.onerror=null; this.src='images/lesson_32_2_8.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="ущелье|пещера|расщелина" placeholder="Назови...">
+        </div>
+
+        <!-- 9. Гонщик -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_9.jpeg" class="l32-t2-img" alt="Гонщик" onerror="this.onerror=null; this.src='images/lesson_32_2_9.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="гонщик|мотоциклист|спортсмен" placeholder="Назови...">
+        </div>
+
+        <!-- 10. Щипцы / клещи -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_10.jpeg" class="l32-t2-img" alt="Щипцы" onerror="this.onerror=null; this.src='images/lesson_32_2_10.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="щипцы|клещи" placeholder="Назови...">
+        </div>
+
+        <!-- 11. Овощи -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_11.jpeg" class="l32-t2-img" alt="Овощи" onerror="this.onerror=null; this.src='images/lesson_32_2_11.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="овощи" placeholder="Назови...">
+        </div>
+
+        <!-- 12. Прищепка -->
+        <div class="l32-t2-card">
+            <div class="l32-t2-img-box">
+                <img src="images/lesson_32_2_12.jpeg" class="l32-t2-img" alt="Прищепка" onerror="this.onerror=null; this.src='images/lesson_32_2_12.jpg';">
+            </div>
+            <input type="text" class="l32-t2-input" data-answer="прищепка|прищепочка" placeholder="Назови...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- ЗАДАНИЕ №3: ИГРА «ЭХО» (ПОДБЕРИ СЛОВА-ПРИЗНАКИ) -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Игра «Эхо»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Подбери слова-признаки к словам-предметам. Впиши подходящие слова в поля.
+    </p>
+
+    <!-- Основной контейнер строк упражнения -->
+    <div class="l32-t3-container">
+
+        <!-- Строка 1: немощь -->
+        <div class="l32-t3-row">
+            <div class="l32-t3-source-word">немощь —</div>
+            <div class="l32-t3-triad">
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="немощный" placeholder="...">
+                    <span class="l32-t3-noun">(дедушка)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="немощная" placeholder="...">
+                    <span class="l32-t3-noun">(старушка)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="немощное" placeholder="...">
+                    <span class="l32-t3-noun">(дитя)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Строка 2: хищник -->
+        <div class="l32-t3-row">
+            <div class="l32-t3-source-word">хищник —</div>
+            <div class="l32-t3-triad">
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="хищный" placeholder="...">
+                    <span class="l32-t3-noun">(лев)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="хищная" placeholder="...">
+                    <span class="l32-t3-noun">(лиса)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="хищное" placeholder="...">
+                    <span class="l32-t3-noun">(животное)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Строка 3: овощ -->
+        <div class="l32-t3-row">
+            <div class="l32-t3-source-word">овощ —</div>
+            <div class="l32-t3-triad">
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="овощной" placeholder="...">
+                    <span class="l32-t3-noun">(суп)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="овощная" placeholder="...">
+                    <span class="l32-t3-noun">(котлета)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="овощное" placeholder="...">
+                    <span class="l32-t3-noun">(пюре)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Строка 4: мощь -->
+        <div class="l32-t3-row">
+            <div class="l32-t3-source-word">мощь —</div>
+            <div class="l32-t3-triad">
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="мощный" placeholder="...">
+                    <span class="l32-t3-noun">(зверь)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="мощная" placeholder="...">
+                    <span class="l32-t3-noun">(машина)</span>
+                </div>
+                <div class="l32-t3-field-pair">
+                    <input type="text" class="l32-t3-input" data-answer="мощное" placeholder="...">
+                    <span class="l32-t3-noun">(движение)</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №4: СОСТАВЬ ПРЕДЛОЖЕНИЯ СО СЛОВОСОЧЕТАНИЯМИ
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Составь предложения со словосочетанием</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Составь предложения со словосочетаниями и словами <b>я, ты, он, она, мы, вы, они</b>. Представь, что действие происходит сегодня. Напиши, что у тебя получилось.
+    </p>
+
+    <!-- Таблица-сетка для двух словосочетаний -->
+    <div class="l32-t4-table">
+
+        <!-- Шапка с названиями словосочетаний -->
+        <div class="l32-t4-header-row">
+            <div class="l32-t4-pronoun-col"></div>
+            <div class="l32-t4-phrase-header">тащить щуку за хвост</div>
+            <div class="l32-t4-phrase-header">чистить щёткой щенка</div>
+        </div>
+
+        <!-- 1. Я -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">я</div>
+            <div class="l32-t4-cell">
+                <span class="l32-t4-verb-prefix">тащу</span>
+                <input type="text" class="l32-t4-input" data-answer="щуку за хвост|тащу щуку за хвост" placeholder="допиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <span class="l32-t4-verb-prefix">чищу</span>
+                <input type="text" class="l32-t4-input" data-answer="щёткой щенка|щенка щёткой|чищу щёткой щенка" placeholder="допиши...">
+            </div>
+        </div>
+
+        <!-- 2. Ты -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">ты</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащишь щуку за хвост|тащишь" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистишь щёткой щенка|чистишь щенка щёткой|чистишь" placeholder="напиши...">
+            </div>
+        </div>
+
+        <!-- 3. Он -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">он</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащит щуку за хвост|тащит" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистит щёткой щенка|чистит щенка щёткой|чистит" placeholder="напиши...">
+            </div>
+        </div>
+
+        <!-- 4. Она -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">она</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащит щуку за хвост|тащит" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистит щёткой щенка|чистит щенка щёткой|чистит" placeholder="напиши...">
+            </div>
+        </div>
+
+        <!-- 5. Мы -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">мы</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащим щуку за хвост|тащим" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистим щёткой щенка|чистим щенка щёткой|чистим" placeholder="напиши...">
+            </div>
+        </div>
+
+        <!-- 6. Вы -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">вы</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащите щуку за хвост|тащите" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистите щёткой щенка|чистите щенка щёткой|чистите" placeholder="напиши...">
+            </div>
+        </div>
+
+        <!-- 7. Они -->
+        <div class="l32-t4-row">
+            <div class="l32-t4-pronoun">они</div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="тащат щуку за хвост|тащат" placeholder="напиши...">
+            </div>
+            <div class="l32-t4-cell">
+                <input type="text" class="l32-t4-input" data-answer="чистят щёткой щенка|чистят щенка щёткой|чистят" placeholder="напиши...">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №5: УПРАЖНЕНИЕ «ВЕСЁЛЫЙ ПОЕЗД»
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Весёлый поезд</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги пассажирам отправиться в путешествие на весёлом поезде! Назови каждого пассажира, выделяя звук <b>[щ]</b>, и сосчитай количество слогов (хлопни в ладоши).<br>
+        Перетащи картинку пассажира на подходящий вагончик: <b>число слогов = числу окошек</b>!
+    </p>
+
+    <!-- ВЕРХНЯЯ ЧАСТЬ: ПОЕЗД С ПАРОВОЗОМ И 4 ВАГОНАМИ -->
+    <div class="l32-t5-train-wrapper">
+        <div class="l32-t5-train">
+
+            <!-- Паровоз (локомотив) -->
+            <div class="l32-t5-locomotive">
+                <div class="l32-t5-pipe"></div>
+                <div class="l32-t5-cab">
+                    <div class="l32-t5-cab-win">😊</div>
+                </div>
+                <div class="l32-t5-boiler">🚂</div>
+                <div class="l32-t5-wheels">
+                    <span>⚙️</span><span>⚙️</span>
+                </div>
+            </div>
+
+            <!-- Вагон 1 (1 окно) -->
+            <div class="l32-t5-wagon" data-wagon="1" ondragover="allowDrop32T5(event)" ondrop="dropPassenger32T5(event)">
+                <div class="l32-t5-wagon-roof"></div>
+                <div class="l32-t5-wagon-body">
+                    <div class="l32-t5-wagon-title">Вагон №1</div>
+                    <div class="l32-t5-windows win-1">
+                        <div class="l32-t5-window">🪟</div>
+                    </div>
+                    <div class="l32-t5-wagon-hint">1 слог</div>
+                </div>
+                <div class="l32-t5-wheels"><span>⚫</span><span>⚫</span></div>
+            </div>
+
+            <!-- Вагон 2 (2 окна) -->
+            <div class="l32-t5-wagon" data-wagon="2" ondragover="allowDrop32T5(event)" ondrop="dropPassenger32T5(event)">
+                <div class="l32-t5-wagon-roof"></div>
+                <div class="l32-t5-wagon-body">
+                    <div class="l32-t5-wagon-title">Вагон №2</div>
+                    <div class="l32-t5-windows win-2">
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                    </div>
+                    <div class="l32-t5-wagon-hint">2 слога</div>
+                </div>
+                <div class="l32-t5-wheels"><span>⚫</span><span>⚫</span></div>
+            </div>
+
+            <!-- Вагон 3 (3 окна) -->
+            <div class="l32-t5-wagon" data-wagon="3" ondragover="allowDrop32T5(event)" ondrop="dropPassenger32T5(event)">
+                <div class="l32-t5-wagon-roof"></div>
+                <div class="l32-t5-wagon-body">
+                    <div class="l32-t5-wagon-title">Вагон №3</div>
+                    <div class="l32-t5-windows win-3">
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                    </div>
+                    <div class="l32-t5-wagon-hint">3 слога</div>
+                </div>
+                <div class="l32-t5-wheels"><span>⚫</span><span>⚫</span></div>
+            </div>
+
+            <!-- Вагон 4 (4 окна) -->
+            <div class="l32-t5-wagon" data-wagon="4" ondragover="allowDrop32T5(event)" ondrop="dropPassenger32T5(event)">
+                <div class="l32-t5-wagon-roof"></div>
+                <div class="l32-t5-wagon-body">
+                    <div class="l32-t5-wagon-title">Вагон №4</div>
+                    <div class="l32-t5-windows win-4">
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                        <div class="l32-t5-window">🪟</div>
+                    </div>
+                    <div class="l32-t5-wagon-hint">4 слога</div>
+                </div>
+                <div class="l32-t5-wheels"><span>⚫</span><span>⚫</span></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Рельсы поезда -->
+    <div class="l32-t5-rails"></div>
+
+    <div class="l32-t5-grid-title">Пассажиры на платформе (нажми на посадочный талон, чтобы вернуть пассажира):</div>
+
+    <!-- НИЖНЯЯ ЧАСТЬ: СЕТКА 3х3 С КАРТИНКАМИ ПАССАЖИРОВ -->
+    <div class="l32-t5-passengers-grid">
+
+        <!-- 8. Барабанщик (4 слога -> вагон 4) -->
+        <div class="l32-t5-slot" data-id="8" data-correct-wagon="4" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="8">
+                <img src="images/lesson_32_5_8.png" class="l32-t5-p-img" alt="Барабанщик" onerror="this.onerror=null; this.src='images/lesson_32_5_8.jpeg';">
+                <div class="l32-t5-p-name">Барабанщик</div>
+            </div>
+        </div>
+
+        <!-- 2. Кощей (2 слога -> вагон 2) -->
+        <div class="l32-t5-slot" data-id="2" data-correct-wagon="2" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="2">
+                <img src="images/lesson_32_5_2.png" class="l32-t5-p-img" alt="Кощей" onerror="this.onerror=null; this.src='images/lesson_32_2_7.jpeg';">
+                <div class="l32-t5-p-name">Кощей</div>
+            </div>
+        </div>
+
+        <!-- 3. Щенок (2 слога -> вагон 2) -->
+        <div class="l32-t5-slot" data-id="3" data-correct-wagon="2" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="3">
+                <img src="images/lesson_32_5_3.png" class="l32-t5-p-img" alt="Щенок" onerror="this.onerror=null; this.src='images/lesson_32_2_4.jpeg';">
+                <div class="l32-t5-p-name">Щенок</div>
+            </div>
+        </div>
+
+        <!-- 4. Щёголь (2 слога -> вагон 2) -->
+        <div class="l32-t5-slot" data-id="4" data-correct-wagon="2" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="4">
+                <img src="images/lesson_32_5_4.png" class="l32-t5-p-img" alt="Щёголь" onerror="this.onerror=null; this.src='images/lesson_32_5_4.jpeg';">
+                <div class="l32-t5-p-name">Щёголь</div>
+            </div>
+        </div>
+
+        <!-- 1. Лещ (1 слог -> вагон 1) -->
+        <div class="l32-t5-slot" data-id="1" data-correct-wagon="1" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="1">
+                <img src="images/lesson_32_5_1.jpeg" class="l32-t5-p-img" alt="Лещ" onerror="this.onerror=null; this.src='images/lesson_32_2_3.jpeg';">
+                <div class="l32-t5-p-name">Лещ</div>
+            </div>
+        </div>
+
+        <!-- 5. Ящерица (4 слога -> вагон 4) -->
+        <div class="l32-t5-slot" data-id="5" data-correct-wagon="4" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="5">
+                <img src="images/lesson_32_5_5.png" class="l32-t5-p-img" alt="Ящерица" onerror="this.onerror=null; this.src='images/lesson_32_5_5.jpeg';">
+                <div class="l32-t5-p-name">Ящерица</div>
+            </div>
+        </div>
+
+        <!-- 6. Гонщики (3 слога -> вагон 3) -->
+        <div class="l32-t5-slot" data-id="6" data-correct-wagon="3" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="6">
+                <img src="images/lesson_32_5_6.png" class="l32-t5-p-img" alt="Гонщики" onerror="this.onerror=null; this.src='images/lesson_32_2_9.jpeg';">
+                <div class="l32-t5-p-name">Гонщики</div>
+            </div>
+        </div>
+
+        <!-- 7. Крановщик (3 слога -> вагон 3) -->
+        <div class="l32-t5-slot" data-id="7" data-correct-wagon="3" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="7">
+                <img src="images/lesson_32_5_7.png" class="l32-t5-p-img" alt="Крановщик" onerror="this.onerror=null; this.src='images/lesson_32_5_7.jpeg';">
+                <div class="l32-t5-p-name">Крановщик</div>
+            </div>
+        </div>
+
+
+        <!-- 9. Щука (2 слога -> вагон 2) -->
+        <div class="l32-t5-slot" data-id="9" data-correct-wagon="2" onclick="returnPassenger32T5(this)">
+            <div class="l32-t5-passenger" draggable="true" ondragstart="dragPassenger32T5(event)" data-id="9">
+                <img src="images/lesson_32_5_9.png" class="l32-t5-p-img" alt="Щука" onerror="this.onerror=null; this.src='images/lesson_32_2_3.jpeg';">
+                <div class="l32-t5-p-name">Щука</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №6: ИГРА «ПУТАНИЦА» (СОБЕРИ СЛОВА ИЗ БУКВ)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Игра «Путаница»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Буквы перепутались! Посмотри на синие буквы сверху, расставь их по порядку и впиши в клеточки, чтобы получились правильные слова со звуком <b>[щ]</b>.
+    </p>
+
+    <!-- Сетка из 2 колонок в 4 ряда -->
+    <div class="l32-t6-grid">
+
+        <!-- 1. КЛЕЩ -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Л Щ К Е</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="к" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="л" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 2. ЩЕЛОЧЬ -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Ь Ч Щ О Е Л</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="л" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="о" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="ч" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="ь" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 3. РОЩА -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">А Р О Щ</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="р" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="о" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="а" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 4. ЩЕКОЛДА -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Д О К Е Щ Л А</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="к" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="о" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="л" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="д" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="а" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 5. ВЕЩИ -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Е В Щ И</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="в" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="и" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 6. ЩЕГОЛ -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Г О Щ Л Е</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="г" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="о" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="л" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 7. ЩЕЛЬ -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">Л Ь Щ Е</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="л" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="ь" maxlength="1">
+            </div>
+        </div>
+
+        <!-- 8. ЩЕПКА -->
+        <div class="l32-t6-card">
+            <div class="l32-t6-scramble">П Е А К Щ</div>
+            <div class="l32-t6-boxes">
+                <input type="text" class="l32-t6-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="е" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="п" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="к" maxlength="1">
+                <input type="text" class="l32-t6-input" data-answer="а" maxlength="1">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task6()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №7: УПРАЖНЕНИЕ «СОБЕРИ СЛОВО» (ЛАБИРИНТ КОЩЕЯ)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Собери слово</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Злой Кощей спрятал слова в лабиринте. Пройди по шагам от звёздочек, собери слова и запиши их в пустые клеточки. Затем составь предложения с каждым словом!
+    </p>
+
+    <!-- ВЕРХНЯЯ ЧАСТЬ: ИНСТРУКЦИИ ХОДОВ И КЛЕТОЧКИ ДЛЯ ВВОДА СЛОВ -->
+    <div class="l32-t7-top-container">
+
+        <!-- Слово 1: Красная звёздочка -->
+        <div class="l32-t7-word-block">
+            <div class="l32-t7-rules">
+                <div class="l32-t7-rule-title red-star">★ От красной звёздочки:</div>
+                <ul class="l32-t7-steps-list">
+                    <li><b>Первый ход:</b> буква с красной звёздочкой.</li>
+                    <li><b>Второй ход:</b> две клетки вниз.</li>
+                    <li><b>Третий ход:</b> одна клетка вправо.</li>
+                    <li><b>Четвёртый ход:</b> три клетки вверх.</li>
+                    <li><b>Пятый ход:</b> две клетки влево.</li>
+                    <li><b>Шестой ход:</b> одна клетка влево.</li>
+                </ul>
+            </div>
+            <!-- 6 клеточек для слова ГОНЩИК -->
+            <div class="l32-t7-answer-boxes" data-word="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="г" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="о" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="н" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="и" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="к" maxlength="1">
+            </div>
+        </div>
+
+        <!-- Слово 2: Зелёная звёздочка -->
+        <div class="l32-t7-word-block">
+            <div class="l32-t7-rules">
+                <div class="l32-t7-rule-title green-star">★ От зелёной звёздочки:</div>
+                <ul class="l32-t7-steps-list">
+                    <li><b>Первый ход:</b> буква с зелёной звёздочкой.</li>
+                    <li><b>Второй ход:</b> две клетки вверх.</li>
+                    <li><b>Третий ход:</b> одна клетка вправо.</li>
+                    <li><b>Четвёртый ход:</b> две клетки вверх.</li>
+                    <li><b>Пятый ход:</b> три клетки вправо.</li>
+                    <li><b>Шестой ход:</b> четыре клетки вниз.</li>
+                </ul>
+            </div>
+            <!-- 6 клеточек для слова ЗАЩИТА -->
+            <div class="l32-t7-answer-boxes" data-word="2">
+                <input type="text" class="l32-t7-letter-input" data-answer="з" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="а" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="щ" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="и" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="т" maxlength="1">
+                <input type="text" class="l32-t7-letter-input" data-answer="а" maxlength="1">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- СРЕДНЯЯ ЧАСТЬ: ИНТЕРАКТИВНАЯ ТАБЛИЦА-ЛАБИРИНТ 6х5 С КОЩЕЕМ В ЦЕНТРЕ -->
+    <div class="l32-t7-maze-wrapper">
+        <table class="l32-t7-maze-table">
+            <!-- Ряд 1 -->
+            <tr>
+                <td class="l32-t7-cell c-blue">Р</td>
+                <td class="l32-t7-cell c-orange">И</td>
+                <td class="l32-t7-cell c-cyan">К</td>
+                <td class="l32-t7-cell c-red">И</td>
+                <td class="l32-t7-cell c-blue">Т</td>
+                <td class="l32-t7-cell c-green">Щ</td>
+            </tr>
+            <!-- Ряд 2 -->
+            <tr>
+                <td class="l32-t7-cell c-green">Ч</td>
+                <td class="l32-t7-cell c-brown">А</td>
+                <!-- Картинка Кощея объединяет 2 колонки и 3 ряда -->
+                <td class="l32-t7-koschey-cell" colspan="2" rowspan="3">
+                    <img src="images/lesson_32_2_7.jpeg" class="l32-t7-koschey-img" alt="Кощей Бессмертный" onerror="this.onerror=null; this.src='images/lesson_32_5_2.png';">
+                </td>
+                <td class="l32-t7-cell c-blue with-star">
+                    <span class="l32-t7-star red-star">★</span>Г
+                </td>
+                <td class="l32-t7-cell c-purple">Д</td>
+            </tr>
+            <!-- Ряд 3 -->
+            <tr>
+                <td class="l32-t7-cell c-red">А</td>
+                <td class="l32-t7-cell c-green">Щ</td>
+                <td class="l32-t7-cell c-blue">Ж</td>
+                <td class="l32-t7-cell c-blue">Т</td>
+            </tr>
+            <!-- Ряд 4 -->
+            <tr>
+                <td class="l32-t7-cell c-blue">Н</td>
+                <td class="l32-t7-cell c-red">Я</td>
+                <td class="l32-t7-cell c-orange">О</td>
+                <td class="l32-t7-cell c-red">Н</td>
+            </tr>
+            <!-- Ряд 5 -->
+            <tr>
+                <td class="l32-t7-cell c-cyan with-star">
+                    <span class="l32-t7-star green-star">★</span>З
+                </td>
+                <td class="l32-t7-cell c-orange">Э</td>
+                <td class="l32-t7-cell c-red">О</td>
+                <td class="l32-t7-cell c-green">Щ</td>
+                <td class="l32-t7-cell c-pink">А</td>
+                <td class="l32-t7-cell c-blue">Ф</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- НИЖНЯЯ ЧАСТЬ: СОСТАВЛЕНИЕ ПРЕДЛОЖЕНИЙ С КАЖДЫМ СЛОВОМ -->
+    <div class="l32-t7-sentences-box">
+        <div class="l32-t7-sentence-row">
+            <span class="l32-t7-sentence-label">Предложение со словом:</span>
+            <input type="text" class="l32-t7-sentence-input" placeholder="...">
+        </div>
+        <div class="l32-t7-sentence-row">
+            <span class="l32-t7-sentence-label">Предложение со словом:</span>
+            <input type="text" class="l32-t7-sentence-input" placeholder="...">
+        </div>
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task7()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №8: УПРАЖНЕНИЕ «СОБЕРИ СЛОВО» ПО ПЕРВЫМ БУКВАМ
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Собери слово</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Назови каждую картинку и определи, с какого звука начинается её название. Впиши первую букву в клеточку под картинкой и прочитай получившиеся слова со звуком <b>[щ]</b>!
+    </p>
+
+    <!-- Общий контейнер для 4 ребусов -->
+    <div class="l32-t8-container">
+
+        <!-- Ребус 1: ЩИТ (3 буквы) -->
+        <div class="l32-t8-word-row" data-word="1">
+            <div class="l32-t8-letters-group">
+                <!-- 1. Щёка -> Щ -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_1_1.png" class="l32-t8-img" alt="Щёка" onerror="this.onerror=null; this.src='images/lesson_32_2_1.jpeg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="щ" maxlength="1">
+                </div>
+                <!-- 2. Игла -> И -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_1_2.png" class="l32-t8-img" alt="Игла" onerror="this.onerror=null; this.src='images/lesson_32_8_1_2.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="и" maxlength="1">
+                </div>
+                <!-- 3. Топор -> Т -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_1_3.png" class="l32-t8-img" alt="Топор" onerror="this.onerror=null; this.src='images/lesson_32_8_1_3.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="т" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ребус 2: КЛЕЩИ (5 букв) -->
+        <div class="l32-t8-word-row" data-word="2">
+            <div class="l32-t8-letters-group">
+                <!-- 1. Курица -> К -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_2_1.jpeg" class="l32-t8-img" alt="Курица" onerror="this.onerror=null; this.src='images/lesson_32_8_2_1.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="к" maxlength="1">
+                </div>
+                <!-- 2. Лейка -> Л -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_2_2.png" class="l32-t8-img" alt="Лейка" onerror="this.onerror=null; this.src='images/lesson_32_8_2_2.jpeg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="л" maxlength="1">
+                </div>
+                <!-- 3. Ежевика -> Е -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_8_2_3.png" class="l32-t8-img" alt="Ежевика" onerror="this.onerror=null; this.src='images/lesson_32_8_2_3.jpeg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="е" maxlength="1">
+                </div>
+                <!-- 4. Щенок -> Щ -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_2_4.jpeg" class="l32-t8-img" alt="Щенок" onerror="this.onerror=null; this.src='images/lesson_32_8_2_4.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="щ" maxlength="1">
+                </div>
+                <!-- 5. Индюк -> И -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson-5-7-indi.png" class="l32-t8-img" alt="Индюк" onerror="this.onerror=null; this.src='images/lesson_32_8_2_5.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="и" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ребус 3: ЩЕКОТКА (7 букв) -->
+        <div class="l32-t8-word-row" data-word="3">
+            <div class="l32-t8-letters-group">
+                <!-- 1. Щётки -> Щ -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_2_3.jpeg" class="l32-t8-img" alt="Щётки" onerror="this.onerror=null; this.src='images/lesson_32_8_3_1.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="щ" maxlength="1">
+                </div>
+                <!-- 2. Енот -> Е -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/raccoon.png" class="l32-t8-img" alt="Енот" onerror="this.onerror=null; this.src='images/lesson_32_8_3_2.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="е" maxlength="1">
+                </div>
+                <!-- 3. Кастрюля -> К -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/pot-8.png" class="l32-t8-img" alt="Кастрюля" onerror="this.onerror=null; this.src='images/lesson_32_8_3_3.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="к" maxlength="1">
+                </div>
+                <!-- 4. Облако -> О -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/cloud.png" class="l32-t8-img" alt="Облако" onerror="this.onerror=null; this.src='images/lesson_32_8_3_4.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="о" maxlength="1">
+                </div>
+                <!-- 5. Троллейбус -> Т -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson-10-11-6.jpg" class="l32-t8-img" alt="Троллейбус" onerror="this.onerror=null; this.src='images/lesson_32_8_3_5.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="т" maxlength="1">
+                </div>
+                <!-- 6. Касатка (Кит) -> К -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson-5-8-6.png" class="l32-t8-img" alt="Касатка" onerror="this.onerror=null; this.src='images/lesson_32_8_3_6.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="к" maxlength="1">
+                </div>
+                <!-- 7. Ананас -> А -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson-5-8-7.png" class="l32-t8-img" alt="Ананас" onerror="this.onerror=null; this.src='images/lesson_32_8_3_7.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="а" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Ребус 4: ЖЕНЩИНА (7 букв) -->
+        <div class="l32-t8-word-row" data-word="4">
+            <div class="l32-t8-letters-group">
+                <!-- 1. Жемчужина -> Ж -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/жемчуг.png" class="l32-t8-img" alt="Жемчужина" onerror="this.onerror=null; this.src='images/lesson_32_8_4_1.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="ж" maxlength="1">
+                </div>
+                <!-- 2. Ель -> Е -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson-6-6-6.png" class="l32-t8-img" alt="Ель" onerror="this.onerror=null; this.src='images/lesson_32_8_4_2.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="е" maxlength="1">
+                </div>
+                <!-- 3. Носок -> Н -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/sock-8.png" class="l32-t8-img" alt="Носок" onerror="this.onerror=null; this.src='images/lesson_32_8_4_3.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="н" maxlength="1">
+                </div>
+                <!-- 4. Щавель -> Щ -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/lesson_32_2_2.jpeg" class="l32-t8-img" alt="Щавель" onerror="this.onerror=null; this.src='images/lesson_32_8_4_4.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="щ" maxlength="1">
+                </div>
+                <!-- 5. Изба -> И -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/изба.png" class="l32-t8-img" alt="Изба" onerror="this.onerror=null; this.src='images/lesson_32_8_4_5.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="и" maxlength="1">
+                </div>
+                <!-- 6. Носилки -> Н -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/nosilki.png" class="l32-t8-img" alt="Носилки" onerror="this.onerror=null; this.src='images/lesson_32_8_4_6.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="н" maxlength="1">
+                </div>
+                <!-- 7. Акула -> А -->
+                <div class="l32-t8-item">
+                    <div class="l32-t8-img-wrap">
+                        <img src="images/акула.png" class="l32-t8-img" alt="Акула" onerror="this.onerror=null; this.src='images/lesson_32_8_4_7.jpg';">
+                    </div>
+                    <input type="text" class="l32-t8-input" data-answer="а" maxlength="1">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-8" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №9: УПРАЖНЕНИЕ «ВОЛШЕБНАЯ ДОРОЖКА»
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Волшебная дорожка</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги ящерице добежать до пещеры! Для этого прочитай слоги и слова на волшебной дорожке. Выбери слова из дорожки и составь с ними <b>5 красивых предложений</b>, записав их в поля ниже.
+    </p>
+
+    <!-- Иллюстрация: волшебная дорожка со слогами и словами -->
+    <div class="l32-t9-img-box">
+        <img src="images/lesson_32_9.jpeg" class="l32-t9-main-img" alt="Волшебная дорожка" onerror="this.onerror=null; this.src='images/lesson_32_9.jpg';">
+    </div>
+
+    <!-- Блок 5 полей для ввода составленных предложений -->
+    <div class="l32-t9-sentences-container">
+        
+        <!-- Предложение 1 -->
+        <div class="l32-t9-sentence-row">
+            <span class="l32-t9-sentence-num">1.</span>
+            <input type="text" class="l32-t9-sentence-input" placeholder="Напиши первое предложение со словом из дорожки...">
+        </div>
+
+        <!-- Предложение 2 -->
+        <div class="l32-t9-sentence-row">
+            <span class="l32-t9-sentence-num">2.</span>
+            <input type="text" class="l32-t9-sentence-input" placeholder="Напиши второе предложение со словом из дорожки...">
+        </div>
+
+        <!-- Предложение 3 -->
+        <div class="l32-t9-sentence-row">
+            <span class="l32-t9-sentence-num">3.</span>
+            <input type="text" class="l32-t9-sentence-input" placeholder="Напиши третье предложение со словом из дорожки...">
+        </div>
+
+        <!-- Предложение 4 -->
+        <div class="l32-t9-sentence-row">
+            <span class="l32-t9-sentence-num">4.</span>
+            <input type="text" class="l32-t9-sentence-input" placeholder="Напиши четвёртое предложение со словом из дорожки...">
+        </div>
+
+        <!-- Предложение 5 -->
+        <div class="l32-t9-sentence-row">
+            <span class="l32-t9-sentence-num">5.</span>
+            <input type="text" class="l32-t9-sentence-input" placeholder="Напиши пятое предложение со словом из дорожки...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-32-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL32Task9()">Проверить</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+
+<script src="lesson-32.js"></script>
+</body>
+</html>
