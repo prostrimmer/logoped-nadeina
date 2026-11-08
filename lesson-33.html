@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Урок 31 - Автоматизация звука [Щ] в словах и предложениях</title>
+    <link rel="stylesheet" href="lesson-33.css">
+</head>
+<body>
+
+<div class="content-wrapper">
+    <header class="main-header">
+        <div class="lesson-badge">Урок 33. Автоматизация звука [Щ] в словах и предложениях</div>
+    </header>
+
+    <!-- =========================================================
+     ЗАДАНИЕ №1: ПРОИЗНЕСИ СЛОГИ И СЛОВА СО ЗВУКОМ [Щ]
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 1. Произнеси слоги и слова</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Чётко произноси звук <b>[щ]</b>. Прочитай слоги и слова парами в двух столбиках. Нажимай на каждую строчку, когда произнесёшь её чисто и без ошибок!
+    </p>
+
+    <!-- Сетка из 2 колонок для слогов и слов -->
+    <div class="l33-t1-grid">
+
+        <!-- Левый столбик -->
+        <div class="l33-t1-col">
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">ща</span>-<span class="l33-t1-shch">ща</span>-<span class="l33-t1-shch">ща</span> — <b>пища</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">ща</span>-<span class="l33-t1-shch">ща</span>-<span class="l33-t1-shch">ща</span> — <b>пищать</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">щи</span>-<span class="l33-t1-shch">щи</span>-<span class="l33-t1-shch">щи</span> — <b>ящик</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">щи</span>-<span class="l33-t1-shch">щи</span>-<span class="l33-t1-shch">щи</span> — <b>пищит</b></span>
+            </div>
+        </div>
+
+        <!-- Правый столбик -->
+        <div class="l33-t1-col">
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">ще</span>-<span class="l33-t1-shch">ще</span>-<span class="l33-t1-shch">ще</span> — <b>училище</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">ще</span>-<span class="l33-t1-shch">ще</span>-<span class="l33-t1-shch">ще</span> — <b>удилище</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">щу</span>-<span class="l33-t1-shch">щу</span>-<span class="l33-t1-shch">щу</span> — <b>ищу</b></span>
+            </div>
+            <div class="l33-t1-row" onclick="toggleL33T1Row(this)">
+                <span class="l33-t1-icon">⚪</span>
+                <span class="l33-t1-text"><span class="l33-t1-shch">щу</span>-<span class="l33-t1-shch">щу</span>-<span class="l33-t1-shch">щу</span> — <b>тащу</b></span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-1" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task1()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №2: ИГРА «10, 7, 2, 1» (УСТНЫЙ СЧЁТ ПРЕДМЕТОВ)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 2. Игра «10, 7, 2, 1»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Составь со словами словосочетания по образцу: <i>десять ящиков, семь ящиков, два ящика, один ящик</i>. Посчитай каждый предмет устно по цепочке цифр и нажми на карточку, когда всё сосчитано без ошибок!
+    </p>
+
+    <!-- ПАНЕЛЬ С КРУПНЫМИ ЦИФРАМИ СЧЁТА -->
+    <div class="l33-t2-digits-bar">
+        <span class="l33-t2-digit-badge">10</span>
+        <span class="l33-t2-digit-arrow">➔</span>
+        <span class="l33-t2-digit-badge">7</span>
+        <span class="l33-t2-digit-arrow">➔</span>
+        <span class="l33-t2-digit-badge">2</span>
+        <span class="l33-t2-digit-arrow">➔</span>
+        <span class="l33-t2-digit-badge">1</span>
+    </div>
+
+    <!-- СЕТКА ИЗ 6 КАРТОЧЕК (2 РЯДА ПО 3 СЛОВА) -->
+    <div class="l33-t2-grid">
+
+        <!-- 1. Ящик -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_32_2_6.jpeg" class="l33-t2-img" alt="Ящик" onerror="this.onerror=null; this.src='images/lesson_32_2_6.jpeg';">
+            </div>
+            <div class="l33-t2-word">ящик</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+        <!-- 2. Удилище -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_33_2.jpeg" class="l33-t2-img" alt="Удилище" onerror="this.onerror=null; this.src='images/lesson_33_2_2.jpg';">
+            </div>
+            <div class="l33-t2-word">удилище</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+        <!-- 3. Овощи -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_32_2_11.jpeg" class="l33-t2-img" alt="Овощи" onerror="this.onerror=null; this.src='images/lesson_32_2_11.jpeg';">
+            </div>
+            <div class="l33-t2-word">овощи</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+        <!-- 4. Прищепка -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_32_2_12.jpeg" class="l33-t2-img" alt="Прищепка" onerror="this.onerror=null; this.src='images/lesson_32_2_12.jpeg';">
+            </div>
+            <div class="l33-t2-word">прищепка</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+        <!-- 5. Щит -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_32_2_5.jpeg" class="l33-t2-img" alt="Щит" onerror="this.onerror=null; this.src='images/lesson_32_2_5.jpeg';">
+            </div>
+            <div class="l33-t2-word">щит</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+        <!-- 6. Щенок -->
+        <div class="l33-t2-card" onclick="toggleL33T2Card(this)">
+            <div class="l33-t2-img-box">
+                <img src="images/lesson_32_2_4.jpeg" class="l33-t2-img" alt="Щенок" onerror="this.onerror=null; this.src='images/lesson_32_2_4.jpeg';">
+            </div>
+            <div class="l33-t2-word">щенок</div>
+            <div class="l33-t2-status"><span class="l33-t2-status-icon">⚪</span> Посчитано</div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-2" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task2()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №3: СОСТАВЬ ПРЕДЛОЖЕНИЯ СО СЛОВОСОЧЕТАНИЯМИ
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 3. Составь предложения со словосочетаниями</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Составь предложения со словосочетаниями и словами <b>я, ты, он, она, мы, вы, они</b>. Представь, что действие происходит сегодня. </i>
+    </p>
+
+    <!-- Сетка из двух независимых столбцов -->
+    <div class="l33-t3-columns-grid">
+
+        <!-- СТОЛБЕЦ 1: искать ящик для овощей -->
+        <div class="l33-t3-column">
+            <div class="l33-t3-img-card">
+                <img src="images/lesson_33_3_1.jpeg" class="l33-t3-img" alt="Искать ящик для овощей" onerror="this.onerror=null; this.src='images/lesson_33_2_1.png';">
+            </div>
+            <div class="l33-t3-phrase-title">искать ящик для овощей</div>
+
+            <div class="l33-t3-inputs-list">
+                <!-- Я -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">я</span>
+                    <span class="l33-t3-prefix">ищу</span>
+                    <input type="text" class="l33-t3-input" data-answer="ящик для овощей|ищу ящик для овощей" placeholder="допиши...">
+                </div>
+                <!-- Ты -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">ты</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищешь ящик для овощей|ищешь" placeholder="напиши...">
+                </div>
+                <!-- Он -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">он</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищет ящик для овощей|ищет" placeholder="напиши...">
+                </div>
+                <!-- Она -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">она</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищет ящик для овощей|ищет" placeholder="напиши...">
+                </div>
+                <!-- Мы -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">мы</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищем ящик для овощей|ищем" placeholder="напиши...">
+                </div>
+                <!-- Вы -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">вы</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищете ящик для овощей|ищете" placeholder="напиши...">
+                </div>
+                <!-- Они -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">они</span>
+                    <input type="text" class="l33-t3-input" data-answer="ищут ящик для овощей|ищут" placeholder="напиши...">
+                </div>
+            </div>
+        </div>
+
+        <!-- СТОЛБЕЦ 2: угощать свежими овощами -->
+        <div class="l33-t3-column">
+            <div class="l33-t3-img-card">
+                <img src="images/lesson_33_3_2.jpeg" class="l33-t3-img" alt="Угощать свежими овощами" onerror="this.onerror=null; this.src='images/lesson_33_2_3.png';">
+            </div>
+            <div class="l33-t3-phrase-title">угощать свежими овощами</div>
+
+            <div class="l33-t3-inputs-list">
+                <!-- Я -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">я</span>
+                    <span class="l33-t3-prefix">угощаю</span>
+                    <input type="text" class="l33-t3-input" data-answer="свежими овощами|угощаю свежими овощами" placeholder="допиши...">
+                </div>
+                <!-- Ты -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">ты</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощаешь свежими овощами|угощаешь" placeholder="напиши...">
+                </div>
+                <!-- Он -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">он</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощает свежими овощами|угощает" placeholder="напиши...">
+                </div>
+                <!-- Она -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">она</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощает свежими овощами|угощает" placeholder="напиши...">
+                </div>
+                <!-- Мы -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">мы</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощаем свежими овощами|угощаем" placeholder="напиши...">
+                </div>
+                <!-- Вы -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">вы</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощаете свежими овощами|угощаете" placeholder="напиши...">
+                </div>
+                <!-- Они -->
+                <div class="l33-t3-row">
+                    <span class="l33-t3-pronoun">они</span>
+                    <input type="text" class="l33-t3-input" data-answer="угощают свежими овощами|угощают" placeholder="напиши...">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-3" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task3()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №4: ПОМОГИ МАЛЫШУ И ВЕЛИКАНУ НАЗВАТЬ ПРЕДМЕТЫ
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 4. Малыш и Великан</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги малышу и великану правильно назвать предметы. Слева напиши маленькие предметы для малыша, а справа — огромные для великана.
+    </p>
+
+    <!-- Основной контейнер: малыш слева, строки по центру, великан справа -->
+    <div class="l33-t4-main-layout">
+
+        <!-- Левая колонка: Малыш -->
+        <div class="l33-t4-character-col">
+            <div class="l33-t4-char-box">
+                <img src="images/lesson_33_4_1.jpeg" class="l33-t4-char-img" alt="Малыш" onerror="this.onerror=null; this.src='images/lesson_33_4_1.jpg';">
+                <div class="l33-t4-char-name">Малыш</div>
+            </div>
+        </div>
+
+        <!-- Центральная колонка: формы ввода и исходные слова -->
+        <div class="l33-t4-center-list">
+
+            <!-- 1. Образец: нос -->
+            <div class="l33-t4-row sample-row">
+                <span class="l33-t4-sample-val">носик</span>
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">нос</span>
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-sample-val">носище</span>
+            </div>
+
+            <!-- 2. нога -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="ножка|ноженька" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">нога</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="ножища|ножище" placeholder="...">
+            </div>
+
+            <!-- 3. палец -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="пальчик" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">палец</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="пальчище" placeholder="...">
+            </div>
+
+            <!-- 4. зубы -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="зубки|зубики" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">зубы</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="зубищи" placeholder="...">
+            </div>
+
+            <!-- 5. губы -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="губки" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">губы</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="губищи" placeholder="...">
+            </div>
+
+            <!-- 6. сапоги -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="сапожки" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">сапоги</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="сапожищи" placeholder="...">
+            </div>
+
+            <!-- 7. пояс -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="поясок" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">пояс</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="поясище" placeholder="...">
+            </div>
+
+            <!-- 8. ботинки -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="ботиночки|ботинки" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">ботинки</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="ботинищи|ботинчищи" placeholder="...">
+            </div>
+
+            <!-- 9. глаза -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="глазки|глазоньки" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">глаза*</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="глазищи" placeholder="...">
+            </div>
+
+            <!-- 10. ногти -->
+            <div class="l33-t4-row">
+                <input type="text" class="l33-t4-input" data-answer="ноготочки" placeholder="...">
+                <span class="l33-t4-dash">—</span>
+                <span class="l33-t4-base-word">ногти</span>
+                <span class="l33-t4-dash">—</span>
+                <input type="text" class="l33-t4-input" data-answer="ноготищи" placeholder="...">
+            </div>
+
+        </div>
+
+        <!-- Правая колонка: Великан -->
+        <div class="l33-t4-character-col">
+            <div class="l33-t4-char-box">
+                <img src="images/lesson_33_4_2.jpeg" class="l33-t4-char-img" alt="Великан" onerror="this.onerror=null; this.src='images/lesson_33_4_2.jpg';">
+                <div class="l33-t4-char-name">Великан</div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-4" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task4()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №5: ИГРА «ЭХО» (ОБРАЗУЙ СЛОВА-ПРИЗНАКИ)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 5. Игра «Эхо»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Образуй от слов-действий слова-признаки со звуком <b>[щ]</b>.  Впиши получившиеся слова в поля.
+    </p>
+
+    <!-- Сетка из двух колонок со строками упражнения -->
+    <div class="l33-t5-grid">
+
+        <!-- Левый столбик -->
+        <div class="l33-t5-col">
+
+            <!-- 1. свистеть -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">свистеть —</span>
+                <input type="text" class="l33-t5-input" data-answer="свистящий" placeholder="...">
+                <span class="l33-t5-noun">(звук)</span>
+            </div>
+
+            <!-- 2. петь -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">петь —</span>
+                <input type="text" class="l33-t5-input" data-answer="поющий" placeholder="...">
+                <span class="l33-t5-noun">(фонтан)</span>
+            </div>
+
+            <!-- 3. звенеть -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">звенеть —</span>
+                <input type="text" class="l33-t5-input" data-answer="звенящий" placeholder="...">
+                <span class="l33-t5-noun">(бубенчик)</span>
+            </div>
+
+            <!-- 4. шипеть -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">шипеть —</span>
+                <input type="text" class="l33-t5-input" data-answer="шипящая" placeholder="...">
+                <span class="l33-t5-noun">(змея)</span>
+            </div>
+
+            <!-- 5. бежать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">бежать —</span>
+                <input type="text" class="l33-t5-input" data-answer="бегущая" placeholder="...">
+                <span class="l33-t5-noun">(девочка)</span>
+            </div>
+
+            <!-- 6. лаять -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">лаять —</span>
+                <input type="text" class="l33-t5-input" data-answer="лающая" placeholder="...">
+                <span class="l33-t5-noun">(собака)</span>
+            </div>
+
+            <!-- 7. стоять -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">стоять —</span>
+                <input type="text" class="l33-t5-input" data-answer="стоящая" placeholder="...">
+                <span class="l33-t5-noun">(кошка)</span>
+            </div>
+
+            <!-- 8. читать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">читать —</span>
+                <input type="text" class="l33-t5-input" data-answer="читающая" placeholder="...">
+                <span class="l33-t5-noun">(ученица)</span>
+            </div>
+
+        </div>
+
+        <!-- Правый столбик -->
+        <div class="l33-t5-col">
+
+            <!-- 1. падать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">падать —</span>
+                <input type="text" class="l33-t5-input" data-answer="падающий" placeholder="...">
+                <span class="l33-t5-noun">(камень)</span>
+            </div>
+
+            <!-- 2. мыть -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">мыть —</span>
+                <input type="text" class="l33-t5-input" data-answer="моющая" placeholder="...">
+                <span class="l33-t5-noun">(паста)</span>
+            </div>
+
+            <!-- 3. журчать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">журчать —</span>
+                <input type="text" class="l33-t5-input" data-answer="журчащий" placeholder="...">
+                <span class="l33-t5-noun">(ручей)</span>
+            </div>
+
+            <!-- 4. таять -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">таять —</span>
+                <input type="text" class="l33-t5-input" data-answer="тающий" placeholder="...">
+                <span class="l33-t5-noun">(снег)</span>
+            </div>
+
+            <!-- 5. кричать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">кричать —</span>
+                <input type="text" class="l33-t5-input" data-answer="кричащий" placeholder="...">
+                <span class="l33-t5-noun">(ребёнок)</span>
+            </div>
+
+            <!-- 6. гудеть -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">гудеть —</span>
+                <input type="text" class="l33-t5-input" data-answer="гудящий" placeholder="...">
+                <span class="l33-t5-noun">(автомобиль)</span>
+            </div>
+
+            <!-- 7. урчать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">урчать —</span>
+                <input type="text" class="l33-t5-input" data-answer="урчащий" placeholder="...">
+                <span class="l33-t5-noun">(котёнок)</span>
+            </div>
+
+            <!-- 8. пищать -->
+            <div class="l33-t5-row">
+                <span class="l33-t5-verb">пищать —</span>
+                <input type="text" class="l33-t5-input" data-answer="пищащий" placeholder="...">
+                <span class="l33-t5-noun">(щенок)</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-5" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task5()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №6: ИГРА-БРОДИЛКА «ЩЕНОК СПЕШИТ К МАМЕ»
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 6. Щенок спешит к маме</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Помоги щенку добраться до мамы-пуделя! Называй картинки по дорожке и чётко произноси звук <b>[щ]</b>. Нажимай на каждый шаг, когда слово произнесено чисто и правильно!
+    </p>
+
+    <!-- Большая общая иллюстрация-бродилка -->
+    <div class="l33-t6-img-box">
+        <img src="images/lesson_33_6.jpeg" class="l33-t6-main-img" alt="Щенок спешит к маме" onerror="this.onerror=null; this.src='images/lesson_33_6.jpg';">
+    </div>
+
+
+
+    
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-6" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task6()">Проверить</button>
+    </div>
+</div>
+
+
+<!-- =========================================================
+     ЗАДАНИЕ №7: ПОВТОРИ СЛОВА И ОБВЕДИ БУКВУ Щ
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 7. Повтори слова со звуком [Щ]</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Чётко повтори слова за взрослым, выделяя звук <b>[щ]</b>. Нажимай на букву <b>«Щ»</b> в каждом слове, чтобы обвести её кружком!
+    </p>
+
+    <!-- Сетка из 3 колонок со словами -->
+    <div class="l33-t7-columns-grid">
+
+        <!-- Колонка 1: звук [Щ] в начале слова -->
+        <div class="l33-t7-col">
+            <div class="l33-t7-col-header">Звук [Щ] в начале</div>
+            <div class="l33-t7-words-list">
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>и</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ит</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>еголь</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>егол</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ука</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>авель</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ёлка</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ётка</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ипцы</div>
+                <div class="l33-t7-word-row"><span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ёки</div>
+            </div>
+        </div>
+
+        <!-- Колонка 2: звук [Щ] в середине слова -->
+        <div class="l33-t7-col">
+            <div class="l33-t7-col-header">Звук [Щ] в середине</div>
+            <div class="l33-t7-words-list">
+                <div class="l33-t7-word-row">пе<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ера</div>
+                <div class="l33-t7-word-row">пло<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>адь</div>
+                <div class="l33-t7-word-row">пло<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>адка</div>
+                <div class="l33-t7-word-row">про<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ать</div>
+                <div class="l33-t7-word-row">тре<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ётка</div>
+                <div class="l33-t7-word-row">носиль<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ик</div>
+                <div class="l33-t7-word-row">пиль<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ик</div>
+                <div class="l33-t7-word-row">до<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ечка</div>
+                <div class="l33-t7-word-row">я<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ерица</div>
+                <div class="l33-t7-word-row">при<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>епки</div>
+            </div>
+        </div>
+
+        <!-- Колонка 3: звук [Щ] в конце слова -->
+        <div class="l33-t7-col">
+            <div class="l33-t7-col-header">Звук [Щ] в конце</div>
+            <div class="l33-t7-words-list">
+                <div class="l33-t7-word-row">пла<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">плю<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">ле<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">ве<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ь</div>
+                <div class="l33-t7-word-row">кле<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">хря<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">бор<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">хво<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+                <div class="l33-t7-word-row">помо<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span>ь</div>
+                <div class="l33-t7-word-row">товари<span class="l33-t7-letter-shch" onclick="toggleL33T7Shch(this)">щ</span></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-7" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task7()">Проверить</button>
+    </div>
+</div>
+
+    <!-- =========================================================
+     ЗАДАНИЕ №8: НАЙДИ ПРЕДМЕТЫ СО ЗВУКОМ [Щ] (УСТНЫЙ ПОИСК)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 8. Найди предметы со звуком [Щ]</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно рассмотри сюжетную картинку и найди слова со звуком <b>[щ]</b>. Назови их вслух, а затем нажми кнопку <b>«Проверить»</b>, чтобы свериться со списком!
+    </p>
+
+    <!-- Большая сюжетная иллюстрация -->
+    <div class="l33-t8-img-box">
+        <img src="images/lesson_33_8.jpeg" class="l33-t8-main-img" alt="Найди предметы со звуком Щ" onerror="this.onerror=null; this.src='images/lesson_33_8.jpg';">
+    </div>
+
+    <!-- Блок для вывода списка найденных слов при проверке -->
+    <div id="res-33-8" class="result-text"></div>
+
+    <!-- Кнопка проверки -->
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task8()">Проверить</button>
+    </div>
+</div>
+
+<!-- =========================================================
+     ЗАДАНИЕ №9: РАССКАЗ «ЩЕНОК» (ЧТЕНИЕ И ОТВЕТЫ НА ВОПРОСЫ)
+     ========================================================= -->
+<div class="white-card">
+    <h2 class="card-title">Задание 9. Рассказ «Щенок»</h2>
+    <div class="yellow-divider"></div>
+    <p class="card-instruction">
+        Внимательно послушай или прочитай рассказ. Запомни все слова со звуком <b>[щ]</b> и ответь на вопросы полными предложениями!
+    </p>
+
+    <!-- БЛОК С РАССКАЗОМ И ИЛЛЮСТРАЦИЕЙ -->
+    <div class="l33-t9-story-card">
+        <div class="l33-t9-story-header">
+            <h3 class="l33-t9-story-title">Щенок</h3>
+        </div>
+
+        <div class="l33-t9-story-body">
+            <div class="l33-t9-story-text">
+                <p>
+                    Катя обещала маме помыть овощи для щей. Но её отвлекал щенок. Он хотел угощения и пищал. Катя угостила щенка косточкой.
+                </p>
+                <p>
+                    Потом щенок полез в ящик. Ящик наклонился и упал на щенка. Щенок стал пищать и звать на помощь Катю. Катя вытащила щенка из-под ящика и сказала: «Не пищи, жди! Обещания надо выполнять. Я сначала помою овощи, а потом мы с тобой пойдём на площадку».
+                </p>
+                <div class="l33-t9-story-author">По Е. Алифановой, Н. Егоровой</div>
+            </div>
+
+            <div class="l33-t9-story-img-box">
+                <img src="images/lesson_33_9.png" class="l33-t9-story-img" alt="Катя и щенок" onerror="this.onerror=null; this.src='images/lesson_33_9.jpeg'; this.onerror=function(){this.src='images/lesson_33_9.jpg';};">
+            </div>
+        </div>
+    </div>
+
+    <!-- БЛОК С 6 ВОПРОСАМИ ПО РАССКАЗУ -->
+    <div class="l33-t9-questions-title">Ответь на вопросы полным предложением:</div>
+
+    <div class="l33-t9-questions-list">
+
+        <!-- Вопрос 1 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">1. Что обещала Катя маме?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+        <!-- Вопрос 2 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">2. Кто отвлекал Катю?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+        <!-- Вопрос 3 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">3. Что сначала делал щенок?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+        <!-- Вопрос 4 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">4. Что случилось потом?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+        <!-- Вопрос 5 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">5. Как щенок позвал Катю?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+        <!-- Вопрос 6 -->
+        <div class="l33-t9-q-row">
+            <label class="l33-t9-q-label">6. Как успокоила щенка Катя?</label>
+            <input type="text" class="l33-t9-q-input" placeholder="Напиши ответ полным предложением...">
+        </div>
+
+    </div>
+
+    <!-- Блок вывода результата и кнопка проверки -->
+    <div id="res-33-9" class="result-text"></div>
+    <div class="btn-box">
+        <button class="orange-check-btn" onclick="checkL33Task9()">Проверить</button>
+    </div>
+</div>
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<script src="lesson-33.js"></script>
+</body>
+</html>
